@@ -1,16 +1,18 @@
 from rdkit.Chem import PandasTools as pdt
 
+def prepare_chembl_data(file_name, factor_name=None):
+    # join path ("data/", filename)
+    chembl_dataset = pdt.LoadSDF(file_name, embedProps=True, molColName=None, smilesName='smiles')
+    chembl_dataset = chembl_dataset.drop(dropcols, axis=1)
+    if factor_name:
+        chembl_dataset['target'] = factor_name
+    return chembl_dataset
+
+
+chembl2016 = prepare_chembl_data('CHEMBL2016_actives.sdf')
+
 # coagulation factor xiii
 chembl2016 = pdt.LoadSDF('CHEMBL2016_actives.sdf', embedProps=True, molColName=None, smilesName='smiles')
-
-# coagulation factor ix
-chembl2820 = None
-
-# coagulation factor xi
-chembl2821 = None
-
-# coagulation factor xii
-chembl3991 = None
 
 # coagulation factor vii
 chembl244 = pdt.LoadSDF('CHEMBL244_actives.sdf', embedProps=True, molColName=None, smilesName='smiles')
