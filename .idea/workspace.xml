@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="055e4ddf-61de-4a20-9037-8c3fc5061e9d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/proper_sdf/CHEMBL209.sdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proper_sdf/CHEMBL2147.sdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proper_sdf/CHEMBL2343.sdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proper_sdf/CHEMBL5794.sdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/CHEMBL209.sdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/CHEMBL2147.sdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/CHEMBL2343.sdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/CHEMBL5794.sdf" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2tBzFya9bAVB7o3070D3wTv9Jqh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/limep/TSC",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
+    ]
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="055e4ddf-61de-4a20-9037-8c3fc5061e9d" name="Changes" comment="" />
+      <created>1739840155575</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739840155575</updated>
+      <workItem from="1739840156606" duration="5336000" />
+      <workItem from="1739877160344" duration="31000" />
+      <workItem from="1743517347318" duration="8455000" />
+      <workItem from="1743576162847" duration="37000" />
+      <workItem from="1744726941145" duration="2782000" />
+      <workItem from="1744787241959" duration="18000" />
+      <workItem from="1744798317422" duration="1186000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
