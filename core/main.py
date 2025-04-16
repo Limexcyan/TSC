@@ -33,7 +33,7 @@ if __name__ == "__main__":
     export_data(full_df, "data/full_sdfs.csv")
 
     featurizer = ClusteringFeaturizer(activity_dist='quantiles', qcount=quantile_count, length=feature_count)
-    feature_count = (feature_count) * 1.0
+    feature_count = feature_count * 1.0
     datas = featurizer(full_df)
 
     export_data(datas, "data/processed_sdfs.csv")

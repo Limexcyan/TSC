@@ -15,6 +15,23 @@ dropped_columns = [
     'std_type'
 ]
 
+"""
+
+CHEMBL209 -> ??
+
+CHEMBL2147 -> PIM1
+CHEMBL4523 -> PIM2
+
+CHEMBL2343 -> Sgk1
+CHEMBL5794 -> Sgk2
+CHEMBL6196 -> Sgk3
+
+CHEMBL -> Jak1
+CHEMBL -> Jak2
+
+"""
+
+
 sdfs = [
     'data/proper_sdf/CHEMBL2147.sdf',
     'data/proper_sdf/CHEMBL2343.sdf',
