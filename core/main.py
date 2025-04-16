@@ -16,9 +16,15 @@ from sklearn.cluster import BisectingKMeans
 from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_score
 
+from scipy.special import rel_entr, kl_div
+from Bio import pairwise2
+
+
 from utils import *
 from featurizer import *
 from clusters_features import *
+from analysis import *
+
 
 if __name__ == "__main__":
     dropped_columns = ['CdId', 'Mol Weight', 'Formula', 'target_id', 'target_name', 'organism', 'target_type', 'ID',
@@ -43,5 +49,10 @@ if __name__ == "__main__":
     export_data(datas, "data/processed_sdfs.csv")
 
     a1, a2, a3, a4 = perform_analysis(datas,50,full_df)
+
+    targettocolor(a1, 50)
+    summary(a1)
+
+
 
 
