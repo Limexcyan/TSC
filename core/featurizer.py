@@ -76,7 +76,10 @@ class ClusteringPreprocessFeaturizer(Featurizer):
             else:
                 fta = pd.DataFrame(fullvec, columns=labels)
                 features = pd.concat([features, fta], ignore_index=True)
+            if (i % 500 == 0) :
+                print("\tcompleted " + str(round(100 * (i/len(df)),1)) + "%")
 
+        print("\tdone.")
         return features
 
 

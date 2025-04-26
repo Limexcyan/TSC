@@ -25,6 +25,7 @@ def consolidate_data(sdfs, userinputs=[], dropcols=[]):
         for additional_labels in userinputs[i]:
             temp[additional_labels[0]] = additional_labels[1]
         sdf_df_aggregate.append(temp)
+        print("\t aggregating " + str(i+1) + "/" + str(len(sdfs)) + " sdfs")
 
     return pd.concat(sdf_df_aggregate).reset_index(drop=True)
 
@@ -36,7 +37,8 @@ def export_data(data, filename):
     :param filename:
     :return:
     """
-    data.to_csv(filename)
+    data.to_csv(filename,index=False)
+    print("done")
 
 
 def gaussianScaler(numArr):
