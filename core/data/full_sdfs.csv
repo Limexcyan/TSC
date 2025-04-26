@@ -32,7 +32,7 @@
 30,CHEMBL1738797,ALECTINIB,,CCc1cc2c(cc1N1CCC(N3CCOCC3)CC1)C(C)(C)c1[nH]c3cc(C#N)ccc3c1C2=O,threonine-protein kinase PIM1
 31,CHEMBL412142,LADUVIGLUSIB,,Cc1cnc(-c2cnc(NCCNc3ccc(C#N)cn3)nc2-c2ccc(Cl)cc2Cl)[nH]1,threonine-protein kinase PIM1
 32,CHEMBL3969289,None,,Cc1cncc(-c2cc3c(cn2)cnn3-c2cn(C)c(=O)c(N3CCC[C@H](N)C3)n2)n1,threonine-protein kinase PIM1
-33,CHEMBL4081711,ZIMLOVISERTIB,,CC[C@@H]1[C@H](F)C(=O)N[C@@H]1COc1nccc2cc(C(N)=O)c(OC)cc12,threonine-protein kinase PIM1
+33,CHEMBL4081711,ZIMLOVISERTIB,,CC[C@H]1[C@@H](COc2nccc3cc(C(N)=O)c(OC)cc23)NC(=O)[C@H]1F,threonine-protein kinase PIM1
 34,CHEMBL3184679,AZD-4547,,COc1cc(CCc2cc(NC(=O)c3ccc(N4CC(C)NC(C)C4)cc3)n[nH]2)cc(OC)c1,threonine-protein kinase PIM1
 35,CHEMBL3545360,ASP-3026,,COc1cc(N2CCC(N3CCN(C)CC3)CC2)ccc1Nc1ncnc(Nc2ccccc2S(=O)(=O)C(C)C)n1,threonine-protein kinase PIM1
 36,CHEMBL3109738,JNJ-26483327,,COc1cc2ncnc3c2cc1OCCCCCN(C)Cc1ccc(Br)cc1N3,threonine-protein kinase PIM1
@@ -41,7 +41,7 @@
 39,CHEMBL3355555,None,,O=S1(=O)CCC(CNc2ccn3ncc(-c4cccc(C(F)(F)F)c4)c3n2)CC1,threonine-protein kinase PIM1
 40,CHEMBL4091496,None,,O=C1NC(=S)S/C1=C\c1ccc2ccccc2n1,threonine-protein kinase PIM1
 41,CHEMBL4075393,None,,O=C1NC(=S)n2c1cc1ccccc1c2=O,threonine-protein kinase PIM1
-42,CHEMBL3691957,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+42,CHEMBL3691957,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 43,CHEMBL3648853,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CCC(N)C2(CCO2)CC1,threonine-protein kinase PIM1
 44,CHEMBL3648843,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CCNC[C@]2(CCO2)C1,threonine-protein kinase PIM1
 45,CHEMBL242383,RESOKAEMPFEROL,,O=c1c(O)c(-c2ccc(O)cc2)oc2cc(O)ccc12,threonine-protein kinase PIM1
@@ -140,7 +140,7 @@
 138,CHEMBL3951088,None,,c1cc(N2CCCNCC2)nc(-n2ncc3cnc(-c4cncc(C5CC5)c4)cc32)c1,threonine-protein kinase PIM1
 139,CHEMBL3946175,None,,NC1C=C(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)CCC1,threonine-protein kinase PIM1
 140,CHEMBL253786,None,,O=c1cc(-c2cccc(O)c2)oc2cc(O)ccc12,threonine-protein kinase PIM1
-141,CHEMBL3651936,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](O)[C@@H](C)C3)ccc2F)c1F,threonine-protein kinase PIM1
+141,CHEMBL3651936,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](O)[C@H](N)C3)ccc2F)c1F,threonine-protein kinase PIM1
 142,CHEMBL3901647,None,,CC(C)Oc1cccc(-c2c[nH]c3ccc(-c4nnc(NC5CCCNC5)s4)cc23)n1,threonine-protein kinase PIM1
 143,CHEMBL3951344,None,,CC(C)Oc1cc(F)cc(-c2c[nH]c3ccc(-c4nnc(N)o4)cc23)c1,threonine-protein kinase PIM1
 144,CHEMBL3896794,None,,Nc1nnc(-c2ccc3[nH]cc(-c4cncc(C5CC5)n4)c3c2)o1,threonine-protein kinase PIM1
@@ -245,7 +245,7 @@
 243,CHEMBL3652018,None,,N[C@H]1CCC[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)ccc(O)c3F)n2)C1,threonine-protein kinase PIM1
 244,CHEMBL3983621,None,,C[C@H]1NC(=O)c2cc(-c3cccc4c(=O)n(C)c(OC5(C)CC5)nc34)[nH]c21,threonine-protein kinase PIM1
 245,CHEMBL3975438,None,,Fc1ccccc1-c1c[nH]c2ccc(-c3nnc(NCc4ccccc4)s3)cc12,threonine-protein kinase PIM1
-246,CHEMBL3691943,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC4CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+246,CHEMBL3691943,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC4CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 247,CHEMBL331237,TRICIRIBINE,,CN1N=C(N)c2cn([C@@H]3O[C@H](CO)[C@@H](O)[C@H]3O)c3ncnc1c23,threonine-protein kinase PIM1
 248,CHEMBL3930402,None,,CCn1cc(-c2cc3c(cn2)cnn3-c2cccc(NC3CCCCNC3)n2)cn1,threonine-protein kinase PIM1
 249,CHEMBL3809986,None,,Cc1nc2cccc3c2nc1N[C@@H](C)/C=C/C[C@H]1CNC(=O)c2cc-3[nH]c21,threonine-protein kinase PIM1
@@ -259,7 +259,7 @@
 257,CHEMBL3910536,None,,OCCCc1cncc(-c2cc3c(cn2)cnn3-c2cccc(N3CCNCC3)n2)n1,threonine-protein kinase PIM1
 258,CHEMBL3946970,None,,CCc1cncc(-c2cc3c(cn2)cnn3-c2cccc(N3CCNCC3)n2)n1,threonine-protein kinase PIM1
 259,CHEMBL3977073,None,,O=C1NCCc2[nH]c(-c3cccc4ccc(Nc5ccc(F)cc5F)nc34)cc21,threonine-protein kinase PIM1
-260,CHEMBL3691980,None,,CC(C)NC(=O)c1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)n2)c1,threonine-protein kinase PIM1
+260,CHEMBL3691980,None,,CC(C)NC(=O)c1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)n2)c1,threonine-protein kinase PIM1
 261,CHEMBL3942495,None,,CNc1nnc(-c2ccc3[nH]cc(-c4cccc(N5CCCC5=O)n4)c3c2)s1,threonine-protein kinase PIM1
 262,CHEMBL3961823,None,,Cc1cncc(-c2cc3c(cn2)cnn3-c2ccc(C(F)(F)F)c(N3CCC[C@H](N)C3)n2)n1,threonine-protein kinase PIM1
 263,CHEMBL3910119,None,,CCn1cc(-c2cc3c(-c4cccc(N5CCNCC(CO)C5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
@@ -305,7 +305,7 @@
 303,CHEMBL5399475,None, ,Clc1cccc(-c2nnc(-c3ccnc(-c4ccccc4)c3)o2)c1,threonine-protein kinase PIM1
 304,CHEMBL246663,None,,COc1ccc(-c2cc(C(F)(F)F)c(C#N)c(=O)[nH]2)cc1Br,threonine-protein kinase PIM1
 305,CHEMBL3687440,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1N=[N+]=[N-],threonine-protein kinase PIM1
-306,CHEMBL3687416,None,,CC(C)C(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+306,CHEMBL3687416,None,,CC(C)C(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 307,CHEMBL3651928,None,,N[C@H]1CCC[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(O)cc3F)n2)C1,threonine-protein kinase PIM1
 308,CHEMBL2048861,None,,O=C1NC(=O)/C(=C/c2ccccc2N2CCNCC2)S1,threonine-protein kinase PIM1
 309,CHEMBL2048863,None,,N[C@H]1CCN(c2c(Cl)cccc2/C=C2\SC(=O)NC2=O)C1,threonine-protein kinase PIM1
@@ -357,7 +357,7 @@
 355,CHEMBL3889589,None,,CNC(=O)c1ccnc(-c2c[nH]c3ccc(-c4nnc(NC(C)C)o4)cc23)n1,threonine-protein kinase PIM1
 356,CHEMBL3946212,None,,CNc1nnc(-c2ccc3[nH]cc(-c4nccc(N5CCC[C@H](N)C5)n4)c3c2)s1,threonine-protein kinase PIM1
 357,CHEMBL3945136,None,,CNc1nnc(-c2ccc3[nH]cc(-c4ccnc(N5CCOCC5)n4)c3c2)s1,threonine-protein kinase PIM1
-358,CHEMBL3687415,None,,COCC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+358,CHEMBL3687415,None,,COCC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 359,CHEMBL1952325,None,,FC(F)(F)Oc1cccc(-c2cnc3ccc(NC4CCOCC4)nn23)c1,threonine-protein kinase PIM1
 360,CHEMBL4075826,None,,O=C1NCn2c1cc1ccccc1c2=O,threonine-protein kinase PIM1
 361,CHEMBL3901903,None,,N[C@H]1CCCN(c2cccc(-c3n[nH]c4cnc(-n5ccnc5)cc34)n2)C1,threonine-protein kinase PIM1
@@ -366,9 +366,9 @@
 364,CHEMBL3318854,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1[C@@H]1C[C@@H](F)[C@H](N)CCO1,threonine-protein kinase PIM1
 365,CHEMBL2032373,None,,O=C(c1ccco1)c1c[nH]c2ccccc12,threonine-protein kinase PIM1
 366,CHEMBL3355543,None,,N[C@H]1CCCN(c2ccn3ncc(-c4cccc(OC(F)(F)F)c4)c3n2)C1,threonine-protein kinase PIM1
-367,CHEMBL3648712,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)sc2N)c1N1CC[C@@H](F)[C@@H](N)CC1,threonine-protein kinase PIM1
+367,CHEMBL3648712,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)sc2N)c1N1CC[C@H](N)[C@H](F)CC1,threonine-protein kinase PIM1
 368,CHEMBL3648753,None,,Nc1sc(-c2c(F)cccc2F)nc1C(=O)Nc1cnn(C2CC2)c1N1CC[C@@H](N)CC(F)(F)C1,threonine-protein kinase PIM1
-369,CHEMBL3648782,None,,Cn1ncc(NC(=O)c2nc(-c3ccccn3)sc2N)c1N1CC[C@@H](F)[C@@H](N)CC1,threonine-protein kinase PIM1
+369,CHEMBL3648782,None,,Cn1ncc(NC(=O)c2nc(-c3ccccn3)sc2N)c1N1CC[C@H](N)[C@H](F)CC1,threonine-protein kinase PIM1
 370,CHEMBL3639476,None,,COC1(C)CC(N)CCN(c2c(NC(=O)c3nc(-c4ccncc4F)sc3N)cnn2C)C1,threonine-protein kinase PIM1
 371,CHEMBL3648819,None,,Cc1cc(-c2nc(C(=O)Nc3cnn(C)c3N3CC[C@@H](N)[C@H](F)CC3)c(N)s2)cc(C)n1,threonine-protein kinase PIM1
 372,CHEMBL3889626,None,,Cc1nc2cccc(-c3cc4c([nH]3)C3(CC3)CNC4=O)c2nc1NC1CC1,threonine-protein kinase PIM1
@@ -588,7 +588,7 @@
 586,CHEMBL3935874,None,,N[C@H]1CCCN(c2sncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)C1,threonine-protein kinase PIM1
 587,CHEMBL3910008,None,,N[C@H]1CCCN(c2ccncc2Nc2ncc3ccc(-c4nccs4)nn23)C1,threonine-protein kinase PIM1
 588,CHEMBL3652024,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)c(F)cc2N)C[C@@H](N)[C@@H]1O,threonine-protein kinase PIM1
-589,CHEMBL3687536,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(F)CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+589,CHEMBL3687536,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(F)CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 590,CHEMBL3676266,None,,N[C@H]1C[C@H](OC(=O)c2ccccc2)CN(c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C1,threonine-protein kinase PIM1
 591,CHEMBL3652622,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1NCC1CCNCC1,threonine-protein kinase PIM1
 592,CHEMBL3970144,None,,O=C1NCCc2[nH]c(-c3cccc4ccc(NCc5ccccc5)nc34)cc21,threonine-protein kinase PIM1
@@ -601,7 +601,7 @@
 599,CHEMBL3394070,None,,Nc1nnc(-c2ccc3[nH]cc(-c4cccc(NC5CCCCC5)n4)c3c2)s1,threonine-protein kinase PIM1
 600,CHEMBL3944528,None,,CC(C)Nc1cncc(-c2c[nH]c3ccc(-c4nc(N)ns4)cc23)n1,threonine-protein kinase PIM1
 601,CHEMBL3648681,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@H](N)[C@@H](F)CC1,threonine-protein kinase PIM1
-602,CHEMBL3648709,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)sc2N)c1N1CC[C@@H](N)[C@@H](F)CC1,threonine-protein kinase PIM1
+602,CHEMBL3648709,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)sc2N)c1N1CC[C@H](F)[C@H](N)CC1,threonine-protein kinase PIM1
 603,CHEMBL4462082,None, ,O=C(O)c1ccc(Nc2nc(-c3cccc([N+](=O)[O-])c3)cs2)cc1,threonine-protein kinase PIM1
 604,CHEMBL3355546,None,,CC(C)(O)[C@H]1CC[C@H](Nc2ccn3ncc(-c4cccc(OC(F)(F)F)c4)c3n2)CC1,threonine-protein kinase PIM1
 605,CHEMBL3684934,None,,CN1CCN(c2nc3c(Br)c(Br)c(Br)c(Br)c3[nH]2)CC1,threonine-protein kinase PIM1
@@ -633,7 +633,7 @@
 631,CHEMBL1952324,None,,Fc1ccc(-c2nnc3ccc(N4CCOCC4)nn23)cc1,threonine-protein kinase PIM1
 632,CHEMBL4112826,None,,Cn1ncc(NC(=O)c2csc(-c3c(F)ccc4[nH]ccc34)n2)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
 633,CHEMBL3648721,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnn(C)c3N3CC[C@@H](N)CC(F)(F)C3)c(N)s2)c1,threonine-protein kinase PIM1
-634,CHEMBL3691925,None,,CC(C)Oc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OCCS(C)(=O)=O)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+634,CHEMBL3691925,None,,CC(C)Oc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OCCS(C)(=O)=O)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 635,CHEMBL3809377,None,,Cc1nc2cccc3c2nc1NC[C@H](C)CC[C@H]1CNC(=O)c2cc-3[nH]c21,threonine-protein kinase PIM1
 636,CHEMBL3651971,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3ccccc3F)n2)C[C@@H](N)[C@H]1O,threonine-protein kinase PIM1
 637,CHEMBL3909217,None,,CCn1c(NC(C)(C)C)nc2c(-c3cc4c([nH]3)[C@@H](C)NC4=O)cccc2c1=O,threonine-protein kinase PIM1
@@ -648,7 +648,7 @@
 646,CHEMBL3799359,None,,Cc1cc(N/N=C/c2ccc(O)cc2)nc2ccccc12,threonine-protein kinase PIM1
 647,CHEMBL3718994,None,,Cn1ncc2cc(-c3cc(=O)n4ncc(-c5ncco5)c4[nH]3)ccc21,threonine-protein kinase PIM1
 648,CHEMBL3691944,None,,C[C@H]1CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCOCC4)cc3F)n2)C[C@@H](N)[C@H]1n1ccnn1,threonine-protein kinase PIM1
-649,CHEMBL3691962,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+649,CHEMBL3691962,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 650,CHEMBL4781364,None, ,Cc1cn([C@H](C)[C@]2(F)CCNC2)c2nc(C(N)=O)cc(Cl)c12,threonine-protein kinase PIM1
 651,CHEMBL3651957,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3cc(F)ccc3F)n2)C1,threonine-protein kinase PIM1
 652,CHEMBL2333445,None,,CCc1ccc(-c2ccc3c(c2)-c2[nH]ncc2S(=O)(=O)N3C)cc1,threonine-protein kinase PIM1
@@ -682,12 +682,12 @@
 680,CHEMBL573046,None,,CN(C)Cc1nc2c(sc3ccc(N4CCCCC4)cc32)c(=O)[nH]1,threonine-protein kinase PIM1
 681,CHEMBL572781,None,,O=c1[nH]c(CN2CC[C@H](O)C2)nc2c1sc1ccc(-c3ccccc3)cc12,threonine-protein kinase PIM1
 682,CHEMBL3648831,None,,COC1(CN)CCN(c2c(NC(=O)c3nc(-c4c(F)cccc4F)sc3N)cnn2C)CC1,threonine-protein kinase PIM1
-683,CHEMBL456936,CALICOFEROL E,,Cc1ccc(O)cc1CC[C@@H]1C(=O)CC[C@]2(C)[C@@H]([C@H](C)CCCC(C)C)CC[C@@H]12,threonine-protein kinase PIM1
+683,CHEMBL456936,CALICOFEROL E,,Cc1ccc(O)cc1CC[C@@H]1C(=O)CC[C@@]2(C)[C@H]1CC[C@@H]2[C@H](C)CCCC(C)C,threonine-protein kinase PIM1
 684,CHEMBL3891239,None,,c1cc(-c2n[nH]c3cnc(-c4cnn(C5CCC5)c4)cc23)nc(N2CCNCC2)c1,threonine-protein kinase PIM1
 685,CHEMBL3898949,None,,CN1CCN(c2nc(-c3n[nH]c4cnc(-c5cnn(C)c5)cc34)ccc2Br)CC1,threonine-protein kinase PIM1
 686,CHEMBL3921475,None,,Cc1ccn(-c2cccc(-c3c[nH]c4ccc(-c5nnc(N)s5)cc34)n2)n1,threonine-protein kinase PIM1
 687,CHEMBL1910914,None,,Nc1ccc(-c2c[nH]c3ccc(-c4cncc(OC[C@@H](N)c5ccccc5)n4)cc23)c(F)n1,threonine-protein kinase PIM1
-688,CHEMBL518060,CALICOFEROL A,,Cc1ccc(O)cc1CC[C@@H]1C(=O)CC[C@]2(C)[C@@H]([C@H](C)/C=C/CC(C)C)CC[C@@H]12,threonine-protein kinase PIM1
+688,CHEMBL518060,CALICOFEROL A,,Cc1ccc(O)cc1CC[C@@H]1C(=O)CC[C@@]2(C)[C@H]1CC[C@@H]2[C@H](C)/C=C/CC(C)C,threonine-protein kinase PIM1
 689,CHEMBL4207014,None,,CS(=O)(=O)c1ccc(-n2nc(-c3cnc4[nH]ccc4c3)c3c(N)ncnc32)cc1,threonine-protein kinase PIM1
 690,CHEMBL101683,None,,O=C(Nc1ccc(Cl)cc1)c1ccccc1NCc1ccncc1,threonine-protein kinase PIM1
 691,CHEMBL3133836,None,,CN1CCCCC1CCN1c2ccccc2Sc2ccc(Cl)cc21,threonine-protein kinase PIM1
@@ -723,7 +723,7 @@
 721,CHEMBL3973432,None,,N[C@@H]1CN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)CC[C@H]1F,threonine-protein kinase PIM1
 722,CHEMBL3942186,None,,C[C@@H]1C[C@H](N)CN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)C1,threonine-protein kinase PIM1
 723,CHEMBL3905194,None,,C[C@@H]1[C@@H](N)CCCN1c1ccncc1Nc1ncc2ccc(-c3c(F)cccc3F)nn12,threonine-protein kinase PIM1
-724,CHEMBL3684944,None,,C[C@@H]1CN(c2nc3c(Br)c(Br)c(Br)c(Br)c3[nH]2)[C@@H](C)CN1,threonine-protein kinase PIM1
+724,CHEMBL3684944,None,,C[C@H]1CN[C@H](C)CN1c1nc2c(Br)c(Br)c(Br)c(Br)c2[nH]1,threonine-protein kinase PIM1
 725,CHEMBL3780637,None,,COc1ccc(-c2cnc3c(Nc4ccc(N5CCOCC5)cc4)nccc3n2)cc1,threonine-protein kinase PIM1
 726,CHEMBL3956461,None,,CCn1cc(-c2cc3c(-c4cccc(N5CCN(C)CC5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
 727,CHEMBL3901863,None,,Cc1nc2cccc(-c3cc4c([nH]3)CCCC4=O)c2nc1NC(C)(C)C,threonine-protein kinase PIM1
@@ -744,7 +744,7 @@
 742,CHEMBL4088455,None,,Cc1[nH]nc(C2CC2)c1-c1ccc2c(NC(=O)C3CC3)noc2c1,threonine-protein kinase PIM1
 743,CHEMBL3937821,None,,CNc1nnc(-c2ccc3[nH]cc(-c4ccccc4F)c3c2)s1,threonine-protein kinase PIM1
 744,CHEMBL3922231,None,,CN(C)c1cncc(-c2c[nH]c3ccc(-c4nnc(N)s4)cc23)n1,threonine-protein kinase PIM1
-745,CHEMBL3687483,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OCCS(C)(=O)=O)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+745,CHEMBL3687483,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OCCS(C)(=O)=O)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 746,CHEMBL494360,None,,FC(F)(F)c1cccc(-c2nnc3ccc(NC4CCCCC4)nn23)c1,threonine-protein kinase PIM1
 747,CHEMBL4172211,None,,O=C(Nc1cc(-c2ccc(O)cc2)cc2[nH]ncc12)C1CC1,threonine-protein kinase PIM1
 748,CHEMBL3393348,None,,N#Cc1cccc(-c2c[nH]c3ncnc(N4CCOCC4)c23)c1,threonine-protein kinase PIM1
@@ -753,7 +753,7 @@
 751,CHEMBL3950062,None,,Nc1nnc(-c2ccc3[nH]cc(-c4cccc(F)n4)c3c2)s1,threonine-protein kinase PIM1
 752,CHEMBL4082756,TP-024,,Cc1cc(-n2nc(Cc3cc(F)cc(C(F)(F)F)c3)nc2C)ccc1C(N)=O,threonine-protein kinase PIM1
 753,CHEMBL4076977,None,,O=C1NC(=S)n2c1cc1ccc(Sc3ccccc3)cc1c2=O,threonine-protein kinase PIM1
-754,CHEMBL3691914,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OCCS(C)(=O)=O)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+754,CHEMBL3691914,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OCCS(C)(=O)=O)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 755,CHEMBL3977692,None,,Cc1nc2cccc(-c3cc4c([nH]3)CCNC4=O)c2nc1N[C@H]1C[C@@H](O)C1,threonine-protein kinase PIM1
 756,CHEMBL3924479,None,,CCn1cc(-c2cc3c(-c4cc(C(C)C)ccn4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
 757,CHEMBL3891210,None,,Cc1nc2cccc(-c3cc4c([nH]3)CCNC4=O)c2nc1NC1(CO)CC1,threonine-protein kinase PIM1
@@ -771,7 +771,7 @@
 769,CHEMBL3764677,None,,FC(F)(F)Oc1cccc(Nc2nnnc3ccc(NCC4CCNCC4)nc23)c1,threonine-protein kinase PIM1
 770,CHEMBL5395494,None, ,CN1CCN(c2ccc(Nc3ncc(F)c(Nc4ccccc4C(=O)NN)n3)cc2)CC1,threonine-protein kinase PIM1
 771,CHEMBL3687414,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1n1ccnn1,threonine-protein kinase PIM1
-772,CHEMBL3691932,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC(C)C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+772,CHEMBL3691932,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC(C)C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 773,CHEMBL3809940,None,,C/C1=C/C[C@H]2CNC(=O)c3cc([nH]c32)-c2cccc3nc(C)c(nc23)NC1,threonine-protein kinase PIM1
 774,CHEMBL5086595,None,,CN(C)C/C=C/C(=O)Nc1ccc(C(=O)N2CCCC(Nc3ncc(Cl)c(-c4c[nH]c5ccccc45)n3)C2)cc1,threonine-protein kinase PIM1
 775,CHEMBL3133838,None,,BrCCCCN1c2ccccc2Sc2ccccc21,threonine-protein kinase PIM1
@@ -786,7 +786,7 @@
 784,CHEMBL4063249,TP-021n,,N#Cc1ccc(Nc2ccc3[nH]c(=O)[nH]c3c2)c(Cl)c1,threonine-protein kinase PIM1
 785,CHEMBL4448325,None, ,NC(=O)c1cc(Cl)c2c(Cl)c(C#CCCO)n([C@H]3CCCNC3)c2n1,threonine-protein kinase PIM1
 786,CHEMBL4588948,None, ,CC(O)CC#Cc1c(Cl)c2c(Cl)cc(C(N)=O)nc2n1[C@H]1CCCNC1,threonine-protein kinase PIM1
-787,CHEMBL3687463,None,,COC(=O)N(C)[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+787,CHEMBL3687463,None,,COC(=O)N(C)[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 788,CHEMBL1835063,None,,NC(=O)c1cnc(N2CCC[C@H](N)C2)nc1Nc1cccc(C(F)(F)F)c1,threonine-protein kinase PIM1
 789,CHEMBL4637707,None, ,O=C1/C(=C/c2c[nH]c3ncccc23)CCc2cc(O)ccc21,threonine-protein kinase PIM1
 790,CHEMBL3648725,None,,CN(C)[C@H]1CCN(c2c(NC(=O)c3nc(-c4c(F)cccc4F)sc3N)cnn2C)CC(F)(F)C1,threonine-protein kinase PIM1
@@ -805,15 +805,15 @@
 803,CHEMBL489784,None,,CCn1c2cc(Cl)c(F)cc2c(=O)c2c(=O)on(Cc3cccc(O)c3)c21,threonine-protein kinase PIM1
 804,CHEMBL3634774,None,,NC(=O)Cc1cc2c(-c3cccc(N4CCNCC4)n3)n[nH]c2cn1,threonine-protein kinase PIM1
 805,CHEMBL3393714,None,,Cn1cncc1-c1ccc2[nH]nc(-c3cncc(O[C@H]4CNCCC45CC5)n3)c2c1,threonine-protein kinase PIM1
-806,CHEMBL3691945,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+806,CHEMBL3691945,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 807,CHEMBL4087394,None,,N#Cc1c(-c2cccc3ccccc23)cc(-c2cccs2)[nH]c1=O,threonine-protein kinase PIM1
 808,CHEMBL3325691,None,,Nc1cc2[nH]ncc2c2c1ncc1ccccc12,threonine-protein kinase PIM1
 809,CHEMBL4097610,None,,O=C1NC(=S)n2c1cc1cccc(Cl)c1c2=O,threonine-protein kinase PIM1
-810,CHEMBL3687481,None,,CCO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@@H]1C,threonine-protein kinase PIM1
+810,CHEMBL3687481,None,,CCO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@H]1N,threonine-protein kinase PIM1
 811,CHEMBL2032374,None,,Oc1ccc(Cl)cc1-c1cc[nH]n1,threonine-protein kinase PIM1
 812,CHEMBL2037198,None,,O=C1Nc2ccc(F)cc2/C1=C\c1ccc(-c2cccc(C(=O)NC3CC3)c2)o1,threonine-protein kinase PIM1
 813,CHEMBL3394072,None,,Nc1nnc(-c2ccc3[nH]cc(-c4cncc(N5CCCC5)n4)c3c2)s1,threonine-protein kinase PIM1
-814,CHEMBL3691981,None,,CC(C)NC(=O)c1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3N3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)n2)c1,threonine-protein kinase PIM1
+814,CHEMBL3691981,None,,CC(C)NC(=O)c1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3N3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)n2)c1,threonine-protein kinase PIM1
 815,CHEMBL3718079,None,,CCn1ncc2cc(-c3cc(=O)n4ncc(-c5n[nH]cc5C)c4[nH]3)ccc21,threonine-protein kinase PIM1
 816,CHEMBL3651980,None,,CCCOc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@@H]3CC[C@H](O)[C@H](N)C3)n2)c1,threonine-protein kinase PIM1
 817,CHEMBL3810095,None,,Cc1nc2cccc3c2nc1N[C@H](C)CCC[C@H]1CNC(=O)c2cc-3[nH]c21,threonine-protein kinase PIM1
@@ -834,10 +834,10 @@
 832,CHEMBL1968151,None,,O=c1[nH]c2sccc2c2nc(-c3ccncc3)nn12,threonine-protein kinase PIM1
 833,CHEMBL226403,None,,O=C1NCCc2[nH]c(-c3ccnc(-c4cnc5ccccc5c4)c3)cc21,threonine-protein kinase PIM1
 834,CHEMBL1974803,None,,O=c1[nH]c2cc(Cl)cc(Cl)c2c(-c2cc(Cl)ccc2O)c1O,threonine-protein kinase PIM1
-835,CHEMBL3651970,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](O)[C@@H](C)C3)n2)c1,threonine-protein kinase PIM1
+835,CHEMBL3651970,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](O)[C@H](N)C3)n2)c1,threonine-protein kinase PIM1
 836,CHEMBL1782510,None,,O=C(O)c1cc2cc(-c3cnn(C4CCNCC4)c3)ccc2o1,threonine-protein kinase PIM1
 837,CHEMBL3634760,None,,Cc1ccc(-c2n[nH]c3cnc(-c4cnn(C)c4)cc23)nc1N1CCC[C@H](N)C1,threonine-protein kinase PIM1
-838,CHEMBL3652006,None,,Nc1ccc(-c2c(F)cccc2F)nc1C(=O)Nc1cnccc1[C@H]1C[C@@H](N)C[C@@H](C(F)(F)F)C1,threonine-protein kinase PIM1
+838,CHEMBL3652006,None,,Nc1ccc(-c2c(F)cccc2F)nc1C(=O)Nc1cnccc1[C@@H]1C[C@H](C(F)(F)F)C[C@H](N)C1,threonine-protein kinase PIM1
 839,CHEMBL1983855,None,,CNCCOc1cncc(-c2ccc3[nH]nc(C)c3c2)c1,threonine-protein kinase PIM1
 840,CHEMBL1277370,None,,CC1(C)[C@@H]2CC[C@@]1(C)c1nc3cc4cn[nH]c4cc3nc12,threonine-protein kinase PIM1
 841,CHEMBL3354513,None,,O=C(Nc1cnccc1OC1CCNCC1)c1csc(-c2c(F)cccc2F)n1,threonine-protein kinase PIM1
@@ -848,7 +848,7 @@
 846,CHEMBL1782508,None,,Cn1cc(-c2ccc3oc(C(=O)O)cc3c2)cn1,threonine-protein kinase PIM1
 847,CHEMBL3325693,None,,Nc1cc2[nH]ncc2c2c1ncc1ccc(Cl)cc12,threonine-protein kinase PIM1
 848,CHEMBL5401267,None, ,CS(=O)(=O)N1CCc2cc(Nc3ncc(C(F)(F)F)c(NCCCN)n3)ccc2C1,threonine-protein kinase PIM1
-849,CHEMBL3652004,None,,Nc1cc(F)c(-c2c(F)cccc2F)nc1C(=O)Nc1cnccc1[C@H]1C[C@@H](N)C[C@@H](C(F)(F)F)C1,threonine-protein kinase PIM1
+849,CHEMBL3652004,None,,Nc1cc(F)c(-c2c(F)cccc2F)nc1C(=O)Nc1cnccc1[C@@H]1C[C@H](C(F)(F)F)C[C@H](N)C1,threonine-protein kinase PIM1
 850,CHEMBL1782514,None,,N[C@H]1CC[C@@H](Nc2cncc(-c3ccc4oc(C(=O)O)cc4c3)n2)CC1,threonine-protein kinase PIM1
 851,CHEMBL3716131,None,,CCn1ncc2cc(-c3cc(=O)n4ncc(-c5ncc(-c6ccccc6)o5)c4[nH]3)ccc21,threonine-protein kinase PIM1
 852,CHEMBL3393709,None,,c1ccc(-c2ccc3[nH]nc(-c4cncc(O[C@H]5CNCCC56CC6)n4)c3c2)cc1,threonine-protein kinase PIM1
@@ -875,7 +875,7 @@
 873,CHEMBL3651949,None,,N[C@H]1CCC[C@@H](c2ccncc2NC(=O)c2ccc(F)c([C@H]3CC[C@@H](O)CC3)n2)C1,threonine-protein kinase PIM1
 874,CHEMBL3326556,None,,COc1ccc2c(cnc3c([N+](=O)[O-])cc4[nH]ncc4c32)c1,threonine-protein kinase PIM1
 875,CHEMBL3651922,None,,C[C@H]1CN(c2ccncc2NC(=O)c2cccc(-c3c(F)cccc3F)n2)C[C@@H](N)[C@@H]1O,threonine-protein kinase PIM1
-876,CHEMBL3687422,None,,CC(C)OC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+876,CHEMBL3687422,None,,CC(C)OC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 877,CHEMBL3991929,Cerdulatinib Hydrochloride,,CCS(=O)(=O)N1CCN(c2ccc(Nc3ncc(C(N)=O)c(NC4CC4)n3)cc2)CC1.Cl,threonine-protein kinase PIM1
 878,CHEMBL3326559,None,,O=[N+]([O-])c1cc2[nH]ncc2c2c1ncc1cc3c(cc12)OCO3,threonine-protein kinase PIM1
 879,CHEMBL3393722,None,,NC1CCCN(c2cncc(-c3n[nH]c4ccc(-c5c(F)cccc5F)cc34)n2)C1,threonine-protein kinase PIM1
@@ -893,7 +893,7 @@
 891,CHEMBL2442308,None,,NCCNc1ccn2ncc(-c3ccccc3-c3ccccc3)c2n1,threonine-protein kinase PIM1
 892,CHEMBL2442299,None,,NCCCNc1ccn2ncc(-c3ccc4ccccc4c3)c2n1,threonine-protein kinase PIM1
 893,CHEMBL3298659,None,,CC(C)(C)CNC(=O)CC1CNC(=O)c2cc(-c3cccc(F)c3)cn21,threonine-protein kinase PIM1
-894,CHEMBL3691964,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+894,CHEMBL3691964,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 895,CHEMBL2218927,None,,Cc1nc2cc3nc(-c4cccs4)cnc3cc2n1C,threonine-protein kinase PIM1
 896,CHEMBL3676310,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2csc(-c3c(F)cc(O)cc3F)n2)C1,threonine-protein kinase PIM1
 897,CHEMBL5082257,None, ,CN1CCN(C(=O)c2ccc(Nc3ncc(F)c(-c4ccc5nccnc5c4)n3)nc2)CC1,threonine-protein kinase PIM1
@@ -997,7 +997,7 @@
 995,CHEMBL3926312,None,,CC(C)(CN)Cn1cc(-c2n[nH]c3cnc(-c4cccnc4)cc23)ccc1=O,threonine-protein kinase PIM1
 996,CHEMBL3915245,None,,FC(F)(F)c1cncc(-c2cc3c(-c4cccc(N5CCNCC5)n4)n[nH]c3cn2)c1,threonine-protein kinase PIM1
 997,CHEMBL3907732,None,,N[C@H]1CCC[C@@H](Nc2ccc3cccc(-c4cc5c([nH]4)CCNC5=O)c3n2)C1,threonine-protein kinase PIM1
-998,CHEMBL3687460,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+998,CHEMBL3687460,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 999,CHEMBL3427176,None,,COC(=O)[C@@H]1CSC(c2nc3ccc(OC)cc3s2)=N1,threonine-protein kinase PIM1
 1000,CHEMBL4109914,None,,Clc1ccccc1-c1ccc2cnc(Nc3cnccc3O[C@@H]3CCCNC3)n2n1,threonine-protein kinase PIM1
 1001,CHEMBL3950704,None,,C[C@H]1NC(=O)c2cc(-c3cccc4c(=O)n(C)c(NC5(C)CC5)nc34)[nH]c21,threonine-protein kinase PIM1
@@ -1044,7 +1044,7 @@
 1042,CHEMBL3648789,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CCC2NCCOC2CC1,threonine-protein kinase PIM1
 1043,CHEMBL3648722,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)sc2N)c1N1CC[C@H](N)CC(F)(F)C1,threonine-protein kinase PIM1
 1044,CHEMBL3898842,None,,CNC(=O)c1ccc(-c2c(-c3cccc(OC(F)(F)F)c3)cc3n2C(CCO)CNC3=O)cc1,threonine-protein kinase PIM1
-1045,CHEMBL3687479,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@@H]1C,threonine-protein kinase PIM1
+1045,CHEMBL3687479,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@H]1N,threonine-protein kinase PIM1
 1046,CHEMBL3651988,None,,Nc1ccc(-c2c(F)cccc2F)nc1C(=O)Nc1cnccc1C1=C[C@@H](N)[C@@H](O)CC1,threonine-protein kinase PIM1
 1047,CHEMBL3660024,None,,CC(C)(CO)COc1cccc2ccc(-c3nnc4cc(CN)ccn34)nc12,threonine-protein kinase PIM1
 1048,CHEMBL221271,None,,N/C(=N\[N+](=O)[O-])N/N=C\c1ccc(-c2cccc([N+](=O)[O-])c2)o1,threonine-protein kinase PIM1
@@ -1057,7 +1057,7 @@
 1055,CHEMBL1982881,None,,O=c1[nH]cnc2c(-c3ccccc3)c(C(F)(F)F)sc12,threonine-protein kinase PIM1
 1056,CHEMBL3765468,None,,FC(F)(F)Oc1cccc(Nc2nnnc3ccc(N4CCOCC4)nc23)c1,threonine-protein kinase PIM1
 1057,CHEMBL4128205,None,,CN(C)CCNc1cncc(-c2ccc3[nH]cc(-c4cccc(F)c4F)c3c2)n1,threonine-protein kinase PIM1
-1058,CHEMBL3687526,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](S(C)(=O)=O)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+1058,CHEMBL3687526,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](S(C)(=O)=O)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 1059,CHEMBL3689330,None,,OC1CCCCC1Nc1nc2c(Br)c(Br)c(Br)c(Br)c2[nH]1,threonine-protein kinase PIM1
 1060,CHEMBL3896195,None,,Cc1nc2ccc(F)c(-c3cc4c(=O)[nH]ccc4[nH]3)c2nc1NC(C)(C)C,threonine-protein kinase PIM1
 1061,CHEMBL3913500,None,,Cc1nc2cccc(-c3cc4n(c3)CCNC4=O)c2nc1NC(C)(C)C,threonine-protein kinase PIM1
@@ -1068,7 +1068,7 @@
 1066,CHEMBL3648838,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cncc3F)sc2N)c1N1CC[C@@H](N)[C@H](F)CC1,threonine-protein kinase PIM1
 1067,CHEMBL3957118,None,,Cc1cncc(-c2cc3c(cn2)cnn3-c2ccc(C)c(N3C[C@@H](N)CCC3=O)n2)n1,threonine-protein kinase PIM1
 1068,CHEMBL381851,None,,O=C1NC(=O)C2=C1c1cn(c3ccccc13)CCCCCCCCCCn1cc2c2ccccc21,threonine-protein kinase PIM1
-1069,CHEMBL3691941,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+1069,CHEMBL3691941,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 1070,CHEMBL3609749,None,,COc1cc(-c2cn([C@H]3CCc4c(F)cccc4N(CC(F)(F)F)C3=O)nn2)ccc1-n1cnc(C)c1,threonine-protein kinase PIM1
 1071,CHEMBL1952132,None,,O[C@H]1CC[C@H](Nc2ccc3nnn(-c4cccc(OC(F)(F)F)c4)c3n2)CC1,threonine-protein kinase PIM1
 1072,CHEMBL4472294,None, ,C[C@@H](c1ccccc1)n1nnc2cnc3ccc(-c4cnc5[nH]ccc5c4)cc3c21,threonine-protein kinase PIM1
@@ -1089,7 +1089,7 @@
 1087,CHEMBL3651905,None,,N[C@H]1CCC[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3ccc(O)cc3F)n2)C1,threonine-protein kinase PIM1
 1088,CHEMBL3687532,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1Oc1ccccn1,threonine-protein kinase PIM1
 1089,CHEMBL3651993,None,,N[C@H]1CCC[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C1,threonine-protein kinase PIM1
-1090,CHEMBL479533,HERBIMYCIN,,CO[C@H]1[C@@H](OC)C[C@H](C)[C@@H](OC)C2=CC(=O)C=C(NC(=O)/C(C)=C/C=C/[C@H](OC)[C@@H](OC(N)=O)/C(C)=C/[C@@H]1C)C2=O,threonine-protein kinase PIM1
+1090,CHEMBL479533,HERBIMYCIN,,CO[C@H]1/C=C/C=C(\C)C(=O)NC2=CC(=O)C=C(C2=O)[C@H](OC)[C@@H](C)C[C@H](OC)[C@H](OC)[C@@H](C)/C=C(\C)[C@@H]1OC(N)=O,threonine-protein kinase PIM1
 1091,CHEMBL3651912,None,,C[C@H]1CN(c2ccncc2NC(=O)c2ccc(F)c(C3CCCCC3)n2)C[C@@H](N)[C@@H]1O,threonine-protein kinase PIM1
 1092,CHEMBL3664626,None,,NCC1(COc2cccc3ccc(-c4nnc5ccccn45)nc23)CCCC1,threonine-protein kinase PIM1
 1093,CHEMBL3717056,None,,COc1cc(-c2cc(=O)n3ncc(-c4nc(C)co4)c3[nH]2)ccc1Cl,threonine-protein kinase PIM1
@@ -1108,7 +1108,7 @@
 1106,CHEMBL3925087,None,,CC(C)Oc1cccc(-c2c[nH]c3ccc(-c4nnc(N5CC[C@H](N)C5)s4)cc23)n1,threonine-protein kinase PIM1
 1107,CHEMBL2442289,None,,NCCNc1ccn2ncc(-c3cc(-c4ccccc4)no3)c2n1,threonine-protein kinase PIM1
 1108,CHEMBL4456471,None, ,CN1CCC(Nc2ccc(C(=O)Nc3cc(-c4ccc5c(c4)OCO5)n[nH]3)cc2)CC1,threonine-protein kinase PIM1
-1109,CHEMBL3691958,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)c(F)cc2N)C[C@@H]1C,threonine-protein kinase PIM1
+1109,CHEMBL3691958,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)c(F)cc2N)C[C@H]1N,threonine-protein kinase PIM1
 1110,CHEMBL4642750,None, ,O=C1/C(=C/c2c[nH]c3ncccc23)Cc2ccccc21,threonine-protein kinase PIM1
 1111,CHEMBL4637288,None, ,O=C1C(=Cc2c[nH]c3ncccc23)COc2ccccc21,threonine-protein kinase PIM1
 1112,CHEMBL3687473,None,,C[C@@H]1C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@H](N)[C@@H]1OCCC#N,threonine-protein kinase PIM1
@@ -1201,7 +1201,7 @@
 1199,CHEMBL1794065,GSK-554170A,,CCn1c(-c2nonc2N)nc2c(C#CC(C)(C)O)ncc(OCC3CCNCC3)c21.O=C(O)C(F)(F)F,threonine-protein kinase PIM1
 1200,CHEMBL1375640,None,,Cc1nc(COc2ccccc2Cl)sc1-c1ccnc(N)n1,threonine-protein kinase PIM1
 1201,CHEMBL3660039,None,,CCCC(Oc1cccc2ccc(-c3nnc4ccccn34)nc12)[C@@H](CC)CN,threonine-protein kinase PIM1
-1202,CHEMBL3687427,None,,COCc1cn([C@@H]2[C@H](N)CN(c3ccncc3NC(=O)c3ccc(F)c(-c4c(F)cccc4F)n3)C[C@@H]2C)nn1,threonine-protein kinase PIM1
+1202,CHEMBL3687427,None,,COCc1cn([C@H]2[C@@H](C)CN(c3ccncc3NC(=O)c3ccc(F)c(-c4c(F)cccc4F)n3)C[C@H]2N)nn1,threonine-protein kinase PIM1
 1203,CHEMBL3898611,None,,N[C@H]1CN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)CC[C@@H]1F,threonine-protein kinase PIM1
 1204,CHEMBL4115619,None,,Cc1ccc(-c2n[nH]c3cnc(-c4cccnc4)cc23)nc1N1CC[C@@H](O)C1,threonine-protein kinase PIM1
 1205,CHEMBL408564,None,,O=C(Nc1n[nH]c2nc(-c3ccco3)c(Br)cc12)C1CC1,threonine-protein kinase PIM1
@@ -1227,7 +1227,7 @@
 1225,CHEMBL3943561,None,,Cc1nc2cccc(-c3cc4c([nH]3)CCNC4=O)c2nc1NC1CCN(C(=O)OC(C)(C)C)CC1,threonine-protein kinase PIM1
 1226,CHEMBL3896761,None,,Cc1nc2cccc(-c3cc4c([nH]3)CCNC4=O)c2nc1NC1CCS(=O)(=O)C1,threonine-protein kinase PIM1
 1227,CHEMBL510836,None,,COc1cc(O)c2c(c1)/C=C/CC[C@H](C)C(=O)CCC[C@H](C)OC2=O,threonine-protein kinase PIM1
-1228,CHEMBL3719135,None,,CC(C)n1nc(-c2cnc(N)c(OC(F)(F)F)c2)cc1[C@H]1[C@@H]2CN(C3COC3)C[C@@H]21,threonine-protein kinase PIM1
+1228,CHEMBL3719135,None,,CC(C)n1nc(-c2cnc(N)c(OC(F)(F)F)c2)cc1[C@@H]1[C@H]2CN(C3COC3)C[C@H]21,threonine-protein kinase PIM1
 1229,CHEMBL2376648,None,,C[C@@H](Oc1cc(C(=O)Nc2ccc(C(=O)N3CCN(C)CC3)cc2)nnc1N)c1c(Cl)ccc(F)c1Cl,threonine-protein kinase PIM1
 1230,CHEMBL3952989,None,,Cc1cncc(-c2cc3c(cn2)cnn3-c2ccc(C)c(N3CCC[C@H](N)C3=O)n2)n1,threonine-protein kinase PIM1
 1231,CHEMBL3979144,None,,O[C@H]1CC[C@H](Nc2ccc3ncc(-c4cccc(C(F)(F)F)c4)n3n2)CC1,threonine-protein kinase PIM1
@@ -1244,7 +1244,7 @@
 1242,CHEMBL2218939,None,,N#C/C(=C(/N)SC1C=CC=CC1)c1cccc(C(O)c2ccncc2)c1,threonine-protein kinase PIM1
 1243,CHEMBL4115280,None,,C[C@@H]1C[C@H](N)CN(c2ccncc2Nc2ncc3ccc(-c4ncccc4Cl)nn23)C1,threonine-protein kinase PIM1
 1244,CHEMBL3684962,None,,Brc1c(Br)c(Br)c2[nH]c(Nc3ccccc3)nc2c1Br,threonine-protein kinase PIM1
-1245,CHEMBL3651967,None,,C[C@H]1C[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)ccc2F)C1,threonine-protein kinase PIM1
+1245,CHEMBL3651967,None,,C[C@@H]1C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)ccc2F)C[C@H](N)C1,threonine-protein kinase PIM1
 1246,CHEMBL1952110,None,,COc1ccc(-n2nnc3ccc(N4CCCCCC4)nc32)cc1,threonine-protein kinase PIM1
 1247,CHEMBL1915441,None,,Fc1ccc(Nc2nc3c(-c4nnc[nH]4)cccc3c3cnccc23)cc1,threonine-protein kinase PIM1
 1248,CHEMBL5084426,None,C27H24F2N6O4,COc1cnccc1Nc1nc(-c2nn(Cc3c(F)cc(OCCO)cc3F)c3ccccc23)ncc1OC,threonine-protein kinase PIM1
@@ -1267,10 +1267,10 @@
 1265,CHEMBL3691935,None,,C[C@H]1CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(F)CCOCC4)cc3F)n2)C[C@@H](N)[C@H]1n1ccnn1,threonine-protein kinase PIM1
 1266,CHEMBL1649586,None,,O=C(O)c1ccc2nc(Nc3cccc(Cl)c3)c3ccncc3c2c1,threonine-protein kinase PIM1
 1267,CHEMBL3394071,None,,Nc1cncc(-c2c[nH]c3ccc(-c4nnc(N)s4)cc23)n1,threonine-protein kinase PIM1
-1268,CHEMBL3691939,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+1268,CHEMBL3691939,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 1269,CHEMBL3634779,None,,NC1CCN(c2cncc(-c3cc4c(-c5ccccc5F)n[nH]c4cn3)n2)CC1,threonine-protein kinase PIM1
 1270,CHEMBL3393708,None,,Fc1ccccc1-c1ccc2[nH]nc(-c3cncc(O[C@H]4CNCCC45CC5)n3)c2c1,threonine-protein kinase PIM1
-1271,CHEMBL3687462,None,,COC(=O)N(C)[C@@H]1[C@H](C)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@@H]1N,threonine-protein kinase PIM1
+1271,CHEMBL3687462,None,,COC(=O)N(C)[C@H]1[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@H]1C,threonine-protein kinase PIM1
 1272,CHEMBL3103879,None,,NCCC(=O)N1CCN(c2ccncc2NC(=O)c2nccnc2N)CC1,threonine-protein kinase PIM1
 1273,CHEMBL3103882,None,,O=C(Nc1ccccc1N1CCCCC1)c1cscn1,threonine-protein kinase PIM1
 1274,CHEMBL3716379,None,,Cn1ccc(-c2cnn3c(=O)cc(-c4ccc(Cl)c(OCC(F)(F)F)c4)[nH]c23)n1,threonine-protein kinase PIM1
@@ -1278,12 +1278,12 @@
 1276,CHEMBL3808459,None,,CCCNc1nc2c(-c3cc4c([nH]3)CCNC4=O)cccc2nc1C,threonine-protein kinase PIM1
 1277,CHEMBL1682559,None,,Fc1ccc(-c2ncn(CCCN3CCOCC3)c2-c2ccc3[nH]ncc3c2)cc1,threonine-protein kinase PIM1
 1278,CHEMBL3355540,None,,Cc1ccc(S(=O)(=O)Nc2ccc(Nc3ccn4ncc(-c5cccc(N(C)C)c5)c4n3)cc2)cc1,threonine-protein kinase PIM1
-1279,CHEMBL3687492,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@@H]1C,threonine-protein kinase PIM1
+1279,CHEMBL3687492,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@H]1N,threonine-protein kinase PIM1
 1280,CHEMBL2006299,None,,COc1cccc(CNC(=O)c2ccc(-c3ccncc3)cc2)c1,threonine-protein kinase PIM1
 1281,CHEMBL2442314,None,,c1ccc2cc(-c3cnn4ccc(NC5CCCCC5)nc34)ccc2c1,threonine-protein kinase PIM1
 1282,CHEMBL514938,GSK-969786A,,Fc1cccc(COc2ccc(Nc3ncnc4sc(-c5ccco5)cc34)cc2Cl)c1,threonine-protein kinase PIM1
 1283,CHEMBL1981725,None,,CCN1CCN(c2ccc(Nc3nccc(-c4c(-c5cccc(C(=O)Nc6ccccc6F)c5)nc5ccccn45)n3)cc2)CC1,threonine-protein kinase PIM1
-1284,CHEMBL3691971,None,,C=C(C)c1cn([C@@H]2[C@H](N)C[C@H](c3ccncc3NC(=O)c3ccc(F)c(-c4c(F)cccc4F)n3)C[C@@H]2C)nn1,threonine-protein kinase PIM1
+1284,CHEMBL3691971,None,,C=C(C)c1cn([C@H]2[C@@H](C)C[C@@H](c3ccncc3NC(=O)c3ccc(F)c(-c4c(F)cccc4F)n3)C[C@H]2N)nn1,threonine-protein kinase PIM1
 1285,CHEMBL2004637,None,,CCN(CCN)C(=O)c1cccc(-n2nc(C(C)(C)C)cc2NC(=O)Nc2cccc3ccccc23)c1,threonine-protein kinase PIM1
 1286,CHEMBL2087474,None,,CS(=O)(=O)N1CCN(Cc2cn3cc(-c4cnc(N)nc4)nc(N4CCOCC4)c3n2)CC1,threonine-protein kinase PIM1
 1287,CHEMBL5074598,None, ,CCOC(=O)N1CCN(Cc2ccc(Nc3ncc(F)c(-c4ccc5nccnc5c4)n3)nc2)CC1,threonine-protein kinase PIM1
@@ -1351,7 +1351,7 @@
 1349,CHEMBL1915634,None,,Cc1cc(F)ccc1Nc1nc2c(-c3nnc[nH]3)cccc2c2cnccc12,threonine-protein kinase PIM1
 1350,CHEMBL4795706,None, ,Clc1cccc(Nc2ncc3cccc(OCc4cn(Cc5c(Cl)cccc5Cl)nn4)c3n2)c1,threonine-protein kinase PIM1
 1351,CHEMBL3809141,None,,CC(C)(C)OC1CC(=O)CC2C(=O)c3cccc(O)c3C(=O)C12,threonine-protein kinase PIM1
-1352,CHEMBL1922224,None,,Cc1ccc(O)cc1CC[C@@H]1[C@@H](O)CC[C@]2(C)[C@@H]([C@H](C)/C=C/CC(C)C)CC[C@@H]12,threonine-protein kinase PIM1
+1352,CHEMBL1922224,None,,Cc1ccc(O)cc1CC[C@@H]1[C@@H](O)CC[C@@]2(C)[C@H]1CC[C@@H]2[C@H](C)/C=C/CC(C)C,threonine-protein kinase PIM1
 1353,CHEMBL2387463,None,,O=C(Nc1c[nH]c2ncc(-c3ccccc3F)cc12)c1cnn2ccc(NCC3CCNCC3)nc12,threonine-protein kinase PIM1
 1354,CHEMBL2377708,None,,Nc1cc2cn[nH]c2c2c(-c3ccccc3)c[nH]c12,threonine-protein kinase PIM1
 1355,CHEMBL2397528,None,,Nc1cc2[nH]ncc2c2c1[nH]c1ccc(Cl)cc12,threonine-protein kinase PIM1
@@ -1496,9 +1496,9 @@
 1494,CHEMBL3651990,None,,C[C@@H]1C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)ccc2N)C[C@H](N)[C@H]1O,threonine-protein kinase PIM1
 1495,CHEMBL1649762,None,,Clc1cccc(Nc2nc3ccccc3c3cnccc23)c1,threonine-protein kinase PIM1
 1496,CHEMBL21156,None,,CC(C)(C)c1nc2c3ccc(F)cc3c3c(=O)[nH]ccc3c2[nH]1,threonine-protein kinase PIM1
-1497,CHEMBL3687498,None,,CCO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+1497,CHEMBL3687498,None,,CCO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 1498,CHEMBL456850,None,,O=C1NC(=S)S/C1=C\c1ccc2ccccc2c1,threonine-protein kinase PIM1
-1499,CHEMBL3651911,None,,CCc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@H](O)[C@@H](C)C3)n2)c1F,threonine-protein kinase PIM1
+1499,CHEMBL3651911,None,,CCc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@@H](O)[C@H](N)C3)n2)c1F,threonine-protein kinase PIM1
 1500,CHEMBL3651982,None,,C[C@@H]1C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H](N)[C@@H]1O,threonine-protein kinase PIM1
 1501,CHEMBL3716116,None,,COc1cc(-c2cc(=O)n3ncc(-c4ncco4)c3[nH]2)ccc1Cl,threonine-protein kinase PIM1
 1502,CHEMBL516908,GW796920X,,Cc1ccc(NC(=O)CC2CC2)cc1-c1ccc(C(=O)NCC2CC2)cc1,threonine-protein kinase PIM1
@@ -1516,20 +1516,20 @@
 1514,CHEMBL5193677,None, ,O=C1NC(NC2CCNCC2)=N/C1=C\c1ccc2c(c1)OCO2,threonine-protein kinase PIM1
 1515,CHEMBL1794052,GW405841X,,COC(=O)c1ccc2c(c1)C(=Cc1cc(Br)c(O)c(Br)c1)C(=O)N2,threonine-protein kinase PIM1
 1516,CHEMBL183844,None,,Cc1cccc(NC(=O)Nc2ccc(-c3cccc4c3CNC4=O)cc2C)c1,threonine-protein kinase PIM1
-1517,CHEMBL3687507,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C(C)(C)O)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+1517,CHEMBL3687507,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C(C)(C)O)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 1518,CHEMBL3651986,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(C3CCCCC3)n2)C1,threonine-protein kinase PIM1
 1519,CHEMBL3103885,None,,O=C(Nc1ccccc1N1CCCCC1)c1ncccc1O,threonine-protein kinase PIM1
 1520,CHEMBL3651965,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)ccc2F)C1,threonine-protein kinase PIM1
 1521,CHEMBL99203,IODOTUBERCIDIN,,Nc1ncnc2c1c(I)cn2[C@@H]1O[C@H](CO)[C@@H](O)[C@H]1O,threonine-protein kinase PIM1
 1522,CHEMBL3689341,None,,CCCCCNC1CCCCC1Nc1nc2c(Br)c(Br)c(Br)c(Br)c2[nH]1,threonine-protein kinase PIM1
 1523,CHEMBL3921064,None,,N[C@H]1CCCN(c2ccccc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)C1,threonine-protein kinase PIM1
-1524,CHEMBL3687510,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OC)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+1524,CHEMBL3687510,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OC)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 1525,CHEMBL2037203,None,,CN1CCCN(C(=O)c2ccc(Cl)c(-c3ccc(/C=C4/C(=O)Nc5ccc(Cl)cc54)o3)c2)CC1,threonine-protein kinase PIM1
 1526,CHEMBL205158,GW695874X,,c1ccc(-c2n[nH]cc2-c2ccnc(-c3ccc(OCCN4CCOCC4)cc3)c2)nc1,threonine-protein kinase PIM1
 1527,CHEMBL2017347,None,,Fc1ccc(Nc2nc3c(-c4nnc[nH]4)cccc3c3sccc23)cc1,threonine-protein kinase PIM1
 1528,CHEMBL2030399,None,,O=c1[nH]c([C@@H]2C[C@@H](O)CN2)nc2c1oc1ccc(Br)cc12,threonine-protein kinase PIM1
 1529,CHEMBL4092706,None,,NC(=O)c1cc(Cl)c2c(Cl)c(-c3ccccc3)n(C3CCCNC3)c2n1,threonine-protein kinase PIM1
-1530,CHEMBL3950251,None,,N[C@@H]1CN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)C[C@H](N)[C@H]1O,threonine-protein kinase PIM1
+1530,CHEMBL3950251,None,,N[C@H]1CN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)C[C@@H](N)[C@@H]1O,threonine-protein kinase PIM1
 1531,CHEMBL3660011,None,,CC(C)(C)OC(=O)NCCCNc1cccc2ccc(-c3nnc4ccccn34)nc12,threonine-protein kinase PIM1
 1532,CHEMBL1241010,None,,N#Cc1ccc2[nH]c3c(ccc4c(C=O)c[nH]c43)c2c1,threonine-protein kinase PIM1
 1533,CHEMBL1650131,None,,CC(C)(O)[C@@H]1CNC[C@H]1Nc1nc(-c2cc(-c3cc[nH]n3)ccc2O)nc2ccccc12,threonine-protein kinase PIM1
@@ -1673,7 +1673,7 @@
 1671,CHEMBL3660040,None,,CCCC(Oc1cccc2ccc(-c3nnc4ccccn34)nc12)[C@H](CC)CN,threonine-protein kinase PIM1
 1672,CHEMBL1915643,None,,NC(=O)c1cccc2c1nc(Nc1ccccc1Cl)c1ccncc12,threonine-protein kinase PIM1
 1673,CHEMBL1915640,None,,COCCOc1ccc(Nc2nc3c(-c4nnc[nH]4)cccc3c3cnccc23)c(F)c1,threonine-protein kinase PIM1
-1674,CHEMBL3687480,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)ncc2N)C[C@@H]1C,threonine-protein kinase PIM1
+1674,CHEMBL3687480,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)ncc2N)C[C@H]1N,threonine-protein kinase PIM1
 1675,CHEMBL2017339,None,,Clc1cccc(Nc2nc3c(-c4nnc[nH]4)cccc3c3sccc23)c1,threonine-protein kinase PIM1
 1676,CHEMBL2017330,None,,c1ccc(Nc2nc3c(-c4nnc[nH]4)cccc3n3cccc23)cc1,threonine-protein kinase PIM1
 1677,CHEMBL1782526,None,,O=C(CC1CCNCC1)Nc1cc(Br)cc2cc(C(=O)O)oc12,threonine-protein kinase PIM1
@@ -1758,7 +1758,7 @@
 1756,CHEMBL575255,None,,CN(C)Cc1nc2c(sc3ccc(-c4ccc(N(C)C)cc4)cc32)c(=O)[nH]1,threonine-protein kinase PIM1
 1757,CHEMBL573578,None,,CC(C)(C)n1nc(Cc2cccc3ccccc23)c2c(N)ncnc21,threonine-protein kinase PIM1
 1758,CHEMBL328710,None,,CN(C)c1ccc(/C=C2\C(=O)Nc3ccccc32)cc1,threonine-protein kinase PIM1
-1759,CHEMBL3318853,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1[C@]12CC[C@H](O1)[C@@H](N)CC2,threonine-protein kinase PIM1
+1759,CHEMBL3318853,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1[C@]12CC[C@H](N)[C@H](CC1)O2,threonine-protein kinase PIM1
 1760,CHEMBL3318856,None,,Cn1ncc(NC(=O)c2csc(-c3c(F)cc([C@H]4CCCO4)cc3F)n2)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
 1761,CHEMBL426658,None,,Clc1cccc(-c2cnc3ccc(NC4CCOCC4)nn23)c1,threonine-protein kinase PIM1
 1762,CHEMBL485745,GW434756X,,Fc1ccc(-c2nn3ccccc3c2-c2ccncc2)cc1,threonine-protein kinase PIM1
@@ -1830,7 +1830,7 @@
 1828,CHEMBL1779374,None,,COc1cncc(-c2nccc(-c3cc4c([nH]3)[C@]3(CCCNC3)CNC4=O)n2)c1,threonine-protein kinase PIM1
 1829,CHEMBL1910901,None,,c1cc(-c2ccc3c(-c4ccc(N5CCNCC5)cc4)n[nH]c3n2)c2cc[nH]c2c1,threonine-protein kinase PIM1
 1830,CHEMBL521179,SR-3677,,CN(C)CCOc1cc(-c2cn[nH]c2)ccc1NC(=O)C1COc2ccccc2O1,threonine-protein kinase PIM1
-1831,CHEMBL1922225,None,,C=C(CC[C@@H](C)[C@H]1CC[C@H]2[C@H](CCc3cc(O)ccc3C)C(=O)CC[C@]12C)C(C)C,threonine-protein kinase PIM1
+1831,CHEMBL1922225,None,,C=C(CC[C@@H](C)[C@H]1CC[C@H]2[C@H](CCc3cc(O)ccc3C)C(=O)CC[C@@]21C)C(C)C,threonine-protein kinase PIM1
 1832,CHEMBL3582478,MSD-CYP11B2,,CC(C)(O)c1cncc(-c2nc3ccc(F)cc3n2C2CC2)c1,threonine-protein kinase PIM1
 1833,CHEMBL1682337,None,,OCCCc1cn(-c2ccc3[nH]ncc3c2)nn1,threonine-protein kinase PIM1
 1834,CHEMBL2177299,None,,O=C(O)c1cc2c(ccc3cc4c(ccc5oc(C(=O)O)cc54)cc32)o1,threonine-protein kinase PIM1
@@ -1853,12 +1853,12 @@
 1851,CHEMBL1972152,None,,O=c1c2c([nH]c3cc(-c4ccco4)nn13)CSC2,threonine-protein kinase PIM1
 1852,CHEMBL188268,None,,NCc1ccc(-n2c(-c3nonc3N)nc3cnccc32)cc1,threonine-protein kinase PIM1
 1853,CHEMBL2017323,None,,Clc1ccccc1Nc1nc2c(-c3nnc[nH]3)cccc2c2sccc12,threonine-protein kinase PIM1
-1854,CHEMBL3687535,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3cc(C(=O)NC(C)C)ccc3F)ccc2N)C[C@@H]1C,threonine-protein kinase PIM1
-1855,CHEMBL3651969,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](O)[C@@H](C)C3)ccc2F)c1,threonine-protein kinase PIM1
-1856,CHEMBL3687436,None,,CC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+1854,CHEMBL3687535,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3cc(C(=O)NC(C)C)ccc3F)ccc2N)C[C@H]1N,threonine-protein kinase PIM1
+1855,CHEMBL3651969,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](O)[C@H](N)C3)ccc2F)c1,threonine-protein kinase PIM1
+1856,CHEMBL3687436,None,,CC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 1857,CHEMBL3687477,None,,C[C@@H]1C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H](N)[C@@H]1C#N,threonine-protein kinase PIM1
 1858,CHEMBL3747351,None,,Cn1c(=O)c(Oc2c(Cl)cccc2Cl)cc2cnc(NC3CCOCC3)nc21,threonine-protein kinase PIM1
-1859,CHEMBL3687472,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+1859,CHEMBL3687472,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 1860,CHEMBL1909378,None,,Cl.NC(=O)c1ccc(-c2nc(-c3ccccn3)c(-c3ccc4c(c3)OCO4)[nH]2)cc1,threonine-protein kinase PIM1
 1861,CHEMBL2017353,None,,CN(C)CCOc1ccc(Nc2nc3c(-c4nnc[nH]4)cccc3c3sccc23)cc1,threonine-protein kinase PIM1
 1862,CHEMBL2153264,None,,Nc1nc2c(-c3ccccn3)nccc2[nH]1,threonine-protein kinase PIM1
@@ -1868,9 +1868,9 @@
 1866,CHEMBL372117,None,,O=C1NC(=O)C2=C1c1cn(c3ccccc13)CCCCCCCCn1cc2c2ccccc21,threonine-protein kinase PIM1
 1867,CHEMBL197443,None,,Cc1ccc(C2Oc3ccc(C)cc3C(=O)C2=O)cc1,threonine-protein kinase PIM1
 1868,CHEMBL1800685,PPTN,,O=C(O)c1cc(-c2ccc(C3CCNCC3)cc2)c2ccc(-c3ccc(C(F)(F)F)cc3)cc2c1,threonine-protein kinase PIM1
-1869,CHEMBL3687537,None,,CC(C)NC(=O)c1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OCCS(C)(=O)=O)[C@@H](C)C3)n2)c1,threonine-protein kinase PIM1
+1869,CHEMBL3687537,None,,CC(C)NC(=O)c1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OCCS(C)(=O)=O)[C@H](N)C3)n2)c1,threonine-protein kinase PIM1
 1870,CHEMBL222419,GSK-237701A,,COc1cc2ncn(-c3cc(O[C@H](C)c4ccccc4Cl)c(C(N)=O)s3)c2cc1OC,threonine-protein kinase PIM1
-1871,CHEMBL3691929,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)c(F)cc2N)C[C@@H]1C,threonine-protein kinase PIM1
+1871,CHEMBL3691929,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)c(F)cc2N)C[C@H]1N,threonine-protein kinase PIM1
 1872,CHEMBL407002,None,,CCCC(=O)Nc1n[nH]c2ncc(-c3cccnc3)cc12,threonine-protein kinase PIM1
 1873,CHEMBL2235178,None,,COc1ccc(-c2cc(-c3cccs3)[nH]c(=O)c2C#N)cc1,threonine-protein kinase PIM1
 1874,CHEMBL2030400,None,,O=c1[nH]c([C@@H]2C[C@@H](F)CN2)nc2c1oc1ccc(Br)cc12,threonine-protein kinase PIM1
@@ -2119,7 +2119,7 @@
 2117,CHEMBL4092508,None,,COc1cc(OC)c(Cl)c(N2Cc3cnc(Nc4ccc(F)cc4)nc3N(C3CCN(C(=O)/C=C/CN(C)C)CC3)C2=O)c1Cl,threonine-protein kinase PIM1
 2118,CHEMBL4207079,None,,Fc1cc(F)cc(-n2cnc3c(NCc4nc5c(F)c(F)ccc5[nH]4)nc(N4CCOCC4)nc32)c1,threonine-protein kinase PIM1
 2119,CHEMBL2006715,None,,O=C(Nc1cccc(-c2nc3sccn3c2-c2ccnc(Nc3cccc(N4CCCC4=O)c3)n2)c1)c1c(F)cccc1F,threonine-protein kinase PIM1
-2120,CHEMBL3687511,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC(C)C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+2120,CHEMBL3687511,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC(C)C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 2121,CHEMBL1794061,GW627834A,,Cl.N#Cc1cccc(Nc2ncc(-c3ccccc3)o2)c1,threonine-protein kinase PIM1
 2122,CHEMBL2035624,None,,O=c1[nH]c(-c2ccc(Cl)cc2Cl)nc2c1oc1ccc(Br)cc12,threonine-protein kinase PIM1
 2123,CHEMBL1980435,None,,COc1cccc(C(=O)Nc2n[nH]c3ccc(-c4cn(Cc5ccccc5)nn4)cc23)c1,threonine-protein kinase PIM1
@@ -2127,10 +2127,10 @@
 2125,CHEMBL1968646,None,,O=c1oc2ccccc2c2[nH]c(-c3ccccc3)nc12,threonine-protein kinase PIM1
 2126,CHEMBL1998551,None,,CC(C)(O)c1nnc2ccc(-c3c(-c4ccc(F)cc4F)nc4n3CCC4)nn12,threonine-protein kinase PIM1
 2127,CHEMBL496009,None,,CSc1cc(Oc2ccnc3[nH]c(=O)[nH]c23)ccc1NC(=O)Nc1cccc(C(F)(F)F)c1,threonine-protein kinase PIM1
-2128,CHEMBL3691921,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC4CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+2128,CHEMBL3691921,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC4CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 2129,CHEMBL583187,None,,O=c1[nH]c(CN2CC[C@H](O)C2)nc2c1sc1ccc(-c3ccc(O)cc3)cc12,threonine-protein kinase PIM1
 2130,CHEMBL4167749,None,,CCC(=O)Nc1ccc(-c2c[nH]c3ncnc(N[C@H](C)c4ccccc4)c23)cc1,threonine-protein kinase PIM1
-2131,CHEMBL3652002,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)C[C@@H](C(F)(F)F)C3)n2)c1,threonine-protein kinase PIM1
+2131,CHEMBL3652002,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C(F)(F)F)C[C@H](N)C3)n2)c1,threonine-protein kinase PIM1
 2132,CHEMBL4177303,None,,NCCCC[C@@H](NC(=O)[C@@H](CC(=O)O)NC(=O)[C@@H](CC(=O)O)NC(=O)[C@@H](CC(=O)O)NC(=O)[C@@H](CC(=O)O)NC(=O)[C@@H](CC(=O)O)NC(=O)[C@@H](CC(=O)O)NC(=O)CCCCCNC(=O)CCC(=O)Nc1ncc(-c2ccc(C(=O)O)cc2)s1)C(=O)O,threonine-protein kinase PIM1
 2133,CHEMBL4177361,None,,OC[C@@H](Nc1ncnc2sc(-c3ccc(O)cc3)cc12)c1ccccc1,threonine-protein kinase PIM1
 2134,CHEMBL1782532,None,,O=C(O)c1cc2cc(Br)cc(N[C@H]3CC[C@@H](O)CC3)c2o1,threonine-protein kinase PIM1
@@ -2171,11 +2171,11 @@
 2169,CHEMBL3652027,None,,C[C@@H]1C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1O,threonine-protein kinase PIM1
 2170,CHEMBL4072887,None,,NC(=O)c1cc(Cl)c2c(Cl)c(I)n(CC3CCNCC3)c2n1,threonine-protein kinase PIM1
 2171,CHEMBL453737,None,,COc1cc2c(Oc3ccc(-c4cnc(Nc5ccc(F)cc5)n(C)c4=O)cc3F)ccnc2cc1OCCCN1CCOCC1,threonine-protein kinase PIM1
-2172,CHEMBL456294,CALICOFEROL I,,Cc1ccc(O)cc1CC[C@@H]1C(=O)CC[C@]2(C)[C@@H]([C@H](C)CCCC(C)C)[C@@H](O)C[C@@H]12,threonine-protein kinase PIM1
+2172,CHEMBL456294,CALICOFEROL I,,Cc1ccc(O)cc1CC[C@@H]1C(=O)CC[C@@]2(C)[C@H]1C[C@H](O)[C@@H]2[C@H](C)CCCC(C)C,threonine-protein kinase PIM1
 2173,CHEMBL3634790,None,,c1ccc(-c2n[nH]c3cnc(-c4cccnc4)cc23)cc1,threonine-protein kinase PIM1
 2174,CHEMBL266325,None,,CCCC(=O)Oc1ccc2[nH]c(C(=O)c3cc4ccccc4[nH]3)cc2c1,threonine-protein kinase PIM1
 2175,CHEMBL3652633,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)cnc2N)c1N1CCC(N)CC1,threonine-protein kinase PIM1
-2176,CHEMBL3687519,None,,CC(C)NC(=O)c1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](S(C)(=O)=O)[C@@H](C)C3)n2)c1,threonine-protein kinase PIM1
+2176,CHEMBL3687519,None,,CC(C)NC(=O)c1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](S(C)(=O)=O)[C@H](N)C3)n2)c1,threonine-protein kinase PIM1
 2177,CHEMBL402228,None,,COc1ccccc1N1CCN(CCCNC(=O)c2nc(-c3cccnc3)no2)CC1,threonine-protein kinase PIM1
 2178,CHEMBL3236464,None,,CCCS(=O)(=O)Nc1cccc(Nc2ccc3ncn(C)c(=O)c3c2)c1C#N,threonine-protein kinase PIM1
 2179,CHEMBL490428,None,,Cc1ccc(Nc2ccc3c(c2)N(c2nc4c(s2)C(=O)NC(C)(C)C4)CCO3)nn1,threonine-protein kinase PIM1
@@ -2215,12 +2215,12 @@
 2213,CHEMBL4521594,BAY-1797, ,NS(=O)(=O)c1cc(NC(=O)Cc2ccccc2)ccc1Oc1cccc(Cl)c1,threonine-protein kinase PIM1
 2214,CHEMBL4206831,None,,CCC(=O)Nc1ccc(C(=O)Nc2ccc(Nc3ncc4c(n3)N(C)c3ccc(C)cc3C(=O)N4C)cc2)cc1,threonine-protein kinase PIM1
 2215,CHEMBL3103865,None,,Nc1ccc(-c2ccccc2C(F)(F)F)nc1C(=O)Nc1cnccc1N1CCC[C@H](N)C1,threonine-protein kinase PIM1
-2216,CHEMBL4165749,BI 2545,,O=C(NC[C@@H]1[C@H]2CN(C(=O)OCc3cc(C(F)(F)F)cc(C(F)(F)F)c3)C[C@@H]12)c1ccc2[nH]nnc2c1,threonine-protein kinase PIM1
+2216,CHEMBL4165749,BI 2545,,O=C(NC[C@H]1[C@@H]2CN(C(=O)OCc3cc(C(F)(F)F)cc(C(F)(F)F)c3)C[C@H]12)c1ccc2[nH]nnc2c1,threonine-protein kinase PIM1
 2217,CHEMBL496995,None,,O=C1NC(=O)/C(=C/c2ccc(Cl)cc2)S1,threonine-protein kinase PIM1
 2218,CHEMBL176857,GW442130X,,COc1ccccc1-c1cc(/C=C2\C(=O)Nc3ncc(Br)cc32)cc(Br)c1O,threonine-protein kinase PIM1
 2219,CHEMBL1999153,None,,FC(F)(F)c1ccccc1CNc1nccc(-c2c[nH]c3ncccc23)n1,threonine-protein kinase PIM1
 2220,CHEMBL1782516,None,,NC[C@H]1CC[C@H](Nc2cncc(-c3ccc4oc(C(=O)O)cc4c3)n2)CC1,threonine-protein kinase PIM1
-2221,CHEMBL3715238,None,,Nc1ncc(-c2cc([C@H]3[C@@H]4CN(C5COC5)C[C@@H]43)n(CC3CC3)n2)cc1C(F)(F)F,threonine-protein kinase PIM1
+2221,CHEMBL3715238,None,,Nc1ncc(-c2cc([C@@H]3[C@H]4CN(C5COC5)C[C@H]43)n(CC3CC3)n2)cc1C(F)(F)F,threonine-protein kinase PIM1
 2222,CHEMBL1909350,GSK-949675A,,CCn1c(-c2nonc2N)nc2c(C#CC(C)(C)O)nc(OCCNC)cc21.Cl,threonine-protein kinase PIM1
 2223,CHEMBL494222,None,,CN(c1ccc2nnc(-c3cccc(C(F)(F)F)c3)n2n1)C1CCCCC1,threonine-protein kinase PIM1
 2224,CHEMBL450071,GSK-1392956A,,COc1cc(N2CCN(C(C)C)CC2)ccc1Nc1nc(Nc2ccc(F)cc2C(=O)NC[C@@H](O)CO)c2cc[nH]c2n1,threonine-protein kinase PIM1
@@ -2244,7 +2244,7 @@
 2242,CHEMBL3687487,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1OCCS(C)(=O)=O,threonine-protein kinase PIM1
 2243,CHEMBL3651975,None,,N[C@H]1CCC[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3cccc(F)c3F)n2)C1,threonine-protein kinase PIM1
 2244,CHEMBL572784,None,,CN(C)Cc1nc2c(sc3ccc(-c4ccoc4)cc32)c(=O)[nH]1,threonine-protein kinase PIM1
-2245,CHEMBL3687534,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OCCS(C)(=O)=O)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+2245,CHEMBL3687534,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OCCS(C)(=O)=O)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 2246,CHEMBL573176,None,,NC(=O)c1c[nH]c2c1ccc1c3ccccc3[nH]c12,threonine-protein kinase PIM1
 2247,CHEMBL573477,None,,O=c1[nH]c(CNc2ccccc2O)nc2c1sc1ccc(Cl)cc12,threonine-protein kinase PIM1
 2248,CHEMBL1909409,GSK-238583A,,O=C(O)C(F)(F)F.O=C(O[C@H]1CN[C@H](C#Cc2cc3ncnc(Nc4ccc(Cc5ccccc5)cc4)c3s2)C1)N1CCOCC1,threonine-protein kinase PIM1
@@ -2280,7 +2280,7 @@
 2278,CHEMBL246655,None,,N#Cc1c(-c2ccccc2)cc(-c2ccc(O)cc2)nc1N,threonine-protein kinase PIM1
 2279,CHEMBL2002726,None,,Cc1n[nH]c2ccc(-c3cncc(OCC(N)Cc4ccccc4)c3)cc12,threonine-protein kinase PIM1
 2280,CHEMBL1974480,None,,CCOC(=O)Cc1nc2c3cc(Br)ccc3[nH]c(=O)n2n1,threonine-protein kinase PIM1
-2281,CHEMBL3687443,None,,CS[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+2281,CHEMBL3687443,None,,CS[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 2282,CHEMBL4560241,BI 0153, ,CN(C)C(=O)Cn1cc(-c2nc(C3(c4ccc(-c5cnc(N)nc5)cc4)CC3)no2)cn1,threonine-protein kinase PIM1
 2283,CHEMBL522502,None,,Nc1ccc2ncnc(NCCc3ccc(Oc4ccccc4)cc3)c2c1,threonine-protein kinase PIM1
 2284,CHEMBL1999556,None,,NC(=O)c1cc2c(-c3ccccc3)cncc2s1,threonine-protein kinase PIM1
@@ -2309,7 +2309,7 @@
 2307,CHEMBL3814423,None,,c1ccc2c(c1)[nH]c1c3[nH]c4ccccc4c3c3[nH]ncc3c21,threonine-protein kinase PIM1
 2308,CHEMBL3774448,None,,O=C1NC(=S)S/C1=C\c1ccc2ncccc2c1,threonine-protein kinase PIM1
 2309,CHEMBL3715831,None,,COc1cc(-c2cc(=O)n3ncc(-c4cc(C)n[nH]4)c3[nH]2)ccc1Cl,threonine-protein kinase PIM1
-2310,CHEMBL3691927,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@H](OC)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+2310,CHEMBL3691927,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@@H](OC)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 2311,CHEMBL289959,None,,c1ccc(Nc2ncnc3ccccc23)cc1,threonine-protein kinase PIM1
 2312,CHEMBL1779347,None,,O=C1NCC2(CCNCC2)c2[nH]c(-c3ccnc(-c4ccc5c(c4)OCCCO5)n3)cc21,threonine-protein kinase PIM1
 2313,CHEMBL1964288,None,,c1ccc(Cn2cc(-c3ccc4[nH]nc(-c5cn(Cc6ccccc6)nn5)c4c3)nn2)cc1,threonine-protein kinase PIM1
@@ -2322,7 +2322,7 @@
 2320,CHEMBL529066,GW574783B,,CS(=O)(=O)CCNCc1ccc(-c2ccc3ncnc(Nc4ccc(OCc5ccccc5)c(Cl)c4)c3c2)o1.Cl,threonine-protein kinase PIM1
 2321,CHEMBL1910906,None,,Nc1ccc(-c2c[nH]c3ccc(-c4cnccn4)cc23)c(F)n1,threonine-protein kinase PIM1
 2322,CHEMBL1803072,None,,CN1C(=O)/C(=C/c2ccc3c(c2)OCO3)N=C1Nc1ccc2c(c1)OCO2,threonine-protein kinase PIM1
-2323,CHEMBL3687505,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C(C)C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+2323,CHEMBL3687505,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C(C)C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 2324,CHEMBL391586,None,,N#Cc1c(-c2ccccc2)cc(-c2cc(Br)ccc2O)[nH]c1=O,threonine-protein kinase PIM1
 2325,CHEMBL2035606,None,,O=c1[nH]c(-c2ccccc2Cl)nc2c1oc1ccc(O)cc12,threonine-protein kinase PIM1
 2326,CHEMBL3103878,None,,NCC(=O)N1CCN(c2ccncc2NC(=O)c2nccnc2N)CC1,threonine-protein kinase PIM1
@@ -2331,7 +2331,7 @@
 2329,CHEMBL4761834,None, ,Clc1cccc(Nc2ncc3cccc(OCc4cn(-c5cc(Cl)cc(Cl)c5)nn4)c3n2)c1,threonine-protein kinase PIM1
 2330,CHEMBL1615278,None,,C[C@@H](Oc1cc(-n2cnc3ccc(OC4CCN(C)CC4)cc32)sc1C(N)=O)c1ccccc1C(F)(F)F,threonine-protein kinase PIM1
 2331,CHEMBL4743511,None, ,Clc1cccc(Nc2ncc3cccc(OCc4cn(Cc5ccccc5)nn4)c3n2)c1,threonine-protein kinase PIM1
-2332,CHEMBL3687516,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](NC(=O)OC)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+2332,CHEMBL3687516,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](NC(=O)OC)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 2333,CHEMBL272410,None,,FC(F)(F)c1cccc(-c2nnc3ccc(NC4CCCCC4)cn23)c1,threonine-protein kinase PIM1
 2334,CHEMBL1945557,None,,CCN1CCC2(CC1)NC(=O)c1c(c3ccc(Cl)c(Cl)c3n1C)C2C#N,threonine-protein kinase PIM1
 2335,CHEMBL1682547,None,,c1ccc(CCNc2nc(-c3ccc4[nH]ncc4c3)cs2)cc1,threonine-protein kinase PIM1
@@ -2460,7 +2460,7 @@
 2458,CHEMBL3648852,None,,CC[C@H]1CN(c2c(NC(=O)c3nc(-c4c(F)cccc4F)sc3N)cnn2C)CC[C@@]1(CN)OC,threonine-protein kinase PIM1
 2459,CHEMBL3652035,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@](C)(N)CC(F)(F)C1,threonine-protein kinase PIM1
 2460,CHEMBL3648861,None,,CO[C@@H]1[C@H](N)CCN(c2c(NC(=O)c3nc(-c4c(F)cccc4F)sc3N)cnn2C)CC12CC2,threonine-protein kinase PIM1
-2461,CHEMBL3691977,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+2461,CHEMBL3691977,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 2462,CHEMBL1993904,None,,NC(=O)c1cc2c(-c3ccc(Nc4nc5ccccc5o4)cc3)cnc(N)c2s1,threonine-protein kinase PIM1
 2463,CHEMBL3889998,None,,Cc1nc2cccc(-c3cc4c([nH]3)CCNC4=O)c2nc1N[C@H]1C[C@@H](N(C)C)C1,threonine-protein kinase PIM1
 2464,CHEMBL3981805,None,,O=C1NCCc2[nH]c(-c3cccc4ccc(Nc5ccccc5Cl)nc34)cc21,threonine-protein kinase PIM1
@@ -2507,7 +2507,7 @@
 2505,CHEMBL1909391,GW576924A,,Cl.[O-][S+]1CCN(Cc2ccc(-c3ccc4ncnc(Nc5ccc(OCc6ccccc6)c(F)c5)c4c3)o2)CC1,threonine-protein kinase PIM1
 2506,CHEMBL3953807,None,,Cc1nc2cccc(-c3cc4c(=O)[nH]ncc4[nH]3)c2nc1NC(C)(C)C,threonine-protein kinase PIM1
 2507,CHEMBL486124,GW874091X,,Cc1nc(-c2ccccc2)n2nc(NCCCN3CCOCC3)ncc12,threonine-protein kinase PIM1
-2508,CHEMBL3687421,None,,CCOC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+2508,CHEMBL3687421,None,,CCOC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 2509,CHEMBL1966722,None,,O=C(NNC(=S)Nc1ccc(Cl)cc1)C(O)(c1ccccc1)c1ccccc1,threonine-protein kinase PIM1
 2510,CHEMBL1971534,None,,NC(=O)c1cc2ccncc2s1,threonine-protein kinase PIM1
 2511,CHEMBL1971149,None,,Cc1nccn2c(-c3ccnc(NCC(C)(C)C(=O)O)n3)c(-c3ccc(F)cc3F)nc12,threonine-protein kinase PIM1
@@ -2578,7 +2578,7 @@
 2576,CHEMBL1967720,None,,CC(C)(C(N)=O)n1cc(-c2cnc(N)c3c(-c4ccc(NC(=O)Nc5cccc(F)c5)cc4)csc23)cn1,threonine-protein kinase PIM1
 2577,CHEMBL3648718,None,,Nc1sc(-c2c(F)cccc2F)nc1C(=O)Nc1cnn(CC(F)F)c1N1CC[C@@H](N)CC(F)(F)C1,threonine-protein kinase PIM1
 2578,CHEMBL3648691,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)cnc2N)c1N1CCC(N)C(F)CC1,threonine-protein kinase PIM1
-2579,CHEMBL3648783,None,,Cn1ncc(NC(=O)c2nc(-c3ncccc3F)sc2N)c1N1CC[C@@H](F)[C@@H](N)CC1,threonine-protein kinase PIM1
+2579,CHEMBL3648783,None,,Cn1ncc(NC(=O)c2nc(-c3ncccc3F)sc2N)c1N1CC[C@H](N)[C@H](F)CC1,threonine-protein kinase PIM1
 2580,CHEMBL4857726,None, ,COc1ncc2cc1NS(=O)(=O)c1cccc(c1)C(=O)NCc1nc(cs1)-c1ncnc3cc-2sc13,threonine-protein kinase PIM1
 2581,CHEMBL97162,None,,COc1nccc(-c2c(-c3ccc(F)cc3)ncn2[C@H]2CC[C@H](O)CC2)n1,threonine-protein kinase PIM1
 2582,CHEMBL4638373,None, ,O=C1/C(=C\c2c[nH]c3ncccc23)CSc2ccccc21,threonine-protein kinase PIM1
@@ -2594,7 +2594,7 @@
 2592,CHEMBL3652620,None,,Cn1cc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)cn1,threonine-protein kinase PIM1
 2593,CHEMBL1910902,None,,c1cncc(-c2ccc3[nH]cc(-c4ccc(N5CCNCC5)cc4)c3c2)c1,threonine-protein kinase PIM1
 2594,CHEMBL1910898,None,,Nc1ccc(-c2ccc3c(-c4ccc(N5CCNCC5)cc4)n[nH]c3n2)cn1,threonine-protein kinase PIM1
-2595,CHEMBL3687508,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+2595,CHEMBL3687508,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 2596,CHEMBL4212680,None,,C=C(C)n1c(=O)n(C(C)=O)c2cc(Br)cnc21,threonine-protein kinase PIM1
 2597,CHEMBL4091991,None,,C=CC(=O)Nc1cc(-n2c(=O)ccc3cnc4ccc(-c5ccc(NS(C)(=O)=O)cc5)cc4c32)ccc1C,threonine-protein kinase PIM1
 2598,CHEMBL5270989,None, ,CCOC(=O)c1cc2c([nH]1)-c1[nH]c3ccccc3c1C(=O)NC2,threonine-protein kinase PIM1
@@ -2954,7 +2954,7 @@
 2952,CHEMBL273564,GW795493X,,Nc1ncnc2occ(-c3ccc(NC(=O)Nc4cccc(C(F)(F)F)c4)cc3)c12,threonine-protein kinase PIM1
 2953,CHEMBL4460272,None, ,c1cc(-c2n[nH]c3ccnc(OC4CCOCC4)c23)cc(N2CCOCC2)n1,threonine-protein kinase PIM1
 2954,CHEMBL1909358,GW654652C,,CCS(=O)(=O)c1ccc(OC)c(Nc2nccc(N(C)c3ccc4c(C)n[nH]c4c3)n2)c1.Cl,threonine-protein kinase PIM1
-2955,CHEMBL4453890,None, ,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@@H](N)[C@@H](O)CC1,threonine-protein kinase PIM1
+2955,CHEMBL4453890,None, ,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@H](O)[C@H](N)CC1,threonine-protein kinase PIM1
 2956,CHEMBL3103863,None,,Nc1nccc(-c2ccc(N)c(C(=O)Nc3cnccc3N3CCC[C@H](N)C3)n2)n1,threonine-protein kinase PIM1
 2957,CHEMBL404367,None,,Cc1cccc(NC(=O)Nc2ccc(-c3cncc4c3c(N)nn4C)cc2)c1,threonine-protein kinase PIM1
 2958,CHEMBL1967094,None,,O=C(NCc1ccc(Cl)cc1)c1cc2c(-c3ccccc3)n[nH]c2s1,threonine-protein kinase PIM1
@@ -2974,9 +2974,9 @@
 2972,CHEMBL3394169,None,,Nc1nnc(-c2ccc3[nH]cc(-c4cccc(OC5CCCCC5)n4)c3c2)s1,threonine-protein kinase PIM1
 2973,CHEMBL506414,GW684626B,,Fc1cccc(COc2ccc(Nc3ncnc4sc(-c5cccs5)cc34)cc2Cl)c1,threonine-protein kinase PIM1
 2974,CHEMBL511745,None,,COc1ccccc1-c1nnc2ccc(NC3CC3)nn12,threonine-protein kinase PIM1
-2975,CHEMBL3691933,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC(C)C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+2975,CHEMBL3691933,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC(C)C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 2976,CHEMBL3651955,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)C[C@H](N)C3)ccc2F)c1,threonine-protein kinase PIM1
-2977,CHEMBL3639908,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2nc(-c3cc(C(=O)NC(C)C)ccc3F)ccc2N)C[C@@H]1C,threonine-protein kinase PIM1
+2977,CHEMBL3639908,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2nc(-c3cc(C(=O)NC(C)C)ccc3F)ccc2N)C[C@H]1N,threonine-protein kinase PIM1
 2978,CHEMBL3717312,None,,Cc1coc(-c2cnn3c(=O)cc(-c4ccc5c(c4)OCO5)[nH]c23)n1,threonine-protein kinase PIM1
 2979,CHEMBL1684525,None,,Cc1ccc2cc(-c3n[nH]c4ccc(NS(=O)(=O)c5ncn(C)c5C)cc34)[nH]c2c1,threonine-protein kinase PIM1
 2980,CHEMBL1767254,None,,NC(=O)c1ccsc1NC(=O)Cc1csc2ccccc12,threonine-protein kinase PIM1
@@ -3050,7 +3050,7 @@
 3048,CHEMBL2004290,None,,COc1ccc(NC(=O)Nc2ccc(-c3csc4c(-c5cnn(CC(C)(C)O)c5)cnc(N)c34)cc2)cc1,threonine-protein kinase PIM1
 3049,CHEMBL1990496,None,,Cn1c(NCC(N)Cc2ccccc2)nc(-c2ccncc2)c(-c2ccc3ccccc3c2)c1=O,threonine-protein kinase PIM1
 3050,CHEMBL1979516,None,,CCNC(=O)c1cnc(N)c2c(-c3ccc(NC(=O)Nc4cccc(F)c4)cc3)csc12,threonine-protein kinase PIM1
-3051,CHEMBL3687493,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OCCC#N)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+3051,CHEMBL3687493,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OCCC#N)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 3052,CHEMBL1562756,None,,CC1(C)CC2=Nc3cc(Cl)ccc3SC2=C(O)C1,threonine-protein kinase PIM1
 3053,CHEMBL3651987,None,,Nc1ccc(-c2c(F)cccc2F)nc1C(=O)Nc1cnccc1C1=CC(N)C(O)CC1,threonine-protein kinase PIM1
 3054,CHEMBL1682350,None,,Fc1ccccc1Cn1cc(-c2ccc3[nH]ncc3c2)nn1,threonine-protein kinase PIM1
@@ -3107,12 +3107,12 @@
 3105,CHEMBL447571,None,,Cc1ccc(/C=C2\SC(O)=NC2=O)cc1,threonine-protein kinase PIM1
 3106,CHEMBL573012,None,,O=c1[nH]c(CN2CC[C@H](O)C2)nc2c1sc1ccc(-c3ccsc3)cc12,threonine-protein kinase PIM1
 3107,CHEMBL2204495,None,,O=C(Nc1cccnc1)c1cc(-c2ccnc(F)c2)ccc1OCc1ccccc1,threonine-protein kinase PIM1
-3108,CHEMBL3109404,None,,COC(=O)c1cc(O)c(O)c(C[C@]2(C)[C@@H](C)CC[C@@]3(C)C(C)=CCC[C@@H]23)c1,threonine-protein kinase PIM1
+3108,CHEMBL3109404,None,,COC(=O)c1cc(O)c(O)c(C[C@]2(C)[C@@H](C)CC[C@@]3(C)C(C)=CCC[C@H]32)c1,threonine-protein kinase PIM1
 3109,CHEMBL3926281,None,,NCCC[C@H]1CNC(=O)c2cc(-c3cccc(OC(F)(F)F)c3)c(-c3ccsc3)n21,threonine-protein kinase PIM1
 3110,CHEMBL2147760,None,,O=C1/C(=C/c2c[nH]c3ccccc23)Oc2c1ccc(O)c2CN1CCNCC1,threonine-protein kinase PIM1
 3111,CHEMBL2170610,BI 9627,,CC(=O)N1CCC(c2ccc(C(=O)NC(=N)N)cc2C(F)(F)F)CC1,threonine-protein kinase PIM1
 3112,CHEMBL400402,None,,Cc1cc(-c2cc(O)ccc2Cl)cc2nnc(Nc3ccc(OCCN4CCCC4)cc3)nc12,threonine-protein kinase PIM1
-3113,CHEMBL3109401,None,,CC1=CCC[C@H]2[C@](C)(CC3=C(O)C(=O)C=C(NCCC(C)C)C3=O)[C@@H](C)CC[C@@]12C,threonine-protein kinase PIM1
+3113,CHEMBL3109401,None,,CC1=CCC[C@@H]2[C@@]1(C)CC[C@H](C)[C@@]2(C)CC1=C(O)C(=O)C=C(NCCC(C)C)C1=O,threonine-protein kinase PIM1
 3114,CHEMBL2397600,None,,O=[N+]([O-])c1cc2cn[nH]c2c2c1[nH]c1ccc(Cl)cc12,threonine-protein kinase PIM1
 3115,CHEMBL2397599,None,,COc1ccc2[nH]c3c([N+](=O)[O-])cc4cn[nH]c4c3c2c1,threonine-protein kinase PIM1
 3116,CHEMBL1964275,None,,Cc1ccc(NC(=O)c2cccc(N3CCCCC3)c2)cc1-c1ccc(C(=O)NCC2CC2)cc1,threonine-protein kinase PIM1
@@ -3205,7 +3205,7 @@
 3203,CHEMBL1096667,None,,O=C(NCc1ccc(O)c(O)c1)c1ccc2c(Cl)cc(Cl)c(O)c2n1,threonine-protein kinase PIM1
 3204,CHEMBL3393713,None,,Fc1ncccc1-c1ccc2[nH]nc(-c3cncc(O[C@H]4CNCCC45CC5)n3)c2c1,threonine-protein kinase PIM1
 3205,CHEMBL5200010,None, ,O=C(Nc1ccccc1)Nc1cccc(Nc2nccc(Nc3ccc4[nH]ccc4c3)n2)c1,threonine-protein kinase PIM1
-3206,CHEMBL3639863,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+3206,CHEMBL3639863,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 3207,CHEMBL3297765,None,,CN1CCN(C[C@@H](NC(=O)C[C@H]2CNC(=O)c3cc(-c4ccnc(F)c4)cn32)C2CCCCC2)CC1,threonine-protein kinase PIM1
 3208,CHEMBL3914983,None,,Cn1ncc(NC(=O)c2csc(-c3c(F)cccc3F)n2)c1[C@H]1CC[C@H](N)[C@H](O)CO1,threonine-protein kinase PIM1
 3209,CHEMBL3963678,None,,Cc1ccn(-c2cnc(-c3c[nH]c4ccc(-c5nnc(N)s5)cc34)cn2)n1,threonine-protein kinase PIM1
@@ -3233,7 +3233,7 @@
 3231,CHEMBL3651932,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2cccc(-c3c(F)cc(O)cc3F)n2)C1,threonine-protein kinase PIM1
 3232,CHEMBL3648759,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CCCC2(CCCN2)CC1,threonine-protein kinase PIM1
 3233,CHEMBL1915443,None,,Cc1ccccc1Nc1nc2c(-c3nnc[nH]3)cccc2c2cnccc12,threonine-protein kinase PIM1
-3234,CHEMBL3691920,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@H](OC)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+3234,CHEMBL3691920,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@@H](OC)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 3235,CHEMBL4227028,None,,COc1cc(C(=O)O)ccc1-c1cncc(-n2ncc3ccc(NC(C)C)cc32)n1,threonine-protein kinase PIM1
 3236,CHEMBL3774704,None,,O=C1OCC/C1=C\c1ccc2ncsc2c1,threonine-protein kinase PIM1
 3237,CHEMBL4076913,None,,Cc1cncc(-c2cc3c(cn2)cnn3-c2cccc([C@H]3CNCCC3(F)F)n2)n1,threonine-protein kinase PIM1
@@ -3262,7 +3262,7 @@
 3260,CHEMBL3298824,None,,O=C(CC1CNC(=O)c2cc(-c3ccc(F)c(F)c3)cn21)NCc1ccco1,threonine-protein kinase PIM1
 3261,CHEMBL3652641,None,,Cn1ncc(NC(=O)c2cncc(-c3ccccc3F)n2)c1N1CCC[C@H](N)CC1,threonine-protein kinase PIM1
 3262,CHEMBL1915431,None,,OCCNc1nc2c(-c3nnc[nH]3)cccc2c2cnccc12,threonine-protein kinase PIM1
-3263,CHEMBL3652003,None,,COc1cc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)C[C@@H](C(F)(F)F)C3)n2)c(F)c1,threonine-protein kinase PIM1
+3263,CHEMBL3652003,None,,COc1cc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C(F)(F)F)C[C@H](N)C3)n2)c(F)c1,threonine-protein kinase PIM1
 3264,CHEMBL247684,None,,N#Cc1c(-c2ccccc2Cl)c2c([nH]c1=O)-c1ccccc1SC2,threonine-protein kinase PIM1
 3265,CHEMBL2387478,None,,O=C(Nc1c[nH]c2ncccc12)c1cnn2ccc(NC[C@H]3CCNC[C@@H]3F)nc12,threonine-protein kinase PIM1
 3266,CHEMBL1649765,None,,O=C(O)c1cccc2c1nc(Nc1cccc(Cl)c1)c1ccncc12,threonine-protein kinase PIM1
@@ -3302,7 +3302,7 @@
 3300,CHEMBL3920246,None,,O=C1NCCc2[nH]c(-c3cccc4ccc(N[C@H]5CCCNC5)nc34)cc21,threonine-protein kinase PIM1
 3301,CHEMBL4107249,None,,CO[C@H]1CO[C@H](c2c(NC(=O)c3nc(-c4c(F)cccc4C(F)(F)F)sc3N)cnn2C)CC[C@H]1N,threonine-protein kinase PIM1
 3302,CHEMBL3393704,None,,Fc1cccc(F)c1-c1ccc2[nH]nc(-c3cncc(OC4CNCCC45CC5)n3)c2c1,threonine-protein kinase PIM1
-3303,CHEMBL3691982,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(F)CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+3303,CHEMBL3691982,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(F)CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 3304,CHEMBL2218931,None,,Cc1cncc2cccc(S(=O)(=O)N3CCCN(C(=O)CN)C[C@H]3C)c12,threonine-protein kinase PIM1
 3305,CHEMBL1275911,None,,CCc1nc2cc3cn[nH]c3cc2nc1CC,threonine-protein kinase PIM1
 3306,CHEMBL3687454,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@@H]1OCCC(=O)O,threonine-protein kinase PIM1
@@ -3358,7 +3358,7 @@
 3356,CHEMBL4568183,SR-301,C34H43N9O4S,CS(=O)(=O)N1CCCC(NC(=O)[C@H](CCC2CCCCC2)NC(=O)c2ccc(CNc3ncnc4c3nnn4-c3ccccc3)cc2)C1,threonine-protein kinase PIM1
 3357,CHEMBL498203,None,,COc1ccc(/C=C2\C(=O)NC(=O)N2Cc2ccccc2)cc1,threonine-protein kinase PIM1
 3358,CHEMBL3691934,None,,C[C@@H]1C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H](N)[C@@H]1n1ccccc1=O,threonine-protein kinase PIM1
-3359,CHEMBL3687470,None,,COC(=O)N(C)[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+3359,CHEMBL3687470,None,,COC(=O)N(C)[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 3360,CHEMBL3676284,None,,C[C@@H]1C[C@H](N)CN(c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C1,threonine-protein kinase PIM1
 3361,CHEMBL3651929,None,,N[C@H]1CCC[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3cc(O)ccc3F)n2)C1,threonine-protein kinase PIM1
 3362,CHEMBL4100387,None,,Cc1c(-c2ccncc2)c[nH]c1C(N)=O,threonine-protein kinase PIM1
@@ -3386,7 +3386,7 @@
 3384,CHEMBL3985653,None,,Nc1cc(-c2c[nH]c3ccc(-c4nnc(N)s4)cc23)ccn1,threonine-protein kinase PIM1
 3385,CHEMBL3964497,None,,COc1nc(-c2cn(S(=O)(=O)c3ccc(C)cc3)c3ccc(-c4nnc(NC(C)(C)C)o4)cc23)ncc1F,threonine-protein kinase PIM1
 3386,CHEMBL3922724,None,,Nc1nnc(-c2ccc3[nH]cc(-c4cncc(-c5ccc(Cl)cc5)n4)c3c2)o1,threonine-protein kinase PIM1
-3387,CHEMBL3652005,None,,N[C@@H]1C[C@H](c2ccncc2NC(=O)c2ccc(F)c(C3CCCCC3)n2)C[C@H](C(F)(F)F)C1,threonine-protein kinase PIM1
+3387,CHEMBL3652005,None,,N[C@H]1C[C@@H](C(F)(F)F)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(C3CCCCC3)n2)C1,threonine-protein kinase PIM1
 3388,CHEMBL3967523,None,,c1cncc(-c2cc3c(-c4cccc(N5CCCNCC5)n4)n[nH]c3cn2)c1,threonine-protein kinase PIM1
 3389,CHEMBL4520531,None, ,O=C(O)c1ccc(Nc2nc(-c3ccc4ccccc4c3)cs2)cc1O,threonine-protein kinase PIM1
 3390,CHEMBL540501,None,,O=C(NOC[C@@H](O)CO)c1ccc(F)c(F)c1Nc1ccc(I)cc1Cl.O=C(NOC[C@H](O)CO)c1ccc(F)c(F)c1Nc1ccc(I)cc1Cl,threonine-protein kinase PIM1
@@ -3472,7 +3472,7 @@
 3470,CHEMBL3648719,None,,Cn1ncc(NC(=O)c2nc(-c3cc(F)ccc3F)sc2N)c1N1CC[C@@H](N)CC(F)(F)C1,threonine-protein kinase PIM1
 3471,CHEMBL3676311,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1F,threonine-protein kinase PIM1
 3472,CHEMBL261440,None,,O=C(Nc1n[nH]c2cc(-c3cc(F)ccc3F)ccc12)C1CC1,threonine-protein kinase PIM1
-3473,CHEMBL3648773,None,,Nc1sc(-c2c(F)cccc2F)nc1C(=O)Nc1cnn(CC(F)F)c1N1CC[C@@H](O)[C@@H](N)CC1,threonine-protein kinase PIM1
+3473,CHEMBL3648773,None,,Nc1sc(-c2c(F)cccc2F)nc1C(=O)Nc1cnn(CC(F)F)c1N1CC[C@H](N)[C@H](O)CC1,threonine-protein kinase PIM1
 3474,CHEMBL3648805,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@H](O)[C@@](C)(N)CC1,threonine-protein kinase PIM1
 3475,CHEMBL2030402,None,,O=c1[nH]c([C@@H]2CCCN2)nc2c1oc1ccc(Cl)cc12,threonine-protein kinase PIM1
 3476,CHEMBL3648749,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC2CCC(C1)O2,threonine-protein kinase PIM1
@@ -3573,7 +3573,7 @@
 3571,CHEMBL583481,None,,O=Cc1c[nH]c2c1ccc1c3cc(-c4ccc(C(F)(F)F)cc4)ccc3[nH]c12,threonine-protein kinase PIM1
 3572,CHEMBL3652011,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](O)[C@@H]1O,threonine-protein kinase PIM1
 3573,CHEMBL3685796,MRL-SYKi,,Cc1cc(Nc2nccc(C)n2)cc(-c2cnc([C@@]3(O)CC[C@H](C(=O)O)C(C)(C)C3)s2)c1,threonine-protein kinase PIM1
-3574,CHEMBL4560589,MLi-2-NC,C22H27N5O2,C[C@@H]1CN(c2cc(-c3nn(C)c4ccc(OC5(C)CC5)cc34)ncn2)C[C@H](C)O1,threonine-protein kinase PIM1
+3574,CHEMBL4560589,MLi-2-NC,C22H27N5O2,C[C@H]1CN(c2cc(-c3nn(C)c4ccc(OC5(C)CC5)cc34)ncn2)C[C@@H](C)O1,threonine-protein kinase PIM1
 3575,CHEMBL4781892,None, ,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)ncc2N)C[C@@H](O)[C@@]1(O)CF,threonine-protein kinase PIM1
 3576,CHEMBL4282264,A-485,,CNC(=O)Nc1ccc2c(c1)CC[C@@]21OC(=O)N(CC(=O)N(Cc2ccc(F)cc2)[C@@H](C)C(F)(F)F)C1=O,threonine-protein kinase PIM1
 3577,CHEMBL4538174,ERKi,C16H17N5O2,C[C@@H](NC(=O)Nc1cc2[nH]ncc2c(CO)n1)c1ccccc1,threonine-protein kinase PIM1
@@ -3604,7 +3604,7 @@
 3602,CHEMBL1976872,None,,CC(=O)Nc1cc2ccccn2n1,threonine-protein kinase PIM1
 3603,CHEMBL478510,None,,CCc1ccc(C2C(C(C)=O)=C(O)C(=O)N2CCc2c[nH]c3ccccc23)cc1,threonine-protein kinase PIM1
 3604,CHEMBL560075,None,,C[C@@H]1CNc2c(sc3ccc4nc(-c5cccnc5)ccc4c23)C(=O)N1,threonine-protein kinase PIM1
-3605,CHEMBL3691952,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+3605,CHEMBL3691952,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 3606,CHEMBL3648730,None,,Nc1sc(-c2c(F)cccc2F)nc1C(=O)Nc1cnn(CC(F)(F)F)c1N1CCCCC(N)C1,threonine-protein kinase PIM1
 3607,CHEMBL595143,None,,COc1cc2c(Oc3ccc(-c4nc5ccccc5s4)cc3)ncnc2cc1OCCCN1CCN(C)CC1,threonine-protein kinase PIM1
 3608,CHEMBL2402081,None,,CC[C@@H]1C(=O)N(C)c2cnc(-n3ccnc3-c3ccc(F)cc3)nc2N1c1ccn(C)n1,threonine-protein kinase PIM1
@@ -3643,8 +3643,8 @@
 3641,CHEMBL3676293,None,,N[C@@H]1C[C@H](c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)CC[C@@H]1O,threonine-protein kinase PIM1
 3642,CHEMBL5288565,None, ,O=C(Nc1cnccc1-c1ccc(F)cc1)c1ccnc(NC(=O)C2CC2)c1,threonine-protein kinase PIM1
 3643,CHEMBL1836679,None,,CSc1nc(Nc2cccc(Cl)c2)c2cnn(CC(C)c3ccccc3)c2n1,threonine-protein kinase PIM1
-3644,CHEMBL3687522,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](S(C)(=O)=O)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
-3645,CHEMBL3687513,None,,CO[C@@H]1[C@H](C)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@@H]1N,threonine-protein kinase PIM1
+3644,CHEMBL3687522,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](S(C)(=O)=O)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+3645,CHEMBL3687513,None,,CO[C@H]1[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@H]1C,threonine-protein kinase PIM1
 3646,CHEMBL1682335,None,,CCCc1cn(-c2ccc3[nH]ncc3c2)nn1,threonine-protein kinase PIM1
 3647,CHEMBL1682355,None,,Clc1ccc(Cl)c(Cn2cc(-c3ccc4[nH]ncc4c3)nn2)c1,threonine-protein kinase PIM1
 3648,CHEMBL4089159,None,,COC(=O)C1=C(Nc2ccccc2Cl)O/C(=C\c2c[nH]c3ncccc23)C1=O,threonine-protein kinase PIM1
@@ -3690,7 +3690,7 @@
 3688,CHEMBL4095736,None,,O=C1NC(=S)n2c1cc1cc(Cl)ccc1c2=O,threonine-protein kinase PIM1
 3689,CHEMBL4557026,ERKi-NC,C15H16N6O2,C[C@H](NC(=O)Nc1cc2[nH]ncc2c(CO)n1)c1ccccn1,threonine-protein kinase PIM1
 3690,CHEMBL4793424,None,,Cl.O=C(c1ccc(Nc2nccc(-c3cc4ccccc4s3)n2)cc1)N1CCC(N2CCCC2)CC1,threonine-protein kinase PIM1
-3691,CHEMBL4742957,None, ,CC[C@]1(O)[C@H](O)C[C@H](c2ccncc2NC(=O)c2nc(-c3ncccc3F)ccc2N)C[C@@H]1C,threonine-protein kinase PIM1
+3691,CHEMBL4742957,None, ,CC[C@@]1(O)[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3ncccc3F)ccc2N)C[C@H]1O,threonine-protein kinase PIM1
 3692,CHEMBL1796254,None,,COCCN1CCc2cc(Nc3ncc(Cl)c(N[C@@H]4CCCC[C@H]4NS(C)(=O)=O)n3)c(OC)cc2CC1,threonine-protein kinase PIM1
 3693,CHEMBL28324,None,,CN([C@@H](Cc1ccc(OS(=O)(=O)c2cccc3cnccc23)cc1)C(=O)N1CCN(c2ccccc2)CC1)S(=O)(=O)c1cccc2cnccc12,threonine-protein kinase PIM1
 3694,CHEMBL228043,None,,C/C(O)=C(\C#N)C(=O)Nc1cc(Br)ccc1Br,threonine-protein kinase PIM1
@@ -3740,16 +3740,16 @@
 3738,CHEMBL393238,None,,N#Cc1c(-c2ccc(O)cc2)cc(-c2ccccc2O)[nH]c1=O,threonine-protein kinase PIM1
 3739,CHEMBL1972934,None,,Nc1ncnc2sccc12,threonine-protein kinase PIM1
 3740,CHEMBL316264,None,,Fc1ccc(-c2nc(-c3ccc(F)cc3)c(-c3ccncc3)[nH]2)cc1,threonine-protein kinase PIM1
-3741,CHEMBL3687533,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@H](OC)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+3741,CHEMBL3687533,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@@H](OC)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 3742,CHEMBL4875986,None, ,CSc1nccc(-c2c(-c3ccc(F)cc3)nc3c(N(C)C)nccn23)n1,threonine-protein kinase PIM1
 3743,CHEMBL332794,A-192621,,CCCOc1ccc([C@H]2[C@H](C(=O)O)[C@@H](c3ccc4c(c3)OCO4)CN2CC(=O)Nc2c(CC)cccc2CC)cc1,threonine-protein kinase PIM1
 3744,CHEMBL4776698,None, ,CCCCNc1nc2ccc([N+](=O)[O-])cc2[nH]1,threonine-protein kinase PIM1
 3745,CHEMBL3973012,None,,NCC[C@H]1CNC(=O)c2cc(-c3cccc(OC(F)(F)F)c3)c(-c3ccc(S(N)(=O)=O)cc3)n21,threonine-protein kinase PIM1
 3746,CHEMBL210618,None,,CCOc1nc(NC(=O)Cc2cc(OC)ccc2OC)cc(N)c1C#N,threonine-protein kinase PIM1
 3747,CHEMBL3892307,None,,O[C@H]1CCN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)C[C@@H]1O,threonine-protein kinase PIM1
-3748,CHEMBL3687434,None,,COC(=O)N[C@@H]1[C@H](C)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1N,threonine-protein kinase PIM1
+3748,CHEMBL3687434,None,,COC(=O)N[C@H]1[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1C,threonine-protein kinase PIM1
 3749,CHEMBL4872681,None, ,CSc1nccc(-c2c(-c3ccccc3)nc3c(N(C)C)nccn23)n1,threonine-protein kinase PIM1
-3750,CHEMBL5422793,None, ,O[C@]12C[C@@H]3C[C@H](C1)[C@H](Nc1c(-c4cn[nH]c4)cnc4[nH]ccc14)[C@@H](C3)C2,threonine-protein kinase PIM1
+3750,CHEMBL5422793,None, ,O[C@@]12C[C@H]3C[C@@H](C1)[C@@H](Nc1c(-c4cn[nH]c4)cnc4[nH]ccc14)[C@H](C3)C2,threonine-protein kinase PIM1
 3751,CHEMBL5169780,None, ,O=C1N=C(Nc2ccccc2)S/C1=C\c1ccc2c(c1)OCO2,threonine-protein kinase PIM1
 3752,CHEMBL5187895,None, ,CCSC1=N/C(=C\c2ccc3c(c2)OCO3)C(=O)N1C,threonine-protein kinase PIM1
 3753,CHEMBL1794062,GW577921A,,COc1ccccc1Nc1ncc(-c2ccccc2)o1.Cl,threonine-protein kinase PIM1
@@ -3861,7 +3861,7 @@
 3859,CHEMBL1888586,None,,Nc1nccc(-c2c(-c3ccc(F)cc3)ncn2C2CCC(O)CC2)n1,threonine-protein kinase PIM1
 3860,CHEMBL3666778,None,,COc1cc(C(=O)NC2CCN(C)CC2)ccc1Nc1ncc2c(n1)-c1c(c(C(=O)N[C@H](CN)c3ccccc3)nn1C)CCC2,threonine-protein kinase PIM1
 3861,CHEMBL3651908,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)CC(C)(C)C3)n2)c1F,threonine-protein kinase PIM1
-3862,CHEMBL3687485,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+3862,CHEMBL3687485,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 3863,CHEMBL5430283,None, ,OCC1OC(n2cnc3c(Br)c(Br)c(Br)c(Br)c32)CC1O,threonine-protein kinase PIM1
 3864,CHEMBL4112327,None,,CCn1cc(-c2cc3c(-c4ccc(C)c(N5CCC[C@@H](N)C5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
 3865,CHEMBL3968244,None,,Fc1ccccc1-c1n[nH]c2cnc(-c3cnccc3OC3CNC3)cc12,threonine-protein kinase PIM1
@@ -3883,7 +3883,7 @@
 3881,CHEMBL188784,GW828529X,,Fc1ccc(Nc2nccc(-c3c(-c4ccc(C(F)(F)F)cc4)nn4ncccc34)n2)cc1F,threonine-protein kinase PIM1
 3882,CHEMBL3427179,None,,CC1(C)SC(c2nc3ccc(O)cc3s2)=N[C@H]1C(=O)O,threonine-protein kinase PIM1
 3883,CHEMBL3427175,None,,COC(=O)[C@H]1CSC(c2nc3ccc(OC)cc3s2)=N1,threonine-protein kinase PIM1
-3884,CHEMBL3687502,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+3884,CHEMBL3687502,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 3885,CHEMBL3903697,None,,NCCC[C@H]1CNC(=O)c2cc(-c3cccc(OC(F)(F)F)c3)c(-c3ccccc3)n21,threonine-protein kinase PIM1
 3886,CHEMBL4062258,None,,Cn1cc(-c2c(Cl)c3c(Cl)cc(C(N)=O)nc3n2C2CCCNC2)cn1,threonine-protein kinase PIM1
 3887,CHEMBL3955578,None,,CNc1nnc(-c2ccc3[nH]cc(-c4cccc(C(F)(F)F)c4)c3c2)s1,threonine-protein kinase PIM1
@@ -3941,11 +3941,11 @@
 3939,CHEMBL3780971,None,,COc1ccc(-c2cnc3cncc(Nc4ccc(N5CCCCC5)cc4)c3n2)cc1,threonine-protein kinase PIM1
 3940,CHEMBL3775393,None,,O=C1NC(=S)S/C1=C\c1ccc2ncsc2c1,threonine-protein kinase PIM1
 3941,CHEMBL3942758,None,,Clc1ccccc1-c1ccc2cnc(Nc3cnccc3O[C@H]3CCCNC3)n2n1,threonine-protein kinase PIM1
-3942,CHEMBL3687494,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](C)[C@@H](OCCC#N)[C@@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+3942,CHEMBL3687494,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](N)[C@H](OCCC#N)[C@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 3943,CHEMBL4589022,None, ,CC(C)n1cc(-c2n[nH]c3ccnc(OC4CCOCC4)c23)cn1,threonine-protein kinase PIM1
 3944,CHEMBL4476226,None, ,CC(=O)N1CCN(c2ccc(Nc3ncc(C(F)(F)F)c(N4Cc5cccc(N(C)S(C)(=O)=O)c5C4)n3)cc2)CC1,threonine-protein kinase PIM1
 3945,CHEMBL3716467,None,,COc1cc(-c2cc(=O)n3ncc(-c4ccn(C)n4)c3[nH]2)ccc1Cl,threonine-protein kinase PIM1
-3946,CHEMBL3687435,None,,CC(=O)N[C@@H]1[C@H](C)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1N,threonine-protein kinase PIM1
+3946,CHEMBL3687435,None,,CC(=O)N[C@H]1[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1C,threonine-protein kinase PIM1
 3947,CHEMBL4785602,None, ,Nc1ncc(-c2cnc(C3CCNCC3)s2)cc1OC1CCCCC1,threonine-protein kinase PIM1
 3948,CHEMBL3691979,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(F)CCOCC4)cc3F)n2)C[C@@H](N)[C@H]1n1ccnn1,threonine-protein kinase PIM1
 3949,CHEMBL1779370,None,,COc1cncc(-c2nccc(-c3cc4c([nH]3)C3(CCCNC3)CNC4=O)n2)c1,threonine-protein kinase PIM1
@@ -3954,7 +3954,7 @@
 3952,CHEMBL3660006,None,,c1cc(NC2CCNCC2)c2nc(-c3nnc4ccccn34)ccc2c1,threonine-protein kinase PIM1
 3953,CHEMBL3716006,None,,O=c1cc(-c2ccc(Cl)c(Cl)c2)[nH]c2c(-c3cc[nH]n3)cnn12,threonine-protein kinase PIM1
 3954,CHEMBL4129891,None,,CN(C)CCNc1cncc(-c2ccc3[nH]cc(-c4ccc(F)cc4)c3c2)n1,threonine-protein kinase PIM1
-3955,CHEMBL3691949,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OCCC#N)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+3955,CHEMBL3691949,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OCCC#N)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 3956,CHEMBL4788802,None, ,N#Cc1nnc2c3c(-c4ccccc4Cl)c(C#N)c(=O)[nH]c3nn2c1N,threonine-protein kinase PIM1
 3957,CHEMBL3940277,None,,CNc1nnc(-c2ccc3[nH]cc(-c4cccc(N5CCOCC5)n4)c3c2)s1,threonine-protein kinase PIM1
 3958,CHEMBL3913664,None,,CNC(=O)c1ccc(F)c(-c2c[nH]c3ccc(-c4nnc(NC(C)C)o4)cc23)c1,threonine-protein kinase PIM1
@@ -4000,12 +4000,12 @@
 3998,CHEMBL3890347,None,,Nc1nnc(-c2ccc3[nH]cc(-c4cccc(N5CCOCC5)n4)c3c2)o1,threonine-protein kinase PIM1
 3999,CHEMBL3955711,None,,c1ccc(-c2n[nH]c3cnc(-c4cncs4)cc23)nc1,threonine-protein kinase PIM1
 4000,CHEMBL246661,None,,CCc1ccc(O)c(-c2cc(-c3cccc(Cl)c3)c(C#N)c(=O)[nH]2)c1,threonine-protein kinase PIM1
-4001,CHEMBL3687432,None,,COCCS(=O)(=O)[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4001,CHEMBL3687432,None,,COCCS(=O)(=O)[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4002,CHEMBL2377714,None,,Cc1c[nH]c2c([N+](=O)[O-])cc3cn[nH]c3c12,threonine-protein kinase PIM1
-4003,CHEMBL3651918,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@@H](N)[C@H](O)[C@@H](C)C3)ccc2F)c1F,threonine-protein kinase PIM1
+4003,CHEMBL3651918,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@H](C)[C@@H](O)[C@H](N)C3)ccc2F)c1F,threonine-protein kinase PIM1
 4004,CHEMBL3703187,None,,CSc1ncc2ccc3c(C(N)=O)cn(CC(C)(C)CN)c3c2n1,threonine-protein kinase PIM1
 4005,CHEMBL4082422,None,,NC(=O)c1cc(Cl)c2c(Cl)c(C3CC3)n(C3CCCNC3)c2n1,threonine-protein kinase PIM1
-4006,CHEMBL3687425,None,,CO/N=C1/[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4006,CHEMBL3687425,None,,CO/N=C1\[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4007,CHEMBL4550702,None, ,Cn1cc(-c2cnc3c(-c4csc(C(=O)NCC(F)(F)F)c4)cnn3c2)cn1,threonine-protein kinase PIM1
 4008,CHEMBL3652020,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3cc(C(F)(F)F)ccc3F)n2)C[C@@H](N)[C@@H]1O,threonine-protein kinase PIM1
 4009,CHEMBL5085558,None,,CN(c1ncccc1CNc1ccnc(-c2nc3c(F)c(Cl)ccc3[nH]2)n1)S(C)(=O)=O,threonine-protein kinase PIM1
@@ -4028,7 +4028,7 @@
 4026,CHEMBL3648762,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1C1CC[C@@H](N)[C@H](F)CC1,threonine-protein kinase PIM1
 4027,CHEMBL3648810,None,,Cc1c(-c2nc(C(=O)Nc3cnn(C)c3N3CC[C@@H](N)[C@H](F)CC3)c(N)s2)cnn1C,threonine-protein kinase PIM1
 4028,CHEMBL3648818,None,,Cn1ncc(NC(=O)c2nc(-c3cc(C#N)ccc3F)sc2N)c1N1CC[C@@H](N)[C@H](F)CC1,threonine-protein kinase PIM1
-4029,CHEMBL3648830,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@@H](O)[C@@H](O)CC1,threonine-protein kinase PIM1
+4029,CHEMBL3648830,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@H](O)[C@H](O)CC1,threonine-protein kinase PIM1
 4030,CHEMBL4102376,None,,Cn1c(-c2ccc(N3CCNCC3)cc2)cc2c(Cl)ccnc21,threonine-protein kinase PIM1
 4031,CHEMBL1241674,None,,CC(C)n1nc(-c2cc3cc(O)ccc3[nH]2)c2c(N)ncnc21,threonine-protein kinase PIM1
 4032,CHEMBL1221601,None,,O=C(NC(NC(=S)Nc1ccc(F)c([N+](=O)[O-])c1)C(Cl)(Cl)Cl)C(c1ccccc1)c1ccccc1,threonine-protein kinase PIM1
@@ -4091,7 +4091,7 @@
 4089,CHEMBL3716329,None,,CCOc1cc(-c2cc(=O)n3ncc(-c4nc(C)co4)c3[nH]2)ccc1Cl,threonine-protein kinase PIM1
 4090,CHEMBL1803082,None,,CCNC1=N/C(=C\c2ccc3c(c2)OCO3)C(=O)N1,threonine-protein kinase PIM1
 4091,CHEMBL1803083,None,,O=C1NC(NCC2CC2)=N/C1=C\c1ccc2c(c1)OCO2,threonine-protein kinase PIM1
-4092,CHEMBL3687531,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](S(C)(=O)=O)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+4092,CHEMBL3687531,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](S(C)(=O)=O)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 4093,CHEMBL1803081,None,,CCCNC1=N/C(=C\c2ccc3c(c2)OCO3)C(=O)N1c1ccccc1,threonine-protein kinase PIM1
 4094,CHEMBL1803078,None,,CCCNC1=N/C(=C\c2ccc(Br)cc2)C(=O)N1C,threonine-protein kinase PIM1
 4095,CHEMBL3634772,None,,c1cc(-c2n[nH]c3cnc(-c4cnn(CC5CC5)c4)cc23)nc(N2CCNCC2)c1,threonine-protein kinase PIM1
@@ -4102,11 +4102,11 @@
 4100,CHEMBL573705,None,,CN(C)Cc1nc2c(sc3ccc(-c4cccc(F)c4)cc32)c(=O)[nH]1,threonine-protein kinase PIM1
 4101,CHEMBL4238883,None,,CCn1cc(C2=C(c3cn(C(C)C)c4ccccc34)C(=O)N(O)C2=O)c2ccccc21,threonine-protein kinase PIM1
 4102,CHEMBL5075401,None, ,Cc1cc(C)c2cc(CN(CCc3ccccc3)Cc3nnnn3Cc3ccco3)c(=O)[nH]c2c1,threonine-protein kinase PIM1
-4103,CHEMBL3687441,None,,CC(=O)N[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4103,CHEMBL3687441,None,,CC(=O)N[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4104,CHEMBL2377717,None,,CCCc1c(C(=O)OC)[nH]c2c([N+](=O)[O-])cc3cn[nH]c3c12,threonine-protein kinase PIM1
 4105,CHEMBL3913112,None,,N[C@H]1C[C@@H](F)CN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)C1,threonine-protein kinase PIM1
 4106,CHEMBL3937423,None,,N[C@H]1CCCN(c2ccncc2Nc2ncc3ccc(-c4ccccn4)nn23)C1,threonine-protein kinase PIM1
-4107,CHEMBL3691983,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3cc(C(=O)NC(C)C)ccc3F)ccc2N)C[C@@H]1C,threonine-protein kinase PIM1
+4107,CHEMBL3691983,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3cc(C(=O)NC(C)C)ccc3F)ccc2N)C[C@H]1N,threonine-protein kinase PIM1
 4108,CHEMBL4473820,None, ,CN1CCC(Nc2ccc(C(=O)Nc3cc(-c4cc(C#N)cs4)n[nH]3)cc2)CC1,threonine-protein kinase PIM1
 4109,CHEMBL3676307,None,,CCOc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)C[C@H](N)C3)cs2)c1F,threonine-protein kinase PIM1
 4110,CHEMBL4100024,None,,O=C1NC(=S)n2c1cc1ccc(-c3ccco3)cc1c2=O,threonine-protein kinase PIM1
@@ -4133,7 +4133,7 @@
 4131,CHEMBL3664630,None,,FC1(COc2cccc3ccc(-c4nnc5ccccn45)nc23)CCCNC1,threonine-protein kinase PIM1
 4132,CHEMBL3685750,None,,N[C@H]1CCCN(c2ccncc2Nc2cccc3cnc(-c4ccccc4F)nc23)C1,threonine-protein kinase PIM1
 4133,CHEMBL3652631,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1OC1CCNCC1,threonine-protein kinase PIM1
-4134,CHEMBL3691986,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@@H](N)[C@@H](NC(=O)OC)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+4134,CHEMBL3691986,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@H](C)[C@H](NC(=O)OC)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 4135,CHEMBL5288241,None, ,C=CC(=O)Nc1ccc(C(=O)Nc2n[nH]c3ccc(-c4cncc(NC[C@@H](O)c5ccccc5)c4)cc23)cc1,threonine-protein kinase PIM1
 4136,CHEMBL3900646,None,,C[C@H]1CC[C@H](N)CN1c1ccncc1Nc1ncc2ccc(-c3c(F)cccc3F)nn12,threonine-protein kinase PIM1
 4137,CHEMBL3326557,None,,O=[N+]([O-])c1cc2[nH]ncc2c2c1ncc1ccc(Cl)cc12,threonine-protein kinase PIM1
@@ -4231,7 +4231,7 @@
 4229,CHEMBL408953,None,,O=C1C=C2C(=Nc3c2c2c(c4c3=NC3=C4CCC=C3)C=NC=2)CC1,threonine-protein kinase PIM1
 4230,CHEMBL3687418,None,,C[C@H]1CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1n1ccnn1,threonine-protein kinase PIM1
 4231,CHEMBL3651956,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3cccc(F)c3F)n2)C1,threonine-protein kinase PIM1
-4232,CHEMBL4552354,BI 3017,C20H21N7O3,Cc1nccc(COC(=O)N2C[C@@H]3[C@@H](CNC(=O)c4ccc5[nH]nnc5c4)[C@@H]3C2)n1,threonine-protein kinase PIM1
+4232,CHEMBL4552354,BI 3017,C20H21N7O3,Cc1nccc(COC(=O)N2C[C@H]3[C@H](CNC(=O)c4ccc5[nH]nnc5c4)[C@H]3C2)n1,threonine-protein kinase PIM1
 4233,CHEMBL4127024,None,,Brc1ccc2[nH]cc(-c3ccccc3)c2c1,threonine-protein kinase PIM1
 4234,CHEMBL454241,None,,CCn1c2cc(Cl)c(OC)cc2c(=O)c2c(=O)o[nH]c21,threonine-protein kinase PIM1
 4235,CHEMBL2017341,None,,Oc1ccc(Nc2nc3c(-c4nnc[nH]4)cccc3c3sccc23)c(Cl)c1,threonine-protein kinase PIM1
@@ -4310,7 +4310,7 @@
 4308,CHEMBL4516843,BAY-207, ,NS(=O)(=O)c1cc(NC(=O)C2(c3ccccc3Cl)CC2)ccc1Oc1cccc(Cl)c1,threonine-protein kinase PIM1
 4309,CHEMBL3701197,A-226,,CCC(=N\O)/C(C)=C/c1ccc(F)c(C)c1,threonine-protein kinase PIM1
 4310,CHEMBL3393720,None,,CS(=O)(=O)Nc1ccc(-c2ccc3[nH]nc(-c4cncc(O[C@H]5CNCCC56CC6)n4)c3c2)c(F)c1,threonine-protein kinase PIM1
-4311,CHEMBL3691916,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3C3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+4311,CHEMBL3691916,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3C3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 4312,CHEMBL3958862,None,,C[C@H]1NC(=O)c2cc(-c3cccc4c(=O)n(C5CC5)c(NC5(C)CC5)nc34)[nH]c21,threonine-protein kinase PIM1
 4313,CHEMBL3651960,None,,CCCOc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3CC[C@H](O)[C@H](N)C3)ccc2F)c1,threonine-protein kinase PIM1
 4314,CHEMBL1949851,None,,Cc1ccc2c(=O)[nH]cnc2c1,threonine-protein kinase PIM1
@@ -4354,7 +4354,7 @@
 4352,CHEMBL3718341,None,,Cc1noc(-c2cnn3c(=O)cc(-c4ccc5c(cnn5C)c4)[nH]c23)n1,threonine-protein kinase PIM1
 4353,CHEMBL3715309,None,,CCn1nccc1-c1cnn2c(=O)cc(-c3ccc4c(cnn4CC)c3)[nH]c12,threonine-protein kinase PIM1
 4354,CHEMBL4245242,None,,O=C(Cc1cccc(OCCCC2CCNCC2)c1)Nc1nc(-c2c[nH]c3ncccc23)cs1,threonine-protein kinase PIM1
-4355,CHEMBL3687490,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4355,CHEMBL3687490,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4356,CHEMBL3660014,None,,c1cc(OC2CCNCC2)c2nc(-c3nnc4ccccn34)ccc2c1,threonine-protein kinase PIM1
 4357,CHEMBL3651962,None,,Nc1cc(F)c(-c2ccccc2F)nc1C(=O)Nc1cnccc1[C@@H]1CC[C@H](O)[C@H](N)C1,threonine-protein kinase PIM1
 4358,CHEMBL1988000,None,,COCCn1c(C)c(C)sc1=NC(=O)c1cc(SC)ccc1Cl,threonine-protein kinase PIM1
@@ -4403,7 +4403,7 @@
 4401,CHEMBL4513415,None, ,CN1CCOc2c1cnn1c(-c3ccc4cccc(NCC5CCOCC5)c4n3)nnc21,threonine-protein kinase PIM1
 4402,CHEMBL4102686,None,,CCn1cc(C(=O)O)c(=O)c2cc(F)c(NCCC(=O)O)c([N+](=O)[O-])c21,threonine-protein kinase PIM1
 4403,CHEMBL4102644,None,,CCOC1CN(c2ccc(Nc3nc4c(-c5nnc[nH]5)cccc4c4cnccc34)c(Cl)c2)CCO1,threonine-protein kinase PIM1
-4404,CHEMBL4450494,None, ,C[C@H]1NC(=O)c2cc(-c3cccc4c(=O)n([C@@H](C)c5cn(C)cn5)c(NC5(C)CC5)nc34)[nH]c21,threonine-protein kinase PIM1
+4404,CHEMBL4450494,None, ,C[C@@H](c1cn(C)cn1)n1c(NC2(C)CC2)nc2c(-c3cc4c([nH]3)[C@@H](C)NC4=O)cccc2c1=O,threonine-protein kinase PIM1
 4405,CHEMBL4878072,None, ,CN1CCN(C(=O)c2ccc3cc(CCNc4ccnc5ccc(C#N)cc45)ccc3c2)CC1,threonine-protein kinase PIM1
 4406,CHEMBL5181355,None, ,CCSC1=N/C(=C\c2ccc3c(c2)OCO3)C(=O)N1,threonine-protein kinase PIM1
 4407,CHEMBL5094031,None, ,CN(C)c1cnc2ccc(-c3ccnc(Nc4ccc(N5CCN(C(=O)OC(C)(C)C)CC5)cn4)n3)cc2n1,threonine-protein kinase PIM1
@@ -4435,7 +4435,7 @@
 4433,CHEMBL1682340,None,,c1cc2[nH]ncc2cc1-n1cc(CC2CCCCC2)nn1,threonine-protein kinase PIM1
 4434,CHEMBL3651959,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2cccc(-c3c(F)cccc3F)n2)C1,threonine-protein kinase PIM1
 4435,CHEMBL584159,None,,O=c1[nH]c(CN2CCOCC2)nc2c1sc1ccc(Cl)cc12,threonine-protein kinase PIM1
-4436,CHEMBL3687509,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4436,CHEMBL3687509,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4437,CHEMBL3264256,None,,CCN(CC)CCCOc1cncc(-c2ccc3[nH]cc(-c4ccnc(N)n4)c3c2)n1,threonine-protein kinase PIM1
 4438,CHEMBL1938953,None,,Clc1ccc(-n2cc(-c3ccncc3)nn2)cc1,threonine-protein kinase PIM1
 4439,CHEMBL575739,None,,O=Cc1c[nH]c2c1ccc1c3cc(-c4ccc(F)cc4F)ccc3[nH]c12,threonine-protein kinase PIM1
@@ -4469,7 +4469,7 @@
 4467,CHEMBL3676283,None,,N[C@H]1C[C@@H](C(F)(F)F)CN(c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C1,threonine-protein kinase PIM1
 4468,CHEMBL3774885,None,,Cn1cc(-c2ccc(Cc3n[nH]c4ccc(C(=O)N5CCOCC5)cc34)cc2)cn1,threonine-protein kinase PIM1
 4469,CHEMBL3687417,None,,C[C@H]1CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1n1cc(-c2ccsc2)nn1,threonine-protein kinase PIM1
-4470,CHEMBL3687475,None,,CC(=O)N(C)[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4470,CHEMBL3687475,None,,CC(=O)N(C)[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4471,CHEMBL3714819,None,,COc1cc(-c2cc(=O)n3ncc(-c4ncc(C)o4)c3[nH]2)ccc1Cl,threonine-protein kinase PIM1
 4472,CHEMBL1952125,None,,FC(F)(F)Oc1cccc(-n2nnc3ccc(NC4CC5(CCNCC5)C4)nc32)c1,threonine-protein kinase PIM1
 4473,CHEMBL1967719,None,,O=C(C=Cc1ccc(Br)cc1)Nc1cccc2cnccc12,threonine-protein kinase PIM1
@@ -4484,14 +4484,14 @@
 4482,CHEMBL3660019,None,,c1cc(OCC2CCNCC2)c2nc(-c3nnc4ccccn34)ccc2c1,threonine-protein kinase PIM1
 4483,CHEMBL3648856,None,,COC1CCC(c2c(NC(=O)c3nc(-c4ccccc4F)sc3N)cnn2C)CCC1N,threonine-protein kinase PIM1
 4484,CHEMBL2147768,None,,COc1ccc2c(c1CN1CCNCC1)O/C(=C\c1c[nH]c3cnccc13)C2=O,threonine-protein kinase PIM1
-4485,CHEMBL3687489,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)ncc2N)C[C@@H]1C,threonine-protein kinase PIM1
+4485,CHEMBL3687489,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)ncc2N)C[C@H]1N,threonine-protein kinase PIM1
 4486,CHEMBL3660033,None,,CNCC(C)(C)COc1cccc2ccc(-c3nnc4ccccn34)nc12,threonine-protein kinase PIM1
 4487,CHEMBL3651947,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)c(F)cc2N)C1,threonine-protein kinase PIM1
 4488,CHEMBL3687442,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@@H]1[S@+](C)[O-],threonine-protein kinase PIM1
 4489,CHEMBL1966703,None,,Cc1n[nH]c2c1C(c1ccccc1F)C1=C(CC(C)(C)CC1=O)N2,threonine-protein kinase PIM1
 4490,CHEMBL3775181,None,,CS(=O)(=O)O.Cc1oc2c(O)c3c(c(O)c2c1C(=O)N1CC[C@H](N)C1)C(=O)c1ccccc1C3=O,threonine-protein kinase PIM1
 4491,CHEMBL1977138,None,,CC(Nc1cncc(-n2cnc3ccc(C#N)cc32)n1)c1ccccc1F,threonine-protein kinase PIM1
-4492,CHEMBL3691922,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4492,CHEMBL3691922,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4493,CHEMBL3752265,None,,Cc1c(Cl)cccc1-c1ccc(C(=O)Nc2ccc(S(N)(=O)=O)cc2)o1,threonine-protein kinase PIM1
 4494,CHEMBL1980896,None,,Nc1ncnc2sc(Br)c(-c3ccc(NC(=O)Cc4cccc(Cl)c4)cc3)c12,threonine-protein kinase PIM1
 4495,CHEMBL1977681,None,,CNC(=O)c1cc2c(-c3ccccc3F)n[nH]c2s1,threonine-protein kinase PIM1
@@ -4614,7 +4614,7 @@
 4612,CHEMBL4111168,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3OC(F)(F)F)sc2N)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
 4613,CHEMBL4111312,None,,Cn1ncc(NC(=O)c2csc(-c3c(F)cc(C4(O)COC4)cc3F)n2)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
 4614,CHEMBL3900487,None,,Cn1cc(-c2cc3c(-c4cccc(NCCc5c[nH]cn5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
-4615,CHEMBL3956027,None,,CCn1cc(-c2cc3c(-c4cccc(N5C[C@@H](C)N[C@@H](C)C5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
+4615,CHEMBL3956027,None,,CCn1cc(-c2cc3c(-c4cccc(N5C[C@H](C)N[C@H](C)C5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
 4616,CHEMBL3897313,None,,CC(C)(C)Nc1nnc(-c2ccc3[nH]cc(C4=CCOCC4)c3c2)o1,threonine-protein kinase PIM1
 4617,CHEMBL3652017,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)CC(C)(C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 4618,CHEMBL3651994,None,,Nc1cc(F)c(-c2c(F)cccc2F)nc1C(=O)Nc1cnccc1[C@@H]1CCC[C@H](N)C1,threonine-protein kinase PIM1
@@ -4684,7 +4684,7 @@
 4682,CHEMBL3986154,None,,C[C@H]1CN(c2ccncc2Nc2ncc3ccc(-c4ccc(S(C)(=O)=O)cc4F)nn23)C[C@@H](N)[C@@H]1O,threonine-protein kinase PIM1
 4683,CHEMBL3651973,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3ccc(F)cc3F)n2)C1,threonine-protein kinase PIM1
 4684,CHEMBL2442310,None,,c1cncc(CNc2ccn3ncc(-c4ccc5ccccc5c4)c3n2)c1,threonine-protein kinase PIM1
-4685,CHEMBL3651926,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@H](O)[C@@H](C)C3)n2)c1F,threonine-protein kinase PIM1
+4685,CHEMBL3651926,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@@H](O)[C@H](N)C3)n2)c1F,threonine-protein kinase PIM1
 4686,CHEMBL3894757,None,,CC(C)(C)Nc1nc2c(-c3cc4c([nH]3)CCNC4=O)cccc2nc1N1CCC1,threonine-protein kinase PIM1
 4687,CHEMBL4444272,None, ,C[C@]12O[C@H](C[C@H](O)[C@H]1O)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)NC4=O,threonine-protein kinase PIM1
 4688,CHEMBL3921180,None,,Cn1cc(-c2cc3c(-c4cccc(N5C[C@@H]6C[C@H]5CN6)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
@@ -4727,7 +4727,7 @@
 4725,CHEMBL3394069,None,,Nc1nnc(-c2ccc3[nH]cc(-c4cccc(NC5CCCC5)n4)c3c2)s1,threonine-protein kinase PIM1
 4726,CHEMBL3394171,None,,CC(C)Oc1cncc(-c2c[nH]c3ccc(-c4nnc(N)s4)cc23)n1,threonine-protein kinase PIM1
 4727,CHEMBL566515,None,,COc1ccccc1-n1c(-c2cc(O)ccc2C)cn2c3c(=O)[nH]c(=O)n(C)c3nc12,threonine-protein kinase PIM1
-4728,CHEMBL3691984,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(F)CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4728,CHEMBL3691984,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(F)CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4729,CHEMBL4562507,None, ,CN1CCOc2c1cnn1c(-c3ccc4cccc(NCC5CCOCC5)c4c3)nnc21,threonine-protein kinase PIM1
 4730,CHEMBL1957500,None,,CS(=O)(=O)N1CCN(Cc2cn3c(Cl)c(-c4cccc5[nH]ncc45)nc(N4CCOCC4)c3n2)CC1,threonine-protein kinase PIM1
 4731,CHEMBL1779373,None,,O=C1NC[C@]2(CCCNC2)c2[nH]c(-c3ccnc(-c4ccc5c(c4)OCO5)n3)cc21,threonine-protein kinase PIM1
@@ -4849,7 +4849,7 @@
 4847,CHEMBL1980178,None,,CC(=O)NC1CCCC(Nc2nc(Cl)cc(-c3c[nH]c4ncccc34)n2)C1,threonine-protein kinase PIM1
 4848,CHEMBL1997275,None,,COc1ccc2[nH]cc(C=C3C(=O)Nc4ccccc43)c2c1,threonine-protein kinase PIM1
 4849,CHEMBL1982122,None,,OCCC(Nc1nc2ccc(-c3ccncc3)cc2s1)c1ccccc1,threonine-protein kinase PIM1
-4850,CHEMBL464351,CALICOFEROL B,,Cc1ccc(O)cc1CC[C@@H]1[C@H](O)CC[C@]2(C)[C@@H]([C@H](C)CCCC(C)C)[C@@H](O)C[C@@H]12,threonine-protein kinase PIM1
+4850,CHEMBL464351,CALICOFEROL B,,Cc1ccc(O)cc1CC[C@H]1[C@@H]2C[C@H](O)[C@H]([C@H](C)CCCC(C)C)[C@@]2(C)CC[C@H]1O,threonine-protein kinase PIM1
 4851,CHEMBL604483,None,,COc1cc2c(Oc3ccc(-c4nc5ccccc5s4)cc3F)ncnc2cc1OCCCN1CCN(C)CC1,threonine-protein kinase PIM1
 4852,CHEMBL7724,AG1295,,Cc1cc2ncc(-c3ccccc3)nc2cc1C,threonine-protein kinase PIM1
 4853,CHEMBL370641,None,,O=C1C(=O)C(c2ccc(O)cc2O)Oc2cc(O)cc(O)c21,threonine-protein kinase PIM1
@@ -4902,7 +4902,7 @@
 4900,CHEMBL4860117,None, ,COc1ncc2cc1NS(=O)(=O)c1cccc(c1)C(=O)NC[C@H]1CCN(C1)c1ncnc3c(C)c-2sc13,threonine-protein kinase PIM1
 4901,CHEMBL4086461,None,,NC(=O)c1cc(Cl)c2c(Cl)c(C3CC3)n([C@@H]3CCCNC3)c2n1,threonine-protein kinase PIM1
 4902,CHEMBL3104852,None,,COC1OC(=O)c2c(O)c(O)c(O)c(C)c21,threonine-protein kinase PIM1
-4903,CHEMBL3691951,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4903,CHEMBL3691951,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4904,CHEMBL3298823,None,,O=C(CC1CNC(=O)c2cc(-c3cn[nH]c3)cn21)NCc1cccc(F)c1,threonine-protein kinase PIM1
 4905,CHEMBL3648804,None,,COC1CCC2(c3c(NC(=O)c4nc(-c5ccccc5F)sc4N)cnn3C)CCC1N2,threonine-protein kinase PIM1
 4906,CHEMBL4869696,None, ,COc1ncc2cc1NS(=O)(=O)c1cccc(c1)C(=O)NCc1cccc(c1)-c1ncnc3cc-2sc13,threonine-protein kinase PIM1
@@ -4914,9 +4914,9 @@
 4912,CHEMBL3660064,None,,CCC1(COc2cccc3ccc(-c4nnc5ccccn45)nc23)CCNCC1,threonine-protein kinase PIM1
 4913,CHEMBL3634755,None,,Cn1cc(-c2cc3c(-c4cccc(O[C@@H]5CCCNC5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
 4914,CHEMBL3634761,None,,CCn1cc(-c2cc3c(-c4cccc(N5CCNCC5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
-4915,CHEMBL3651968,None,,C[C@H]1C[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C1,threonine-protein kinase PIM1
+4915,CHEMBL3651968,None,,C[C@@H]1C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H](N)C1,threonine-protein kinase PIM1
 4916,CHEMBL3634788,None,,Cc1n[nH]c2cnc(-c3cn[nH]c3)cc12,threonine-protein kinase PIM1
-4917,CHEMBL3691959,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)c(F)cc2N)C[C@@H]1C,threonine-protein kinase PIM1
+4917,CHEMBL3691959,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)c(F)cc2N)C[C@H]1N,threonine-protein kinase PIM1
 4918,CHEMBL3634786,None,,Cc1n[nH]c2cnc(-c3cccnc3)cc12,threonine-protein kinase PIM1
 4919,CHEMBL3684955,None,,Brc1c(Br)c(Br)c2[nH]c(NCCN3CCCC3)nc2c1Br,threonine-protein kinase PIM1
 4920,CHEMBL3687529,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1S(C)(=O)=O,threonine-protein kinase PIM1
@@ -4950,12 +4950,12 @@
 4948,CHEMBL3648800,None,,Cn1cc(-c2nc(C(=O)Nc3cnn(C)c3N3CCC[C@H](N)CC3)c(N)s2)cn1,threonine-protein kinase PIM1
 4949,CHEMBL3691924,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC4CCOCC4)cc3F)n2)C[C@@H](N)[C@@H]1OCCS(C)(=O)=O,threonine-protein kinase PIM1
 4950,CHEMBL3648670,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)ccc(C4CC4)c3F)sc2N)c1N1CCC[C@@H](N)CC1,threonine-protein kinase PIM1
-4951,CHEMBL3687461,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccnc(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4951,CHEMBL3687461,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccnc(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4952,CHEMBL3648694,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)cnc2N)c1N1CC[C@@H](N)CC(F)(F)C1,threonine-protein kinase PIM1
 4953,CHEMBL4758072,None, ,Cc1ccc(-n2cc(COc3cccc4cnc(Nc5cccc(Cl)c5)nc34)nn2)cc1[N+](=O)[O-],threonine-protein kinase PIM1
-4954,CHEMBL3687426,None,,CO/N=C1\[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+4954,CHEMBL3687426,None,,CO/N=C1/[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 4955,CHEMBL3691917,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1OCCS(C)(=O)=O,threonine-protein kinase PIM1
-4956,CHEMBL3687503,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OC)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+4956,CHEMBL3687503,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OC)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 4957,CHEMBL129177,HARMALOL,,CC1=NCCc2c1[nH]c1cc(O)ccc21,threonine-protein kinase PIM1
 4958,CHEMBL3651941,None,,COc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)C[C@H](N)C3)ccc2F)c1,threonine-protein kinase PIM1
 4959,CHEMBL3687419,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)/C1=N\O,threonine-protein kinase PIM1
@@ -5042,7 +5042,7 @@
 5040,CHEMBL602937,FASCAPLYSIN,,O=C1c2ccccc2-[n+]2ccc3c([nH]c4ccccc43)c21,threonine-protein kinase PIM1
 5041,CHEMBL4286841,None,,CN1CCC(c2nc(-c3ccc(F)c(NS(C)(=O)=O)c3)c(-c3ccnc(NCC4CC4)n3)s2)CC1,threonine-protein kinase PIM1
 5042,CHEMBL601661,None,,CNC(=O)Nc1ccc(-c2nc(N3CC4CCC(C3)O4)c3cnn(C4CCC5(CC4)OCCO5)c3n2)cc1,threonine-protein kinase PIM1
-5043,CHEMBL3651943,None,,COc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@H](O)[C@@H](C)C3)ccc2F)c1F,threonine-protein kinase PIM1
+5043,CHEMBL3651943,None,,COc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@@H](O)[C@H](N)C3)ccc2F)c1F,threonine-protein kinase PIM1
 5044,CHEMBL2442312,None,,Nc1ccn2ncc(-c3ccc4ccccc4c3)c2n1,threonine-protein kinase PIM1
 5045,CHEMBL1970142,None,,CNC(=O)C(C)n1cc(-c2cnc(N)c3c(-c4ccc(NC(=O)Nc5ccc(C)cc5)cc4)csc23)cn1,threonine-protein kinase PIM1
 5046,CHEMBL1991678,None,,Cc1nccn2c(-c3ccnc(NCC(C)(C)CO)n3)c(-c3ccc(F)cc3F)nc12,threonine-protein kinase PIM1
@@ -5086,7 +5086,7 @@
 5084,CHEMBL1992242,None,,Cc1cc(C)cc(NC(=O)Nc2ccc(-c3cccc4sncc34)cc2)c1,threonine-protein kinase PIM1
 5085,CHEMBL1979176,None,,COc1ccc2c(NC(=O)Nc3cc(C(F)(F)F)ccn3)ccnc2c1,threonine-protein kinase PIM1
 5086,CHEMBL1995832,None,,COc1nccn2c(-c3ccnc(NCC(C)(C)CO)n3)c(-c3ccc(F)cc3F)nc12,threonine-protein kinase PIM1
-5087,CHEMBL3691966,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4COC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+5087,CHEMBL3691966,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4COC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 5088,CHEMBL3634778,None,,Cc1n[nH]c2cnc(-c3cncc(N4CCC(N)CC4)n3)cc12,threonine-protein kinase PIM1
 5089,CHEMBL2002456,None,,CC(C)(C)Oc1cc(-c2ccncc2)cc2[nH]nc(N)c12,threonine-protein kinase PIM1
 5090,CHEMBL3648745,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CCC[C@H](NCCO)CC1,threonine-protein kinase PIM1
@@ -5096,7 +5096,7 @@
 5094,CHEMBL3948083,None,,CC1(C)CN(c2cnc3cccc(-c4cc5c([nH]4)CCNC5=O)c3n2)CCN1,threonine-protein kinase PIM1
 5095,CHEMBL3891490,None,,CN1CCN(c2cnc(-c3c[nH]c4ccc(-c5nnc(N)s5)cc34)cn2)CC1,threonine-protein kinase PIM1
 5096,CHEMBL3934801,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1[C@@]12CC[C@H](N)[C@@H](CC1)O2,threonine-protein kinase PIM1
-5097,CHEMBL3648707,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnn(C)c3N3CC[C@@H](N)[C@@H](F)CC3)c(N)s2)c1,threonine-protein kinase PIM1
+5097,CHEMBL3648707,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnn(C)c3N3CC[C@H](F)[C@H](N)CC3)c(N)s2)c1,threonine-protein kinase PIM1
 5098,CHEMBL405021,None,,O=C(Nc1n[nH]c2cc(-c3ccccc3)ccc12)C1CC1,threonine-protein kinase PIM1
 5099,CHEMBL1909364,GW589961A,,COC(=O)Nc1nc2ccc(Oc3ccc(NC(=O)Nc4cccc(Cl)c4)cc3)cc2[nH]1.Cl,threonine-protein kinase PIM1
 5100,CHEMBL3651996,None,,Nc1ccc(-c2c(F)cccc2F)nc1C(=O)Nc1cnccc1[C@@H]1CC[C@H](O)[C@H](N)C1,threonine-protein kinase PIM1
@@ -5116,7 +5116,7 @@
 5114,CHEMBL3809565,None,,Cc1nc2cccc3c2nc1NC[C@@H](C)CC[C@H]1CNC(=O)c2cc-3[nH]c21,threonine-protein kinase PIM1
 5115,CHEMBL1985681,None,,N#Cc1ccc2c(c1)C(c1ccc3c(n1)CCCC3O)C(=O)N2,threonine-protein kinase PIM1
 5116,CHEMBL1964937,None,,O=C(NC(CO)c1ccccc1)N1CC=C(c2c[nH]c3ncccc23)CC1,threonine-protein kinase PIM1
-5117,CHEMBL3691954,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC4CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+5117,CHEMBL3691954,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC4CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 5118,CHEMBL3652029,None,,CC1CC(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)=CC(O)C1,threonine-protein kinase PIM1
 5119,CHEMBL1163559,None,,O=C(c1ccc(-c2cnc3c(c2)N(Cc2cc(Cl)ccc2C(F)(F)F)CCN3)cc1)N1CCC(N2CCCC2)CC1,threonine-protein kinase PIM1
 5120,CHEMBL28626,MORIN,,O=c1c(O)c(-c2ccc(O)cc2O)oc2cc(O)cc(O)c12,threonine-protein kinase PIM1
@@ -5130,7 +5130,7 @@
 5128,CHEMBL1966501,None,,Cc1cc(OCc2cccc(C(F)(F)F)c2)ccc1CN1CC(C(=O)O)C1,threonine-protein kinase PIM1
 5129,CHEMBL1977874,None,,CCn1c(=O)c2cc(C(N)=O)c(N)nc2n(C2CC2)c1=O,threonine-protein kinase PIM1
 5130,CHEMBL1984296,None,,Cc1ccc(C)c(NC(=O)c2cc(-c3ccco3)nc3ccccc23)c1,threonine-protein kinase PIM1
-5131,CHEMBL3691976,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+5131,CHEMBL3691976,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 5132,CHEMBL1995916,None,,CNC(=O)c1cc(-c2ccccc2)[nH]n1,threonine-protein kinase PIM1
 5133,CHEMBL1996649,None,,CCN(CC)CCCNC(=O)c1cnc(N)c2c(-c3ccc(NC(=O)Nc4cccc(F)c4)cc3)csc12,threonine-protein kinase PIM1
 5134,CHEMBL5424844,None, ,COc1ccc2sc(C(=O)NNc3cc(Cl)cc(Cl)c3)cc2c1,threonine-protein kinase PIM1
@@ -5173,21 +5173,21 @@
 5171,CHEMBL3393710,None,,Fc1cccnc1-c1ccc2[nH]nc(-c3cncc(O[C@H]4CNCCC45CC5)n3)c2c1,threonine-protein kinase PIM1
 5172,CHEMBL3687452,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)C12OCCO2,threonine-protein kinase PIM1
 5173,CHEMBL3648692,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)ccc2N)c1N1CCC(N)C(F)CC1,threonine-protein kinase PIM1
-5174,CHEMBL3648708,None,,Cn1ncc(NC(=O)c2nc(-c3cc(F)ccc3F)sc2N)c1N1CC[C@@H](F)[C@@H](N)CC1,threonine-protein kinase PIM1
+5174,CHEMBL3648708,None,,Cn1ncc(NC(=O)c2nc(-c3cc(F)ccc3F)sc2N)c1N1CC[C@H](N)[C@H](F)CC1,threonine-protein kinase PIM1
 5175,CHEMBL164,MYRICETIN,,O=c1c(O)c(-c2cc(O)c(O)c(O)c2)oc2cc(O)cc(O)c12,threonine-protein kinase PIM1
-5176,CHEMBL3687456,None,,COC(=O)N(C)[C@@H]1[C@H](C)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@@H]1N,threonine-protein kinase PIM1
+5176,CHEMBL3687456,None,,COC(=O)N(C)[C@H]1[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@H]1C,threonine-protein kinase PIM1
 5177,CHEMBL248757,None,,N#Cc1ncc2nc1OCCCCOc1cc(NCc3cncs3)c(Cl)cc1NC(=O)N2,threonine-protein kinase PIM1
 5178,CHEMBL512504,None,,N#Cc1c(O)c2c(-c3ccc(-c4ccccc4O)cc3)csc2[nH]c1=O,threonine-protein kinase PIM1
 5179,CHEMBL1803085,None,,O=C1NC(Nc2ccc(O)cc2)=N/C1=C\c1ccc2c(c1)OCO2,threonine-protein kinase PIM1
 5180,CHEMBL1802355,None,,COc1ccc(NC2=N/C(=C\c3ccc4c(c3)OCO4)C(=O)N2)cc1,threonine-protein kinase PIM1
-5181,CHEMBL3687501,None,,CCO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+5181,CHEMBL3687501,None,,CCO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 5182,CHEMBL191705,GW621431X,,CCS(=O)(=O)c1ccc(OC)c(Nc2ncc(-c3cccc(C(C)=O)c3)o2)c1,threonine-protein kinase PIM1
 5183,CHEMBL3950192,None,,N[C@H]1CCCN(c2ccncc2Nc2ncc3ccc(Cl)nn23)C1,threonine-protein kinase PIM1
 5184,CHEMBL3913540,None,,C[C@@H]1C[C@H](N)CN(c2ccncc2Nc2ncc3ccc(-c4ncccc4F)nn23)C1,threonine-protein kinase PIM1
 5185,CHEMBL3920733,None,,N[C@H]1CCCN(c2ccncc2Nc2ncc3ccc(-c4ncccc4Cl)nn23)C1,threonine-protein kinase PIM1
 5186,CHEMBL3912242,None,,CN[C@H]1CCCN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)C1,threonine-protein kinase PIM1
-5187,CHEMBL3904539,None,,N[C@@H]1CN(c2ccncc2Nc2ncc3ccc(-c4ncccc4F)nn23)C[C@H](N)[C@H]1O,threonine-protein kinase PIM1
-5188,CHEMBL3687491,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+5187,CHEMBL3904539,None,,N[C@H]1CN(c2ccncc2Nc2ncc3ccc(-c4ncccc4F)nn23)C[C@@H](N)[C@@H]1O,threonine-protein kinase PIM1
+5188,CHEMBL3687491,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 5189,CHEMBL399530,None,,CCc1cc(-c2[nH]nc(C)c2-c2ccc3c(c2)OCCO3)c(O)cc1O,threonine-protein kinase PIM1
 5190,CHEMBL265470,None,,CC(=O)O.O=C(O)c1ccc2c3c1cccc3c(=O)n1c3ccccc3nc21,threonine-protein kinase PIM1
 5191,CHEMBL253998,GLABRANIN,,CC(C)=CCc1c(O)cc(O)c2c1O[C@H](c1ccccc1)CC2=O,threonine-protein kinase PIM1
@@ -5239,10 +5239,10 @@
 5237,CHEMBL4073332,None,,NC(=O)c1cc(Cl)c2c(Cl)c(C3CCCO3)n(C3CCCNC3)c2n1,threonine-protein kinase PIM1
 5238,CHEMBL458997,None,,CNC(=O)c1ccccc1Nc1nc(Nc2ccc(N3CCOCC3)cc2OC)ncc1Cl,threonine-protein kinase PIM1
 5239,CHEMBL328216,None,,Nc1cc2ncnc(Nc3cccc(Br)c3)c2cc1N,threonine-protein kinase PIM1
-5240,CHEMBL3691931,None,,CC(C)Oc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+5240,CHEMBL3691931,None,,CC(C)Oc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 5241,CHEMBL3715226,None,,Cc1nn2c(=O)cc(-c3ccc4c(c3)OCO4)[nH]c2c1-c1ncco1,threonine-protein kinase PIM1
 5242,CHEMBL3691938,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@@H](N)[C@H]1n1ccnn1,threonine-protein kinase PIM1
-5243,CHEMBL3687484,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](C)[C@@H](OCCS(C)(=O)=O)[C@@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+5243,CHEMBL3687484,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](N)[C@H](OCCS(C)(=O)=O)[C@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 5244,CHEMBL3746909,None,,C[C@@H]1C[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3ccccc3F)n2)C1,threonine-protein kinase PIM1
 5245,CHEMBL5282240,None, ,C/C=C/Cn1cc(-c2ccc(C(C)(C)O)cc2OC)c2cc[nH]c2c1=O,threonine-protein kinase PIM1
 5246,CHEMBL1779360,None,,O=C1NCC2(CCNCC2)c2[nH]c(-c3ccnc(-c4cc(Cl)cc(Cl)c4)n3)cc21,threonine-protein kinase PIM1
@@ -5262,7 +5262,7 @@
 5260,CHEMBL3775858,None,,Oc1ccc(Cl)c2ccc(Nc3ccccn3)nc12,threonine-protein kinase PIM1
 5261,CHEMBL3771285,None,,Cc1c(Cl)cccc1NC(=O)c1sc2nc3c(cc2c1N)C(=O)CC3,threonine-protein kinase PIM1
 5262,CHEMBL2387474,None,,O=C(Nc1c[nH]c2ncc(-c3c(F)cccc3F)cc12)c1cnn2ccc(CCC3CCNCC3)nc12,threonine-protein kinase PIM1
-5263,CHEMBL4098877,MLi-2,,C[C@@H]1CN(c2cc(-c3n[nH]c4ccc(OC5(C)CC5)cc34)ncn2)C[C@H](C)O1,threonine-protein kinase PIM1
+5263,CHEMBL4098877,MLi-2,,C[C@H]1CN(c2cc(-c3n[nH]c4ccc(OC5(C)CC5)cc34)ncn2)C[C@@H](C)O1,threonine-protein kinase PIM1
 5264,CHEMBL4782760,None, ,CC(C)(CO)CNC1=NC(=O)/C(=C/c2csc(-c3cccc(OC(F)(F)F)c3)n2)S1,threonine-protein kinase PIM1
 5265,CHEMBL4760855,None, ,O=C1N=C(N[C@H]2CCC[C@@H]2O)S/C1=C\c1ccc(-c2cccc(Cl)c2)o1,threonine-protein kinase PIM1
 5266,CHEMBL5183704,None, ,Cc1ccc(NC(=O)CCc2cccc(-c3cnc4[nH]ccc4c3)c2)cc1C(F)(F)F,threonine-protein kinase PIM1
@@ -5366,7 +5366,7 @@
 5364,CHEMBL1985311,None,,Nc1n[nH]c2cccc(-c3ccc(NC(=O)Nc4cc(CO)ccc4F)cc3)c12,threonine-protein kinase PIM1
 5365,CHEMBL3952671,None,,NC1CCN(C(=O)c2cccc(-c3n[nH]c4cnc(-c5cccnc5)cc34)n2)CC1,threonine-protein kinase PIM1
 5366,CHEMBL2001998,None,,CNC(=O)N1CCN(CCCOc2ccc3c(c2)-c2[nH]nc(-c4ccc(C#N)nc4)c2C3)CC1,threonine-protein kinase PIM1
-5367,CHEMBL12850,DEHYDROABIETIC ACID,,CC(C)c1ccc2c(c1)CC[C@H]1[C@](C)(C(=O)O)CCC[C@]21C,threonine-protein kinase PIM1
+5367,CHEMBL12850,DEHYDROABIETIC ACID,,CC(C)c1ccc2c(c1)CC[C@@H]1[C@]2(C)CCC[C@@]1(C)C(=O)O,threonine-protein kinase PIM1
 5368,CHEMBL3972439,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnn(C)c3[C@@H]3CC[C@@H](N)[C@@H](F)CO3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 5369,CHEMBL1969735,None,,CC(C)(CO)CNc1nccc(-c2c(-c3ccc(F)cc3)nc3c(Cl)nccn23)n1,threonine-protein kinase PIM1
 5370,CHEMBL1972462,None,,CCCCC#Cc1ccc(CN2CC(C(=O)O)C2)cc1,threonine-protein kinase PIM1
@@ -5430,9 +5430,9 @@
 5428,CHEMBL3648832,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnn(C)c3N3CCC(N)CC(F)(F)C3)c(N)s2)c(F)c1,threonine-protein kinase PIM1
 5429,CHEMBL1915429,None,,c1cc(-c2nnc[nH]2)c2nc(NC3CCC3)c3ccncc3c2c1,threonine-protein kinase PIM1
 5430,CHEMBL1738916,None,,O=C(O)c1cc2cc(Br)ccc2o1,threonine-protein kinase PIM1
-5431,CHEMBL4539943,BAY-694, ,O=C(O)[C@@H]1[C@@H](Cn2nnc3ccccc3c2=O)CC[C@H]1C(=O)c1ccc(OCCC2CCOCC2)cc1,threonine-protein kinase PIM1
+5431,CHEMBL4539943,BAY-694, ,O=C(c1ccc(OCCC2CCOCC2)cc1)[C@@H]1CC[C@H](Cn2nnc3ccccc3c2=O)[C@H]1C(=O)O,threonine-protein kinase PIM1
 5432,CHEMBL3936239,None,,NCC[C@H]1CNC(=O)c2cc(-c3cccc(OC(F)(F)F)c3)c(-c3cccc(C(F)(F)F)c3)n21,threonine-protein kinase PIM1
-5433,CHEMBL4585243,BAY-7598, ,O=C(O)[C@H]1[C@H](Cn2nnc3ccccc3c2=O)CC[C@@H]1C(=O)c1ccc(OCCC2CCOCC2)cc1,threonine-protein kinase PIM1
+5433,CHEMBL4585243,BAY-7598, ,O=C(c1ccc(OCCC2CCOCC2)cc1)[C@H]1CC[C@@H](Cn2nnc3ccccc3c2=O)[C@@H]1C(=O)O,threonine-protein kinase PIM1
 5434,CHEMBL3648677,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@H](N)C[C@H](F)C1,threonine-protein kinase PIM1
 5435,CHEMBL1968930,None,,CC(C)(CN)CNc1nc(Cl)cc(-c2c[nH]c3ncccc23)n1,threonine-protein kinase PIM1
 5436,CHEMBL3895053,None,,C[C@]1(O)CC[C@H](Nc2ccc3ncc(-c4cccc(OC(F)(F)F)c4)n3n2)CC1,threonine-protein kinase PIM1
@@ -5508,7 +5508,7 @@
 5506,CHEMBL4459538,None, ,CO[C@H]1C[C@H](N)CCN(c2c(NC(=O)c3nc(-c4c(F)cccc4F)sc3N)cnn2C)C1,threonine-protein kinase PIM1
 5507,CHEMBL50894,ALSTERPAULLONE,,O=C1Cc2c([nH]c3ccc([N+](=O)[O-])cc23)-c2ccccc2N1,threonine-protein kinase PIM1
 5508,CHEMBL76904,TYRPHOSTIN 23,,N#CC(C#N)=Cc1ccc(O)c(O)c1,threonine-protein kinase PIM1
-5509,CHEMBL3687506,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(F)CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+5509,CHEMBL3687506,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(F)CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 5510,CHEMBL2138625,None,,C=CC(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1C#CC(C)(C)N1CCN(C)CC1,threonine-protein kinase PIM1
 5511,CHEMBL1794070,GSK-579289A,,C[C@@H](Oc1cc(-n2cnc3ccc(OC4CCN(C)CC4)cc32)sc1C(N)=O)c1ccccc1Cl,threonine-protein kinase PIM1
 5512,CHEMBL181361,GW693481X,,Nc1nc(-c2ccccn2)c(-c2ccc3ncccc3n2)s1,threonine-protein kinase PIM1
@@ -5548,7 +5548,7 @@
 5546,CHEMBL3929257,None,,COC(=O)N(c1ccccc1)c1ccc2cccc(-c3cc4c([nH]3)CCNC4=O)c2n1,threonine-protein kinase PIM1
 5547,CHEMBL475761,GW784684X,,CN1CCN(Cc2ccc(-c3cc4ncnc(Nc5ccc(OCc6cccc(F)c6)c(Cl)c5)c4s3)o2)CC1,threonine-protein kinase PIM1
 5548,CHEMBL3900881,None,,Cc1cncc(-c2cc3c(cn2)cnn3-c2ccc3c(n2)CC(CN)CO3)n1,threonine-protein kinase PIM1
-5549,CHEMBL240954,None,,CC(=O)O[C@@H]1[C@@H](OC(C)=O)[C@@H](O)[C@H](Oc2c(-c3ccc(O)cc3)oc3cc(O)cc(O)c3c2=O)O[C@H]1C,threonine-protein kinase PIM1
+5549,CHEMBL240954,None,,CC(=O)O[C@H]1[C@H](C)O[C@@H](Oc2c(-c3ccc(O)cc3)oc3cc(O)cc(O)c3c2=O)[C@H](O)[C@@H]1OC(C)=O,threonine-protein kinase PIM1
 5550,CHEMBL196022,GW642125X,,COc1ccc(-c2coc3ncnc(N)c23)cc1,threonine-protein kinase PIM1
 5551,CHEMBL477979,GW785974X,,Cc1ccc(C(=O)NC(C)C)cc1-c1ccc(C(=O)NCC2CC2)cc1,threonine-protein kinase PIM1
 5552,CHEMBL246656,None,,N#Cc1c(-c2ccc(Cl)cc2)c2c([nH]c1=O)-c1ccccc1OC2,threonine-protein kinase PIM1
@@ -5598,8 +5598,8 @@
 5596,CHEMBL3916074,None,,COc1ccc(CNc2nnc(-c3ccc4[nH]cc(-c5cncc(C6CC6)n5)c4c3)o2)cc1,threonine-protein kinase PIM1
 5597,CHEMBL4225206,None,,CC(=O)NCc1ccc(-c2cncc(-n3ncc4ccc(NC(C)C)cc43)n2)cc1,threonine-protein kinase PIM1
 5598,CHEMBL3684943,None,,CC(C)n1c(N2CCNCC2)nc2c(Br)c(Br)c(Br)c(Br)c21,threonine-protein kinase PIM1
-5599,CHEMBL3691918,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
-5600,CHEMBL3687423,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+5599,CHEMBL3691918,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
+5600,CHEMBL3687423,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 5601,CHEMBL3684971,None,,CN(C)CCN(Cc1ccccc1)c1nc2c(Br)c(Br)c(Br)c(Br)c2[nH]1,threonine-protein kinase PIM1
 5602,CHEMBL3908853,None,,OC1CNCCN(c2cccc(-n3ncc4cnc(-c5cncc(C6COC6)c5)cc43)n2)C1,threonine-protein kinase PIM1
 5603,CHEMBL3919337,None,,CC(C)Nc1nnc(-c2ccc3[nH]cc(-c4nccc(C5CC5)n4)c3c2)o1,threonine-protein kinase PIM1
@@ -5617,7 +5617,7 @@
 5615,CHEMBL3689322,None,,N[C@H]1CCCC[C@@H]1Nc1nc2c(Br)c(Br)c(Br)c(Br)c2[nH]1,threonine-protein kinase PIM1
 5616,CHEMBL4753835,None, ,O=C1N=C(NCC2CC2)S/C1=C\c1csc(-c2ccc(C(F)(F)F)cc2)n1,threonine-protein kinase PIM1
 5617,CHEMBL3965031,None,,Nc1nnc(-c2ccc3[nH]cc(-c4nccc(-c5ccccc5)n4)c3c2)o1,threonine-protein kinase PIM1
-5618,CHEMBL3687521,None,,CC(C)NC(=O)c1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OCCC#N)[C@@H](C)C3)n2)c1,threonine-protein kinase PIM1
+5618,CHEMBL3687521,None,,CC(C)NC(=O)c1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OCCC#N)[C@H](N)C3)n2)c1,threonine-protein kinase PIM1
 5619,CHEMBL4294912,None,,O=C1NCc2c1c1c3cc(O)ccc3[nH]c1c1[nH]c3ccccc3c21,threonine-protein kinase PIM1
 5620,CHEMBL5085896,None, ,O=C(c1ccc(Nc2ncc(F)c(-c3ccc4ncc(N5CCOCC5)nc4c3)n2)nc1)N1CCNCC1,threonine-protein kinase PIM1
 5621,CHEMBL4634851,None, ,CC(C)c1cc(Nc2nc(N3CCC[C@H](N)C3)ncc2C(N)=O)cc(C(C)C)c1,threonine-protein kinase PIM1
@@ -5638,9 +5638,9 @@
 5636,CHEMBL4759292,None, ,O=C1N=C(NCCCO)S/C1=C\c1ccc(-c2cccc(Cl)c2)o1,threonine-protein kinase PIM1
 5637,CHEMBL4746104,None, ,O=C(O)CCNC1=NC(=O)/C(=C/c2csc(-c3cccc(Cl)c3)n2)S1,threonine-protein kinase PIM1
 5638,CHEMBL1952128,None,,FC(F)(F)Oc1cccc(-n2nnc3ccc(N4CC5CNCC5C4)nc32)c1,threonine-protein kinase PIM1
-5639,CHEMBL3691942,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
-5640,CHEMBL3687486,None,,CO[C@H]1[C@H](C)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1N,threonine-protein kinase PIM1
-5641,CHEMBL3687504,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4CCS(=O)(=O)CC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+5639,CHEMBL3691942,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
+5640,CHEMBL3687486,None,,CO[C@@H]1[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1C,threonine-protein kinase PIM1
+5641,CHEMBL3687504,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4CCS(=O)(=O)CC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 5642,CHEMBL3676297,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C[C@@H](N)[C@@H]1O,threonine-protein kinase PIM1
 5643,CHEMBL3676271,None,,NC1CC(C(F)(F)F)CN(c2ccncc2NC(=O)c2csc(-c3c(F)cccc3F)n2)C1,threonine-protein kinase PIM1
 5644,CHEMBL3676286,None,,Nc1sc(-c2c(F)cccc2F)nc1C(=O)Nc1cnccc1N1CCC(F)CC1,threonine-protein kinase PIM1
@@ -5656,7 +5656,7 @@
 5654,CHEMBL4584981,NVS-MALT1-C,C24H27ClF3N5O4S,CO[C@@H](C)c1c(Nc2ccc([C@@H](N(C)C(=O)C3CCS(=O)(=O)CC3)C(F)(F)F)cc2)cnc2cc(Cl)nn12,threonine-protein kinase PIM1
 5655,CHEMBL120077,None,,COc1cc2c(cc1OC)-c1n[nH]c(Nc3cccc(F)c3)c1C2,threonine-protein kinase PIM1
 5656,CHEMBL3775111,None,,CC1C/C(=C\c2ccc3c(c2)CCO3)C(=O)O1,threonine-protein kinase PIM1
-5657,CHEMBL4445645,None, ,C[C@@H]1CN(c2ncc(Cl)c(Nc3ccc4c(c3)n(CCC(C)(C)O)c(=O)n4C)n2)C[C@H](C)C1(F)F,threonine-protein kinase PIM1
+5657,CHEMBL4445645,None, ,C[C@H]1CN(c2ncc(Cl)c(Nc3ccc4c(c3)n(CCC(C)(C)O)c(=O)n4C)n2)C[C@@H](C)C1(F)F,threonine-protein kinase PIM1
 5658,CHEMBL3687458,None,,C[C@@H]1C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H](N)[C@@H]1n1cncn1,threonine-protein kinase PIM1
 5659,CHEMBL3651917,None,,CCc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)C[C@H](N)C3)n2)c1F,threonine-protein kinase PIM1
 5660,CHEMBL3394066,None,,Nc1nnc(-c2ccc3[nH]cc(-c4cccc(N5CCCC5)n4)c3c2)s1,threonine-protein kinase PIM1
@@ -5703,20 +5703,20 @@
 5701,CHEMBL4114805,None,,N=CC(NC(=O)c1nc(-c2cc(F)ccc2F)sc1N)/C(=N\CC(F)F)N1CCCC(O)CC1,threonine-protein kinase PIM1
 5702,CHEMBL3648786,None,,Cn1ncc(NC(=O)c2nc(-c3cccc(=O)[nH]3)sc2N)c1N1CCC[C@H](N)CC1,threonine-protein kinase PIM1
 5703,CHEMBL3747699,None,,Cn1c(=O)c(Oc2ccc(F)cc2F)cc2cnc(NC3CCN(S(C)(=O)=O)CC3)nc21,threonine-protein kinase PIM1
-5704,CHEMBL3691926,None,,CO[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC(C)C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
-5705,CHEMBL3691928,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](OCCS(C)(=O)=O)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+5704,CHEMBL3691926,None,,CO[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC(C)C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
+5705,CHEMBL3691928,None,,COc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](OCCS(C)(=O)=O)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 5706,CHEMBL3975341,None,,O=C(NC1CC1)c1ccc2cccc(-c3cc4c([nH]3)CCNC4=O)c2n1,threonine-protein kinase PIM1
 5707,CHEMBL3915263,None,,N#C[C@H]1CC[C@H](Nc2ccc3ncc(-c4cccc(Cl)c4)n3n2)CC1,threonine-protein kinase PIM1
 5708,CHEMBL4440433,None, ,Cc1n[nH]c2ccnc(NC3CCCCC3)c12,threonine-protein kinase PIM1
 5709,CHEMBL4449552,None, ,Cc1n[nH]c2ccnc(Nc3ccccc3F)c12,threonine-protein kinase PIM1
 5710,CHEMBL3617968,BAY-678,,CC(=O)C1=C(C)N(c2cccc(C(F)(F)F)c2)C(=O)N[C@@H]1c1ccc(C#N)nc1,threonine-protein kinase PIM1
-5711,CHEMBL3651913,None,,CCc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](O)[C@@H](C)C3)n2)c1F,threonine-protein kinase PIM1
+5711,CHEMBL3651913,None,,CCc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](O)[C@H](N)C3)n2)c1F,threonine-protein kinase PIM1
 5712,CHEMBL3651952,None,,N[C@H]1CCC[C@@H](c2ccncc2NC(=O)c2ccc(F)c([C@H]3CC[C@H](O)CC3)n2)C1,threonine-protein kinase PIM1
 5713,CHEMBL3940411,None,,Cc1nc2cccc(-c3cc4c([nH]3)CNC4=O)c2nc1NC(C)(C)C,threonine-protein kinase PIM1
 5714,CHEMBL4111393,None,,CO[C@H]1CO[C@H](c2c(NC(=O)c3nc(-c4ccccc4F)sc3N)cnn2C)CC[C@H]1N,threonine-protein kinase PIM1
 5715,CHEMBL3914906,None,,Cc1noc(C)c1-c1nc(C(=O)Nc2cnn(C)c2[C@@H]2CC[C@@H](N)[C@@H](F)CO2)cs1,threonine-protein kinase PIM1
 5716,CHEMBL3623150,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@@H](N)CC(F)(F)C1,threonine-protein kinase PIM1
-5717,CHEMBL3651940,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@H](O)[C@@H](C)C3)ccc2F)c1F,threonine-protein kinase PIM1
+5717,CHEMBL3651940,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@@H](O)[C@H](N)C3)ccc2F)c1F,threonine-protein kinase PIM1
 5718,CHEMBL3910790,None,,O[C@H]1CCN(c2nc(-c3n[nH]c4cnc(-c5cccnc5)cc34)ccc2Br)C1,threonine-protein kinase PIM1
 5719,CHEMBL3936994,None,,O=C1N(CC2CCNC2)CCN1c1n[nH]c2cnc(-c3cccnc3)cc12,threonine-protein kinase PIM1
 5720,CHEMBL3894085,None,,CC(C)O[C@H]1CC[C@H](Nc2ccc3ncc(-c4cccc(OC(F)(F)F)c4)n3n2)CC1,threonine-protein kinase PIM1
@@ -5760,7 +5760,7 @@
 5758,CHEMBL5282194,None, ,CN1CCN(c2ccc(Nc3nccc(-c4cccc([N+](=O)[O-])c4)n3)cc2C(F)(F)F)CC1,threonine-protein kinase PIM1
 5759,CHEMBL4763702,None, ,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2nc(-c3ncccc3F)ccc2N)C[C@@H](O)[C@@]1(O)CF,threonine-protein kinase PIM1
 5760,CHEMBL4752561,None,,COc1cc(-c2cn([C@H]3CCc4ccccc4N(CC(F)(F)F)C3=O)nn2)ccc1-n1ccc(C)n1,threonine-protein kinase PIM1
-5761,CHEMBL3920138,None,,C[C@@H]1CN[C@@H](C)CN1c1ccncc1Nc1ncc2ccc(-c3c(F)cccc3F)nn12,threonine-protein kinase PIM1
+5761,CHEMBL3920138,None,,C[C@H]1CN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)[C@H](C)CN1,threonine-protein kinase PIM1
 5762,CHEMBL1985654,None,,COCCN(CCOC)c1cc(-c2c[nH]c3ncccc23)cc(Cl)n1,threonine-protein kinase PIM1
 5763,CHEMBL4112684,None,,Cn1ncc(NC(=O)c2csc(-c3ccccc3C(F)(F)F)n2)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
 5764,CHEMBL3684933,None,,Brc1c(Br)c(Br)c2[nH]c(N3CCNCC3)nc2c1Br,threonine-protein kinase PIM1
@@ -5866,7 +5866,7 @@
 5864,CHEMBL3891729,None,,N[C@H]1CCCN(c2cncc(-c3cc4c(-c5ccccc5F)n[nH]c4cn3)n2)CC1,threonine-protein kinase PIM1
 5865,CHEMBL3897249,None,,c1ccc(-c2n[nH]c3cnc(-n4cncn4)cc23)cc1,threonine-protein kinase PIM1
 5866,CHEMBL3962986,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1C1=CCOCC1,threonine-protein kinase PIM1
-5867,CHEMBL3984745,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1[C@]12CC[C@H](O1)[C@@H](O)CC2,threonine-protein kinase PIM1
+5867,CHEMBL3984745,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1[C@]12CC[C@H](O)[C@H](CC1)O2,threonine-protein kinase PIM1
 5868,CHEMBL3895788,None,,CO[C@H]1COC(c2c(NC(=O)c3nc(-c4c(F)cccc4F)sc3N)cnn2C)CC[C@@H]1N,threonine-protein kinase PIM1
 5869,CHEMBL3978119,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1[C@H]1C[C@H](F)[C@@H](N)CCO1,threonine-protein kinase PIM1
 5870,CHEMBL3938434,None,,CN1CCN(c2cc3c(-c4ccccc4)n[nH]c3cn2)CC1=O,threonine-protein kinase PIM1
@@ -5908,13 +5908,13 @@
 5906,CHEMBL3648663,None,,CN[C@@H]1CCCN(c2c(NC(=O)c3nc(-c4cc(F)ccc4F)sc3N)cnn2CC(F)F)CC1,threonine-protein kinase PIM1
 5907,CHEMBL4101797,None,,CCn1cc(C(=O)O)c(=O)c2cc(F)c(NC(CC(=O)O)C(=O)O)c([N+](=O)[O-])c21,threonine-protein kinase PIM1
 5908,CHEMBL4162709,None,,NC(=O)c1nc2ccccc2nc1Nc1cccc(N2CCOCC2)c1,threonine-protein kinase PIM1
-5909,CHEMBL3109402,None,,COc1cc2nc(C)oc2c(C[C@]2(C)[C@@H](C)CC[C@@]3(C)C(C)=CCC[C@@H]23)c1O,threonine-protein kinase PIM1
+5909,CHEMBL3109402,None,,COc1cc2nc(C)oc2c(C[C@]2(C)[C@@H](C)CC[C@@]3(C)C(C)=CCC[C@H]32)c1O,threonine-protein kinase PIM1
 5910,CHEMBL3913792,None,,Cc1nc2cccc(-c3cc4c([nH]3)CCNC4=O)c2nc1OCCC(C)(C)N,threonine-protein kinase PIM1
 5911,CHEMBL3973409,None,,Cc1nc2cccc(-c3cc4c(=O)[nH]cnc4[nH]3)c2nc1F,threonine-protein kinase PIM1
 5912,CHEMBL1182777,None,,O=C(O)c1ccc2c3c1cccc3c(=O)n1c3ccccc3nc21,threonine-protein kinase PIM1
 5913,CHEMBL4110363,None,,CC[C@@H]1CN(c2cccc(-n3ncc4cnc(-c5cnn(CC)c5)cc43)n2)CCN1,threonine-protein kinase PIM1
 5914,CHEMBL418613,None,,O=C(O)c1ccc2ccc(/C=C/c3ccc(O)cc3)nc2c1O,threonine-protein kinase PIM1
-5915,CHEMBL3687433,None,,CC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+5915,CHEMBL3687433,None,,CC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 5916,CHEMBL1898211,None,,Clc1ccc(CNc2ccnc(-c3ccc4[nH]ncc4c3)n2)cc1Cl,threonine-protein kinase PIM1
 5917,CHEMBL3660028,None,,CC(C)(C)COc1cccc2ccc(-c3nnc4ccccn34)nc12,threonine-protein kinase PIM1
 5918,CHEMBL3651907,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)CC(C)(C)C3)ccc2F)c1F,threonine-protein kinase PIM1
@@ -5948,7 +5948,7 @@
 5946,CHEMBL3652625,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)ccc2N)c1N1CCC[C@@H](N)C1,threonine-protein kinase PIM1
 5947,CHEMBL3703175,None,,Cn1c(-c2ccccc2)c(C(N)=O)c2ccc3cnc(N)nc3c21,threonine-protein kinase PIM1
 5948,CHEMBL188426,GW807982X,,CCOc1ccc2c(-c3ccnc(Nc4cc(OC)cc(C(F)(F)F)c4)n3)cnn2n1,threonine-protein kinase PIM1
-5949,CHEMBL3687420,None,,Cc1cn([C@@H]2[C@H](N)CN(c3ccncc3NC(=O)c3ccc(F)c(-c4c(F)cccc4F)n3)C[C@@H]2C)nn1,threonine-protein kinase PIM1
+5949,CHEMBL3687420,None,,Cc1cn([C@H]2[C@@H](C)CN(c3ccncc3NC(=O)c3ccc(F)c(-c4c(F)cccc4F)n3)C[C@H]2N)nn1,threonine-protein kinase PIM1
 5950,CHEMBL5413882,None, ,CC(C)(Sc1nc2c(cnn2-c2ccccc2)c(=O)[nH]1)C(N)=O,threonine-protein kinase PIM1
 5951,CHEMBL2048865,None,,N[C@@H]1CCCN(c2ccccc2/C=C2\SC(=O)NC2=O)C1,threonine-protein kinase PIM1
 5952,CHEMBL5206744,None, ,O=C1NC(Nc2ccccn2)=N/C1=C\c1ccc2c(c1)OCO2,threonine-protein kinase PIM1
@@ -5965,15 +5965,15 @@
 5963,CHEMBL1230164,None,,O=c1cc(C(F)(F)F)c2c(-c3cccc(C(F)(F)F)c3)n[nH]c2[nH]1,threonine-protein kinase PIM1
 5964,CHEMBL3975756,None,,OC1CN(c2cncc(-c3cc4c(cn3)cnn4-c3cccc(N4CCNCC4)n3)n2)C1,threonine-protein kinase PIM1
 5965,CHEMBL3648705,None,,Cn1ncc(NC(=O)c2nc(-c3ccccn3)sc2N)c1N1CC[C@H](N)[C@@H](F)CC1,threonine-protein kinase PIM1
-5966,CHEMBL3691965,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](n4ccnn4)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+5966,CHEMBL3691965,None,,Cc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](n4ccnn4)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 5967,CHEMBL3652630,None,,Cn1ncc(NC(=O)c2nc(-c3ccccc3F)cnc2N)c1N1CCC[C@H](N)C1,threonine-protein kinase PIM1
 5968,CHEMBL3652638,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CCC[C@@H](N)CC1,threonine-protein kinase PIM1
 5969,CHEMBL4104355,None,,NC(=O)c1cc(Cl)c2c(Cl)c(C3CC3)n([C@H]3CCCNC3)c2n1,threonine-protein kinase PIM1
 5970,CHEMBL3651964,None,,CCCOc1ccc(F)c(-c2ccc(N)c(C(=O)Nc3cnccc3[C@@H]3CC[C@H](O)[C@H](N)C3)n2)c1,threonine-protein kinase PIM1
-5971,CHEMBL3687482,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@@H]1C,threonine-protein kinase PIM1
+5971,CHEMBL3687482,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@H]1N,threonine-protein kinase PIM1
 5972,CHEMBL4861720,None, ,CN(C)c1nccn2c(-c3cnn(C)c3)c(-c3ccc(F)cc3)nc12,threonine-protein kinase PIM1
 5973,CHEMBL4853288,None, ,Nc1nccc(-c2c(-c3ccc(F)cc3)nc3c(N)nccn23)n1,threonine-protein kinase PIM1
-5974,CHEMBL3687499,None,,CCO[C@@H]1[C@H](C)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@@H]1N,threonine-protein kinase PIM1
+5974,CHEMBL3687499,None,,CCO[C@H]1[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@H]1C,threonine-protein kinase PIM1
 5975,CHEMBL3918273,None,,C[C@H]1NC(=O)c2cc(-c3cccc4c(=O)n(C)c(N[C@H]5CCC[C@@H](N)C5)nc34)[nH]c21,threonine-protein kinase PIM1
 5976,CHEMBL3940944,None,,O=C(CN1CCOCC1)N[C@H]1CC[C@H](Nc2ccc3ncc(-c4cccc(Cl)c4)n3n2)CC1,threonine-protein kinase PIM1
 5977,CHEMBL3687446,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1[S+](C)[O-],threonine-protein kinase PIM1
@@ -5982,7 +5982,7 @@
 5980,CHEMBL3651942,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3cc(O)ccc3F)n2)C1,threonine-protein kinase PIM1
 5981,CHEMBL478649,None,,Cc1ccc(C(=O)NC2CC2)cc1-c1ccc(C(=O)NCC2CC2)cc1,threonine-protein kinase PIM1
 5982,CHEMBL3651925,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@@H]3C[C@H](N)C[C@H](N)C3)n2)c1F,threonine-protein kinase PIM1
-5983,CHEMBL3691975,None,,COC(=O)N[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+5983,CHEMBL3691975,None,,COC(=O)N[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(OC)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 5984,CHEMBL3780632,None,,c1ccc(-c2cnc3cncc(Nc4ccc(N5CCOCC5)cc4)c3n2)cc1,threonine-protein kinase PIM1
 5985,CHEMBL3648747,None,,Nc1sc(-c2cc(F)ccc2F)nc1C(=O)Nc1cnn(C2CC2)c1N1CCC(N)C(F)CC1,threonine-protein kinase PIM1
 5986,CHEMBL1998953,None,,c1ccc(-c2c[nH]c3ncnc(N4CCCCC4)c23)cc1,threonine-protein kinase PIM1
@@ -6093,7 +6093,7 @@
 6091,CHEMBL300138,ENZASTAURIN,,Cn1cc(C2=C(c3cn(C4CCN(Cc5ccccn5)CC4)c4ccccc34)C(=O)NC2=O)c2ccccc21,threonine-protein kinase PIM1
 6092,CHEMBL494089,GSK-690693,,CCn1c(-c2nonc2N)nc2c(C#CC(C)(C)O)ncc(OC[C@H]3CCCNC3)c21,threonine-protein kinase PIM1
 6093,CHEMBL549915,None,,Cc1ccncc1-c1ccc2c(ccc3sc4c(c32)NC[C@@H](C)NC4=O)n1,threonine-protein kinase PIM1
-6094,CHEMBL514201,TALMAPIMOD,,C[C@@H]1CN(Cc2ccc(F)cc2)[C@@H](C)CN1C(=O)c1cc2c(C(=O)C(=O)N(C)C)cn(C)c2cc1Cl,threonine-protein kinase PIM1
+6094,CHEMBL514201,TALMAPIMOD,,C[C@H]1CN(C(=O)c2cc3c(C(=O)C(=O)N(C)C)cn(C)c3cc2Cl)[C@H](C)CN1Cc1ccc(F)cc1,threonine-protein kinase PIM1
 6095,CHEMBL558752,RAF-265,,Cn1c(Nc2ccc(C(F)(F)F)cc2)nc2cc(Oc3ccnc(-c4ncc(C(F)(F)F)[nH]4)c3)ccc21,threonine-protein kinase PIM1
 6096,CHEMBL1782509,None,,O=C(O)c1cc2cc(-c3cncc(NCC4CCNCC4)n3)ccc2o1,threonine-protein kinase PIM1
 6097,CHEMBL1614710,OSI-930,,O=C(Nc1ccc(OC(F)(F)F)cc1)c1sccc1NCc1ccnc2ccccc12,threonine-protein kinase PIM1
@@ -6138,7 +6138,7 @@
 6136,CHEMBL5202187,None, ,CCSc1ncc2cc3cnccc3c(N)c2n1,threonine-protein kinase PIM1
 6137,CHEMBL2147765,None,,CCCOc1ccc2c(c1CN1CCNCC1)O/C(=C\c1c[nH]c3ccccc13)C2=O,threonine-protein kinase PIM1
 6138,CHEMBL4563904,None, ,C[C@H]1NC(=O)c2cc(-c3cccc4c(=O)n(Cc5cn(C)cn5)c(NC(C)(C)C)nc34)[nH]c21,threonine-protein kinase PIM1
-6139,CHEMBL4463004,None, ,C[C@H](c1cn(C)cn1)n1c(NC2(C)CC2)nc2c(-c3cc4c([nH]3)[C@@H](C)NC4=O)cccc2c1=O,threonine-protein kinase PIM1
+6139,CHEMBL4463004,None, ,C[C@H]1NC(=O)c2cc(-c3cccc4c(=O)n([C@H](C)c5cn(C)cn5)c(NC5(C)CC5)nc34)[nH]c21,threonine-protein kinase PIM1
 6140,CHEMBL5085656,None, ,Cc1nc(OCc2cscn2)c2c(-c3ccnc(N)c3)c[nH]c2n1,threonine-protein kinase PIM1
 6141,CHEMBL501822,None,,O=C(O)Cc1ccc(O)c([N+](=O)[O-])c1,threonine-protein kinase PIM1
 6142,CHEMBL4528544,None, ,NC(=O)c1cc(Cl)c2c(Cl)c(C#CC3CCOCC3)n([C@H]3CCCNC3)c2n1,threonine-protein kinase PIM1
@@ -6155,11 +6155,11 @@
 6153,CHEMBL4113286,None,,CCn1cc(-c2cc3c(-c4cccc(N5CCC[C@@H](N)CC5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
 6154,CHEMBL1276179,None,,CN1C[C@@H]2C[C@H]1CN2c1cc(F)c(-c2ccnc3c(-c4cccc5[nH]ncc45)c(-c4ccncc4)nn23)c(F)c1,threonine-protein kinase PIM1
 6155,CHEMBL4517719,None, ,O=C(Nc1ccc2[nH]nc(-c3ccc4[nH]ccc4c3)c2c1)c1c(Cl)cccc1Cl,threonine-protein kinase PIM1
-6156,CHEMBL3687457,None,,COC(=O)N(C)[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@@H]1C,threonine-protein kinase PIM1
+6156,CHEMBL3687457,None,,COC(=O)N(C)[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2nc(-c3c(F)cccc3F)sc2N)C[C@H]1N,threonine-protein kinase PIM1
 6157,CHEMBL3687447,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1S(C)(=O)=O,threonine-protein kinase PIM1
 6158,CHEMBL573339,PI-103,,Oc1cccc(-c2nc(N3CCOCC3)c3oc4ncccc4c3n2)c1,threonine-protein kinase PIM1
 6159,CHEMBL5179796,None, ,O=C(Cc1ccccc1)Nc1ccc(NC(=O)Nc2nc3ccc(O)cc3s2)cc1,threonine-protein kinase PIM1
-6160,CHEMBL3651927,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](O)[C@@H](C)C3)n2)c1F,threonine-protein kinase PIM1
+6160,CHEMBL3651927,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](O)[C@H](N)C3)n2)c1F,threonine-protein kinase PIM1
 6161,CHEMBL3765598,None,,CC1CCN(c2ccc3nnnc(Nc4cccc(OC(F)(F)F)c4)c3n2)CC1,threonine-protein kinase PIM1
 6162,CHEMBL3660095,None,,FCCN1CCC(F)(COc2cccc3ccc(-c4nnc5ccccn45)nc23)CC1,threonine-protein kinase PIM1
 6163,CHEMBL3954702,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1C12CCC(N)C(CC1)O2,threonine-protein kinase PIM1
@@ -6175,7 +6175,7 @@
 6173,CHEMBL3949701,None,,FC(F)(F)c1cccc(-c2cnn3ccc(NC4CCOCC4)nc23)c1,threonine-protein kinase PIM1
 6174,CHEMBL2377710,None,,O=[N+]([O-])c1cc2cn[nH]c2c2cc[nH]c12,threonine-protein kinase PIM1
 6175,CHEMBL4106476,None,,N[C@@H]1CCN(c2cncc(-c3cc4c(-c5ccccc5F)n[nH]c4cn3)c2)C1,threonine-protein kinase PIM1
-6176,CHEMBL3687468,None,,COC(=O)N(C)[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+6176,CHEMBL3687468,None,,COC(=O)N(C)[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 6177,CHEMBL3623162,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@@](C)(N)CC(F)(F)C1,threonine-protein kinase PIM1
 6178,CHEMBL3393716,None,,Nc1ccc(-c2ccc3[nH]nc(-c4cncc(O[C@H]5CNCCC56CC6)n4)c3c2)c(F)c1,threonine-protein kinase PIM1
 6179,CHEMBL3393705,None,,CC1(C)CCNCC1Oc1cncc(-c2n[nH]c3ccc(-c4c(F)cccc4F)cc23)n1,threonine-protein kinase PIM1
@@ -6195,7 +6195,7 @@
 6193,CHEMBL4114312,None,,Cn1ncc(NC(=O)c2csc(-c3ccccn3)n2)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
 6194,CHEMBL3298890,None,,NC[C@@H](NC(=O)C[C@@H]1CNC(=O)c2cc(-c3ccnc(F)c3)cn21)c1ccccc1,threonine-protein kinase PIM1
 6195,CHEMBL3953990,None,,c1cc(N2CCNCC2)nc(-n2ncc3cnc(-c4cncs4)cc32)c1,threonine-protein kinase PIM1
-6196,CHEMBL3691961,None,,COC(=O)N[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCOCC4)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+6196,CHEMBL3691961,None,,COC(=O)N[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCOCC4)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 6197,CHEMBL3904737,None,,Nc1nnc(-c2ccc3[nH]cc(-c4nccc(-c5ccccc5F)n4)c3c2)o1,threonine-protein kinase PIM1
 6198,CHEMBL3898847,None,,COc1cc(-c2c[nH]c3ccc(-c4nnc(N)s4)cc23)nc(NC(C)C)n1,threonine-protein kinase PIM1
 6199,CHEMBL3934994,None,,CC(Oc1cncc(-c2c[nH]c3ccc(-c4nnc(N)s4)cc23)n1)C(F)(F)F,threonine-protein kinase PIM1
@@ -6224,7 +6224,7 @@
 6222,CHEMBL3938424,None,,COc1nc(-c2c[nH]c3ccc(-c4nnc(NC(C)C)o4)cc23)nc(C)c1F,threonine-protein kinase PIM1
 6223,CHEMBL3902878,None,,NC1CCCCN(c2cccc(-c3n[nH]c4cnc(-c5cnn(CCF)c5)cc34)n2)C1,threonine-protein kinase PIM1
 6224,CHEMBL3975794,None,,c1cc(-c2n[nH]c3cnc(-c4cncs4)cc23)nc(N2CCCCC2)c1,threonine-protein kinase PIM1
-6225,CHEMBL3648713,None,,Cn1ncc(NC(=O)c2nc(-c3cc(F)ccc3F)sc2N)c1N1CC[C@@H](N)[C@@H](F)CC1,threonine-protein kinase PIM1
+6225,CHEMBL3648713,None,,Cn1ncc(NC(=O)c2nc(-c3cc(F)ccc3F)sc2N)c1N1CC[C@H](F)[C@H](N)CC1,threonine-protein kinase PIM1
 6226,CHEMBL3639475,None,,Cn1ncc(NC(=O)c2nc(-c3cc(F)ccc3F)sc2N)c1N1CC[C@H](N)CC(F)(F)C1,threonine-protein kinase PIM1
 6227,CHEMBL3648732,None,,COC1CCN(c2c(NC(=O)c3nc(-c4c(F)cccc4F)sc3N)cnn2C)CCC1N,threonine-protein kinase PIM1
 6228,CHEMBL3648742,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnn(C4CC4)c3N3CCC(N)C(F)CC3)c(N)s2)c1,threonine-protein kinase PIM1
@@ -6235,7 +6235,7 @@
 6233,CHEMBL3792428,None,,Nc1cc(-c2ccncc2NC(=O)c2nc(-c3ccccc3F)ccc2N)ccn1,threonine-protein kinase PIM1
 6234,CHEMBL1915423,None,,CN(C)C(=O)c1cccc2c1nc(Nc1cccc(Cl)c1)c1ccncc12,threonine-protein kinase PIM1
 6235,CHEMBL4102902,None,,O=C1/C(=C/c2c[nH]c3ncccc23)Oc2c1ccc(O)c2CN1CCNCC1,threonine-protein kinase PIM1
-6236,CHEMBL517956,ASTROGORGIADIOL,,Cc1ccc(O)cc1CC[C@@H]1[C@H](O)CC[C@]2(C)[C@@H]([C@H](C)CCCC(C)C)CC[C@@H]12,threonine-protein kinase PIM1
+6236,CHEMBL517956,ASTROGORGIADIOL,,Cc1ccc(O)cc1CC[C@H]1[C@@H]2CC[C@H]([C@H](C)CCCC(C)C)[C@@]2(C)CC[C@H]1O,threonine-protein kinase PIM1
 6237,CHEMBL1987430,None,,CCCc1ccc2nccc(NC(=O)Nc3cccc(C(F)(F)F)n3)c2c1,threonine-protein kinase PIM1
 6238,CHEMBL1992042,None,,O=C(Nc1cccc(C2Nc3ccc4ccccc4c3C3C=CCC32)c1)c1ccc(F)cc1,threonine-protein kinase PIM1
 6239,CHEMBL1982660,None,,COc1ccc2c(NC(=O)Nc3cccc(C(F)(F)F)n3)ccnc2c1,threonine-protein kinase PIM1
@@ -6288,7 +6288,7 @@
 6286,CHEMBL4460019,None, ,CN1CCOc2c1cnn1c(-c3ccc4ccnc(NCC5(F)CCNCC5)c4c3)nnc21,threonine-protein kinase PIM1
 6287,CHEMBL3951026,None,,CN(C)c1ccc(-c2c(-c3cccc(OC(F)(F)F)c3)cc3n2[C@@H](CCN)CNC3=O)cc1,threonine-protein kinase PIM1
 6288,CHEMBL4114760,None,,C/N=C(\C(C=N)NC(=O)c1nc(-c2ccccc2F)sc1N)N1CC[C@@H](N)[C@H](F)CC1,threonine-protein kinase PIM1
-6289,CHEMBL3648775,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1C1CC[C@@H](N)[C@@H](F)CC1,threonine-protein kinase PIM1
+6289,CHEMBL3648775,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1C1CC[C@H](F)[C@H](N)CC1,threonine-protein kinase PIM1
 6290,CHEMBL2387466,None,,O=C(Nc1ccc(F)cc1)c1cnn2c(O)cc(C3CCNCC3)nc12,threonine-protein kinase PIM1
 6291,CHEMBL485070,None,,CCOc1cc(/C=C(\C#N)C(N)=O)cc(CSc2ccccc2)c1O,threonine-protein kinase PIM1
 6292,CHEMBL3651977,None,,N[C@H]1CCC[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3cc(F)ccc3F)n2)C1,threonine-protein kinase PIM1
@@ -6306,7 +6306,7 @@
 6304,CHEMBL3264262,None,,CN(C)/C=C/C(=O)c1c[nH]c2ccc(-c3cncc(OCCN(C)C)n3)cc12,threonine-protein kinase PIM1
 6305,CHEMBL5189982,None, ,c1cc2c(cn1)Oc1ccc3cc1N2CCCCNCCCCCO3,threonine-protein kinase PIM1
 6306,CHEMBL1682344,None,,c1cc2[nH]ncc2cc1-c1c[nH]nn1,threonine-protein kinase PIM1
-6307,CHEMBL515982,CALICOFEROL C,,C=C(CC[C@@H](C)[C@H]1CC[C@H]2[C@H](CCc3cc(O)ccc3C)[C@H](O)CC[C@]12C)C(C)C,threonine-protein kinase PIM1
+6307,CHEMBL515982,CALICOFEROL C,,C=C(CC[C@@H](C)[C@H]1CC[C@H]2[C@H](CCc3cc(O)ccc3C)[C@H](O)CC[C@@]21C)C(C)C,threonine-protein kinase PIM1
 6308,CHEMBL1910899,None,,Nc1cc(-c2ccc3c(-c4ccc(N5CCNCC5)cc4)n[nH]c3n2)ccn1,threonine-protein kinase PIM1
 6309,CHEMBL3895040,None,,CC(C)Nc1nnc(-c2ccc3[nH]cc(-c4ccnc(C5CC5)n4)c3c2)o1,threonine-protein kinase PIM1
 6310,CHEMBL3898134,None,,CCCCOc1cnc(-c2c[nH]c3ccc(-c4nnc(N)s4)cc23)cn1,threonine-protein kinase PIM1
@@ -6372,7 +6372,7 @@
 6370,CHEMBL3954143,None,,Cc1nc2cccc(-c3cc4c([nH]3)CCNC4=O)c2nc1Cl,threonine-protein kinase PIM1
 6371,CHEMBL3651898,None,,C[C@@H]1C[C@H](O)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C1,threonine-protein kinase PIM1
 6372,CHEMBL3894442,None,,Cc1nc2cccc(-c3cc4c([nH]3)CCNC4=O)c2nc1NC(C)(C)CNC(=O)OC(C)(C)C,threonine-protein kinase PIM1
-6373,CHEMBL3687512,None,,CO[C@@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+6373,CHEMBL3687512,None,,CO[C@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C)cc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 6374,CHEMBL3793600,None,,Nc1ccc(-c2ccncc2NC(=O)c2nc(-c3ccccc3F)ccc2N)cn1,threonine-protein kinase PIM1
 6375,CHEMBL3651974,None,,N[C@@H]1C[C@H](c2ccncc2NC(=O)c2cccc(-c3c(F)cccc3F)n2)CC[C@@H]1O,threonine-protein kinase PIM1
 6376,CHEMBL5423773,None, ,Cc1cc(O)cc2occ(Cc3ccc(C(=O)O)cc3)c12,threonine-protein kinase PIM1
@@ -6580,10 +6580,10 @@
 6578,CHEMBL5089934,None, ,C#Cc1ccc2c(c1)[nH]c1ncnc(N(C)[C@H]3CCCN(CCC#N)C3)c12,threonine-protein kinase PIM1
 6579,CHEMBL3900258,None,,Cc1cncc(-c2cc3c(cn2)cnn3-c2cccc(NC3CCNCC3)n2)n1,threonine-protein kinase PIM1
 6580,CHEMBL3929510,None,,O=C1NCCc2[nH]c(-c3cccc4ccc(Oc5ccc(Cl)cc5)nc34)cc21,threonine-protein kinase PIM1
-6581,CHEMBL3687469,None,,COC(=O)N(C)[C@@H]1[C@H](C)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1N,threonine-protein kinase PIM1
+6581,CHEMBL3687469,None,,COC(=O)N(C)[C@H]1[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1C,threonine-protein kinase PIM1
 6582,CHEMBL5092157,None, ,Cc1nc(NCc2ccccc2)c2c(-c3ccnc(N)c3)c[nH]c2n1,threonine-protein kinase PIM1
 6583,CHEMBL3297764,None,,CN1CCN(C[C@@H](NC(=O)C[C@H]2CNC(=O)c3cc(-c4cc(Cl)ccc4F)cn32)C2CCCCC2)CC1,threonine-protein kinase PIM1
-6584,CHEMBL3687528,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](S(C)(=O)=O)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+6584,CHEMBL3687528,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](S(C)(=O)=O)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 6585,CHEMBL3652009,None,,C[C@H]1CN(c2ccncc2NC(=O)c2cccc(-c3c(F)cccc3F)n2)C[C@@H](O)[C@@H]1O,threonine-protein kinase PIM1
 6586,CHEMBL3745857,None,,CN(C)CCNc1ncc2cc(Oc3ccc(F)cc3F)c(=O)n(C)c2n1,threonine-protein kinase PIM1
 6587,CHEMBL4590812,None, ,CN1CCOc2c1cnn1c(-c3cccc(C(=O)NCC4CCNCC4)n3)nnc21,threonine-protein kinase PIM1
@@ -6609,7 +6609,7 @@
 6607,CHEMBL3648833,None,,Cc1c(-c2nc(C(=O)Nc3cnn(C)c3N3CCC(N)CC(F)(F)C3)c(N)s2)cnn1C,threonine-protein kinase PIM1
 6608,CHEMBL3898550,None,,CC(Oc1ccc2cccc(-c3cc4c([nH]3)CCNC4=O)c2n1)C(F)(F)F,threonine-protein kinase PIM1
 6609,CHEMBL3940639,None,,O=C1NCCc2[nH]c(-c3cccc4ccc(O[C@@H]5CCCNC5)nc34)cc21,threonine-protein kinase PIM1
-6610,CHEMBL3687515,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@@H](N)[C@@H](NC(=O)OC)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+6610,CHEMBL3687515,None,,COCCOc1cc(F)c(-c2nc(C(=O)Nc3cnccc3N3C[C@H](C)[C@H](NC(=O)OC)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 6611,CHEMBL3961692,None,,Nc1cncc(-c2cc3c(cn2)cnn3-c2cccc(N3CCCNCC3)n2)n1,threonine-protein kinase PIM1
 6612,CHEMBL1975815,None,,O=C1CC(c2ccc(F)cc2)Cc2[nH]c3cc(Cl)ccc3c(=O)c21,threonine-protein kinase PIM1
 6613,CHEMBL3917077,None,,COc1cncc(-c2cc3c(cn2)cnn3-c2cccc(N3CCNCC3)n2)n1,threonine-protein kinase PIM1
@@ -6682,7 +6682,7 @@
 6680,CHEMBL3891851,None,,Cc1cncc(-c2cc3c(cn2)cnn3-c2ccc(Cl)c(N3CCC[C@H](N)C3)n2)n1,threonine-protein kinase PIM1
 6681,CHEMBL258721,None,,CC(C)c1nn(-c2c(Cl)cccc2Cl)c2nc(Cc3ccc(OCCO)cc3)[nH]c(=O)c12,threonine-protein kinase PIM1
 6682,CHEMBL3970168,None,,C[C@H]1CCCN(c2ccnc(-c3c[nH]c4ccc(-c5nnc(N)o5)cc34)n2)C1,threonine-protein kinase PIM1
-6683,CHEMBL3687471,None,,COC(=O)N(C)[C@@H]1[C@H](N)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+6683,CHEMBL3687471,None,,COC(=O)N(C)[C@H]1[C@@H](C)CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 6684,CHEMBL3689337,None,,CN1CCCC(Nc2nc3c(Br)c(Br)c(Br)c(Br)c3[nH]2)CC1,threonine-protein kinase PIM1
 6685,CHEMBL370177,None,,NCC1CCn2c(c(C3=C(c4c[nH]c5ccccc45)C(=O)NC3=O)c3ccccc32)C1,threonine-protein kinase PIM1
 6686,CHEMBL198948,None,,O=C1NC(=O)C2=C1c1cn(c3ccccc13)CCCCCCCCCn1cc2c2ccccc21,threonine-protein kinase PIM1
@@ -6715,7 +6715,7 @@
 6713,CHEMBL3904050,None,,C[C@H]1NC(=O)c2cc(-c3cccc4c(=O)n(C5CCC5)c(NC(C)(C)C)nc34)[nH]c21,threonine-protein kinase PIM1
 6714,CHEMBL3648748,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CCOCCC1=O,threonine-protein kinase PIM1
 6715,CHEMBL5441414,None,,CC(C)[C@@H](Nc1ncnc2[nH]c(-c3cnn(C)c3C#N)cc12)c1ccc2c(n1)OCCO2,threonine-protein kinase PIM1
-6716,CHEMBL3687500,None,,CCO[C@@H]1[C@H](C)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1N,threonine-protein kinase PIM1
+6716,CHEMBL3687500,None,,CCO[C@H]1[C@@H](N)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1C,threonine-protein kinase PIM1
 6717,CHEMBL3691956,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCC4)cc3F)n2)C[C@@H](N)[C@H]1n1ccnn1,threonine-protein kinase PIM1
 6718,CHEMBL3652007,None,,C[C@@H]1CN(c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H](N)[C@H]1O,threonine-protein kinase PIM1
 6719,CHEMBL3703173,None,,NC(=O)c1c(-c2ccccc2)[nH]c2c1ccc1cnc(N)nc12,threonine-protein kinase PIM1
@@ -6724,7 +6724,7 @@
 6722,CHEMBL3648837,None,,Cc1cc(-c2nc(C(=O)Nc3cnn(C)c3N3CC[C@@H](N)CC(F)(F)C3)c(N)s2)ccn1,threonine-protein kinase PIM1
 6723,CHEMBL3651935,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2nc(-c3ccc(O)cc3F)ccc2F)C1,threonine-protein kinase PIM1
 6724,CHEMBL3652022,None,,C[C@@H]1C[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cc(O)cc3F)n2)C1,threonine-protein kinase PIM1
-6725,CHEMBL3691985,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@H]3C[C@@H](N)[C@@H](NC(=O)OC)[C@@H](C)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
+6725,CHEMBL3691985,None,,CCOCc1cc(F)c(-c2nc(C(=O)Nc3cnccc3[C@@H]3C[C@H](C)[C@H](NC(=O)OC)[C@H](N)C3)ccc2F)c(F)c1,threonine-protein kinase PIM1
 6726,CHEMBL4114036,None,,Cn1ncc(NC(=O)c2ccc(F)c(-c3c(F)cc(OC4CCOCC4)cc3F)n2)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
 6727,CHEMBL3687459,None,,C[C@H]1C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H](N)[C@H]1n1cncn1,threonine-protein kinase PIM1
 6728,CHEMBL4113793,None,,COC(c1cc(F)c(-c2nc(C(=O)Nc3cnn(C)c3[C@@H]3CC[C@@H](N)[C@H](F)CO3)cs2)c(F)c1)C1CC1,threonine-protein kinase PIM1
@@ -6830,7 +6830,7 @@
 6828,CHEMBL5407681,None, ,Nc1ccc2c(c1)NC(=O)/C2=C/c1ccc(C(=O)O)cc1,threonine-protein kinase PIM1
 6829,CHEMBL3931390,None,,C[C@H]1CCN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)C[C@@H]1N,threonine-protein kinase PIM1
 6830,CHEMBL4445116,None, ,CC(C)(C#N)CC#Cc1c(Cl)c2c(Cl)cc(C(N)=O)nc2n1[C@H]1CCCNC1,threonine-protein kinase PIM1
-6831,CHEMBL3687445,None,,CS[C@H]1[C@H](N)C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@@H]1C,threonine-protein kinase PIM1
+6831,CHEMBL3687445,None,,CS[C@@H]1[C@@H](C)C[C@@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H]1N,threonine-protein kinase PIM1
 6832,CHEMBL3971118,None,,NCC[C@H]1CNC(=O)c2cc(-c3cccc(OC(F)(F)F)c3)c(-c3ccc(O)cc3)n21,threonine-protein kinase PIM1
 6833,CHEMBL3298819,None,,O=C(CC1CNC(=O)c2cc(-c3ccccc3F)cn21)NCC1CCCCC1,threonine-protein kinase PIM1
 6834,CHEMBL3689318,None,,Fc1ccc(CNc2nc3c(Br)c(Br)c(Br)c(Br)c3[nH]2)cc1F,threonine-protein kinase PIM1
@@ -6938,7 +6938,7 @@
 6936,CHEMBL4114499,None,,CCn1cc(-c2cc3c(-c4ccc(Br)c(N5C[C@H](N)C[C@@H](F)C5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
 6937,CHEMBL3919615,None,,CCn1cc(-c2cc3c(-c4cccc(N5CCNCC(C#N)C5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
 6938,CHEMBL3912557,None,,Cc1n[nH]c2cnc(-c3cncc(N4CCC[C@H](N)C4)n3)cc12,threonine-protein kinase PIM1
-6939,CHEMBL3651909,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3N3C[C@@H](N)[C@H](O)[C@@H](C)C3)n2)c1F,threonine-protein kinase PIM1
+6939,CHEMBL3651909,None,,Cc1ccc(F)c(-c2cccc(C(=O)Nc3cnccc3N3C[C@H](C)[C@@H](O)[C@H](N)C3)n2)c1F,threonine-protein kinase PIM1
 6940,CHEMBL3687488,None,,C[C@@H]1C[C@H](c2ccncc2NC(=O)c2ccc(F)c(-c3c(F)cccc3F)n2)C[C@H](N)[C@@H]1OCCS(C)(=O)=O,threonine-protein kinase PIM1
 6941,CHEMBL3974800,None,,Cc1cncc(-c2cc3c(cn2)cnn3-c2cccc(C3(O)CCCNC3)n2)n1,threonine-protein kinase PIM1
 6942,CHEMBL3968206,None,,CCn1cc(-c2cc3c(cn2)cnn3-c2cccc(N3CCN[C@@H](C)C3)n2)cn1,threonine-protein kinase PIM1
@@ -7043,7 +7043,7 @@
 7041,CHEMBL4107866,None,,Cc1n[nH]c2cnc(-c3cncc(N4CCC[C@@H](N)C4)n3)cc12,threonine-protein kinase PIM1
 7042,CHEMBL3967003,None,,c1cncc(-c2cc3c(-c4cn[nH]c4)n[nH]c3cn2)c1,threonine-protein kinase PIM1
 7043,CHEMBL4110399,None,,O[C@@H]1CCCN(c2nc(-c3n[nH]c4cnc(-c5cccnc5)cc34)ccc2Br)C1,threonine-protein kinase PIM1
-7044,CHEMBL4113088,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1[C@]12CC[C@@H](N)[C@H](CC1)O2,threonine-protein kinase PIM1
+7044,CHEMBL4113088,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1[C@]12CC[C@H](O1)[C@H](N)CC2,threonine-protein kinase PIM1
 7045,CHEMBL4111897,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
 7046,CHEMBL3652033,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CCCC(F)(CN)CC1,threonine-protein kinase PIM1
 7047,CHEMBL3648840,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CCNCC2(CCO2)C1,threonine-protein kinase PIM1
@@ -7118,7 +7118,7 @@
 7116,CHEMBL4107489,None,,CO[C@@H]1CO[C@H](c2c(NC(=O)c3csc(-c4c(F)cccc4F)n3)cnn2C)CC[C@H]1N,threonine-protein kinase PIM1
 7117,CHEMBL4114977,None,,Cn1ncc(NC(=O)c2csc(-c3c(F)cc([C@@H]4CCCO4)cc3F)n2)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
 7118,CHEMBL4111835,None,,CN(C)c1ccc(-c2nc(C(=O)Nc3cnn(C)c3[C@@H]3CC[C@@H](N)[C@H](F)CO3)cs2)cn1,threonine-protein kinase PIM1
-7119,CHEMBL4108465,None,,C[C@@H]1CN(c2ccncc2Nc2ncc3ccc(-c4c(F)cccc4F)nn23)[C@@H](C)CN1,threonine-protein kinase PIM1
+7119,CHEMBL4108465,None,,C[C@H]1CN[C@H](C)CN1c1ccncc1Nc1ncc2ccc(-c3c(F)cccc3F)nn12,threonine-protein kinase PIM1
 7120,CHEMBL3906206,None,,O=C1NCCc2[nH]c(-c3cccc4ccc(Nc5cccc(F)c5)nc34)cc21,threonine-protein kinase PIM1
 7121,CHEMBL3639838,None,,CCCn1c(N2CCNCC2)nc2c(Br)c(Br)c(Br)c(Br)c21,threonine-protein kinase PIM1
 7122,CHEMBL3899535,None,,Cc1nc2cccc(-c3cc4c([nH]3)C3(CC3)NC4=O)c2nc1NCC(F)F,threonine-protein kinase PIM1
@@ -7133,7 +7133,7 @@
 7131,CHEMBL3925309,None,,Cc1nc2cccc(-c3cc4c([nH]3)CCNC4=O)c2nc1NCC(C)(C)O,threonine-protein kinase PIM1
 7132,CHEMBL3915381,None,,CCn1cc(-c2cc3c(-c4cccc(N5CCNC(C(F)(F)F)CC5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
 7133,CHEMBL3933742,None,,Cn1c(NC(C)(C)C)nc2c(-c3cc4c([nH]3)[C@@H](CCO)NC4=O)cccc2c1=O,threonine-protein kinase PIM1
-7134,CHEMBL3950124,None,,CCn1cc(-c2cc3c(-c4cccc(N5C[C@H]6CNC[C@H]6C5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
+7134,CHEMBL3950124,None,,CCn1cc(-c2cc3c(-c4cccc(N5C[C@@H]6CNC[C@@H]6C5)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
 7135,CHEMBL3891373,None,,CN1CCN(c2cc3c(-c4ccccn4)n[nH]c3cn2)CC1=O,threonine-protein kinase PIM1
 7136,CHEMBL4580240,None, ,Cc1nc2sc3c(c2c(C)c1Br)NC(c1ccc(O)c(O)c1)NC3=O,threonine-protein kinase PIM1
 7137,CHEMBL3925624,None,,FC(F)(F)c1cccc(-c2n[nH]c3cnc(-c4cccnc4)cc23)c1,threonine-protein kinase PIM1
@@ -7164,7 +7164,7 @@
 7162,CHEMBL4106673,None,,Cn1ncc(NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)COC4)cc3F)n2)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
 7163,CHEMBL3943830,None,,CC(C)c1ccc(-c2n[nH]c3cnc(-c4cccnc4)cc23)nc1N1CCC[C@H](N)C1,threonine-protein kinase PIM1
 7164,CHEMBL4108678,None,,Cn1ncc(NC(=O)c2ccc(F)c(-c3c(F)cc(C4(O)CCOCC4)cc3F)n2)c1[C@@H]1CC[C@@H](N)[C@H](F)CO1,threonine-protein kinase PIM1
-7165,CHEMBL3648714,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnn(C)c3N3CC[C@@H](F)[C@@H](N)CC3)c(N)s2)c1,threonine-protein kinase PIM1
+7165,CHEMBL3648714,None,,Cc1ccc(F)c(-c2nc(C(=O)Nc3cnn(C)c3N3CC[C@H](N)[C@H](F)CC3)c(N)s2)c1,threonine-protein kinase PIM1
 7166,CHEMBL3648729,None,,C[C@H]1CN(c2c(NC(=O)c3nc(-c4c(F)cccc4F)sc3N)cnn2CC(F)(F)F)CCN1,threonine-protein kinase PIM1
 7167,CHEMBL3648734,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CCCCCC1=O,threonine-protein kinase PIM1
 7168,CHEMBL3648756,None,,CCn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@H](N)[C@@H](F)CC1,threonine-protein kinase PIM1
@@ -7181,7 +7181,7 @@
 7179,CHEMBL3648678,None,,C[C@H]1CNCCN1c1c(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)cnn1C,threonine-protein kinase PIM1
 7180,CHEMBL4108045,None,,Cc1cccc(F)c1-c1nc(C(=O)Nc2cnn(C)c2[C@@H]2CC[C@@H](N)[C@H](F)CO2)c(N)s1,threonine-protein kinase PIM1
 7181,CHEMBL3648765,None,,Cn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC2(CCNC2)C1,threonine-protein kinase PIM1
-7182,CHEMBL3648768,None,,CCn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@H](OC)[C@@H](N)CC1,threonine-protein kinase PIM1
+7182,CHEMBL3648768,None,,CCn1ncc(NC(=O)c2nc(-c3c(F)cccc3F)sc2N)c1N1CC[C@H](N)[C@@H](OC)CC1,threonine-protein kinase PIM1
 7183,CHEMBL3891871,None,,FC(F)(F)Oc1cccc(-c2cnc3ccc(NCC4CCOCC4)nn23)c1,threonine-protein kinase PIM1
 7184,CHEMBL3943090,None,,N#C[C@H]1CC[C@H](Nc2ccc3ncc(-c4cccc(C(F)(F)F)c4)n3n2)CC1,threonine-protein kinase PIM1
 7185,CHEMBL3966882,None,,CC(C)(O)[C@H]1CC[C@H](Nc2ccc3nnc(-c4cccc(C(F)(F)F)c4)n3c2)CC1,threonine-protein kinase PIM1
@@ -7219,7 +7219,7 @@
 7217,CHEMBL3891378,None,,c1cncc(-c2cc3c(C4CCCC4)n[nH]c3cn2)c1,threonine-protein kinase PIM1
 7218,CHEMBL3893675,None,,CNc1nc2cccc(-c3cc4c([nH]3)CCNC4=O)c2nc1NC(C)(C)C,threonine-protein kinase PIM1
 7219,CHEMBL5426017,None, ,COC(=O)c1ccc(/C=C2/C(=O)Nc3cc(N)ccc32)cc1,threonine-protein kinase PIM1
-7220,CHEMBL3676298,None,,N[C@@H]1C[C@H](c2ccncc2NC(=O)c2csc(C3CCCCC3)n2)C[C@H](N)[C@H]1O,threonine-protein kinase PIM1
+7220,CHEMBL3676298,None,,N[C@H]1C[C@@H](c2ccncc2NC(=O)c2csc(C3CCCCC3)n2)C[C@@H](N)[C@@H]1O,threonine-protein kinase PIM1
 7221,CHEMBL3648738,None,,COC1CCN(c2c(NC(=O)c3nc(-c4ccccc4F)sc3N)cnn2C)CCC1N,threonine-protein kinase PIM1
 7222,CHEMBL3964935,None,,OC1CCN(c2nc(-c3n[nH]c4cnc(-c5cccnc5)cc34)ccc2Br)CC1,threonine-protein kinase PIM1
 7223,CHEMBL3925682,None,,Cn1cc(-c2cc3c(-c4cccc(NCC(C)(C)O)n4)n[nH]c3cn2)cn1,threonine-protein kinase PIM1
@@ -7408,7 +7408,7 @@
 7406,CHEMBL496102,AMG-208,,COc1ccc2c(OCc3nnc4ccc(-c5ccccc5)nn34)ccnc2c1,threonine-protein kinase PIM1
 7407,CHEMBL384304,RG-547,,COc1ccc(F)c(F)c1C(=O)c1cnc(NC2CCN(S(C)(=O)=O)CC2)nc1N,threonine-protein kinase Sgk1
 7408,CHEMBL412142,LADUVIGLUSIB,,Cc1cnc(-c2cnc(NCCNc3ccc(C#N)cn3)nc2-c2ccc(Cl)cc2Cl)[nH]1,threonine-protein kinase Sgk1
-7409,CHEMBL4081711,ZIMLOVISERTIB,,CC[C@@H]1[C@H](F)C(=O)N[C@@H]1COc1nccc2cc(C(N)=O)c(OC)cc12,threonine-protein kinase Sgk1
+7409,CHEMBL4081711,ZIMLOVISERTIB,,CC[C@H]1[C@@H](COc2nccc3cc(C(N)=O)c(OC)cc23)NC(=O)[C@H]1F,threonine-protein kinase Sgk1
 7410,CHEMBL2177818,None,,Nc1ncccc1-c1nc2cccnc2n1-c1ccc(CC(=O)Nc2ccccc2)cc1,threonine-protein kinase Sgk1
 7411,CHEMBL247067,None,,CN(C)c1cc2cc(n1)CCCn1cc(c3ccccc31)C1=C(C(=O)NC1=O)c1cn(c3ccccc13)CCC2,threonine-protein kinase Sgk1
 7412,CHEMBL1817865,None,,Nc1n[nH]c2ncccc12,threonine-protein kinase Sgk1
@@ -7515,7 +7515,7 @@
 7513,CHEMBL4472294,None, ,C[C@@H](c1ccccc1)n1nnc2cnc3ccc(-c4cnc5[nH]ccc5c4)cc3c21,threonine-protein kinase Sgk1
 7514,CHEMBL5081823,None, ,Cc1n[nH]c2nc(-c3ccc(NS(=O)(=O)c4cc(Cl)ccc4F)cc3)nc(Oc3ccc(N)nc3)c12,threonine-protein kinase Sgk1
 7515,CHEMBL4209540,None,,Cc1cccc(-c2nc(N)sc2-c2ccc3ncccc3n2)c1,threonine-protein kinase Sgk1
-7516,CHEMBL479533,HERBIMYCIN,,CO[C@H]1[C@@H](OC)C[C@H](C)[C@@H](OC)C2=CC(=O)C=C(NC(=O)/C(C)=C/C=C/[C@H](OC)[C@@H](OC(N)=O)/C(C)=C/[C@@H]1C)C2=O,threonine-protein kinase Sgk1
+7516,CHEMBL479533,HERBIMYCIN,,CO[C@H]1/C=C/C=C(\C)C(=O)NC2=CC(=O)C=C(C2=O)[C@H](OC)[C@@H](C)C[C@H](OC)[C@H](OC)[C@@H](C)/C=C(\C)[C@@H]1OC(N)=O,threonine-protein kinase Sgk1
 7517,CHEMBL3355031,None,,COc1nc(-c2ccc(NS(=O)(=O)c3cc(C)ccc3F)cc2)nc2[nH]ncc12,threonine-protein kinase Sgk1
 7518,CHEMBL2218926,None,,CC(C)(C)c1cc(C=C(C#N)C#N)cc(Br)c1O,threonine-protein kinase Sgk1
 7519,CHEMBL3356024,None,,Nc1n[nH]c2cc(-c3ccc(NS(=O)(=O)c4cccc(Cl)c4Cl)cc3)ccc12,threonine-protein kinase Sgk1
@@ -7535,7 +7535,7 @@
 7533,CHEMBL557108,None,,CC(C(=O)O)c1ccc(-c2c[nH]c3ncc(-c4ccc5ccccc5c4)cc23)cc1,threonine-protein kinase Sgk1
 7534,CHEMBL1940252,None,,CC(=O)N1CC[C@@H](Nc2cncc(C(=O)c3cn(C(C)C)c4ncnc(N)c34)n2)[C@H]1c1ccc(F)cc1,threonine-protein kinase Sgk1
 7535,CHEMBL3774632,None,,CC(O)CNc1nc(NCc2ccc(-c3ccccn3)cc2)c2[nH]nc(C(C)C)c2n1,threonine-protein kinase Sgk1
-7536,CHEMBL3719135,None,,CC(C)n1nc(-c2cnc(N)c(OC(F)(F)F)c2)cc1[C@H]1[C@@H]2CN(C3COC3)C[C@@H]21,threonine-protein kinase Sgk1
+7536,CHEMBL3719135,None,,CC(C)n1nc(-c2cnc(N)c(OC(F)(F)F)c2)cc1[C@@H]1[C@H]2CN(C3COC3)C[C@H]21,threonine-protein kinase Sgk1
 7537,CHEMBL2218925,None,,O=C1Nc2ccc(Br)cc2/C1=C\c1cc2c([nH]1)CCCC2,threonine-protein kinase Sgk1
 7538,CHEMBL3356019,None,,Cn1cc(S(=O)(=O)Nc2ccc(-c3ccc4c(N)n[nH]c4c3)cc2)c(C(F)(F)F)n1,threonine-protein kinase Sgk1
 7539,CHEMBL3092462,None,,Nc1n[nH]c2nc(-c3ccc(NS(=O)(=O)c4cc(Cl)ccc4F)c(F)c3)cnc12,threonine-protein kinase Sgk1
@@ -7892,9 +7892,9 @@
 7890,CHEMBL4551344,A-1210227,C44H41ClF3N7O7S,O=C(NS(=O)(=O)c1ccc(NCC2CCOCC2)c([N+](=O)[O-])c1)c1ccc(N2CCN(Cc3ccc(C(F)(F)F)cc3-c3ccc(Cl)cc3)CC2)cc1Oc1cnc2[nH]ccc2c1,threonine-protein kinase Sgk1
 7891,CHEMBL4521594,BAY-1797, ,NS(=O)(=O)c1cc(NC(=O)Cc2ccccc2)ccc1Oc1cccc(Cl)c1,threonine-protein kinase Sgk1
 7892,CHEMBL4206831,None,,CCC(=O)Nc1ccc(C(=O)Nc2ccc(Nc3ncc4c(n3)N(C)c3ccc(C)cc3C(=O)N4C)cc2)cc1,threonine-protein kinase Sgk1
-7893,CHEMBL4165749,BI 2545,,O=C(NC[C@@H]1[C@H]2CN(C(=O)OCc3cc(C(F)(F)F)cc(C(F)(F)F)c3)C[C@@H]12)c1ccc2[nH]nnc2c1,threonine-protein kinase Sgk1
+7893,CHEMBL4165749,BI 2545,,O=C(NC[C@H]1[C@@H]2CN(C(=O)OCc3cc(C(F)(F)F)cc(C(F)(F)F)c3)C[C@H]12)c1ccc2[nH]nnc2c1,threonine-protein kinase Sgk1
 7894,CHEMBL176857,GW442130X,,COc1ccccc1-c1cc(/C=C2\C(=O)Nc3ncc(Br)cc32)cc(Br)c1O,threonine-protein kinase Sgk1
-7895,CHEMBL3715238,None,,Nc1ncc(-c2cc([C@H]3[C@@H]4CN(C5COC5)C[C@@H]43)n(CC3CC3)n2)cc1C(F)(F)F,threonine-protein kinase Sgk1
+7895,CHEMBL3715238,None,,Nc1ncc(-c2cc([C@@H]3[C@H]4CN(C5COC5)C[C@H]43)n(CC3CC3)n2)cc1C(F)(F)F,threonine-protein kinase Sgk1
 7896,CHEMBL1909350,GSK-949675A,,CCn1c(-c2nonc2N)nc2c(C#CC(C)(C)O)nc(OCCNC)cc21.Cl,threonine-protein kinase Sgk1
 7897,CHEMBL450071,GSK-1392956A,,COc1cc(N2CCN(C(C)C)CC2)ccc1Nc1nc(Nc2ccc(F)cc2C(=O)NC[C@@H](O)CO)c2cc[nH]c2n1,threonine-protein kinase Sgk1
 7898,CHEMBL13868,None,,Fc1ccc(-c2ncn(C3CCNCC3)c2-c2ccnc(Oc3ccc(Oc4ccccc4)cc3)n2)cc1,threonine-protein kinase Sgk1
@@ -8161,7 +8161,7 @@
 8159,CHEMBL2204495,None,,O=C(Nc1cccnc1)c1cc(-c2ccnc(F)c2)ccc1OCc1ccccc1,threonine-protein kinase Sgk1
 8160,CHEMBL409525,None,,CN(C)CCOc1ccc2c(-c3c(-c4ccccn4)nn4c3CCC4)ccnc2c1,threonine-protein kinase Sgk1
 8161,CHEMBL254992,None,,COc1c(NC(=O)c2ccc(C)c(N3C=C(C(=O)NCC(C)(C)CN(C)C)NN3)c2)cc(C(C)(C)C)cc1NS(C)(=O)=O,threonine-protein kinase Sgk1
-8162,CHEMBL4546703,None, ,CC(C)COc1cccc(Cl)c1-c1cc2cnc(N)nc2nc1N1C[C@@H]2[C@@H](N)[C@@H]2C1,threonine-protein kinase Sgk1
+8162,CHEMBL4546703,None, ,CC(C)COc1cccc(Cl)c1-c1cc2cnc(N)nc2nc1N1C[C@H]2[C@H](N)[C@H]2C1,threonine-protein kinase Sgk1
 8163,CHEMBL2170610,BI 9627,,CC(=O)N1CCC(c2ccc(C(=O)NC(=N)N)cc2C(F)(F)F)CC1,threonine-protein kinase Sgk1
 8164,CHEMBL2376154,None,,Cn1nc(-c2cnc3[nH]cc(C(=O)N[C@@H](C(=O)N4CC(C#N)C4)C4CC4)c3n2)c2ccc(Cl)cc21,threonine-protein kinase Sgk1
 8165,CHEMBL1242366,None,,CC[C@H]1C[C@H]2O[C@@](C)([C@@H]1OC)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)N[C@@H]4O,threonine-protein kinase Sgk1
@@ -8224,7 +8224,7 @@
 8222,CHEMBL4531775,SR-321, ,O=C(NCCCC1CCCCC1)c1ccc(CNC(=O)c2cnn(-c3ccccc3)c2C(F)(F)F)cc1,threonine-protein kinase Sgk1
 8223,CHEMBL4564312,BAY-786,C29H26ClF4N3O5S2,O=C(NCc1ncc(C(F)(F)F)cc1Cl)c1ccc2c(c1)C1(CCS(=O)(=O)CC1)[C@@H](C1CC1)N2S(=O)(=O)c1ccc(F)cc1,threonine-protein kinase Sgk1
 8224,CHEMBL4540759,BI 0054, ,CC(=O)N1CCC(c2ccc(C(=O)NC3=NCCN3)cc2C(F)(F)F)CC1,threonine-protein kinase Sgk1
-8225,CHEMBL4453148,None, ,Nc1ncc2cc(-c3c(Cl)cccc3-c3cccnc3)c(N3C[C@@H]4[C@@H](N)[C@@H]4C3)nc2n1,threonine-protein kinase Sgk1
+8225,CHEMBL4453148,None, ,Nc1ncc2cc(-c3c(Cl)cccc3-c3cccnc3)c(N3C[C@H]4[C@H](N)[C@H]4C3)nc2n1,threonine-protein kinase Sgk1
 8226,CHEMBL4082278,None,,C=CC(=O)Nc1cccc(C(=O)Nc2ccc(Nc3cc(-c4[nH]c(SC)nc4C)ccn3)cc2)c1,threonine-protein kinase Sgk1
 8227,CHEMBL4518706,PF-00911705, ,CN(c1ccnc(CNc2nc(Nc3ccc4c(c3)CC(=O)N4)ncc2C(F)(F)F)n1)S(C)(=O)=O,threonine-protein kinase Sgk1
 8228,CHEMBL3903492,None,,Cc1n[nH]c2ncc(C(=O)N3CCC[C@H]3c3ccc(Cl)cc3)cc12,threonine-protein kinase Sgk1
@@ -8292,7 +8292,7 @@
 8290,CHEMBL383246,None,,COc1cc2ncnc(Nc3cccc(Cl)c3F)c2cc1CN(C)C1(C(N)=O)CCN(C(C)C)CC1,threonine-protein kinase Sgk1
 8291,CHEMBL3125728,None,,COc1ccc(-c2nc3cc(-c4csc(C(=O)NCCC(C)C)c4)cnc3[nH]2)cc1,threonine-protein kinase Sgk1
 8292,CHEMBL3685796,MRL-SYKi,,Cc1cc(Nc2nccc(C)n2)cc(-c2cnc([C@@]3(O)CC[C@H](C(=O)O)C(C)(C)C3)s2)c1,threonine-protein kinase Sgk1
-8293,CHEMBL4560589,MLi-2-NC,C22H27N5O2,C[C@@H]1CN(c2cc(-c3nn(C)c4ccc(OC5(C)CC5)cc34)ncn2)C[C@H](C)O1,threonine-protein kinase Sgk1
+8293,CHEMBL4560589,MLi-2-NC,C22H27N5O2,C[C@H]1CN(c2cc(-c3nn(C)c4ccc(OC5(C)CC5)cc34)ncn2)C[C@@H](C)O1,threonine-protein kinase Sgk1
 8294,CHEMBL4282264,A-485,,CNC(=O)Nc1ccc2c(c1)CC[C@@]21OC(=O)N(CC(=O)N(Cc2ccc(F)cc2)[C@@H](C)C(F)(F)F)C1=O,threonine-protein kinase Sgk1
 8295,CHEMBL4538174,ERKi,C16H17N5O2,C[C@@H](NC(=O)Nc1cc2[nH]ncc2c(CO)n1)c1ccccc1,threonine-protein kinase Sgk1
 8296,CHEMBL389745,None,,COc1cc(-c2ccc3c(c2)Nc2ccc(C(C)(C)C(=O)Nc4ccc(N5CCOCC5)cc4)cc2NC3=O)ccc1N,threonine-protein kinase Sgk1
@@ -8338,7 +8338,7 @@
 8336,CHEMBL332794,A-192621,,CCCOc1ccc([C@H]2[C@H](C(=O)O)[C@@H](c3ccc4c(c3)OCO4)CN2CC(=O)Nc2c(CC)cccc2CC)cc1,threonine-protein kinase Sgk1
 8337,CHEMBL210618,None,,CCOc1nc(NC(=O)Cc2cc(OC)ccc2OC)cc(N)c1C#N,threonine-protein kinase Sgk1
 8338,CHEMBL383760,None,,CNC(=O)[C@H]1CCCN1Cc1cc2c(Nc3cccc(Cl)c3F)ncnc2cc1OC,threonine-protein kinase Sgk1
-8339,CHEMBL5422793,None, ,O[C@]12C[C@@H]3C[C@H](C1)[C@H](Nc1c(-c4cn[nH]c4)cnc4[nH]ccc14)[C@@H](C3)C2,threonine-protein kinase Sgk1
+8339,CHEMBL5422793,None, ,O[C@@]12C[C@H]3C[C@@H](C1)[C@@H](Nc1c(-c4cn[nH]c4)cnc4[nH]ccc14)[C@H](C3)C2,threonine-protein kinase Sgk1
 8340,CHEMBL1794062,GW577921A,,COc1ccccc1Nc1ncc(-c2ccccc2)o1.Cl,threonine-protein kinase Sgk1
 8341,CHEMBL1909353,GW458344A,,Cc1cc(-c2ccco2)cc(C)c1/C=C/c1cncc(-c2nn[nH]n2)c1.Cl,threonine-protein kinase Sgk1
 8342,CHEMBL4870304,None,,COc1cc2nc(NC3CC3)nc(NC3CCN(C(C)C)CC3)c2cc1OC.O=C(O)C(F)(F)F,threonine-protein kinase Sgk1
@@ -8428,7 +8428,7 @@
 8426,CHEMBL5086345,None, ,Cc1n[nH]c2nc(-c3ccc(NS(=O)(=O)c4cc(Cl)ccc4F)cc3)nc(OCCCN)c12,threonine-protein kinase Sgk1
 8427,CHEMBL3356028,None,,N#Cc1ccc(Cl)cc1S(=O)(=O)Nc1ccc(-c2ccc3c(N)n[nH]c3c2)cc1,threonine-protein kinase Sgk1
 8428,CHEMBL235157,None,,COc1cc2ncc3c(N)nc4c(C)c(N)ccc4c3c2cc1OC,threonine-protein kinase Sgk1
-8429,CHEMBL4552354,BI 3017,C20H21N7O3,Cc1nccc(COC(=O)N2C[C@@H]3[C@@H](CNC(=O)c4ccc5[nH]nnc5c4)[C@@H]3C2)n1,threonine-protein kinase Sgk1
+8429,CHEMBL4552354,BI 3017,C20H21N7O3,Cc1nccc(COC(=O)N2C[C@H]3[C@H](CNC(=O)c4ccc5[nH]nnc5c4)[C@H]3C2)n1,threonine-protein kinase Sgk1
 8430,CHEMBL2087493,None,,CS(=O)(=O)N1CCN(Cc2cn3c(Cl)c(-c4cnc(N)nc4)nc(N4CCOCC4)c3n2)CC1,threonine-protein kinase Sgk1
 8431,CHEMBL5071544,None, ,Cc1n[nH]c2nc(-c3ccc(NS(=O)(=O)c4cc(Cl)ccc4F)cc3)nc(OCC3CNCCO3)c12,threonine-protein kinase Sgk1
 8432,CHEMBL5432289,None, ,NS(=O)(=O)c1ccc(NC(=O)Nc2nc(-c3ccccc3)n(-c3ccc(F)cc3)n2)cc1,threonine-protein kinase Sgk1
@@ -8617,7 +8617,7 @@
 8615,CHEMBL475599,GSK-300014A,,CS(=O)(=O)CCNCc1cc(-c2cc3c(Nc4ccc(OCc5cccc(F)c5)c(Cl)c4)ncnc3s2)cs1,threonine-protein kinase Sgk1
 8616,CHEMBL185939,GW828525X,,FC(F)(F)c1ccc(-c2nn3ncccc3c2-c2ccnc(Nc3ccc4c(c3)OCCO4)n2)cc1,threonine-protein kinase Sgk1
 8617,CHEMBL1641799,None,,CC(C)(C)c1cc(C(=O)O)c(NC(=O)Nc2ccc3[nH]ncc3c2)s1,threonine-protein kinase Sgk1
-8618,CHEMBL4098877,MLi-2,,C[C@@H]1CN(c2cc(-c3n[nH]c4ccc(OC5(C)CC5)cc34)ncn2)C[C@H](C)O1,threonine-protein kinase Sgk1
+8618,CHEMBL4098877,MLi-2,,C[C@H]1CN(c2cc(-c3n[nH]c4ccc(OC5(C)CC5)cc34)ncn2)C[C@@H](C)O1,threonine-protein kinase Sgk1
 8619,CHEMBL3799292,(R)-9s,,C[C@H](c1cccc(C#N)c1)n1cc(Cl)cc(C(N)=O)c1=N,threonine-protein kinase Sgk1
 8620,CHEMBL1516890,GW441756X,,Cn1cc(C=C2C(=O)Nc3cccnc32)c2ccccc21,threonine-protein kinase Sgk1
 8621,CHEMBL1909381,GW575808A,,Cc1ccc(Nc2ccnc(Nc3cccc(C(N)=O)c3)n2)cc1O.Cl,threonine-protein kinase Sgk1
@@ -8656,8 +8656,8 @@
 8654,CHEMBL340807,HARMALINE,,COc1ccc2c3c([nH]c2c1)C(C)=NCC3,threonine-protein kinase Sgk1
 8655,CHEMBL261131,DIACYLGLYCEROL KINASE INHIBITOR II,,O=c1c2ccccc2[nH]c(=S)n1CCN1CCC(=C(c2ccc(F)cc2)c2ccc(F)cc2)CC1,threonine-protein kinase Sgk1
 8656,CHEMBL4586794,ABT-100, ,Cn1cncc1[C@](O)(COc1ccc(C#N)cc1-c1ccc(OC(F)(F)F)cc1)c1ccc(C#N)cc1,threonine-protein kinase Sgk1
-8657,CHEMBL4539943,BAY-694, ,O=C(O)[C@@H]1[C@@H](Cn2nnc3ccccc3c2=O)CC[C@H]1C(=O)c1ccc(OCCC2CCOCC2)cc1,threonine-protein kinase Sgk1
-8658,CHEMBL4585243,BAY-7598, ,O=C(O)[C@H]1[C@H](Cn2nnc3ccccc3c2=O)CC[C@@H]1C(=O)c1ccc(OCCC2CCOCC2)cc1,threonine-protein kinase Sgk1
+8657,CHEMBL4539943,BAY-694, ,O=C(c1ccc(OCCC2CCOCC2)cc1)[C@@H]1CC[C@H](Cn2nnc3ccccc3c2=O)[C@H]1C(=O)O,threonine-protein kinase Sgk1
+8658,CHEMBL4585243,BAY-7598, ,O=C(c1ccc(OCCC2CCOCC2)cc1)[C@H]1CC[C@@H](Cn2nnc3ccccc3c2=O)[C@@H]1C(=O)O,threonine-protein kinase Sgk1
 8659,CHEMBL574737,UCN-01,,CN[C@@H]1C[C@H]2O[C@@](C)([C@@H]1OC)n1c3ccccc3c3c4c(c5c6ccccc6n2c5c31)C(=O)N[C@H]4O,threonine-protein kinase Sgk1
 8660,CHEMBL3916717,SELONSERTIB,,Cc1cc(F)c(C(=O)Nc2cccc(-c3nncn3C(C)C)n2)cc1-n1cnc(C2CC2)c1,threonine-protein kinase Sgk1
 8661,CHEMBL91829,RUBOXISTAURIN,,CN(C)C[C@@H]1CCn2cc(c3ccccc32)C2=C(C(=O)NC2=O)c2cn(c3ccccc23)CCO1,threonine-protein kinase Sgk1
@@ -8699,7 +8699,7 @@
 8697,CHEMBL1785002,None,,NC(=O)Cc1ccccc1Oc1nccc(-c2c(-c3ccc(F)cc3)ncn2C2CCNCC2)n1,threonine-protein kinase Sgk1
 8698,CHEMBL205966,GW659893X,,Nc1ccc(C#Cc2cncnc2Nc2ccc(OCc3cccc(F)c3)c(Cl)c2)cc1,threonine-protein kinase Sgk1
 8699,CHEMBL475761,GW784684X,,CN1CCN(Cc2ccc(-c3cc4ncnc(Nc5ccc(OCc6cccc(F)c6)c(Cl)c5)c4s3)o2)CC1,threonine-protein kinase Sgk1
-8700,CHEMBL240954,None,,CC(=O)O[C@@H]1[C@@H](OC(C)=O)[C@@H](O)[C@H](Oc2c(-c3ccc(O)cc3)oc3cc(O)cc(O)c3c2=O)O[C@H]1C,threonine-protein kinase Sgk1
+8700,CHEMBL240954,None,,CC(=O)O[C@H]1[C@H](C)O[C@@H](Oc2c(-c3ccc(O)cc3)oc3cc(O)cc(O)c3c2=O)[C@H](O)[C@@H]1OC(C)=O,threonine-protein kinase Sgk1
 8701,CHEMBL196022,GW642125X,,COc1ccc(-c2coc3ncnc(N)c23)cc1,threonine-protein kinase Sgk1
 8702,CHEMBL477979,GW785974X,,Cc1ccc(C(=O)NC(C)C)cc1-c1ccc(C(=O)NCC2CC2)cc1,threonine-protein kinase Sgk1
 8703,CHEMBL4217392,None,,CS(=O)(=O)N1CCN(Cc2nc3c(N4CCOCC4)nc(-c4cnc(N)nc4)cn3n2)CC1,threonine-protein kinase Sgk1
@@ -8901,7 +8901,7 @@
 8899,CHEMBL362558,LY-2090314,,O=C1NC(=O)C(c2cnc3ccccn23)=C1c1cn2c3c(cc(F)cc13)CN(C(=O)N1CCCCC1)CC2,threonine-protein kinase Sgk2
 8900,CHEMBL296468,BMS-387032,,CC(C)(C)c1cnc(CSc2cnc(NC(=O)C3CCNCC3)s2)o1,threonine-protein kinase Sgk2
 8901,CHEMBL412142,LADUVIGLUSIB,,Cc1cnc(-c2cnc(NCCNc3ccc(C#N)cn3)nc2-c2ccc(Cl)cc2Cl)[nH]1,threonine-protein kinase Sgk2
-8902,CHEMBL4081711,ZIMLOVISERTIB,,CC[C@@H]1[C@H](F)C(=O)N[C@@H]1COc1nccc2cc(C(N)=O)c(OC)cc12,threonine-protein kinase Sgk2
+8902,CHEMBL4081711,ZIMLOVISERTIB,,CC[C@H]1[C@@H](COc2nccc3cc(C(N)=O)c(OC)cc23)NC(=O)[C@H]1F,threonine-protein kinase Sgk2
 8903,CHEMBL2177818,None,,Nc1ncccc1-c1nc2cccnc2n1-c1ccc(CC(=O)Nc2ccccc2)cc1,threonine-protein kinase Sgk2
 8904,CHEMBL1982167,None,,COc1ccc(OC)c(NC(=O)c2cnn3c(-c4ccccc4)ccnc23)c1,threonine-protein kinase Sgk2
 8905,CHEMBL1996066,None,,N#Cc1ccc2nc(N)n(-c3nc(-c4ccccc4)cs3)c2c1,threonine-protein kinase Sgk2
@@ -8990,7 +8990,7 @@
 8988,CHEMBL221271,None,,N/C(=N\[N+](=O)[O-])N/N=C\c1ccc(-c2cccc([N+](=O)[O-])c2)o1,threonine-protein kinase Sgk2
 8989,CHEMBL3609749,None,,COc1cc(-c2cn([C@H]3CCc4c(F)cccc4N(CC(F)(F)F)C3=O)nn2)ccc1-n1cnc(C)c1,threonine-protein kinase Sgk2
 8990,CHEMBL4472294,None, ,C[C@@H](c1ccccc1)n1nnc2cnc3ccc(-c4cnc5[nH]ccc5c4)cc3c21,threonine-protein kinase Sgk2
-8991,CHEMBL479533,HERBIMYCIN,,CO[C@H]1[C@@H](OC)C[C@H](C)[C@@H](OC)C2=CC(=O)C=C(NC(=O)/C(C)=C/C=C/[C@H](OC)[C@@H](OC(N)=O)/C(C)=C/[C@@H]1C)C2=O,threonine-protein kinase Sgk2
+8991,CHEMBL479533,HERBIMYCIN,,CO[C@H]1/C=C/C=C(\C)C(=O)NC2=CC(=O)C=C(C2=O)[C@H](OC)[C@@H](C)C[C@H](OC)[C@H](OC)[C@@H](C)/C=C(\C)[C@@H]1OC(N)=O,threonine-protein kinase Sgk2
 8992,CHEMBL2218926,None,,CC(C)(C)c1cc(C=C(C#N)C#N)cc(Br)c1O,threonine-protein kinase Sgk2
 8993,CHEMBL1982880,None,,COc1ccc(OC)c(Nc2ccc3nnc(-c4ccccc4)n3n2)c1,threonine-protein kinase Sgk2
 8994,CHEMBL1971430,None,,Cc1cccc(-c2c(-c3ccncc3)nc(NCC(N)Cc3ccccc3)n(C)c2=O)c1,threonine-protein kinase Sgk2
@@ -9025,7 +9025,7 @@
 9023,CHEMBL1794065,GSK-554170A,,CCn1c(-c2nonc2N)nc2c(C#CC(C)(C)O)ncc(OCC3CCNCC3)c21.O=C(O)C(F)(F)F,threonine-protein kinase Sgk2
 9024,CHEMBL1375640,None,,Cc1nc(COc2ccccc2Cl)sc1-c1ccnc(N)n1,threonine-protein kinase Sgk2
 9025,CHEMBL408564,None,,O=C(Nc1n[nH]c2nc(-c3ccco3)c(Br)cc12)C1CC1,threonine-protein kinase Sgk2
-9026,CHEMBL3719135,None,,CC(C)n1nc(-c2cnc(N)c(OC(F)(F)F)c2)cc1[C@H]1[C@@H]2CN(C3COC3)C[C@@H]21,threonine-protein kinase Sgk2
+9026,CHEMBL3719135,None,,CC(C)n1nc(-c2cnc(N)c(OC(F)(F)F)c2)cc1[C@@H]1[C@H]2CN(C3COC3)C[C@H]21,threonine-protein kinase Sgk2
 9027,CHEMBL2218925,None,,O=C1Nc2ccc(Br)cc2/C1=C\c1cc2c([nH]1)CCCC2,threonine-protein kinase Sgk2
 9028,CHEMBL36450,None,,Cc1nc(-c2ccccc2)c(-c2ccncc2)o1,threonine-protein kinase Sgk2
 9029,CHEMBL2218940,None,,N#C/C(=C(\N)Sc1ccc(N)cc1)c1ccccc1C(F)(F)F,threonine-protein kinase Sgk2
@@ -9350,9 +9350,9 @@
 9348,CHEMBL4551344,A-1210227,C44H41ClF3N7O7S,O=C(NS(=O)(=O)c1ccc(NCC2CCOCC2)c([N+](=O)[O-])c1)c1ccc(N2CCN(Cc3ccc(C(F)(F)F)cc3-c3ccc(Cl)cc3)CC2)cc1Oc1cnc2[nH]ccc2c1,threonine-protein kinase Sgk2
 9349,CHEMBL4521594,BAY-1797, ,NS(=O)(=O)c1cc(NC(=O)Cc2ccccc2)ccc1Oc1cccc(Cl)c1,threonine-protein kinase Sgk2
 9350,CHEMBL4206831,None,,CCC(=O)Nc1ccc(C(=O)Nc2ccc(Nc3ncc4c(n3)N(C)c3ccc(C)cc3C(=O)N4C)cc2)cc1,threonine-protein kinase Sgk2
-9351,CHEMBL4165749,BI 2545,,O=C(NC[C@@H]1[C@H]2CN(C(=O)OCc3cc(C(F)(F)F)cc(C(F)(F)F)c3)C[C@@H]12)c1ccc2[nH]nnc2c1,threonine-protein kinase Sgk2
+9351,CHEMBL4165749,BI 2545,,O=C(NC[C@H]1[C@@H]2CN(C(=O)OCc3cc(C(F)(F)F)cc(C(F)(F)F)c3)C[C@H]12)c1ccc2[nH]nnc2c1,threonine-protein kinase Sgk2
 9352,CHEMBL176857,GW442130X,,COc1ccccc1-c1cc(/C=C2\C(=O)Nc3ncc(Br)cc32)cc(Br)c1O,threonine-protein kinase Sgk2
-9353,CHEMBL3715238,None,,Nc1ncc(-c2cc([C@H]3[C@@H]4CN(C5COC5)C[C@@H]43)n(CC3CC3)n2)cc1C(F)(F)F,threonine-protein kinase Sgk2
+9353,CHEMBL3715238,None,,Nc1ncc(-c2cc([C@@H]3[C@H]4CN(C5COC5)C[C@H]43)n(CC3CC3)n2)cc1C(F)(F)F,threonine-protein kinase Sgk2
 9354,CHEMBL1909350,GSK-949675A,,CCn1c(-c2nonc2N)nc2c(C#CC(C)(C)O)nc(OCCNC)cc21.Cl,threonine-protein kinase Sgk2
 9355,CHEMBL450071,GSK-1392956A,,COc1cc(N2CCN(C(C)C)CC2)ccc1Nc1nc(Nc2ccc(F)cc2C(=O)NC[C@@H](O)CO)c2cc[nH]c2n1,threonine-protein kinase Sgk2
 9356,CHEMBL13868,None,,Fc1ccc(-c2ncn(C3CCNCC3)c2-c2ccnc(Oc3ccc(Oc4ccccc4)cc3)n2)cc1,threonine-protein kinase Sgk2
@@ -9762,7 +9762,7 @@
 9760,CHEMBL210928,None,,CCOc1nc(NC(=O)Cc2cc(OC)c(S(C)(=O)=O)cc2OC)cc(N)c1Cl,threonine-protein kinase Sgk2
 9761,CHEMBL220057,None,,Cc1cccc(NC(=O)Nc2ccc(-c3cccc4[nH]nc(N)c34)cc2)c1,threonine-protein kinase Sgk2
 9762,CHEMBL3685796,MRL-SYKi,,Cc1cc(Nc2nccc(C)n2)cc(-c2cnc([C@@]3(O)CC[C@H](C(=O)O)C(C)(C)C3)s2)c1,threonine-protein kinase Sgk2
-9763,CHEMBL4560589,MLi-2-NC,C22H27N5O2,C[C@@H]1CN(c2cc(-c3nn(C)c4ccc(OC5(C)CC5)cc34)ncn2)C[C@H](C)O1,threonine-protein kinase Sgk2
+9763,CHEMBL4560589,MLi-2-NC,C22H27N5O2,C[C@H]1CN(c2cc(-c3nn(C)c4ccc(OC5(C)CC5)cc34)ncn2)C[C@@H](C)O1,threonine-protein kinase Sgk2
 9764,CHEMBL4282264,A-485,,CNC(=O)Nc1ccc2c(c1)CC[C@@]21OC(=O)N(CC(=O)N(Cc2ccc(F)cc2)[C@@H](C)C(F)(F)F)C1=O,threonine-protein kinase Sgk2
 9765,CHEMBL4538174,ERKi,C16H17N5O2,C[C@@H](NC(=O)Nc1cc2[nH]ncc2c(CO)n1)c1ccccc1,threonine-protein kinase Sgk2
 9766,CHEMBL4568735,NVS-MALT1,C24H27ClF3N5O4S,CO[C@@H](C)c1c(Nc2ccc([C@H](N(C)C(=O)C3CCS(=O)(=O)CC3)C(F)(F)F)cc2)cnc2cc(Cl)nn12,threonine-protein kinase Sgk2
@@ -9907,7 +9907,7 @@
 9905,CHEMBL3745885,None,,Cn1c(=O)c(S(=O)(=O)c2ccc(F)cc2F)cc2cnc(Nc3ccc4[nH]ccc4c3)nc21,threonine-protein kinase Sgk2
 9906,CHEMBL1995592,None,,Cc1cc(O)ccc1-n1c2cc(Cl)ccc2c(=O)c2c(N)nc(N)nc21,threonine-protein kinase Sgk2
 9907,CHEMBL1976420,None,,CCc1c(-c2ccc(C(C)(C)O)cc2)[nH]c2nccnc12,threonine-protein kinase Sgk2
-9908,CHEMBL4552354,BI 3017,C20H21N7O3,Cc1nccc(COC(=O)N2C[C@@H]3[C@@H](CNC(=O)c4ccc5[nH]nnc5c4)[C@@H]3C2)n1,threonine-protein kinase Sgk2
+9908,CHEMBL4552354,BI 3017,C20H21N7O3,Cc1nccc(COC(=O)N2C[C@H]3[C@H](CNC(=O)c4ccc5[nH]nnc5c4)[C@H]3C2)n1,threonine-protein kinase Sgk2
 9909,CHEMBL207995,None,,COc1cc(C=O)c(Cl)cc1NC(=O)Nc1cnc(C#N)cn1,threonine-protein kinase Sgk2
 9910,CHEMBL1990212,None,,COc1cc(OC)c(Nc2ccc3nnc(-c4ccccc4)n3n2)cc1Cl,threonine-protein kinase Sgk2
 9911,CHEMBL2000481,None,,NCCNS(=O)(=O)c1cccc(C(=O)Nc2ccc(-c3n[nH]c(=O)c4ccccc34)cc2)c1,threonine-protein kinase Sgk2
@@ -10171,7 +10171,7 @@
 10169,CHEMBL458997,None,,CNC(=O)c1ccccc1Nc1nc(Nc2ccc(N3CCOCC3)cc2OC)ncc1Cl,threonine-protein kinase Sgk2
 10170,CHEMBL475599,GSK-300014A,,CS(=O)(=O)CCNCc1cc(-c2cc3c(Nc4ccc(OCc5cccc(F)c5)c(Cl)c4)ncnc3s2)cs1,threonine-protein kinase Sgk2
 10171,CHEMBL185939,GW828525X,,FC(F)(F)c1ccc(-c2nn3ncccc3c2-c2ccnc(Nc3ccc4c(c3)OCCO4)n2)cc1,threonine-protein kinase Sgk2
-10172,CHEMBL4098877,MLi-2,,C[C@@H]1CN(c2cc(-c3n[nH]c4ccc(OC5(C)CC5)cc34)ncn2)C[C@H](C)O1,threonine-protein kinase Sgk2
+10172,CHEMBL4098877,MLi-2,,C[C@H]1CN(c2cc(-c3n[nH]c4ccc(OC5(C)CC5)cc34)ncn2)C[C@@H](C)O1,threonine-protein kinase Sgk2
 10173,CHEMBL3799292,(R)-9s,,C[C@H](c1cccc(C#N)c1)n1cc(Cl)cc(C(N)=O)c1=N,threonine-protein kinase Sgk2
 10174,CHEMBL1516890,GW441756X,,Cn1cc(C=C2C(=O)Nc3cccnc32)c2ccccc21,threonine-protein kinase Sgk2
 10175,CHEMBL1909381,GW575808A,,Cc1ccc(Nc2ccnc(Nc3cccc(C(N)=O)c3)n2)cc1O.Cl,threonine-protein kinase Sgk2
@@ -10227,8 +10227,8 @@
 10225,CHEMBL1096290,GSK-1000163A,,CCn1c(-c2nonc2N)nc2c(C#CC(C)(C)O)nc(CN3CCCC3)cc21,threonine-protein kinase Sgk2
 10226,CHEMBL261131,DIACYLGLYCEROL KINASE INHIBITOR II,,O=c1c2ccccc2[nH]c(=S)n1CCN1CCC(=C(c2ccc(F)cc2)c2ccc(F)cc2)CC1,threonine-protein kinase Sgk2
 10227,CHEMBL4586794,ABT-100, ,Cn1cncc1[C@](O)(COc1ccc(C#N)cc1-c1ccc(OC(F)(F)F)cc1)c1ccc(C#N)cc1,threonine-protein kinase Sgk2
-10228,CHEMBL4539943,BAY-694, ,O=C(O)[C@@H]1[C@@H](Cn2nnc3ccccc3c2=O)CC[C@H]1C(=O)c1ccc(OCCC2CCOCC2)cc1,threonine-protein kinase Sgk2
-10229,CHEMBL4585243,BAY-7598, ,O=C(O)[C@H]1[C@H](Cn2nnc3ccccc3c2=O)CC[C@@H]1C(=O)c1ccc(OCCC2CCOCC2)cc1,threonine-protein kinase Sgk2
+10228,CHEMBL4539943,BAY-694, ,O=C(c1ccc(OCCC2CCOCC2)cc1)[C@@H]1CC[C@H](Cn2nnc3ccccc3c2=O)[C@H]1C(=O)O,threonine-protein kinase Sgk2
+10229,CHEMBL4585243,BAY-7598, ,O=C(c1ccc(OCCC2CCOCC2)cc1)[C@H]1CC[C@@H](Cn2nnc3ccccc3c2=O)[C@@H]1C(=O)O,threonine-protein kinase Sgk2
 10230,CHEMBL3916717,SELONSERTIB,,Cc1cc(F)c(C(=O)Nc2cccc(-c3nncn3C(C)C)n2)cc1-n1cnc(C2CC2)c1,threonine-protein kinase Sgk2
 10231,CHEMBL14762,SELICICLIB,,CC[C@H](CO)Nc1nc(NCc2ccccc2)c2ncn(C(C)C)c2n1,threonine-protein kinase Sgk2
 10232,CHEMBL3813842,PAXALISIB,,CC1(C)OCCn2c1nc1c(N3CCOCC3)nc(-c3cnc(N)nc3)nc12,threonine-protein kinase Sgk2

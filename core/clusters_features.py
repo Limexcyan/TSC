@@ -148,7 +148,7 @@ def cal_ccount(dat,cs):
         count.append(len(centroid))
     return count
 
-def perform_analysis(dat,n,og,adj=None,ogadj=None):
+def perform_analysis(dat,n,og):
     cl, processed, pcadata = cluster(dat,n)
     ccount(processed,n)
     centroidanalysis(processed,n)
@@ -156,28 +156,6 @@ def perform_analysis(dat,n,og,adj=None,ogadj=None):
     dat_sorted['smiles'] = og['smiles']
     dat_sorted['target'] = og['target']
     dat_sorted = dat_sorted.sort_values(by=['distance'])
-    #adjoint = adj.copy()
-    #nl = cl.predict(adjoint)
-    #nd = cl.transform(adjoint)[np.arange(len(adjoint)),nl]
-    #adjoint['centroid'] = nl
-    #adjoint['distance'] = nd
     prevd, prevc = cal_centroidanalysis(processed,n)
-    #newd, newc = cal_centroidanalysis(adjoint,n)
-    #plt.scatter(newd,newc,c='red',marker='^')
-    #plt.scatter(prevd,prevc,c='blue',marker='o')
-    #plt.title("centroid count")
-    #plt.xlabel("centroid")
-    #plt.ylabel("amount")
-    #plt.show()
-    #plt.bar(range(n),newc,color='red')
-    #plt.bar(range(n),prevc,color='blue')
-    #plt.title("centroid count")
-    #plt.xlabel("centroid")
-    #plt.ylabel("amount")
-    #plt.show()
-    #adj_sorted = adjoint.copy()
-    #adj_sorted['target'] = ogadj['target']
-    #adj_sorted['smiles'] = ogadj['smiles']
-    #adj_sorted = adj_sorted.sort_values(by=['distance'])
-    return dat_sorted, None, processed, None
+    return dat_sorted, processed
 

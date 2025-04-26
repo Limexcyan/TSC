@@ -32,16 +32,16 @@ if __name__ == "__main__":
 
     export_data(full_df, "data/full_sdfs.csv")
 
-    featurizer = ClusteringFeaturizer(activity_dist='quantiles', qcount=quantile_count, length=feature_count)
+    featurizer = ClusteringPreprocessFeaturizer(preprocess_type='quantiles', quant_count=quantile_count, morganfp_size=feature_count)
     feature_count = feature_count * 1.0
     datas = featurizer(full_df)
 
     export_data(datas, "data/processed_sdfs.csv")
 
-    a1, a2, a3, a4 = perform_analysis(datas,50,full_df)
+    out_data_full, out_data_processed = perform_analysis(datas,50,full_df)
 
-    targettocolor(a1, 50)
-    summary(a1)
+    targettocolor(out_data_full, 50)
+    summary(out_data_full, 1e-20)
 
 
 

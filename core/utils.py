@@ -47,19 +47,19 @@ def gaussianScaler(numArr):
     numArr = (numArr - mean) / std
     return numArr
 
-# jeżeli dane podążają za 'power law' (~e^x)
+# if data follows the 'power law' (~ e^x)
 def logScaler(numArr):
     # standard logarythmic scaler
     numArr = np.log(numArr)
     return numArr
 
-# jeżeli dystrybucja jest niejasna
-# dane dzielimy na kwantyle
+# in case of uncertain distribution
+# divide the data into quantiles
 def createQuantiles(dfColumn, numQuantiles):
     # create as many quantiles as wanted
     return pd.qcut(dfColumn, numQuantiles, labels=False, duplicates='drop')
 
-# i normalizujemy minmaxem
+# minmax normalizer
 def minMaxScaler(numArr):
     # standard minmax scaler
     minx = np.min(numArr)
