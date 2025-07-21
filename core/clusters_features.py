@@ -38,6 +38,27 @@ def cluster(dataset,n):
     plt.show()
     return clustering, processed_data, pcdata3d
 
+def st_cluster(dataset,n):
+    clustering = BisectingKMeans(n_clusters=n)
+    clusterdist = clustering.fit_transform(dataset)
+    clusterid = clustering.labels_
+    clusterdist = clusterdist[np.arange(len(dataset)),clusterid]
+    processed_data = dataset.copy()
+    processed_data['centroid'] = clusterid
+    processed_data['distance'] = clusterdist
+    pca = PCA(n_components=3)
+    pcdata3d = pd.DataFrame(pca.fit_transform(processed_data.drop(["centroid","distance"], axis=1)))
+    pcdata3d.columns = ["pc1", "pc2", "pc3"]
+
+    sizes = np.power(10,6)/np.power(processed_data["distance"],7)
+    fig = plt.figure(figsize=(11,9))
+    ax = fig.add_subplot(projection='3d')
+    ax.azim = 35
+    ax.elev = 35
+    sc = ax.scatter(pcdata3d["pc1"],pcdata3d["pc2"],pcdata3d["pc3"],cmap=plt.cm.gist_rainbow,c=processed_data["centroid"],s=sizes)
+    plt.legend(*sc.legend_elements(), bbox_to_anchor=(1.05, 1), loc=2)
+    return clustering, processed_data, pcdata3d, fig
+
 def showcluster(cid,dat,pcdat):
     cdata = dat[dat["centroid"]==cid]['distance']
     pickcluster = pcdat.loc[dat["centroid"]==cid]

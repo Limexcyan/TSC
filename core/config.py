@@ -40,11 +40,11 @@ dropped_columns = [
 """
 
 sdfs = [
-    'data/proper_sdf/CHEMBL2147_SerinePIM1.sdf',
-    'data/proper_sdf/CHEMBL2343_SerineSgk1.sdf',
-    'data/proper_sdf/CHEMBL5794_SerineSgk2.sdf',
-    'data/proper_sdf/CHEMBL260_CMGC_MAPK.sdf',
-    'data/proper_sdf/CHEMBL262_CMGC_GSK.sdf'
+    '../data/proper_sdf/CHEMBL2147_SerinePIM1.sdf',
+    '../data/proper_sdf/CHEMBL2343_SerineSgk1.sdf',
+    '../data/proper_sdf/CHEMBL5794_SerineSgk2.sdf',
+    '../data/proper_sdf/CHEMBL260_CMGC_MAPK.sdf',
+    '../data/proper_sdf/CHEMBL262_CMGC_GSK.sdf'
 ]
 
 data_path = f'data/proper_sdf'

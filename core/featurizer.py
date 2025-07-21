@@ -49,7 +49,7 @@ class ClusteringPreprocessFeaturizer(Featurizer):
     :param quick: switch merging of the dataframe to instead append to an array when generating features
     :return: dataframe or array containing morgan fingerprints of compounds
     """
-    def __call__(self, df, quick=False):
+    def __call__(self, df, update_callback = None):
         if(self.preprocess_type != None and self.preprocess_type != 'gaussian' and self.preprocess_type != 'powerlaw' and self.preprocess_type != 'quantiles'):
             print('The preprocess_type argument was wrongly set and is assumed to be None. Please use one of the following:\ngaussian,\npowerlaw,\nquantiles')
             self.preprocess_type = None
@@ -60,10 +60,9 @@ class ClusteringPreprocessFeaturizer(Featurizer):
             self.quant_count = 100
 
         labels = ['mfp_' + str(n) for n in np.arange(self.morganfp_size)]
-        if quick:
-            features = []
-        else:
-            features = pd.DataFrame(columns=labels)
+
+        features = pd.DataFrame(columns=labels)
+        features_sub = pd.DataFrame(columns=labels)
 
         for i,row in df.iterrows():
             smiles = row[self.smiles_col]
@@ -71,50 +70,17 @@ class ClusteringPreprocessFeaturizer(Featurizer):
             mfp = AllChem.GetMorganFingerprintAsBitVect(mol, self.morganfp_radius, nBits=self.morganfp_size)
             mfpvec = np.array(mfp, dtype=int)
             fullvec = np.array([np.hstack(mfpvec)],dtype=float)
-            if quick:
-                features.append(fullvec)
-            else:
+            if (i % 500 != 0):
                 fta = pd.DataFrame(fullvec, columns=labels)
-                features = pd.concat([features, fta], ignore_index=True)
-            if (i % 500 == 0) :
+                features_sub = pd.concat([features_sub, fta], ignore_index=True)
+            else :
+                if update_callback is not None:
+                    update_callback(round(100 * (i/len(df)),1))
                 print("\tcompleted " + str(round(100 * (i/len(df)),1)) + "%")
+                features = pd.concat([features, features_sub], ignore_index=True)
+                features_sub = pd.DataFrame(columns=labels)
 
         print("\tdone.")
         return features
 
 
-# class ClusteringFeaturizer(Featurizer):
-#     def __init__(self, activity_dist='gaussian', qcount=0, radius=2, length=1024, **kwargs):
-#         self.activity_dist = activity_dist
-#         self.qcount = qcount
-#         self.radius = radius
-#         self.length = length
-#         super().__init__(**kwargs)
-#
-#     def __call__(self, df, quick=False):
-#         if (
-#                 self.activity_dist != 'gaussian' and self.activity_dist != 'powerlaw' and self.activity_dist != 'quantiles'):
-#             print(
-#                 'wrongly set attribute activity_dist. Please use one of the following:\ngaussian, powerlaw, quantiles')
-#             return pd.DataFrame()
-#         # if quantiles are selected, there must be at least two of them
-#         if (self.activity_dist == 'quantiles' and self.qcount < 2):
-#             print('wrongly set quantile count.')
-#             return pd.DataFrame()
-#         c = ['f_' + str(n) for n in np.arange(self.length)]
-#         if quick:
-#             features = []
-#         else:
-#             features = pd.DataFrame(columns=c)
-#         for i, row in df.iterrows():
-#             smiles = row[self.smiles_col]
-#             mol = Chem.MolFromSmiles(smiles)
-#             fp = AllChem.GetMorganFingerprintAsBitVect(mol, self.radius, nBits=self.length)
-#             fpvector = np.array(fp, dtype=int)
-#             vec = np.array([np.hstack(fpvector)], dtype=float)
-#             if quick:
-#                 features.append(vec)
-#             else:
-#                 fta = pd.DataFrame(vec, columns=c)
-#                 features = pd.concat([features, fta], ignore_index=True)
-#         return features
