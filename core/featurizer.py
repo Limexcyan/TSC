@@ -49,7 +49,7 @@ class ClusteringPreprocessFeaturizer(Featurizer):
     :param quick: switch merging of the dataframe to instead append to an array when generating features
     :return: dataframe or array containing morgan fingerprints of compounds
     """
-    def __call__(self, df, update_callback = None):
+    def __call__(self, df):
         if(self.preprocess_type != None and self.preprocess_type != 'gaussian' and self.preprocess_type != 'powerlaw' and self.preprocess_type != 'quantiles'):
             print('The preprocess_type argument was wrongly set and is assumed to be None. Please use one of the following:\ngaussian,\npowerlaw,\nquantiles')
             self.preprocess_type = None
@@ -74,8 +74,6 @@ class ClusteringPreprocessFeaturizer(Featurizer):
                 fta = pd.DataFrame(fullvec, columns=labels)
                 features_sub = pd.concat([features_sub, fta], ignore_index=True)
             else :
-                if update_callback is not None:
-                    update_callback(round(100 * (i/len(df)),1))
                 print("\tcompleted " + str(round(100 * (i/len(df)),1)) + "%")
                 features = pd.concat([features, features_sub], ignore_index=True)
                 features_sub = pd.DataFrame(columns=labels)
