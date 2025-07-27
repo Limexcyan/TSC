@@ -150,6 +150,6 @@ def cluster_stats(df_clustered, cluster_count):
 if __name__ == "__main__":
     df = pd.read_csv("data/proper_sdf/receptors_tree/full_sdfs.csv")  # expects columns: smiles, target
     clustered_df = cluster_SH(df, cluster_count=20, max_mols=200)
-    export_data(clustered_df, "herehere")
+    export_data(clustered_df, "results/herehere")
     #pcadata = visualize_clusters_3D(clustered_df)
     #cluster_stats(clustered_df, cluster_count=20)
