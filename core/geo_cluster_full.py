@@ -9,15 +9,17 @@ from matplotlib import pyplot as plt
 import math
 from numpy import linalg as la
 import scipy
-
+import matplotlib
+from utils import *
+matplotlib.use('TkAgg')
 
 # ----------------- Spherical Harmonics Descriptor ----------------- #
 
 def rsh(m, l, ph, th):
-    if m < 0:
-        tm = scipy.special.sph_harm(-m, l, ph, th).imag
+    if (m < 0):
+        tm = scipy.special.sph_harm(-m,l,ph,th).imag
     else:
-        tm = scipy.special.sph_harm(m, l, ph, th).real
+        tm = scipy.special.sph_harm(m,l,ph,th).real
     if m == 0:
         tm /= math.sqrt(2)
     return math.sqrt(2) * pow(-1, m) * tm
@@ -40,7 +42,7 @@ def PCA_SH(coords, maxl=3):
     r, th, ph = np.zeros(L), np.zeros(L), np.zeros(L)
     for i in range(L):
         r[i] = la.norm(coords[i])
-        th[i] = math.acos(coords[i, 2] / r[i])
+        th[i] = math.acos(coords[i, 2] / r[i]) if r[i] > 1e-5 else 0
         denom = r[i] * math.sin(th[i])
         ph[i] = math.acos(coords[i, 0] / denom) if denom > 1e-6 else 0
 
@@ -146,7 +148,8 @@ def cluster_stats(df_clustered, cluster_count):
 # ----------------- Usage Example ----------------- #
 
 if __name__ == "__main__":
-    df = pd.read_csv("data/full_sdfs.csv")  # expects columns: smiles, target
-    clustered_df = cluster_SH(df, cluster_count=5, max_mols=100)
-    pcadata = visualize_clusters_3D(clustered_df)
-    cluster_stats(clustered_df, cluster_count=5)
+    df = pd.read_csv("data/proper_sdf/receptors_tree/full_sdfs.csv")  # expects columns: smiles, target
+    clustered_df = cluster_SH(df, cluster_count=20, max_mols=200)
+    export_data(clustered_df, "herehere")
+    #pcadata = visualize_clusters_3D(clustered_df)
+    #cluster_stats(clustered_df, cluster_count=20)

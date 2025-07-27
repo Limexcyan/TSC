@@ -70,3 +70,5 @@ def minMaxScaler(numArr):
     # to values ranging from 0 to 1
     numArr = (numArr - minx) / (maxx - minx)
     return numArr
+
+#print(len(pd.read_csv("core/data/proper_sdf/molecule_tree/full_sdfs.csv")))
