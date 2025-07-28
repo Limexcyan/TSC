@@ -1,155 +1,306 @@
 import pandas as pd
 import numpy as np
-from rdkit import Chem
-from rdkit.Chem import AllChem
+import math
+import scipy.special
+from numpy import linalg as la
 from sklearn.cluster import BisectingKMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-from matplotlib import pyplot as plt
-import math
-from numpy import linalg as la
-import scipy
+from sklearn.impute import SimpleImputer
 import matplotlib
-from utils import *
-matplotlib.use('TkAgg')
 
-# ----------------- Spherical Harmonics Descriptor ----------------- #
+matplotlib.use('Agg')  # Set non-interactive backend
+import matplotlib.pyplot as plt
+import ast
 
+
+# --- Spherical Harmonics ---
 def rsh(m, l, ph, th):
-    if (m < 0):
-        tm = scipy.special.sph_harm(-m,l,ph,th).imag
+    if m < 0:
+        tm = scipy.special.sph_harm_y(-m, l, ph, th).imag
     else:
-        tm = scipy.special.sph_harm(m,l,ph,th).real
+        tm = scipy.special.sph_harm_y(m, l, ph, th).real
     if m == 0:
-        tm /= math.sqrt(2)
+        tm = tm / math.sqrt(2)
     return math.sqrt(2) * pow(-1, m) * tm
 
 
 def PCA_SH(coords, maxl=3):
-    coords = np.array(coords)
+    coords = np.array(coords).reshape(-1, 3)
+    if len(coords) < 5:  # Ensure enough points for meaningful SH
+        return None
     avg = coords.mean(axis=0)
     coords -= avg
     L = len(coords)
-    ev = np.transpose(la.eig(np.cov(coords.T))[1])
+    ev = np.transpose(la.eig(np.cov(np.transpose(coords)))[1])
+
     for i in range(2):
-        proj = coords @ ev[i]
+        proj = coords.dot(ev[i])
         if -min(proj) > max(proj):
             ev[i] = -ev[i]
     if la.det(ev) < 0:
         ev[2] = -ev[2]
-    coords = coords @ ev.T
+
+    coords = coords.dot(np.transpose(ev))
 
     r, th, ph = np.zeros(L), np.zeros(L), np.zeros(L)
     for i in range(L):
         r[i] = la.norm(coords[i])
-        th[i] = math.acos(coords[i, 2] / r[i]) if r[i] > 1e-5 else 0
+        th[i] = math.acos(coords[i, 2] / r[i]) if r[i] > 1e-6 else 0
         denom = r[i] * math.sin(th[i])
         ph[i] = math.acos(coords[i, 0] / denom) if denom > 1e-6 else 0
 
     harm = []
     for l in range(maxl):
-        for m in range(-l, l+1):
+        for m in range(-l, l + 1):
             fun = np.array([rsh(m, l, ph[i], th[i]) for i in range(L)])
-            coeff = r @ fun / np.sum(fun * fun)
+            denom = np.sum(fun * fun)
+            coeff = r.dot(fun) / denom if denom > 1e-6 else 0  # Avoid division by zero
             harm.append(coeff)
-    return harm
+    return harm if not np.any(np.isnan(harm)) else None  # Return None if NaN
 
 
-# ----------------- 3D Optimization ----------------- #
-
-def optimize_molecule_3d(mol):
-    mol = Chem.AddHs(mol)
-    if AllChem.EmbedMolecule(mol, AllChem.ETKDGv3()) != 0:
-        return None
-    if AllChem.MMFFHasAllMoleculeParams(mol):
-        AllChem.MMFFOptimizeMolecule(mol)
-    else:
-        AllChem.UFFOptimizeMolecule(mol)
-    conf = mol.GetConformer()
-    return [[conf.GetAtomPosition(i).x, conf.GetAtomPosition(i).y, conf.GetAtomPosition(i).z]
-            for i in range(mol.GetNumAtoms())]
-
-
-# ----------------- Clustering & Analysis ----------------- #
-
-def cluster_SH(df, cluster_count=5, max_mols=100, maxl=3):
+# --- SH Clustering ---
+def cluster_3d_string_csv(csv_path, cluster_count=5, maxl=3):
+    df = pd.read_csv(csv_path, low_memory=False)[:1000]
     features, names, smiles = [], [], []
 
-    for i, row in df.iterrows():
-        if i >= max_mols:
-            break
-        smi = row['smiles']
-        mol = Chem.MolFromSmiles(smi)
-        if mol is None:
-            continue
-        coords = optimize_molecule_3d(mol)
-        if coords is None:
-            continue
+    for idx, row in df.iterrows():
         try:
-            desc = PCA_SH(coords, maxl=maxl)
-            features.append(desc)
-            names.append(row.get('target', f'mol_{i}'))
-            smiles.append(smi)
+            coords_raw = [ast.literal_eval(c) for c in row[2:].dropna() if isinstance(c, str) and '[' in c and ']' in c]
+            coords = [c for c in coords_raw if len(c) == 3 and all(isinstance(x, (int, float)) for x in c)]
+            if len(coords) < 5:
+                print(f"[WARN] Skipping molecule {row['target']}, too few atoms ({len(coords)})")
+                continue
+            sh_desc = PCA_SH(coords, maxl=maxl)
+            if sh_desc is None or np.any(np.isnan(sh_desc)):
+                print(f"[WARN] Skipping molecule {row['target']}, invalid SH descriptors")
+                continue
+            features.append(sh_desc)
+            names.append(row['target'])
+            smiles.append(row['smiles'])
         except Exception as e:
-            print(f"Skipped {i}: {e}")
+            print(f"[ERROR] Failed to process molecule {row['target']}: {e}")
 
-    X = StandardScaler().fit_transform(features)
-    clustering = BisectingKMeans(n_clusters=cluster_count, random_state=42)
-    dist = clustering.fit_transform(X)
-    labels = clustering.labels_
-    dists = dist[np.arange(len(X)), labels]
+    if not features:
+        raise ValueError("No valid molecules processed; check input data.")
 
-    df_clustered = pd.DataFrame(X)
-    df_clustered['centroid'] = labels
-    df_clustered['distance'] = dists
-    df_clustered['target'] = names
-    df_clustered['smiles'] = smiles
-
-    return df_clustered
+    features = np.array(features)
+    dataset = pd.DataFrame(features)
+    dataset['target'] = names
+    dataset['smiles'] = smiles
+    return dataset
 
 
-def visualize_clusters_3D(df_clustered):
+# --- Clustering and Visualization Functions ---
+def cluster(dataset, n):
+    features = dataset.drop(['target', 'smiles'], axis=1)
+    scaler = StandardScaler()
+    imputer = SimpleImputer(strategy='mean')  # Impute NaN with mean
+    features_imputed = imputer.fit_transform(features)
+    features_scaled = scaler.fit_transform(features_imputed)
+
+    clustering = BisectingKMeans(n_clusters=n, random_state=42)
+    clusterdist = clustering.fit_transform(features_scaled)
+    clusterid = clustering.labels_
+    clusterdist = clusterdist[np.arange(len(features_scaled)), clusterid]
+
+    processed_data = dataset.copy()
+    processed_data['centroid'] = clusterid
+    processed_data['distance'] = clusterdist
+
     pca = PCA(n_components=3)
-    pcadata = pd.DataFrame(pca.fit_transform(df_clustered.drop(columns=["centroid", "distance", "target", "smiles"])))
-    pcadata.columns = ["pc1", "pc2", "pc3"]
-    df_clustered = df_clustered.reset_index(drop=True)
-    pcadata['centroid'] = df_clustered['centroid']
-    pcadata['distance'] = df_clustered['distance']
+    pcdata3d = pd.DataFrame(pca.fit_transform(features_scaled))
+    pcdata3d.columns = ['pc1', 'pc2', 'pc3']
 
-    sizes = np.power(10, 6) / np.power(pcadata["distance"] + 1e-4, 7)
+    sizes = np.power(10, 6) / np.power(processed_data['distance'], 7)
     fig = plt.figure(figsize=(11, 9))
     ax = fig.add_subplot(projection='3d')
     ax.azim = 35
     ax.elev = 35
-    sc = ax.scatter(pcadata["pc1"], pcadata["pc2"], pcadata["pc3"],
-                    c=pcadata["centroid"], cmap='gist_rainbow', s=sizes)
+    sc = ax.scatter(pcdata3d['pc1'], pcdata3d['pc2'], pcdata3d['pc3'], cmap=plt.cm.gist_rainbow,
+                    c=processed_data['centroid'], s=sizes)
     plt.legend(*sc.legend_elements(), bbox_to_anchor=(1.05, 1), loc=2)
-    plt.title("Spherical Harmonics Clustering (PCA 3D)")
-    plt.show()
-    return pcadata
+    plt.savefig('cluster_3d_plot.png', dpi=300, bbox_inches='tight')
+    plt.close()
+    return clustering, processed_data, pcdata3d
 
 
-def cluster_stats(df_clustered, cluster_count):
-    counts = df_clustered['centroid'].value_counts().sort_index()
-    plt.bar(range(cluster_count), counts)
-    plt.title("Cluster Sizes")
-    plt.xlabel("Cluster ID")
-    plt.ylabel("Count")
-    plt.show()
+def showcluster(cid, dat, pcdat):
+    cdata = dat[dat['centroid'] == cid]['distance']
+    pickcluster = pcdat.loc[dat['centroid'] == cid]
+    sizes = np.power(10, 6) / np.power(cdata, 7)
+    print(sizes.shape)
+    print(pickcluster.shape)
+    fig = plt.figure(figsize=(10, 10))
+    ax = fig.add_subplot(projection='3d')
+    ax.azim = 35
+    ax.elev = 35
+    sc = ax.scatter(pickcluster['pc1'], pickcluster['pc2'], pickcluster['pc3'], cmap=plt.cm.viridis, s=sizes)
+    plt.legend(*sc.legend_elements(), bbox_to_anchor=(1.05, 1), loc=2)
+    plt.savefig(f'cluster_{cid}_plot.png', dpi=300, bbox_inches='tight')
+    plt.close()
 
-    dist_sums = df_clustered.groupby('centroid')['distance'].sum()
-    plt.scatter(counts.values, dist_sums.values)
-    plt.title("Cluster Size vs Total Distance")
-    plt.xlabel("Count")
-    plt.ylabel("Total Distance")
-    plt.show()
+
+def centroidanalysis(dat, ccount):
+    dsts = []
+    count = []
+    for i in range(ccount):
+        centroid = dat[dat['centroid'] == i]
+        dsts.append(np.sum(centroid['distance']))
+        count.append(len(centroid))
+    plt.scatter(count, dsts)
+    plt.title('Centroid Count vs Total Distance')
+    plt.xlabel('Count')
+    plt.ylabel('Distance')
+    plt.savefig('centroid_analysis.png', dpi=300, bbox_inches='tight')
+    plt.close()
 
 
-# ----------------- Usage Example ----------------- #
+def cal_centroidanalysis(dat, ccount):
+    dsts = []
+    count = []
+    for i in range(ccount):
+        centroid = dat[dat['centroid'] == i]
+        dsts.append(np.sum(centroid['distance']))
+        count.append(len(centroid))
+    return dsts, count
 
+
+def ccount(dat, cs):
+    count = []
+    for i in range(cs):
+        centroid = dat[dat['centroid'] == i]
+        count.append(len(centroid))
+    plt.bar(range(cs), count)
+    plt.title('Centroid Count')
+    plt.xlabel('Centroid')
+    plt.ylabel('Amount')
+    plt.savefig('centroid_count.png', dpi=300, bbox_inches='tight')
+    plt.close()
+
+
+def cal_ccount(dat, cs):
+    count = []
+    for i in range(cs):
+        centroid = dat[dat['centroid'] == i]
+        count.append(len(centroid))
+    return count
+
+
+def perform_analysis(dat, n, og):
+    cl, processed, pcadata = cluster(dat, n)
+    ccount(processed, n)
+    centroidanalysis(processed, n)
+    dat_sorted = processed.copy()
+    dat_sorted['smiles'] = og['smiles']
+    dat_sorted['target'] = og['target']
+    dat_sorted = dat_sorted.sort_values(by=['distance'])
+    prevd, prevc = cal_centroidanalysis(processed, n)
+    return dat_sorted, processed
+
+
+def summary(a1, eps, userinputs=None, cluster_count=5):
+    if userinputs is None:
+        print("No userinputs provided; skipping summary.")
+        return None, None, None
+
+    compound_distance = []
+    compound_clusters = []
+    compound_norm = []
+    aggregate_compound_clusters = [[0 for _ in range(cluster_count)] for _ in range(len(userinputs))]
+
+    for i, ui in enumerate(userinputs):
+        target = ui[0][1] if isinstance(ui, (list, tuple)) and len(ui) > 0 and isinstance(ui[0], (list, tuple)) and len(ui[0]) > 1 else ui
+        if not isinstance(target, str):
+            print(f"[WARN] Invalid target format for userinput {ui}; skipping.")
+            continue
+        subset = a1[a1['target'] == target]
+        if subset.empty:
+            print(f"[WARN] No data for target {target}; skipping.")
+            continue
+        tempd, tempc = cal_centroidanalysis(subset, cluster_count)
+        compound_distance.append(tempd)
+        compound_clusters.append(tempc)
+        total_count = np.sum(tempc)
+        compound_norm.append(tempc / total_count if total_count > 0 else np.zeros_like(tempc))
+        for j in range(i, len(userinputs)):
+            aggregate_compound_clusters[j] = np.add(aggregate_compound_clusters[j], tempc)
+
+    # Create stacked bar plot with distinct colors
+    plt.figure(figsize=(10, 6))
+    colors = plt.cm.tab10(np.linspace(0, 1, len(userinputs)))  # Distinct colors for each target
+    for j in range(len(userinputs)):
+        target = userinputs[len(userinputs) - j - 1]
+        target = target[0][1] if isinstance(target, (list, tuple)) and len(target) > 0 and isinstance(target[0], (list, tuple)) and len(target[0]) > 1 else target
+        plt.bar(range(cluster_count), aggregate_compound_clusters[len(userinputs) - j - 1],
+                label=target, alpha=0.7, color=colors[len(userinputs) - j - 1],
+                bottom=np.sum(aggregate_compound_clusters[:len(userinputs) - j - 1], axis=0),
+                width=0.8/len(userinputs), align='edge', edgecolor='black')
+
+    plt.xlabel('Cluster')
+    plt.ylabel('Number of Molecules')
+    plt.title('Molecule Distribution Across Clusters by Target')
+    plt.xticks(range(cluster_count), [f'Cluster {i}' for i in range(cluster_count)])
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title='Targets')
+    plt.grid(True, axis='y', linestyle='--', alpha=0.5)
+    plt.tight_layout()
+    plt.savefig('summary_plot.png', dpi=300, bbox_inches='tight')
+    plt.close()
+
+    return compound_distance, compound_clusters, compound_norm
+
+
+# --- User Inputs ---
+molecules_userinputs = [
+    [('target', 'chembl2014'), ('seq', """MPATAPSCPSGSRSPSWGSTWPCVSEGSWGTALSCTSSSGRLGPKVPVWHTKMKTATNIY
+IFNLALADTLVLLTLPFQGTDILLGFWPFGNALCKTVIAIDYYNMFTSTFTLTAMSVDRY
+VAICHPIRALDVRTSSKAQAVNVAIWALASVVGVPVAIMGSAQVEDEEIECLVEIPTPQD
+YWGPVFAICIFLFSFIVPVLVISVCYSLMIRRLRGVRLLSGSREKDRNLRRITRLVLVVV
+AVFVGCWTPVQVFVLAQGLGVQPSSETAVAILRFCTALGYVNSCLNPILYAFLDENFKAC
+FRKFCCASALRRDVQVSDRVRSIAKDVALACKTSETVPRPA""")],
+    [('target', 'deltaopioid'), ('seq', """MEPAPSAGAELQPPLFANASDAYPSACPSAGANASGPPGARSASSLALAIAITALYSAVC
+AVGLLGNVLVMFGIVRYTKMKTATNIYIFNLALADALATSTLPFQSAKYLMETWPFGELL
+CKAVLSIDYYNMFTSIFTLTMMSVDRYIAVCHPVKALDFRTPAKAKLINICIWVLASGVG
+VPIMVMAVTRPRDGAVVCMLQFPSPSWYWDTVTKICVFLFAFVVPILIITVCYGLMLLRL
+RSVRLLSGSKEKDRSLRRITRMVLVVVGAFVVCWAPIHIFVIVWTLVDIDRRDPLVVAAL
+HLCIALGYANSSLNPVLYAFLDENFKRCFRQLCRKPCGRPDPSSFSRAREATARERVTAC
+TPSDGPGGGAAA""")],
+    [('target', 'kappaopioid'), ('seq', """MDSPIQIFRGEPGPTCAPSACLPPNSSAWFPGWAEPDSNGSAGSEDAQLEPAHISPAIPV
+IITAVYSVVFVVGLVGNSLVMFVIIRYTKMKTATNIYIFNLALADALVTTTMPFQSTVYL
+MNSWPFGDVLCKIVISIDYYNMFTSIFTLTMMSVDRYIAVCHPVKALDFRTPLKAKIINI
+CIWLLSSSVGISAIVLGGTKVREDVDVIECSLQFPDDDYSWWDLFMKICVFIFAFVIPVL
+IIIVCYTLMILRLKSVRLLSGSREKDRNLRRITRLVLVVVAVFVVCWTPIHIFILVEALG
+STSHSTAALSSYYFCIALGYTNSSLNPILYAFLDENFKRCFRDFCFPLKMRMERQSTSRV
+RNTVQDPAYLRDIDGMNKPV""")],
+    [('target', 'muopioid'), ('seq', """MDSSAAPTNASNCTDALAYSSCSPAPSPGSWVNLSHLDGNLSDPCGPNRTDLGGRDSLCP
+PTGSPSMITAITIMALYSIVCVVGLFGNFLVMYVIVRYTKMKTATNIYIFNLALADALAT
+STLPFQSVNYLMGTWPFGTILCKIVISIDYYNMFTSIFTLCTMSVDRYIAVCHPVKALDF
+RTPRNAKIINVCNWILSSAIGLPVMFMATTKYRQGSIDCTLTFSHPTWYWENLLKICVFI
+FAFIMPVLIITVCYGLMILRLKSVRMLSGSKEKDRNLRRITRMVLVVVAVFIVCWTPIHI
+YVIIKALVTIPETTFQTVSWHFCIALGYTNSCLNPVLYAFLDENFKRCFREFCIPTSSNI
+EQQNSTRIRQNTRDHPSTANTVDRTNHQLENLEAETAPLP""")],
+    [('target', 'sigmaopioid'), ('seq', """MQWAVGRRWAWAALLLAVAAVLTQVVWLWLGTQSFVFQREEIAQLARQYAGLDHELAFSR
+LIVELRRLHPGHVLPDEELQWVFVNAGGWMGAMCLLHASLSEYVLLFGTALGSRGHSGRY
+WAEISDTIISGTFHQWREGTTKSEVFYPGETVVHGPGEATAVEWGPNTWMVEYGRGVIPS
+TLAFALADTVFSTQDFLTLFYTLRSYARGLRLELTTYLFGQDP""")]
+]
+
+# --- Example Usage ---
 if __name__ == "__main__":
-    df = pd.read_csv("data/proper_sdf/receptors_tree/full_sdfs.csv")  # expects columns: smiles, target
-    clustered_df = cluster_SH(df, cluster_count=20, max_mols=200)
-    export_data(clustered_df, "results/herehere")
-    #pcadata = visualize_clusters_3D(clustered_df)
-    #cluster_stats(clustered_df, cluster_count=20)
+    path = "./data/proper_sdf/molecule_tree/full_3ds.csv"
+    cluster_count = 20
+    maxl = 5
+    try:
+        dataset = cluster_3d_string_csv(path, cluster_count=cluster_count, maxl=maxl)
+        og_data = pd.read_csv(path, low_memory=False)[['target', 'smiles']][:1000]
+        dat_sorted, processed = perform_analysis(dataset, cluster_count, og_data)
+        compound_distance, compound_clusters, compound_norm = summary(dat_sorted, eps=0.1,
+                                                                      userinputs=molecules_userinputs,
+                                                                      cluster_count=cluster_count)
+        if compound_distance is not None:
+            print("Compound Distances:", compound_distance)
+            print("Compound Clusters:", compound_clusters)
+            print("Compound Normalized:", compound_norm)
+    except Exception as e:
+        print(f"[ERROR] Pipeline failed: {e}")
