@@ -30,7 +30,7 @@ def pca_sh_descriptors(points: np.ndarray, max_l: int = 3) -> np.ndarray:
     """
     Compute real spherical harmonics coefficients aligned with PCA orientation.
     Based on "Toward High Throughput 3D Virtual Screening Using Spherical Harmonic Surface".
-    See http://pubs.acs.org/doi/abs/10.1021/ci7001507 and http://arxiv.org/pdf/1509.09211 for details.
+    See https://pubs.acs.org/doi/abs/10.1021/ci7001507 and https://arxiv.org/pdf/1509.09211 for details.
     Parameters:
         points (np.ndarray): (N, 3) array of 3D coordinates.
         max_l (int): Maximum degree `l` of spherical harmonics (default 3).
@@ -85,7 +85,7 @@ def rif_sh_descriptors(points: np.ndarray, harmonics: int = 8) -> np.ndarray:
     """
     Compute rotationally invariant descriptors using spherical harmonics (RIF-SH).
     Based on "Toward High Throughput 3D Virtual Screening Using Spherical Harmonic Surface".
-    See http://pubs.acs.org/doi/abs/10.1021/ci7001507 for details.
+    See https://pubs.acs.org/doi/abs/10.1021/ci7001507 for details.
     Parameters:
         points (np.ndarray): An (N, 3) array of 3D coordinates.
         harmonics (int): The maximum degree `l` of spherical harmonics to compute.
@@ -127,7 +127,7 @@ def bdc_descriptors(points: np.ndarray) -> List[float]:
     """
     Compute 8 BDC (Bent Deformed Cylinder) descriptors for a set of 3D points.
     Approximate shape as cylinder which was bent and deformed to have evolving ellipse in cross-section.
-    See  http://arxiv.org/pdf/1509.09211 for details.
+    See  https://arxiv.org/pdf/1509.09211 for details.
 
     Parameters:
         points (np.ndarray): An (N, 3) array of 3D coordinates.
@@ -212,7 +212,7 @@ def usr_descriptors(points: np.ndarray) -> List[float]:
     """
     Compute 12 USR (Ultrafast Shape Recognition) descriptors for a given set of 3D points.
     Based on "Ultrafast shape recognition for similarity search in molecular database.
-    See http://rspa.royalsocietypublishing.org/content/463/2081/1307 for details.
+    See https://rspa.royalsocietypublishing.org/content/463/2081/1307 for details.
 
     Parameters:
         points (np.ndarray): An (N, 3) array of 3D coordinates.
