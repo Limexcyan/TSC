@@ -12,57 +12,11 @@ import matplotlib
 matplotlib.use('Agg')  # Set non-interactive backend
 import matplotlib.pyplot as plt
 import ast
-
-
-# --- Spherical Harmonics ---
-def rsh(m, l, ph, th):
-    if m < 0:
-        tm = scipy.special.sph_harm_y(-m, l, ph, th).imag
-    else:
-        tm = scipy.special.sph_harm_y(m, l, ph, th).real
-    if m == 0:
-        tm = tm / math.sqrt(2)
-    return math.sqrt(2) * pow(-1, m) * tm
-
-
-def PCA_SH(coords, maxl=3):
-    coords = np.array(coords).reshape(-1, 3)
-    if len(coords) < 5:  # Ensure enough points for meaningful SH
-        return None
-    avg = coords.mean(axis=0)
-    coords -= avg
-    L = len(coords)
-    ev = np.transpose(la.eig(np.cov(np.transpose(coords)))[1])
-
-    for i in range(2):
-        proj = coords.dot(ev[i])
-        if -min(proj) > max(proj):
-            ev[i] = -ev[i]
-    if la.det(ev) < 0:
-        ev[2] = -ev[2]
-
-    coords = coords.dot(np.transpose(ev))
-
-    r, th, ph = np.zeros(L), np.zeros(L), np.zeros(L)
-    for i in range(L):
-        r[i] = la.norm(coords[i])
-        th[i] = math.acos(coords[i, 2] / r[i]) if r[i] > 1e-6 else 0
-        denom = r[i] * math.sin(th[i])
-        ph[i] = math.acos(coords[i, 0] / denom) if denom > 1e-6 else 0
-
-    harm = []
-    for l in range(maxl):
-        for m in range(-l, l + 1):
-            fun = np.array([rsh(m, l, ph[i], th[i]) for i in range(L)])
-            denom = np.sum(fun * fun)
-            coeff = r.dot(fun) / denom if denom > 1e-6 else 0  # Avoid division by zero
-            harm.append(coeff)
-    return harm if not np.any(np.isnan(harm)) else None  # Return None if NaN
-
+from desc3d import *
 
 # --- SH Clustering ---
-def cluster_3d_string_csv(csv_path, cluster_count=5, maxl=3):
-    df = pd.read_csv(csv_path, low_memory=False)[:1000]
+def cluster_3d_string_csv(csv_path, cluster_count=10, max_l=3):
+    df = pd.read_csv(csv_path, low_memory=False)[:100]
     features, names, smiles = [], [], []
 
     for idx, row in df.iterrows():
@@ -72,7 +26,8 @@ def cluster_3d_string_csv(csv_path, cluster_count=5, maxl=3):
             if len(coords) < 5:
                 print(f"[WARN] Skipping molecule {row['target']}, too few atoms ({len(coords)})")
                 continue
-            sh_desc = PCA_SH(coords, maxl=maxl)
+            coords = np.array(coords)
+            sh_desc = pca_spherical_harmonics(coords, max_l=max_l)
             if sh_desc is None or np.any(np.isnan(sh_desc)):
                 print(f"[WARN] Skipping molecule {row['target']}, invalid SH descriptors")
                 continue
@@ -121,7 +76,7 @@ def cluster(dataset, n):
     sc = ax.scatter(pcdata3d['pc1'], pcdata3d['pc2'], pcdata3d['pc3'], cmap=plt.cm.gist_rainbow,
                     c=processed_data['centroid'], s=sizes)
     plt.legend(*sc.legend_elements(), bbox_to_anchor=(1.05, 1), loc=2)
-    plt.savefig('cluster_3d_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig('results/cluster_3d_plot.png', dpi=300, bbox_inches='tight')
     plt.close()
     return clustering, processed_data, pcdata3d
 
@@ -138,7 +93,7 @@ def showcluster(cid, dat, pcdat):
     ax.elev = 35
     sc = ax.scatter(pickcluster['pc1'], pickcluster['pc2'], pickcluster['pc3'], cmap=plt.cm.viridis, s=sizes)
     plt.legend(*sc.legend_elements(), bbox_to_anchor=(1.05, 1), loc=2)
-    plt.savefig(f'cluster_{cid}_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig(f'results/cluster_{cid}_plot.png', dpi=300, bbox_inches='tight')
     plt.close()
 
 
@@ -153,7 +108,7 @@ def centroidanalysis(dat, ccount):
     plt.title('Centroid Count vs Total Distance')
     plt.xlabel('Count')
     plt.ylabel('Distance')
-    plt.savefig('centroid_analysis.png', dpi=300, bbox_inches='tight')
+    plt.savefig('results/centroid_analysis.png', dpi=300, bbox_inches='tight')
     plt.close()
 
 
@@ -176,7 +131,7 @@ def ccount(dat, cs):
     plt.title('Centroid Count')
     plt.xlabel('Centroid')
     plt.ylabel('Amount')
-    plt.savefig('centroid_count.png', dpi=300, bbox_inches='tight')
+    plt.savefig('results/centroid_count.png', dpi=300, bbox_inches='tight')
     plt.close()
 
 
@@ -245,7 +200,7 @@ def summary(a1, eps, userinputs=None, cluster_count=5):
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title='Targets')
     plt.grid(True, axis='y', linestyle='--', alpha=0.5)
     plt.tight_layout()
-    plt.savefig('summary_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig('results/summary_plot.png', dpi=300, bbox_inches='tight')
     plt.close()
 
     return compound_distance, compound_clusters, compound_norm
@@ -288,12 +243,12 @@ TLAFALADTVFSTQDFLTLFYTLRSYARGLRLELTTYLFGQDP""")]
 
 # --- Example Usage ---
 if __name__ == "__main__":
-    path = "./data/proper_sdf/molecule_tree/full_3ds.csv"
-    cluster_count = 20
-    maxl = 5
+    path = "./data/proper_sdf/receptors_tree/full_3ds.csv"
+    cluster_count = 10
+    max_l = 5
     try:
-        dataset = cluster_3d_string_csv(path, cluster_count=cluster_count, maxl=maxl)
-        og_data = pd.read_csv(path, low_memory=False)[['target', 'smiles']][:1000]
+        dataset = cluster_3d_string_csv(path, cluster_count=cluster_count, max_l=max_l)
+        og_data = pd.read_csv(path, low_memory=False)[['target', 'smiles']][:100]
         dat_sorted, processed = perform_analysis(dataset, cluster_count, og_data)
         compound_distance, compound_clusters, compound_norm = summary(dat_sorted, eps=0.1,
                                                                       userinputs=molecules_userinputs,

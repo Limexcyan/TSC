@@ -4,7 +4,7 @@ import math
 import scipy
 from typing import List
 
-def rsh(m: int, l: int, phi: float, theta: float) -> float:
+def real_spherical_harmonics(m: int, l: int, phi: float, theta: float) -> float:
     """
     Compute real form of the Spherical harmonics.
     See https://en.wikipedia.org/wiki/Spherical_harmonics#Real_form for details.
@@ -26,7 +26,7 @@ def rsh(m: int, l: int, phi: float, theta: float) -> float:
         return scipy.special.sph_harm_y(l, -m, phi, theta).imag * ((-1) ** m) / math.sqrt(2)
 
 
-def pca_sh_descriptors(points: np.ndarray, max_l: int = 3) -> np.ndarray:
+def pca_spherical_harmonics(points: np.ndarray, max_l: int = 3) -> np.ndarray:
     """
     Compute real spherical harmonics coefficients aligned with PCA orientation.
     Based on "Toward High Throughput 3D Virtual Screening Using Spherical Harmonic Surface".
@@ -74,7 +74,7 @@ def pca_sh_descriptors(points: np.ndarray, max_l: int = 3) -> np.ndarray:
 
     for l in range(max_l):
         for m in range(-l, l + 1):
-            Y_lm = np.array([rsh(m, l, phi[i], theta[i]) for i in range(n_points)])
+            Y_lm = np.array([real_spherical_harmonics(m, l, phi[i], theta[i]) for i in range(n_points)])
             denom = np.sum(Y_lm * Y_lm) or 1e-6
             descriptors[coeff_idx] = np.dot(r, Y_lm) / denom
             coeff_idx += 1
