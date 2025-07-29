@@ -1,44 +1,7 @@
-import pandas as pd
-
-import numpy as np
-
-from matplotlib import pyplot as plt
-
-
 from scipy.special import rel_entr, kl_div
-
 from Bio import pairwise2
-
 from clusters_features import *
 from config import *
-
-def targettocolor(dat, n):
-    pim1d, pim1c = cal_centroidanalysis(dat[dat['target'] == 'threonine-protein kinase PIM1'],n)
-    sgk1d, sgk1c = cal_centroidanalysis(dat[dat['target'] == 'threonine-protein kinase Sgk1'],n)
-    sgk2d, sgk2c = cal_centroidanalysis(dat[dat['target'] == 'threonine-protein kinase Sgk2'],n)
-    plt.scatter(pim1d, pim1c, marker='^', c='red')
-    plt.scatter(sgk1d, sgk1c, marker='o', c='blue')
-    plt.scatter(sgk2d, sgk2c, marker='x', c='green')
-    plt.title("centroid count")
-    plt.xlabel("centroid")
-    plt.ylabel("amount")
-    plt.show()
-    plt.bar(range(n),pim1c,color='red')
-    plt.title("centroid count for pim1")
-    plt.xlabel("centroid")
-    plt.ylabel("amount")
-    plt.show()
-    plt.bar(range(n),sgk1c,color='blue')
-    plt.title("centroid count for sgk1")
-    plt.xlabel("centroid")
-    plt.ylabel("amount")
-    plt.show()
-    plt.bar(range(n),sgk2c,color='green')
-    plt.title("centroid count for sgk2")
-    plt.xlabel("centroid")
-    plt.ylabel("amount")
-    plt.show()
-
 
 def summary(a1, eps):
     compound_distance = []
@@ -81,5 +44,5 @@ def summary(a1, eps):
     for i in range(len(userinputs) - 1):
         for j in range(i+1,len(userinputs)):
             alignments_i_j = pairwise2.align.globalxx(userinputs[i][1][1],userinputs[j][1][1])
-            score_i_j = alignments_i_j[0][2] # alignment score
+            score_i_j = alignments_i_j[0][2]
             print(f"Alignment Score ({userinputs[i][0][1]} vs {userinputs[j][0][1]}): {score_i_j}")

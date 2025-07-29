@@ -74,9 +74,9 @@ def pca_spherical_harmonics(points: np.ndarray, max_l: int = 3) -> np.ndarray:
 
     for l in range(max_l):
         for m in range(-l, l + 1):
-            Y_lm = np.array([real_spherical_harmonics(m, l, phi[i], theta[i]) for i in range(n_points)])
-            denom = np.sum(Y_lm * Y_lm) or 1e-6
-            descriptors[coeff_idx] = np.dot(r, Y_lm) / denom
+            y_lm = np.array([real_spherical_harmonics(m, l, phi[i], theta[i]) for i in range(n_points)])
+            denom = np.sum(y_lm * y_lm) or 1e-6
+            descriptors[coeff_idx] = np.dot(r, y_lm) / denom
             coeff_idx += 1
 
     return descriptors
@@ -114,9 +114,9 @@ def rif_sh_descriptors(points: np.ndarray, harmonics: int = 8) -> np.ndarray:
     for l in range(harmonics):
         acc = 0.0
         for m in range(-l, l + 1):
-            Y_lm = np.array([scipy.special.sph_harm_y(l, m, phi[i], theta[i]) for i in range(len(points))])
-            numerator = np.abs(np.dot(r, Y_lm))
-            denominator = np.sum(np.abs(Y_lm * Y_lm)) or 1e-6
+            y_lm = np.array([scipy.special.sph_harm_y(l, m, phi[i], theta[i]) for i in range(len(points))])
+            numerator = np.abs(np.dot(r, y_lm))
+            denominator = np.sum(np.abs(y_lm * y_lm)) or 1e-6
             acc += (numerator / denominator) ** 2
         desc[l] = math.sqrt(acc)
 
@@ -194,7 +194,6 @@ def bdc_descriptors(points: np.ndarray) -> List[float]:
     y2 = y_final**2
     z2 = z_final**2
     yz = y_final * z_final
-    n = len(y2)
 
     y2_mean = y2.mean()
     z2_mean = z2.mean()
@@ -211,7 +210,7 @@ def bdc_descriptors(points: np.ndarray) -> List[float]:
 def usr_descriptors(points: np.ndarray) -> List[float]:
     """
     Compute 12 USR (Ultrafast Shape Recognition) descriptors for a given set of 3D points.
-    Based on "Ultrafast shape recognition for similarity search in molecular database.
+    Based on "Ultrafast shape recognition for similarity search in molecular database".
     See https://rspa.royalsocietypublishing.org/content/463/2081/1307 for details.
 
     Parameters:
@@ -227,11 +226,11 @@ def usr_descriptors(points: np.ndarray) -> List[float]:
         skew = np.mean(((distances - mean) / math.sqrt(var))**3) if var > 0 else 0.0
         return [mean, var, skew]
 
-    def get_extreme_point(points: np.ndarray, reference: np.ndarray, mode: str = 'closest') -> np.ndarray:
+    def get_extreme_point(points_array: np.ndarray, reference: np.ndarray, mode: str = 'closest') -> np.ndarray:
         """Return the closest or farthest point to the reference."""
-        dists = la.norm(points - reference, axis=1)
+        dists = la.norm(points_array - reference, axis=1)
         idx = np.argmin(dists) if mode == 'closest' else np.argmax(dists)
-        return points[idx]
+        return points_array[idx]
 
     if points.ndim != 2 or points.shape[1] != 3:
         raise ValueError("Input must be a (N, 3) array of 3D points.")

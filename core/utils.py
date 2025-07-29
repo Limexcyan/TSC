@@ -1,13 +1,8 @@
 import pandas as pd
 import numpy as np
-from rdkit import Chem
-from rdkit.Chem import AllChem
 from rdkit.Chem import PandasTools as pdt
-from rdkit.Chem import GraphDescriptors
-from rdkit.Chem import rdFMCS as fmcs
 
-
-def consolidate_data(sdfs, userinputs=[], dropcols=[]):
+def consolidate_data(sdfs, userinputs, dropcols):
     """
 
     :param sdfs: d array of filenames for SDF files
@@ -27,7 +22,6 @@ def consolidate_data(sdfs, userinputs=[], dropcols=[]):
 
     return pd.concat(sdf_df_aggregate).reset_index(drop=True)
 
-
 def export_data(data, filename):
     """
 
@@ -38,7 +32,6 @@ def export_data(data, filename):
     data.to_csv(filename,index=False)
     print("done")
 
-
 def gaussianScaler(numArr):
     # standard gaussian scaler
     # X' = (X-mu)/sigma
@@ -47,19 +40,15 @@ def gaussianScaler(numArr):
     numArr = (numArr - mean) / std
     return numArr
 
-# if data follows the 'power law' (~ e^x)
 def logScaler(numArr):
     # standard logarythmic scaler
     numArr = np.log(numArr)
     return numArr
 
-# in case of uncertain distribution
-# divide the data into quantiles
 def createQuantiles(dfColumn, numQuantiles):
     # create as many quantiles as wanted
     return pd.qcut(dfColumn, numQuantiles, labels=False, duplicates='drop')
 
-# minmax normalizer
 def minMaxScaler(numArr):
     # standard minmax scaler
     minx = np.min(numArr)

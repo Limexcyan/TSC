@@ -8,15 +8,15 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.impute import SimpleImputer
 import matplotlib
-
-matplotlib.use('Agg')  # Set non-interactive backend
+from config import *
+#matplotlib.use('Agg')  # Set non-interactive backend
 import matplotlib.pyplot as plt
 import ast
 from desc3d import *
 
 # --- SH Clustering ---
 def cluster_3d_string_csv(csv_path, cluster_count=10, max_l=3, descriptor='sh'):
-    df = pd.read_csv(csv_path, low_memory=False)[:100]
+    df = pd.read_csv(csv_path, low_memory=False)[:1000]
     features, names, smiles = [], [], []
 
     for idx, row in df.iterrows():
@@ -210,50 +210,14 @@ def summary(a1, eps, userinputs=None, cluster_count=5):
 
     return compound_distance, compound_clusters, compound_norm
 
-
-# --- User Inputs ---
-molecules_userinputs = [
-    [('target', 'chembl2014'), ('seq', """MPATAPSCPSGSRSPSWGSTWPCVSEGSWGTALSCTSSSGRLGPKVPVWHTKMKTATNIY
-IFNLALADTLVLLTLPFQGTDILLGFWPFGNALCKTVIAIDYYNMFTSTFTLTAMSVDRY
-VAICHPIRALDVRTSSKAQAVNVAIWALASVVGVPVAIMGSAQVEDEEIECLVEIPTPQD
-YWGPVFAICIFLFSFIVPVLVISVCYSLMIRRLRGVRLLSGSREKDRNLRRITRLVLVVV
-AVFVGCWTPVQVFVLAQGLGVQPSSETAVAILRFCTALGYVNSCLNPILYAFLDENFKAC
-FRKFCCASALRRDVQVSDRVRSIAKDVALACKTSETVPRPA""")],
-    [('target', 'deltaopioid'), ('seq', """MEPAPSAGAELQPPLFANASDAYPSACPSAGANASGPPGARSASSLALAIAITALYSAVC
-AVGLLGNVLVMFGIVRYTKMKTATNIYIFNLALADALATSTLPFQSAKYLMETWPFGELL
-CKAVLSIDYYNMFTSIFTLTMMSVDRYIAVCHPVKALDFRTPAKAKLINICIWVLASGVG
-VPIMVMAVTRPRDGAVVCMLQFPSPSWYWDTVTKICVFLFAFVVPILIITVCYGLMLLRL
-RSVRLLSGSKEKDRSLRRITRMVLVVVGAFVVCWAPIHIFVIVWTLVDIDRRDPLVVAAL
-HLCIALGYANSSLNPVLYAFLDENFKRCFRQLCRKPCGRPDPSSFSRAREATARERVTAC
-TPSDGPGGGAAA""")],
-    [('target', 'kappaopioid'), ('seq', """MDSPIQIFRGEPGPTCAPSACLPPNSSAWFPGWAEPDSNGSAGSEDAQLEPAHISPAIPV
-IITAVYSVVFVVGLVGNSLVMFVIIRYTKMKTATNIYIFNLALADALVTTTMPFQSTVYL
-MNSWPFGDVLCKIVISIDYYNMFTSIFTLTMMSVDRYIAVCHPVKALDFRTPLKAKIINI
-CIWLLSSSVGISAIVLGGTKVREDVDVIECSLQFPDDDYSWWDLFMKICVFIFAFVIPVL
-IIIVCYTLMILRLKSVRLLSGSREKDRNLRRITRLVLVVVAVFVVCWTPIHIFILVEALG
-STSHSTAALSSYYFCIALGYTNSSLNPILYAFLDENFKRCFRDFCFPLKMRMERQSTSRV
-RNTVQDPAYLRDIDGMNKPV""")],
-    [('target', 'muopioid'), ('seq', """MDSSAAPTNASNCTDALAYSSCSPAPSPGSWVNLSHLDGNLSDPCGPNRTDLGGRDSLCP
-PTGSPSMITAITIMALYSIVCVVGLFGNFLVMYVIVRYTKMKTATNIYIFNLALADALAT
-STLPFQSVNYLMGTWPFGTILCKIVISIDYYNMFTSIFTLCTMSVDRYIAVCHPVKALDF
-RTPRNAKIINVCNWILSSAIGLPVMFMATTKYRQGSIDCTLTFSHPTWYWENLLKICVFI
-FAFIMPVLIITVCYGLMILRLKSVRMLSGSKEKDRNLRRITRMVLVVVAVFIVCWTPIHI
-YVIIKALVTIPETTFQTVSWHFCIALGYTNSCLNPVLYAFLDENFKRCFREFCIPTSSNI
-EQQNSTRIRQNTRDHPSTANTVDRTNHQLENLEAETAPLP""")],
-    [('target', 'sigmaopioid'), ('seq', """MQWAVGRRWAWAALLLAVAAVLTQVVWLWLGTQSFVFQREEIAQLARQYAGLDHELAFSR
-LIVELRRLHPGHVLPDEELQWVFVNAGGWMGAMCLLHASLSEYVLLFGTALGSRGHSGRY
-WAEISDTIISGTFHQWREGTTKSEVFYPGETVVHGPGEATAVEWGPNTWMVEYGRGVIPS
-TLAFALADTVFSTQDFLTLFYTLRSYARGLRLELTTYLFGQDP""")]
-]
-
 # --- Example Usage ---
 if __name__ == "__main__":
     path = "./data/proper_sdf/molecule_tree/full_3ds.csv"
-    cluster_count = 10
-    max_l = 5
+    cluster_count = 20
+    max_l = 10
     try:
         dataset = cluster_3d_string_csv(path, cluster_count=cluster_count, max_l=max_l, descriptor='rif')
-        og_data = pd.read_csv(path, low_memory=False)[['target', 'smiles']][:100]
+        og_data = pd.read_csv(path, low_memory=False)[['target', 'smiles']][:1000]
         dat_sorted, processed = perform_analysis(dataset, cluster_count, og_data)
         compound_distance, compound_clusters, compound_norm = summary(dat_sorted, eps=0.1,
                                                                       userinputs=molecules_userinputs,

@@ -1,14 +1,10 @@
 import pandas as pd
-import numpy as np
 from rdkit import Chem
 from rdkit.Chem import AllChem
-from numpy import linalg as la
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
-import math
-import scipy
 from desc3d import *
 
 def optimize_molecule_3d(mol, use_mmff=True, max_iters=200):
