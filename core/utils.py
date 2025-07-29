@@ -1,7 +1,5 @@
 import pandas as pd
-
 import numpy as np
-
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit.Chem import PandasTools as pdt
@@ -66,9 +64,6 @@ def minMaxScaler(numArr):
     # standard minmax scaler
     minx = np.min(numArr)
     maxx = np.max(numArr)
-    # linearly map all values from minimal to maximal
-    # to values ranging from 0 to 1
+
     numArr = (numArr - minx) / (maxx - minx)
     return numArr
-
-#print(len(pd.read_csv("core/data/proper_sdf/molecule_tree/full_sdfs.csv")))

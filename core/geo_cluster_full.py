@@ -15,7 +15,7 @@ import ast
 from desc3d import *
 
 # --- SH Clustering ---
-def cluster_3d_string_csv(csv_path, cluster_count=10, max_l=3):
+def cluster_3d_string_csv(csv_path, cluster_count=10, max_l=3, descriptor='sh'):
     df = pd.read_csv(csv_path, low_memory=False)[:100]
     features, names, smiles = [], [], []
 
@@ -27,7 +27,12 @@ def cluster_3d_string_csv(csv_path, cluster_count=10, max_l=3):
                 print(f"[WARN] Skipping molecule {row['target']}, too few atoms ({len(coords)})")
                 continue
             coords = np.array(coords)
-            sh_desc = pca_spherical_harmonics(coords, max_l=max_l)
+            sh_desc = np.array(coords)
+            if descriptor == 'sh':
+                sh_desc = pca_spherical_harmonics(coords, max_l=max_l)
+            if descriptor == 'rif':
+                sh_desc = rif_sh_descriptors(coords)
+
             if sh_desc is None or np.any(np.isnan(sh_desc)):
                 print(f"[WARN] Skipping molecule {row['target']}, invalid SH descriptors")
                 continue
@@ -243,11 +248,11 @@ TLAFALADTVFSTQDFLTLFYTLRSYARGLRLELTTYLFGQDP""")]
 
 # --- Example Usage ---
 if __name__ == "__main__":
-    path = "./data/proper_sdf/receptors_tree/full_3ds.csv"
+    path = "./data/proper_sdf/molecule_tree/full_3ds.csv"
     cluster_count = 10
     max_l = 5
     try:
-        dataset = cluster_3d_string_csv(path, cluster_count=cluster_count, max_l=max_l)
+        dataset = cluster_3d_string_csv(path, cluster_count=cluster_count, max_l=max_l, descriptor='rif')
         og_data = pd.read_csv(path, low_memory=False)[['target', 'smiles']][:100]
         dat_sorted, processed = perform_analysis(dataset, cluster_count, og_data)
         compound_distance, compound_clusters, compound_norm = summary(dat_sorted, eps=0.1,
