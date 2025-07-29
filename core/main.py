@@ -28,6 +28,8 @@ from config import *
 import os
 
 if __name__ == "__main__":
+    sdfs = molecules_sdfs
+    userinputs = molecules_userinputs
     print("trying to find existing data")
     if(os.path.isfile("data/full_sdfs.csv")):
         print("check success for full sdfs")
