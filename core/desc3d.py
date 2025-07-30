@@ -123,7 +123,7 @@ def rif_sh_descriptors(points: np.ndarray, harmonics: int = 8) -> np.ndarray:
     return desc
 
 
-def bdc_descriptors(points: np.ndarray) -> List[float]:
+def bend_deformed_cylinder_descriptors(points: np.ndarray) -> List[float]:
     """
     Compute 8 BDC (Bent Deformed Cylinder) descriptors for a set of 3D points.
     Approximate shape as cylinder which was bent and deformed to have evolving ellipse in cross-section.
@@ -207,7 +207,7 @@ def bdc_descriptors(points: np.ndarray) -> List[float]:
 
     return [width, 2 * bend, y2_mean, z2_mean, yz_mean, y2_lin, z2_lin, yz_lin]
 
-def usr_descriptors(points: np.ndarray) -> List[float]:
+def ultrafast_shape_recognition_descriptors(points: np.ndarray) -> List[float]:
     """
     Compute 12 USR (Ultrafast Shape Recognition) descriptors for a given set of 3D points.
     Based on "Ultrafast shape recognition for similarity search in molecular database".

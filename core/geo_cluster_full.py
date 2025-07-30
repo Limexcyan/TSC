@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import math
-import scipy.special
+from scipy.special import rel_entr, kl_div
 from numpy import linalg as la
 from sklearn.cluster import BisectingKMeans
 from sklearn.preprocessing import StandardScaler
@@ -16,27 +16,31 @@ from desc3d import *
 
 # --- SH Clustering ---
 def cluster_3d_string_csv(csv_path, cluster_count=10, max_l=3, descriptor='sh'):
-    df = pd.read_csv(csv_path, low_memory=False)[:1000]
+    df = pd.read_csv(csv_path, low_memory=False)[2000:2010]
     features, names, smiles = [], [], []
 
     for idx, row in df.iterrows():
         try:
             coords_raw = [ast.literal_eval(c) for c in row[2:].dropna() if isinstance(c, str) and '[' in c and ']' in c]
             coords = [c for c in coords_raw if len(c) == 3 and all(isinstance(x, (int, float)) for x in c)]
-            if len(coords) < 5:
+            print(idx)
+            if len(coords) < 10:
                 print(f"[WARN] Skipping molecule {row['target']}, too few atoms ({len(coords)})")
                 continue
             coords = np.array(coords)
-            sh_desc = np.array(coords)
+            desc = np.array(coords)
             if descriptor == 'sh':
-                sh_desc = pca_spherical_harmonics(coords, max_l=max_l)
-            if descriptor == 'rif':
-                sh_desc = rif_sh_descriptors(coords)
-
-            if sh_desc is None or np.any(np.isnan(sh_desc)):
+                desc = pca_spherical_harmonics(coords, max_l=max_l)
+            elif descriptor == 'rif':
+                desc = rif_sh_descriptors(coords)
+            elif descriptor == 'bdc':
+                desc = bend_deformed_cylinder_descriptors(coords)
+            elif descriptor == 'usr':
+                desc = ultrafast_shape_recognition_descriptors(coords)
+            elif desc is None or np.any(np.isnan(desc)):
                 print(f"[WARN] Skipping molecule {row['target']}, invalid SH descriptors")
                 continue
-            features.append(sh_desc)
+            features.append(desc)
             names.append(row['target'])
             smiles.append(row['smiles'])
         except Exception as e:
@@ -156,7 +160,6 @@ def perform_analysis(dat, n, og):
     dat_sorted['smiles'] = og['smiles']
     dat_sorted['target'] = og['target']
     dat_sorted = dat_sorted.sort_values(by=['distance'])
-    prevd, prevc = cal_centroidanalysis(processed, n)
     return dat_sorted, processed
 
 
@@ -175,6 +178,7 @@ def summary(a1, eps, userinputs=None, cluster_count=5):
         if not isinstance(target, str):
             print(f"[WARN] Invalid target format for userinput {ui}; skipping.")
             continue
+
         subset = a1[a1['target'] == target]
         if subset.empty:
             print(f"[WARN] No data for target {target}; skipping.")
@@ -187,23 +191,15 @@ def summary(a1, eps, userinputs=None, cluster_count=5):
         for j in range(i, len(userinputs)):
             aggregate_compound_clusters[j] = np.add(aggregate_compound_clusters[j], tempc)
 
-    # Create stacked bar plot with distinct colors
     plt.figure(figsize=(10, 6))
-    colors = plt.cm.tab10(np.linspace(0, 1, len(userinputs)))  # Distinct colors for each target
-    for j in range(len(userinputs)):
-        target = userinputs[len(userinputs) - j - 1]
-        target = target[0][1] if isinstance(target, (list, tuple)) and len(target) > 0 and isinstance(target[0], (list, tuple)) and len(target[0]) > 1 else target
-        plt.bar(range(cluster_count), aggregate_compound_clusters[len(userinputs) - j - 1],
-                label=target, alpha=0.7, color=colors[len(userinputs) - j - 1],
-                bottom=np.sum(aggregate_compound_clusters[:len(userinputs) - j - 1], axis=0),
-                width=0.8/len(userinputs), align='edge', edgecolor='black')
+    target_names = [entry[0][1] for entry in userinputs]
+    for j, target in enumerate(target_names):
+        plt.bar(range(cluster_count), aggregate_compound_clusters[j], label=target)
 
     plt.xlabel('Cluster')
-    plt.ylabel('Number of Molecules')
-    plt.title('Molecule Distribution Across Clusters by Target')
-    plt.xticks(range(cluster_count), [f'Cluster {i}' for i in range(cluster_count)])
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title='Targets')
-    plt.grid(True, axis='y', linestyle='--', alpha=0.5)
+    plt.ylabel('Number of molecules')
+    plt.title('Distribution across clusters by Target')
+    plt.legend(title='Targets')
     plt.tight_layout()
     plt.savefig('results/summary_plot.png', dpi=300, bbox_inches='tight')
     plt.close()
@@ -212,15 +208,15 @@ def summary(a1, eps, userinputs=None, cluster_count=5):
 
 # --- Example Usage ---
 if __name__ == "__main__":
-    path = "./data/proper_sdf/molecule_tree/full_3ds.csv"
-    cluster_count = 20
+    path = "./data/proper_sdf/receptors_tree/full_3ds.csv"
+    cluster_count = 5
     max_l = 10
     try:
         dataset = cluster_3d_string_csv(path, cluster_count=cluster_count, max_l=max_l, descriptor='rif')
-        og_data = pd.read_csv(path, low_memory=False)[['target', 'smiles']][:1000]
+        og_data = pd.read_csv(path, low_memory=False)[['target', 'smiles']][2000:2010]
         dat_sorted, processed = perform_analysis(dataset, cluster_count, og_data)
         compound_distance, compound_clusters, compound_norm = summary(dat_sorted, eps=0.1,
-                                                                      userinputs=molecules_userinputs,
+                                                                      userinputs=receptors_userinputs,
                                                                       cluster_count=cluster_count)
         if compound_distance is not None:
             print("Compound Distances:", compound_distance)

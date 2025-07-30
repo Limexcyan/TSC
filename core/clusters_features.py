@@ -156,6 +156,5 @@ def perform_analysis(dat,n,og):
     dat_sorted['smiles'] = og['smiles']
     dat_sorted['target'] = og['target']
     dat_sorted = dat_sorted.sort_values(by=['distance'])
-    prevd, prevc = cal_centroidanalysis(processed,n)
     return dat_sorted, processed
 

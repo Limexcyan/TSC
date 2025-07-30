@@ -2,8 +2,6 @@ from scipy.special import rel_entr, kl_div
 from Bio import pairwise2
 from clusters_features import *
 from config import *
-from main import userinputs
-
 
 def kl_divergence(p, q, eps=1e-10):
     return np.sum(kl_div(p + eps, q + eps))
@@ -11,10 +9,10 @@ def kl_divergence(p, q, eps=1e-10):
 def bhattacharyya_distance(p, q):
     return -np.log(np.sum(np.sqrt(p * q)))
 
-def summary(a1, eps=1e-10):
+def summary(a1, userinputs, eps=1e-10):
     compound_distance = []
     compound_clusters = []
-    aggregate_compound_clusters = [[0 for j in range(cluster_count)] for i in range(len(userinputs))]
+    aggregate_compound_clusters = [[0 for _ in range(cluster_count)] for _ in range(len(userinputs))]
     compound_norm = []
     for i in range(len(userinputs)):
         tempd, tempc = cal_centroidanalysis(a1[a1['target'] == userinputs[i][0][1]],cluster_count)
@@ -31,7 +29,6 @@ def summary(a1, eps=1e-10):
     plt.ylabel("amount")
     plt.legend()
     plt.show()
-
 
     for i in range(len(userinputs)-1):
         for j in range(i+1,len(userinputs)):
