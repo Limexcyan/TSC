@@ -9,6 +9,18 @@ from rdkit.Chem import GraphDescriptors
 from rdkit.Chem import rdFMCS as fmcs
 
 
+def st_consolidate_data(sdfs, dropcols=[]):
+    sdf_df_aggregate = []
+    for i in range(len(sdfs)):
+        temp = pdt.LoadSDF(sdfs[i][0][1], embedProps=True, molColName=None, smilesName='smiles').drop(dropcols, axis=1)
+        for j in range(len(sdfs[i]) - 1):
+            temp[sdfs[i][j+1][0]] = sdfs[i][j+1][1]
+        sdf_df_aggregate.append(temp)
+        print("\t aggregating " + str(i+1) + "/" + str(len(sdfs)) + " sdfs")
+
+    return pd.concat(sdf_df_aggregate).reset_index(drop=True)
+
+
 def consolidate_data(sdfs, userinputs=[], dropcols=[]):
     """
 
