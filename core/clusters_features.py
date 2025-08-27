@@ -38,6 +38,7 @@ def cluster(dataset,n):
     plt.show()
     return clustering, processed_data, pcdata3d
 
+
 def showcluster(cid,dat,pcdat):
     cdata = dat[dat["centroid"]==cid]['distance']
     pickcluster = pcdat.loc[dat["centroid"]==cid]

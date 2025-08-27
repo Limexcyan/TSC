@@ -123,6 +123,7 @@ def correlation_plot(compound_norm, labels, metric="js", eps=1e-10):
     return corr_matrix
 
 def summary(a1, userinputs, eps=1e-10):
+
     compound_distance = []
     compound_clusters = []
     aggregate_compound_clusters = [[0 for _ in range(cluster_count)] for _ in range(len(userinputs))]
@@ -163,5 +164,3 @@ def summary(a1, userinputs, eps=1e-10):
 
 
     scatter_js_vs_alignment(compound_norm,userinputs, eps)
-
-

@@ -10,7 +10,7 @@ if __name__ == "__main__":
     print("trying to find existing data")
     if os.path.isfile("data/full_sdfs.csv"):
         print("check success for full sdfs")
-        full_df = pd.read_csv("data/full_sdfs.csv",index_col=False)
+        full_df = pd.read_csv("../data/full_sdfs.csv",index_col=False)
     else:
         print("consolidating data")
         full_df = consolidate_data(sdfs, userinputs=userinputs, dropcols=dropped_columns)
@@ -18,7 +18,7 @@ if __name__ == "__main__":
         export_data(full_df, "data/full_sdfs.csv")
     if os.path.isfile("data/processed_sdfs.csv"):
         print("check success for processed data")
-        datas = pd.read_csv("data/processed_sdfs.csv",index_col=False)
+        datas = pd.read_csv("../data/processed_sdfs.csv",index_col=False)
         feature_count = feature_count * 1.0
     else:
         print("featurizing data - populating with morgan fingerprints")
@@ -27,7 +27,7 @@ if __name__ == "__main__":
         feature_count = feature_count * 1.0
         datas = featurizer(full_df)
         print("exporting featurized data")
-        export_data(datas, "data/processed_sdfs.csv")
+        export_data(datas, "../data/processed_sdfs.csv")
     
     print("performing analysis...")
     out_data_full, out_data_processed = perform_analysis(datas,cluster_count,full_df)
