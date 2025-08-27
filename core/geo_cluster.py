@@ -119,5 +119,5 @@ def rif_cluster_smiles_csv(csv_path, cluster_count=5, max_mols=100):
     return pd.DataFrame({'name': names, 'cluster': labels})
 
 if __name__ == "__main__":
-    result_df = rif_cluster_smiles_csv("data/proper_sdf/molecule_tree/full_sdfs.csv", cluster_count=5, max_mols=100)
+    result_df = rif_cluster_smiles_csv("data/proper_sdf/molecule_tree/full_sdfs.csv", cluster_count=5, max_mols=500)
     print(result_df.head())

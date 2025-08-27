@@ -59,19 +59,20 @@ if __name__ == "__main__":
         export_data(df_3d, full_3d_path)
 
     path = "./data/proper_sdf/molecule_tree/full_3ds.csv"
-    cluster_count = 20
-    max_l = 10
+    cluster_count = 5
+    max_l = 100
     try:
-        dataset = cluster_3d_string_csv(path, cluster_count=cluster_count, max_l=max_l, descriptor='usr')
-        og_data = pd.read_csv(path, low_memory=False)[['target', 'smiles']][:1000]
-        dat_sorted, processed = perform_analysis(dataset, cluster_count, og_data)
-        compound_distance, compound_clusters, compound_norm = summary(dat_sorted, eps=0.1,
-                                                                      userinputs=molecules_userinputs,
-                                                                      cluster_count=cluster_count)
+        dataset = cluster_3d_string_csv(path, cluster_count=cluster_count, max_l=max_l, descriptor='sh')
+        export_data(dataset, "./data/sh_sdfs.csv")
+
+        #og_data = pd.read_csv(path, low_memory=False)[['target', 'smiles']][:200]
+        #dat_sorted, processed = perform_analysis(dataset, cluster_count, og_data)
+        #compound_distance, compound_clusters, compound_norm = summary(dat_sorted, eps=0.1,
+        #                                                              userinputs=molecules_userinputs,
+        #                                                              cluster_count=cluster_count)
         if compound_distance is not None:
             print("Compound Distances:", compound_distance)
             print("Compound Clusters:", compound_clusters)
             print("Compound Normalized:", compound_norm)
     except Exception as e:
         print(f"[ERROR] Pipeline failed: {e}")
-

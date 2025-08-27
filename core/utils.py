@@ -41,7 +41,7 @@ def gaussianScaler(numArr):
     return numArr
 
 def logScaler(numArr):
-    # standard logarythmic scaler
+    # standard logarithmic scaler
     numArr = np.log(numArr)
     return numArr
 
