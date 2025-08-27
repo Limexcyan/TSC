@@ -1,27 +1,8 @@
 import pandas as pd
-
 import numpy as np
-
-from rdkit import Chem
-from rdkit.Chem import AllChem
 from rdkit.Chem import PandasTools as pdt
-from rdkit.Chem import GraphDescriptors
-from rdkit.Chem import rdFMCS as fmcs
 
-
-def st_consolidate_data(sdfs, dropcols=[]):
-    sdf_df_aggregate = []
-    for i in range(len(sdfs)):
-        temp = pdt.LoadSDF(sdfs[i][0][1], embedProps=True, molColName=None, smilesName='smiles').drop(dropcols, axis=1)
-        for j in range(len(sdfs[i]) - 1):
-            temp[sdfs[i][j+1][0]] = sdfs[i][j+1][1]
-        sdf_df_aggregate.append(temp)
-        print("\t aggregating " + str(i+1) + "/" + str(len(sdfs)) + " sdfs")
-
-    return pd.concat(sdf_df_aggregate).reset_index(drop=True)
-
-
-def consolidate_data(sdfs, userinputs=[], dropcols=[]):
+def consolidate_data(sdfs, userinputs, dropcols):
     """
 
     :param sdfs: d array of filenames for SDF files
@@ -41,7 +22,6 @@ def consolidate_data(sdfs, userinputs=[], dropcols=[]):
 
     return pd.concat(sdf_df_aggregate).reset_index(drop=True)
 
-
 def export_data(data, filename):
     """
 
@@ -52,7 +32,6 @@ def export_data(data, filename):
     data.to_csv(filename,index=False)
     print("done")
 
-
 def gaussianScaler(numArr):
     # standard gaussian scaler
     # X' = (X-mu)/sigma
@@ -61,24 +40,19 @@ def gaussianScaler(numArr):
     numArr = (numArr - mean) / std
     return numArr
 
-# if data follows the 'power law' (~ e^x)
 def logScaler(numArr):
-    # standard logarythmic scaler
+    # standard logarithmic scaler
     numArr = np.log(numArr)
     return numArr
 
-# in case of uncertain distribution
-# divide the data into quantiles
 def createQuantiles(dfColumn, numQuantiles):
     # create as many quantiles as wanted
     return pd.qcut(dfColumn, numQuantiles, labels=False, duplicates='drop')
 
-# minmax normalizer
 def minMaxScaler(numArr):
     # standard minmax scaler
     minx = np.min(numArr)
     maxx = np.max(numArr)
-    # linearly map all values from minimal to maximal
-    # to values ranging from 0 to 1
+
     numArr = (numArr - minx) / (maxx - minx)
     return numArr
