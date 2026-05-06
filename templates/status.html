@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8">
+    const my_token = '{{ my_token }}';
+    var socket = io();
+    socket.on('job_taken', (payload) => {
+        if (my_token == payload.taken) { console.log("my job is taken"); var elem_status = document.getElementById("job-status"); elem_status.textContent = 'processing'; }
+        else {console.log("job taken received")}; 
+    });
+    socket.on('query_job_status_response', (payload) => {
+        console.log("status query response was served");
+        if (my_token == payload.token) { var elem_status = document.getElementById("job-status"); elem_status.textContent = payload.status; }
+    })
+    socket.on('job_free', (payload) => {
+        if (my_token == payload.freed) { console.log("my job is free"); location.reload(); /*elem_status.textContent = "completed"; location.reload();*/ }
+    });
+    function initialize_values() {
+        var elem_status = document.getElementById("job-status");
+        console.log("listening, sending request for update on status"); 
+        socket.emit('query_job_status', { data: my_token });
+    }
+</script>
+</head>
+<body onload="initialize_values()">
+<h1>Processing</h1>
+<p>Your request is currently <output id="job-status"></output>. Please wait until the process finishes or refresh the page if necessary.</p>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+</head>
+<body>
+<h1>Analysis</h1>
+<p>Analyze</p>
+{% autoescape false %}
+{{fig_bar_stacked}}
+{% endautoescape %}
+<a href="{{ url_for('serve_index') }}">Back</a>
+</body>
+</html>

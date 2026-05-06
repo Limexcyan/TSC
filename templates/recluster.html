@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>SDF Reclustering</h1>
+	<p>Use this page to cluster SDFs on an already fitted model</p>
+	<form method="post" enctype="multipart/form-data">
+		<fieldset><legend>Upload files</legend>
+		<div>
+			<div><input id="file" name="file" type="file" accept=".sdf" multiple/></div>
+			<div>{{mfp_size}} - Morgan fingerprint size</div>
+			<input id="mfp-size" name="mfp-size" type="hidden" value={{mfp_size}}/>
+			<div>{{mfp_radius}} - Morgan fingerprint radius</div>
+			<input id="mfp-radius" name="mfp-radius" type="hidden" value={{mfp_radius}}/>
+			<div>{{cluster_k}} - cluster count</div>
+			<input id="cluster-k" name="cluster-k" type="hidden" value={{cluster_k}}/>
+			<input id="mode" name="mode" type="hidden" value="recluster"/>
+		</div>
+		</fieldset>
+	<div><button name="recluster">Submit</button></div>
+	</form>
+</body>
+</html>

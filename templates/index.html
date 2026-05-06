@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+	<script type="text/javascript" charset="utf-8">
+		var getJobTokens = function(){
+			var pairs = document.cookie.split(";");
+			var cookies = [];
+			for (var i=0; i<pairs.length; i++){
+				var pair = pairs[i].split("=");
+				cookies.push((pair[0]+'').trim());
+			}
+			return cookies;
+		}
+		var socket = io();
+		socket.on('job_query_response', (payload) => {
+			console.log(`received job update job ${payload.request_key}`);
+			Object.values(payload).forEach(job => {
+				console.log(job);
+				console.log(job.request_key);
+				const details = document.getElementById(job.request_key)
+				details.innerHTML = ""
+				job.jobs.forEach(jinfo => {
+					var p = document.createElement("p")
+					p.appendChild(document.createTextNode("task no. " + jinfo.job_id + " - " + jinfo.status))
+					details.appendChild(p)
+				})
+			})
+		});
+		function job_query(job_tokens){
+			console.log(`enquiry for job ${job_tokens}`);
+			socket.emit('job_query', { data: job_tokens });
+		}
+		function tableCreate(){
+			const body = document.getElementById("tasks_display")
+			var table_elements = getJobTokens();
+			var table = document.createElement("table");
+			table.id = "tasks_list";
+			table_elements.forEach(element => {
+				console.log("creating table element for element", element)
+				const tr = table.insertRow();
+				const td_info = tr.insertCell();
+				td_info.setAttribute("name","tasks_keys");
+				td_info.appendChild(document.createTextNode(`${element}`));
+				const td_status = tr.insertCell();
+				td_status.appendChild(document.createTextNode(`...`));
+				td_status.id = element;
+				const link = tr.insertCell();
+				const a = document.createElement("a")
+				a.appendChild(document.createTextNode("Details"))
+				a.href = window.location.href + "details/" + element
+				link.appendChild(a)
+			});
+			body.appendChild(table);
+		}
+		function update_statuses(){
+			var list = document.getElementsByName("tasks_keys");
+			var queries = [];
+			list.forEach(element => {
+				console.log(element)
+				queries.push(element.textContent);
+			});
+			job_query(queries);
+		}
+	</script>
+</head>
+<body onload="tableCreate();update_statuses()">
+<h1>TSC flask ui</h1>
+	<fieldset><legend>Process new files</legend>
+		<div>
+			<p>Information on what this is and how it works</p>
+			<a href="{{ url_for('serve_mode', mode='process') }}">Cluster</a>
+		</div>
+	</fieldset>
+	<fieldset><legend>Past processes</legend>
+		<div>
+			<p>Information on how to use this</p>
+			<div id="tasks_display">
+
+			</div>
+		</div>
+	</fieldset>
+	<footer>
+		<p style="text-align: center;">This website uses cookies for technical purpouses only.</p>
+	</footer>
+
+</body>
+</html>

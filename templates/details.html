@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>Job id {{job_id}}</h1>
+    <div>
+        {% autoescape false %}
+        {{table}}
+        {% endautoescape %}
+    </div>
+    <a href="{{ url_for('serve_index') }}">Back</a>
+</body>
+</html>
