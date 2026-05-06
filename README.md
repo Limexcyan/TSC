@@ -26,7 +26,7 @@ Create an empty directory called "appdata" within the cloned repository. The fil
     ├── config.py
     └── ...
 ```
-Ensure that constant APPDATA_ABSOLUTE_PATH is the absolute path of the appdata folder listed above.
+Ensure that a `config.py` constant named `APPDATA_ABSOLUTE_PATH` is in fact the absolute path of the appdata folder listed above.
 
 To start the application, open a terminal in the root folder and execute the following command:
 `.\venv\Scripts\python.exe -m flask --app .\TSC\main.py run`
