@@ -1,2 +1,0 @@
-# TSC
-Target structural clustering
