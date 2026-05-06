@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Featurize</h1>
+	<p>Use this page to featurize a consolidated dataset</p>
+	<form action="action" method="post" enctype="multipart/form-data">
+		<fieldset><legend>Upload files</legend>
+		<div>
+			<div><input id="file" name="file" type="file" accept=".csv" /></div>
+			<div><input id="mfp-size" name="mfp-size" type="range" min="1024" max="4096" value="1024" step="1024" /><label for="mfp-size"><output id="mfp-size-value"></output> - Morgan fingerprint size</label></div>
+			<div><input id="mfp-radius" name="mfp-radius" type="range" min="1" max="4" value="2" step="1" /><label for="mfp-radius"><output id="mfp-radius-value"></output> - Morgan fingerprint radius</label></div>
+			<input id="mode" name="mode" type="hidden" value="preprocess"/>
+		</div>
+		<script>
+			const mfp_size_val = document.getElementById("mfp-size-value");
+			const mfp_size_inp = document.getElementById("mfp-size");
+			const mfp_radius_val = document.getElementById("mfp-radius-value");
+			const mfp_radius_inp = document.getElementById("mfp-radius");
+			mfp_size_val.textContent = mfp_size_inp.value;
+			mfp_radius_val.textContent = mfp_radius_inp.value;
+			mfp_size_inp.addEventListener("input", (event) => { mfp_size_val.textContent = event.target.value; });
+			mfp_radius_inp.addEventListener("input", (event) => { mfp_radius_val.textContent = event.target.value; });
+		</script>
+		</fieldset>
+	<div><button name="upload">Submit</button></div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Cluster</h1>
+	<p>Use this page to cluster a featurized dataset</p>
+	<form action="action" method="post" enctype="multipart/form-data">
+	<fieldset><legend>Upload files</legend>
+		<div>
+			<div><input id="file" name="file" type="file" accept=".csv" /></div>
+			<div><input id="cluster-k" name="cluster-k" type="number" min="2" max="64" value="32" step="1" /><label for="cluster-k">cluster count</label></div>
+			<input id="mode" name="mode" type="hidden" value="cluster"/>
+		</div>
+	</fieldset>
+	<div><button name="upload">Submit</button></div>
+	</form>
+</body>
+</html>
