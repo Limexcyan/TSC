@@ -1,6 +1,7 @@
 [orchestrator]
 
-save_directory = 'src\\tscapp\\webapp\\orchestrator\\appdata'
+appdata_path = 'src\\tscapp\\webapp\\orchestrator\\appdata'
+database_path = 'src\\tscapp\\webapp\\orchestrator\\appdata\\db.db'
 
 [flask]
 

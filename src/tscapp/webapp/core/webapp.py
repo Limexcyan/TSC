@@ -9,6 +9,8 @@ from ...common.settings import ConfigBase, SettingsBase
 from .webapp_config import load_flask_config
 from .webapp_logic import register_urls
 
+from ..diagnostic.admin_pages import register_admin_urls
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -23,9 +25,13 @@ class WebappCli(CliRunnerMixin, SettingsBase):
     webapp: WebappConfig
 
     def cmd(self):
-        app, sio = webapp_init(config=self.webapp)
-        register_urls(app=app, sio=sio)
-        webapp_start(app=app, sio=sio, config=self.webapp)
+        webapp(config=self.webapp)
+
+def webapp(config:WebappConfig):
+    app, sio = webapp_init(config=config)
+    register_urls(app=app, sio=sio)
+    register_admin_urls(app=app, sio=sio)
+    webapp_start(app=app, sio=sio, config=config)
 
 def webapp_init(config: WebappConfig) -> Tuple[Flask, SocketIO]:
     logger.info("static folder is %s", config.sites_static_dir.resolve())
