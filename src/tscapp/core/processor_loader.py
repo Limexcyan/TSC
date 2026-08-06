@@ -38,6 +38,12 @@ def load_chembl_sdf(
     )
     return chembl_sdf.select(config.keep_cols)
 
+def load_csv(
+    file: Path,
+) -> pl.DataFrame:
+    logger.info("loading csv %s", file)
+    return pl.read_csv(file)
+
 def load_stage(
     file: Path,
     config: LoaderConfig,
