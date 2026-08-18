@@ -1,7 +1,11 @@
 [orchestrator]
 
-appdata_path = 'src\\tscapp\\webapp\\orchestrator\\appdata'
-database_path = 'src\\tscapp\\webapp\\orchestrator\\appdata\\db.db'
+appdata_path = 'src\\tscapp\\webapp\\appdata'
+database_path = 'src\\tscapp\\webapp\\appdata\\db.db'
+
+[webapp]
+
+file_path = 'src\\tscapp\\webapp\\appdata\\files'
 
 [flask]
 
@@ -24,6 +28,8 @@ SESSION_COOKIE_HTTPONLY=true
 SESSION_COOKIE_SECURE=false
 SESSION_COOKIE_PARTITIONED=false
 # SESSION_COOKIE_SAMESITE=None
+SESSION_PERMAMENT=true
+SESSION_TYPE='filesystem' # if deploying locally this is fine, change this if in production
 PERMAMENT_SESSION_LIFETIME=2678400
 SESSION_REFRESH_EACH_REQUEST=true
 USE_X_SENDFILE=false

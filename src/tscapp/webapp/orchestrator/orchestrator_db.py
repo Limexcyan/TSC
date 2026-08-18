@@ -8,7 +8,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-_dblock = Lock()
+_dblock: LockType = Lock()
 
 def under_lock(f):
     def wrapper(*args, **kwargs):

@@ -12,3 +12,4 @@ wheels/
 # Others
 test/
 appdata/
+flask_session/

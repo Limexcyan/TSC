@@ -1,0 +1,23 @@
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  margin: 0;
+}
+h1, h2, h3 { 
+  line-height: 1.2;
+  margin: 0 0 .75em;
+}
+p { 
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin: 0 0 1.5em;
+}
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+h2 { font-size: 2rem; }
+header.hero, main, footer.site-footer, section { padding: 16px; }

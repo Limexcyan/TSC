@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="/static/styles.css" type="text/css">
+</head>
+<body>
+    <header class="hero">Browse through your files</header>
+    <main>
+        <button id="initSession">Create new session</button>
+        <script>
+            document.getElementById('initSession').onclick = function () {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/session", true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send("{}");
+                xhr.onload = function () {
+                    window.top.location = window.top.location;
+                };
+            };
+        </script>
+        {% if contents|length > 0 %}
+        <ul>
+            {% for name, item in contents|items %}
+                <li>{{ name }}</li>
+                {% if item|length > 0 %}
+                <ul>
+                    {% for filename in item %}
+                    <li>{{ filename }}</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No files</p>
+                {% endif %}
+                <button id="manageSession_{{ name }}" onclick="location.href = '/session/{{ name }}'">Manage this session</button>
+                <button id="deleteSession_{{ name }}">Delete this session</button>
+                <script>
+                    document.getElementById('deleteSession_{{ name }}').onclick = function () {
+                        var xhr = new XMLHttpRequest();
+                        xhr.open("DELETE", "/session/{{ name }}", true);
+                        xhr.setRequestHeader('Content-Type', 'application/json');
+                        xhr.send("{}");
+                        xhr.onload = function () {
+                            window.top.location = window.top.location;
+                        };
+                    };
+                </script>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No active sessions</p>
+        {% endif %}
+    </main>
+    <footer class="site-footer">
+    </footer>
+</body>
+</html>

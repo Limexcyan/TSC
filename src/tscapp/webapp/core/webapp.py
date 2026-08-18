@@ -1,24 +1,26 @@
+from flask_session import Session
+from tscapp.webapp.core.webapp_logic import init_sessions
+from tscapp.webapp.core.webapp_config import load_webapp_config
 from typing import Tuple
 from pathlib import Path
-from flask import Flask
+from flask import Flask, session
 from flask_socketio import SocketIO
 
 from ...common.cli import CliRunnerMixin
 from ...common.settings import ConfigBase, SettingsBase
 
 from .webapp_config import load_flask_config, load_orchestrator_config
-from .webapp_logic import register_urls
 
 from ..diagnostic.admin_pages import register_admin_urls
-from ..orchestrator.orchestrator import orchestrator_init
+from ..orchestrator.orchestrator import orchestrator_init, OrchestratorDB
 
 import logging
 
 logger = logging.getLogger(__name__)
 
 class WebappConfig(ConfigBase):
-    sites_static_dir: Path = Path(r"src\tscapp\webapp\resources\templates")
-    sites_templates_dir: Path = Path(r"src\tscapp\webapp\resources")
+    sites_static_dir: Path = Path(r"src\tscapp\webapp\core\resources\static")
+    sites_templates_dir: Path = Path(r"src\tscapp\webapp\core\resources\templates")
     config_file: Path = Path(r"src\tscapp\webapp\config.toml")
     flask_debug: bool = True
 
@@ -31,8 +33,10 @@ class WebappCli(CliRunnerMixin, SettingsBase):
 def webapp(config:WebappConfig):
     app, sio = webapp_init(config=config)
     odb = orchestrator_init(load_orchestrator_config(config.config_file.resolve()))
+    wappconf = load_webapp_config(config.config_file.resolve())
 
-    register_urls(app=app, sio=sio, odb=odb)
+    from .webapp_logic import register_urls
+    register_urls(app=app, sio=sio, odb=odb, session=session, appdata_path=wappconf['file_path'])
     register_admin_urls(app=app, sio=sio, odb=odb)
     webapp_start(app=app, config=config)
 
@@ -49,6 +53,9 @@ def webapp_init(config: WebappConfig) -> Tuple[Flask, SocketIO]:
 
     logger.info("Attaching socketIO...")
     sio = SocketIO(flask_app)
+
+    logger.info("Initializing session...")
+    Session(flask_app)
 
     return flask_app, sio
 

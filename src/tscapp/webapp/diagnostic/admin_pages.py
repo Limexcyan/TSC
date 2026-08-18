@@ -16,5 +16,4 @@ def register_admin_urls(app: Flask, sio: SocketIO, odb: OrchestratorDB) -> None:
     def admin_orchestrator_db(table):
         odb.db_cur.execute(f"SELECT * FROM {table}")
         records = odb.db_cur.fetchall()
-        logger.info(f"<body><p>{"</p><p>".join(records)}</p></body>")
         return f"<body><p>{"</p><p>".join(records)}</p></body>"
