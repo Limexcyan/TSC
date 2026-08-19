@@ -1,0 +1,16 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+biopython
+jinja2
+
+[chembl]
+chembl-webresource-client
+
+[rdkit]
+rdkit
+
+[test]
+pytest

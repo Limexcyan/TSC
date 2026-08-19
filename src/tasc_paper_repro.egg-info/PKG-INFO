@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: tasc-paper-repro
+Version: 0.1.0
+Summary: Reproducibility package for the TaSC ligand-distribution experiments
+Requires-Python: >=3.10
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: matplotlib
+Requires-Dist: biopython
+Requires-Dist: jinja2
+Provides-Extra: rdkit
+Requires-Dist: rdkit; extra == "rdkit"
+Provides-Extra: chembl
+Requires-Dist: chembl-webresource-client; extra == "chembl"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"

@@ -1,0 +1,26 @@
+[project]
+name = "tasc-paper-repro"
+version = "0.1.0"
+description = "Reproducibility package for the TaSC ligand-distribution experiments"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scipy",
+  "scikit-learn",
+  "matplotlib",
+  "biopython",
+  "jinja2",
+]
+
+[project.optional-dependencies]
+rdkit = ["rdkit"]
+chembl = ["chembl-webresource-client"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

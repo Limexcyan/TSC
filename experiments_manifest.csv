@@ -1,0 +1,18 @@
+experiment,path,purpose
+E0,experiments/e0/run_descriptor_recovery.py,Descriptor recovery and target-distribution relation table
+E0,experiments/e0/make_usr_usrcat_descriptors.py,Precompute RDKit USR/USRCAT descriptors
+E0,experiments/e0/make_bdc_descriptors.py,Precompute BDC descriptors using original TSC core
+E1,experiments/e1/run_mantel_grid.py,Descriptor x distance Mantel/partial Mantel grid
+E1,experiments/e1/recompute_pairwise_js_table.py,Corrected normalized base-2 JS table
+E1,experiments/e1/make_corrected_js_alignment_table.py,Join corrected JS table with sequence alignment scores
+E2,experiments/e2/create_docking_alignment_plots.py,Docking-profile/alignment plots
+E2,experiments/e2/create_smina_glide_concordance.py,smina-Glide concordance tables/plots
+E3,experiments/e3/run_target_assignment_v2.py,Final pocket-free multi-label target assignment benchmark
+E4,experiments/e4/build_chembl_ki_table.py,Fetch and aggregate ChEMBL Ki values
+E4,experiments/e4/run_boundary_selectivity_v2.py,Boundary/selectivity validation against Ki
+E5,experiments/e5/build_e5_data_from_scratch.py,Cross-target property-matched decoy dataset builder
+E5,experiments/e5/make_e5_shape_descriptors.py,E5 descriptor generation
+E5,experiments/e5/run_e5_oneclass_benchmark.py,One-class binder/outlier benchmark
+E5,experiments/e5/build_confirmed_ki_dataset.py,Confirmed-Ki threshold dataset builder
+E5,experiments/e5/summarize_e5_shape_claim.py,Final E5 claim summary table
+wrapper,experiments/wrappers/tsc_bdc_wrapper.py,Wrapper for original TSC BDC descriptor function

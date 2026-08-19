@@ -1,40 +1,25 @@
-core/data/
-data/
-core/results/
-visual/
-other/
-core/__pycache__/
-.cache
+# Python
+__pycache__/
+*.py[cod]
 .pytest_cache/
-.pybuilder/
-.ipynb_checkpoints
-profile_default/
-ipython_config.py
-python-version
-Pipfile.lock
-uv.lock
-poetry.lock
-.pdm.lock
-.pdm.toml
-.pdm-python
-.pdm-build/
-__pypackages__/
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-.spyderproject
-.spyproject
-.ropeproject
-.mypy_cache/
-.dmypy.json
-dmypy.json
-.pyre/
-.pytype/
-cython_debug/
-.pypirc
-**.idea/**
+.venv/
+.env/
 
+# data and generated outputs
+data/raw/*.csv
+data/raw/*.sdf
+data/raw/*.sdf.gz
+data/processed/*.csv
+results/
+!results/.gitkeep
+
+# large/temporary science outputs
+*.zip
+*.pdf
+*.png
+*.svg
+*.log
+.DS_Store
+
+# local original TSC clone, if added as sibling/submodule manually
+TSC-restore-3d-desc/

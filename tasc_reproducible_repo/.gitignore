@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env/
+
+# data and generated outputs
+data/raw/*.csv
+data/raw/*.sdf
+data/raw/*.sdf.gz
+data/processed/*.csv
+results/
+!results/.gitkeep
+
+# large/temporary science outputs
+*.zip
+*.pdf
+*.png
+*.svg
+*.log
+.DS_Store
+
+# local original TSC clone, if added as sibling/submodule manually
+TSC-restore-3d-desc/
