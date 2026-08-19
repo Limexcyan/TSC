@@ -72,7 +72,3 @@ pytest
 ## Reproduce paper experiments
 
 A concise command list is in `docs/reproduce_paper.md`.
-
-## Important methodological note
-
-Use `src/tasc_paper/distances.py` for future JS calculations. `scipy.spatial.distance.jensenshannon` returns the Jensen--Shannon **distance**, i.e. `sqrt(JSD)`. The paper tables should report base-2 Jensen--Shannon **divergence**, computed as `jensenshannon(p, q, base=2.0) ** 2`, which is bounded by `[0, 1]`.
