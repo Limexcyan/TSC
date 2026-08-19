@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Session, appdata_path: Path):
 
-    @app.route('/session', methods=["POST"])
+    @app.route('/api/session', methods=["POST"])
     def session_create():
         assertion: Response = assert_session(session, create=True)
         if assertion.status_code >= 400:
@@ -30,7 +30,7 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
         os.makedirs(path_to_session)
         return make_response(("created", 201))
 
-    @app.route('/session', methods=["GET"])
+    @app.route('/api/session', methods=["GET"])
     def session_enumerate():
         assertion = assert_session(session)
         if assertion.status_code >= 400:
@@ -42,7 +42,7 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
         subfolders = list_files(session_root)
         return make_response((subfolders, 200))
     
-    @app.route('/session/<session>', methods=["GET"])
+    @app.route('/api/session/<session>', methods=["GET"])
     def session_details(session):
         assertion = assert_session(session)
         if assertion.status_code >= 400:
@@ -55,7 +55,7 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
         return make_response((subfolders, 200))
         pass
     
-    @app.route('/session/<session>', methods=["POST"])
+    @app.route('/api/session/<session>', methods=["POST"])
     def session_upload(session):
         assertion = assert_session(session, create=True)
         if assertion.status_code >= 400:
@@ -82,7 +82,7 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
                 logger.info("upload successfull")
         return make_response(('write ok', 200))
     
-    @app.route('/session/<session>/<file>', methods=["DELETE"])
+    @app.route('/api/session/<session>/<file>', methods=["DELETE"])
     def session_delete_file(session,file):
         assertion = assert_session(session)
         if assertion.status_code >= 400:
@@ -94,7 +94,7 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
         file_path.unlink()
         return make_response(("deleted", 204))
     
-    @app.route('/session/<session>', methods=["DELETE"])
+    @app.route('/api/session/<session>', methods=["DELETE"])
     def session_delete(session):
         assertion = assert_session(session)
         if assertion.status_code >= 400:
