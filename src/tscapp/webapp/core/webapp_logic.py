@@ -9,22 +9,20 @@ from pathlib import Path
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO
 from ..orchestrator.orchestrator_db import OrchestratorDB
+from .webapp_common import list_files, assert_session,
 from flask_session import Session
+
+from .api.session import api_session_init
 
 logger = logging.getLogger(__name__)
 
 def init_sessions(app: Flask) -> Session:
     Session(app)
 
-def list_files(dir: Path):
-    dirs = next(dir.walk())[1]
-    dirs.sort(key=lambda x: -os.path.getmtime(dir / x))
-    manifest = dict()
-    for d in dirs:
-        manifest.update({d:next((dir / d).walk())[2]})
-    return manifest
-    
+
 def register_urls(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Session, appdata_path: Path) -> None:
+
+    api_session_init(app, sio, odb, session, appdata_path)
 
     @app.route('/')
     def index():
@@ -43,39 +41,6 @@ def register_urls(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     @app.route('/process')
     def process():
         return render_template("upload_pipeline_processor.html")
-
-    @app.route('/session', methods=["POST"])
-    def session_init():
-        name = request.args.get("name", default=uuid4().hex)
-        if not session.get("uuid"):
-            logger.error("requested to init processor session with no active webapp session")
-            return make_response(("No active webapp session", 400))
-        if (appdata_path / session["uuid"] / name).exists():
-            logger.error("session %s already exists", name)
-            return make_response(("Session name already exists, request different session name", 400))
-        os.makedirs(appdata_path / session["uuid"] / name)
-        return make_response(("Session created", 200))
-    
-    @app.route('/session/<name>', methods=["GET"])
-    def session_get(name):
-        if not session.get("uuid"):
-            logger.error("requested to delete processor session with no active webapp session")
-            return make_response(("No active webapp session", 400))
-        if not (appdata_path / session["uuid"] / name).exists():
-            logger.error("session %s does not exist", name)
-            return make_response(("Session does not exist", 400))
-        return render_template("browse_session.html")
-    
-    @app.route('/session/<name>', methods=["DELETE"])
-    def session_delete(name):
-        if not session.get("uuid"):
-            logger.error("requested to delete processor session with no active webapp session")
-            return make_response(("No active webapp session", 400))
-        if not (appdata_path / session["uuid"] / name).exists():
-            logger.error("session %s does not exist", name)
-            return make_response(("Session does not exist", 400))
-        shutil.rmtree(appdata_path / session["uuid"] / name)
-        return make_response(("Session deleted", 200))
 
     @app.route('/upload', methods=["POST"])
     def upload():
