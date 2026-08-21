@@ -9,7 +9,7 @@ from pathlib import Path
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO
 from ..orchestrator.orchestrator_db import OrchestratorDB
-from .webapp_common import list_files, assert_session,
+from .webapp_common import list_files, assert_session
 from flask_session import Session
 
 from .api.session import api_session_init
@@ -30,13 +30,15 @@ def register_urls(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
 
     @app.route('/contents')
     def browse():
-        if not session.get("uuid"):
-            session["uuid"] = uuid4().hex
-            logger.info("new session created: %s", session["uuid"])
+        assertion = assert_session(session, create=True)
+        if assertion.status_code >= 400:
+            return assertion
         contents: Path = appdata_path / session["uuid"]
         if not contents.exists():
             os.makedirs(contents)
-        return render_template("browse.html", contents=list_files(contents))
+        sessions = list_files(contents)
+        names = []
+        return render_template("browse.html", contents=sessions)
 
     @app.route('/process')
     def process():

@@ -11,6 +11,7 @@ from flask import Flask, render_template, request
 from flask_socketio import SocketIO
 from ...orchestrator.orchestrator_db import OrchestratorDB
 from ..webapp_common import list_files, assert_session
+from ....common.names import random_sentence
 from flask_session import Session
 
 logger = logging.getLogger(__name__)
@@ -22,12 +23,13 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
         assertion: Response = assert_session(session, create=True)
         if assertion.status_code >= 400:
             return assertion
-        session_name = request.args.get("name", default=uuid4().hex)
-        path_to_session = appdata_path / session["uuid"] / session_name
-        if path_to_session.exist():
-            logger.error("Session named %s already exists", session_name)
+        session_uuid = uuid4().hex
+        path_to_session = appdata_path / session["uuid"] / session_uuid
+        if path_to_session.exists():
+            logger.error("Session named %s already exists", session_uuid)
             return make_response(("already exists", 400))
         os.makedirs(path_to_session)
+        odb.table_sessions_create(session_uuid, session["uuid"], request.args.get("name", default=random_sentence(long=True)))
         return make_response(("created", 201))
 
     @app.route('/api/session', methods=["GET"])
@@ -39,29 +41,34 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
         if not session_root.exists():
             logger.error("No session %s for user %s", session_root, session['uuid'])
             return make_response(("not found", 404))
-        subfolders = list_files(session_root)
+        subfolders = list(list_files(session_root).keys())
         return make_response((subfolders, 200))
     
-    @app.route('/api/session/<session>', methods=["GET"])
-    def session_details(session):
+    @app.route('/api/session/<session_id>', methods=["GET"])
+    def session_details(session_id):
         assertion = assert_session(session)
         if assertion.status_code >= 400:
             return assertion
-        files_root = appdata_path / session["uuid"] / session
+        files_root = appdata_path / session["uuid"] / session_id
         if not files_root.exists():
             logger.error("No session %s", files_root)
             return make_response(("not found", 404))
-        subfolders = list_files(files_root)
-        return make_response((subfolders, 200))
+        details = {
+            "session_id": session_id,
+            "session_alias": odb.table_sessions_retrieve_alias(session_id, session["uuid"]),
+            "session_expires": odb.table_sessions_retrieve_expires(session_id, session["uuid"]),
+            "session_contents": list(list_files(files_root).keys())
+        }
+        return make_response((details, 200))
         pass
     
-    @app.route('/api/session/<session>', methods=["POST"])
-    def session_upload(session):
+    @app.route('/api/session/<session_id>', methods=["POST"])
+    def session_upload(session_id):
         assertion = assert_session(session, create=True)
         if assertion.status_code >= 400:
             return assertion
         file = request.files['file']
-        save = appdata_path / session["uuid"] / session / secure_filename(file.filename)
+        save = appdata_path / session["uuid"] / session_id / secure_filename(file.filename)
         current_chunk = int(request.form.get('dzchunkindex', 0))
         if save.exists() and current_chunk == 0:
             return make_response(('file already exists', 400))
@@ -82,26 +89,27 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
                 logger.info("upload successfull")
         return make_response(('write ok', 200))
     
-    @app.route('/api/session/<session>/<file>', methods=["DELETE"])
-    def session_delete_file(session,file):
+    @app.route('/api/session/<session_id>/<file>', methods=["DELETE"])
+    def session_delete_file(session_id,file):
         assertion = assert_session(session)
         if assertion.status_code >= 400:
             return assertion
-        file_path = appdata_path / session["uuid"] / session / file
+        file_path = appdata_path / session["uuid"] / session_id / file
         if not file_path.exists():
             logger.warning("File %s does not exist", file_path)
             return make_response(("no action", 204))
         file_path.unlink()
         return make_response(("deleted", 204))
     
-    @app.route('/api/session/<session>', methods=["DELETE"])
-    def session_delete(session):
+    @app.route('/api/session/<session_id>', methods=["DELETE"])
+    def session_delete(session_id):
         assertion = assert_session(session)
         if assertion.status_code >= 400:
             return assertion
-        session_path = appdata_path / session["uuid"] / session
+        session_path = appdata_path / session["uuid"] / session_id
         if not session_path.exists():
             logger.warning("No session %s", session_path)
             return make_response(("no action", 204))
         shutil.rmtree(session_path)
+        odb.table_sessions_delete(session_id, session["uuid"])
         return make_response(("deleted", 204))
