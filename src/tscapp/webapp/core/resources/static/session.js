@@ -69,15 +69,15 @@ function build_list(skip=0, top=10) {
     xhr.send("{}");
     xhr.onload = function() {
         response = JSON.parse(xhr.response);
-        list_root = document.getElementById("session_list");
+        list_root = document.getElementById("session-list");
         if (response.length == 0) {
             let info = document.createElement("p");
             info.innerText = "No items to display";
-            info.id = "list_root"
+            info.id = "list-root"
             list_root.appendChild(info);
         } else {
             let list = document.createElement("ul")
-            list.id = "list_root";
+            list.id = "list-root";
             list_root.appendChild(list);
             response.slice(skip,skip+top).map(function (x) {fetch_data(x)});
         }
