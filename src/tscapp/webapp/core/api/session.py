@@ -7,7 +7,7 @@ from flask import make_response
 from os.path import getsize
 from werkzeug.utils import secure_filename
 from pathlib import Path
-from flask import Flask, render_template, request
+from flask import Flask, request
 from flask_socketio import SocketIO
 from ...orchestrator.orchestrator_db import OrchestratorDB
 from ..webapp_common import list_files, assert_session
@@ -30,7 +30,7 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
             return make_response(("already exists", 400))
         os.makedirs(path_to_session)
         odb.table_sessions_create(session_uuid, session["uuid"], request.args.get("name", default=random_sentence(long=True)))
-        return make_response(("created", 201))
+        return make_response((session_uuid, 201))
 
     @app.route('/api/session', methods=["GET"])
     def session_enumerate():
@@ -49,7 +49,7 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
         assertion = assert_session(session)
         if assertion.status_code >= 400:
             return assertion
-        files_root = appdata_path / session["uuid"] / session_id
+        files_root = appdata_path / session["uuid"]
         if not files_root.exists():
             logger.error("No session %s", files_root)
             return make_response(("not found", 404))
@@ -57,7 +57,7 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
             "session_id": session_id,
             "session_alias": odb.table_sessions_retrieve_alias(session_id, session["uuid"]),
             "session_expires": odb.table_sessions_retrieve_expires(session_id, session["uuid"]),
-            "session_contents": list(list_files(files_root).keys())
+            "session_contents": list(list_files(files_root)[session_id])
         }
         return make_response((details, 200))
         pass

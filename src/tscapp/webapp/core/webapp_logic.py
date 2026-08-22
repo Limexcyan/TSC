@@ -33,12 +33,18 @@ def register_urls(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
         assertion = assert_session(session, create=True)
         if assertion.status_code >= 400:
             return assertion
-        contents: Path = appdata_path / session["uuid"]
-        if not contents.exists():
-            os.makedirs(contents)
-        sessions = list_files(contents)
-        names = []
-        return render_template("browse.html", contents=sessions)
+        return render_template("browse.html")
+
+    @app.route('/session/<session_id>')
+    def browse_session(session_id):
+        assertion = assert_session(session, create=True)
+        if assertion.status_code >= 400:
+            return assertion
+        return render_template("browse_session.html", uuid=session_id)
+
+    @app.route('/session/<session_key>/<session_id>')
+    def browse_public_session(session_key,session_id):
+        return make_response(("ok",200))
 
     @app.route('/process')
     def process():
