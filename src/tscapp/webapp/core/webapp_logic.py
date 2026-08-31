@@ -13,6 +13,8 @@ from .webapp_common import list_files, assert_session
 from flask_session import Session
 
 from .api.session import api_session_init
+from .api.file import api_file_init
+from .api.task import api_task_init
 
 logger = logging.getLogger(__name__)
 
@@ -23,6 +25,9 @@ def init_sessions(app: Flask) -> Session:
 def register_urls(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Session, appdata_path: Path) -> None:
 
     api_session_init(app, sio, odb, session, appdata_path)
+    api_file_init(app, sio, odb, session, appdata_path)
+    api_task_init(app, sio, odb, session, appdata_path)
+
 
     @app.route('/')
     def index():

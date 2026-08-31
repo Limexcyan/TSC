@@ -1,3 +1,60 @@
+function factory_api_delete(uuid, filename=null) {
+    request = `/api/session/${uuid}`;
+    _onload = function () {};
+    if (filename === null) {
+        _onload = function () { };
+    } else {
+        request = `/api/session/${uuid}/${filename}`;
+        _onload = function () { window.location.reload(); };
+    }
+    return function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open("DELETE", request, true); // may be async
+        xhr.send("{}");
+        xhr.onload = _onload;
+    }
+}
+
+function factory_redirect_to_session(uuid) {
+    return function () { window.location.href = `/session/${uuid}`; }
+}
+
+function fetch_session_files(uuid) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", `/api/session/${uuid}`, false) // no async to show files in order
+    xhr.send("{}")
+    return xhr
+}
+
+function fetch_session(top=10, skip=0){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", `/api/session`, true)
+    xhr.send(`{"top":${top},"skip":${skip}}`)
+    return xhr
+}
+
+function create_button(inner_text, onclick) {
+    btn = document.createElement("button")
+    btn.innerText = inner_text
+    btn.onclick = onclick
+}
+
+function create_listing_session(session_details) {
+    anchor = document.getElementById("session-listing-root");
+    session_listing = document.createElement("div");
+    session_name = document.createElement("p");
+    session_name.innerText = session_details.session_alias;
+    session_listing.appendChild(session_name);
+    session_buttons = document.createElement("div");
+    session_button_delete = create_button("Delete session", factory_api_delete(session_details.session_id));
+    session_button_manage_files = create_button("Manage files", factory_redirect_to_session(session_details.session_id));
+    session_buttons.appendChild(session_button_delete);
+    session_buttons.appendChild(session_button_manage_files);
+
+    
+}
+
+
 function delete_factory(uuid) {
     return function () {
         var xhr = new XMLHttpRequest();
@@ -97,13 +154,18 @@ function build_page(uuid) {
         } else {
             for(let i = 0; i < response.session_contents.length; ++i) {
                 let li = document.createElement("li");
-                li.innerText = response.session_contents[i];
+                filename = response.session.session_contents[i];
+                li.innerText = filename;
                 site_files.appendChild(li);
                 let delete_btn = document.createElement("button");
                 delete_btn.innerText = "delete file";
-                delete_btn.onclick = delete_file_factory(uuid, response.session_contents[i]);
+                delete_btn.onclick = delete_file_factory(uuid, filename);
                 site_files.appendChild(delete_btn);
             }
         }
     }
+}
+
+function build_file_item(uuid) {
+
 }

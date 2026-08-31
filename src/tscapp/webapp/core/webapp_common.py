@@ -1,5 +1,6 @@
 from flask import make_response
 from uuid import uuid4
+from functools import wraps
 from flask_session import Session
 import os
 from pathlib import Path
@@ -28,3 +29,14 @@ def assert_session(session: Session, create=False):
         logger.info("User already has a session")
         return make_response(("satisfied", 100))
     return make_response(("ok", 200))
+
+def with_session(session: Session, create=False):
+    def with_session_wrapper(f):
+        @wraps(f)
+        def _f(*args, **kwargs):
+            assertion = assert_session(session, create)
+            if assertion.status_core >= 400:
+                return assertion
+            return f(*args, **kwargs)
+        return _f
+    return with_session_wrapper
