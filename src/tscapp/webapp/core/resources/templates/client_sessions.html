@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="/static/styles.css" type="text/css">
+</head>
+<body>
+    <script type="text/javascript" src="/static/client_session.js"></script>
+    <header class="hero">Browse through your files</header>
+    <main>
+        <button id="initSession">Create new session</button>
+        <script>
+            document.getElementById('initSession').onclick = function () {
+                api_post_new_client_session().then(client_sessions_build_session_list);
+            };
+        </script>
+        <div id="session-list">
+
+        </div>
+    </main>
+    <footer class="site-footer">
+    </footer>
+    <script>
+        client_sessions_build_session_list()
+    </script>
+</body>
+</html>

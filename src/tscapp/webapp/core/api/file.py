@@ -57,7 +57,7 @@ def api_file_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
             else:
                 logger.info("upload successfull")
                 metadata = odb.table_files_create(
-                    save,
+                    str(save.relative_to(appdata_path)),
                     file_type,
                     session_client,
                     session_uuid
@@ -93,14 +93,19 @@ def api_file_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
         metadata = odb.table_files_retrieve_type(path, session_client)
         return make_response((metadata,200))
     
-    @app.route("/api/file/<path>", methods=["DELETE"])
+    @app.route("/api/file/<fn>", methods=["DELETE"])
     @with_session(session=session)
-    def api_file_file_delete(path):
+    def api_file_file_delete(fn):
         session_client = session["uuid"]
+        request_body = request.get_json()
+        session_uuid = request_body.get("session", None)
+        if not session_uuid:
+            return make_response(('no session',400))
+        path = str(Path(session_client) / session_uuid / fn)
         file_associated_session = odb.table_files_retrieve_session(path, session_client)
         if not file_associated_session:
             return (('not tracked',404))
-        file_path = Path(path)
+        file_path = appdata_path / path
         if not file_path.exists():
             return (('does not exist', 404))
         if str(file_path.parent.resolve().absolute()) != str((appdata_path / session_client / file_associated_session).resolve().absolute()):
@@ -109,7 +114,7 @@ def api_file_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
             path,
             session_client
         )
-        shutil.rmtree(file_path)
+        os.remove(file_path)
         return make_response(('deleted',204))
 
     pass

@@ -23,7 +23,8 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
     def api_session_post():
         session_uuid = uuid4().hex
         session_client = session["uuid"]
-        session_alias = request.form.get("name", default=random_sentence(long=True))
+        request_form = request.get_json()
+        session_alias = request_form.get("name", random_sentence(long=True))
         session_path = appdata_path / session_client / session_uuid
         if session_path.exists():
             logger.error("Session %s exists", session_path)
@@ -46,6 +47,8 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
     @with_session(session=session)
     def api_file_session_file_session_get(session_id):
         metadata = odb.table_files_query_session(session["uuid"],session_id)
+        if not metadata:
+            metadata = []
         return make_response((metadata,200))
 
     @app.route("/api/session/<session_uuid>", methods=["PUT"])

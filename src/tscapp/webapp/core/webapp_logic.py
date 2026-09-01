@@ -33,19 +33,19 @@ def register_urls(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     def index():
         return render_template("landing.html")
 
-    @app.route('/contents')
+    @app.route('/session')
     def browse():
         assertion = assert_session(session, create=True)
         if assertion.status_code >= 400:
             return assertion
-        return render_template("browse.html")
+        return render_template("client_sessions.html")
 
     @app.route('/session/<session_id>')
     def browse_session(session_id):
         assertion = assert_session(session, create=True)
         if assertion.status_code >= 400:
             return assertion
-        return render_template("browse_session.html", uuid=session_id)
+        return render_template("client_session_view.html", uuid=session_id)
 
     @app.route('/session/<session_key>/<session_id>')
     def browse_public_session(session_key,session_id):
