@@ -35,7 +35,7 @@ def with_session(session: Session, create=False):
         @wraps(f)
         def _f(*args, **kwargs):
             assertion = assert_session(session, create)
-            if assertion.status_core >= 400:
+            if assertion.status_code >= 400:
                 return assertion
             return f(*args, **kwargs)
         return _f

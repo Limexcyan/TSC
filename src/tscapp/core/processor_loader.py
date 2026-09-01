@@ -30,7 +30,7 @@ def load_chembl_sdf(
     logger.info("loading %s columns %s", file, ",".join(config.keep_cols))
     chembl_sdf = pl.from_pandas(
         LoadSDF(
-            filename=file,
+            filename=file.resolve(),
             molColName=None,
             smilesName=config.smiles_col,
             embedProps=True

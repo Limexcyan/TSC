@@ -1,3 +1,4 @@
+from threading import Event
 from .orchestrator_tasks import TaskStatus
 from json import loads
 from json import dumps
@@ -13,6 +14,8 @@ from datetime import datetime
 logger = logging.getLogger(__name__)
 
 _dblock: LockType = Lock()
+_worker_global_lock: LockType = Lock()
+_notify_worker: Event = Event()
 
 def under_lock(f):
     def wrapper(*args, **kwargs):
@@ -28,6 +31,25 @@ def under_lock(f):
             raise err
     return wrapper
 
+def under_worker_lock(f):
+    def wrapper(*args, **kwargs):
+        _worker_global_lock.acquire()
+        err = None
+        try:
+            return f(*args, **kwargs)
+        except Exception as e:
+            err = e
+        finally:
+            _worker_global_lock.release()
+        if err:
+            raise err
+    return wrapper
+
+def worker_event_signal():
+    _notify_worker.set()
+
+def worker_event_clear():
+    _notify_worker.clear()
 
 class OrchestratorDB():
     db_con: sql.Connection
@@ -137,6 +159,7 @@ class OrchestratorDB():
         modified = datetime.now()
         self.db_cur.execute("INSERT INTO tasks(uuid,client,session,data,status,modified) VALUES (?, ?, ?, ?, ?, ?)", (uuid, client, session, data_json, status, modified))
         self.db_con.commit()
+        worker_event_signal()
         return {"uuid":uuid, "client":client, "session":session, "data":loads(data_json)}
     
     @under_lock
@@ -189,12 +212,19 @@ class OrchestratorDB():
 
     @under_lock
     def table_tasks_update_status(self, uuid: str, client: str, status: TaskStatus):
-        self.db_cur.execute("UPDATE sessions SET status = ? WHERE uuid = ? AND client = ?", (status.value,uuid,client))
+        self.db_cur.execute("UPDATE tasks SET status = ?, modified = ? WHERE uuid = ? AND client = ?", (status.value,datetime.now(),uuid,client))
         self.db_con.commit()
+        worker_event_signal()
 
     @under_lock
     def table_tasks_update_status_absolute(self, uuid: str, status: TaskStatus):
-        self.db_cur.execute("UPDATE sessions SET status = ? WHERE uuid = ?", (status.value,uuid))
+        self.db_cur.execute("UPDATE tasks SET status = ?, modified = ? WHERE uuid = ?", (status.value,datetime.now(),uuid))
+        self.db_con.commit()
+        worker_event_signal()
+        
+    @under_lock
+    def table_tasks_update_data_absolute(self, uuid: str, data):
+        self.db_cur.execute("UPDATE tasks SET status = ?, modified = ? WHERE uuid = ?", (dumps(data),datetime.now(),uuid))
         self.db_con.commit()
 
     @under_lock

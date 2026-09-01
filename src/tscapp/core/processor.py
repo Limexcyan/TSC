@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 class ProcessorConfig(ConfigBase):
     output_file: Path
-    input_dir: Path
+    input_files: list[Path]
     loader_config: LoaderConfig = LoaderConfig()
     featurizer_config: FeaturizerConfig = FeaturizerConfig()
     clustering_config: ClusteringConfig = ClusteringConfig()
@@ -25,7 +25,7 @@ class ProcessorCli(CliRunnerMixin, SettingsBase):
 
 def processor(config: ProcessorConfig):
     loaded = list()
-    for file in config.input_dir.glob("*.sdf"):
+    for file in config.input_files:
         chembl_data = load_stage(file, config.loader_config)
         loaded.append(chembl_data)
     consolidated = consolidate_after_loaded(loaded)

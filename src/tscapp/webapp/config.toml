@@ -2,6 +2,7 @@
 
 appdata_path = 'src\\tscapp\\webapp\\appdata'
 database_path = 'src\\tscapp\\webapp\\appdata\\db.db'
+worker_count = 2
 
 [webapp]
 

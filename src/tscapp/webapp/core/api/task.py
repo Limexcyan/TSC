@@ -24,16 +24,13 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     @with_session(session=session)
     def api_task_post():
         session_client = session["uuid"]
-        session_uuid = request.form.get("session", default=None)
+        request_body = request.get_json()
+        session_uuid = request_body.get("session", None)
         if not session_uuid:
             return make_response(('no session',400))
-        task_data = request.form.get("data", default=None)
+        task_data = request_body.get("data", None)
         if not task_data:
             return make_response(('no data', 400))
-        try:
-            task_data = loads(task_data)
-        except Exception:
-            return make_response(('malformed json', 400))
         task_uuid = uuid4().hex
         metadata = odb.table_tasks_create(
             task_uuid,
@@ -41,7 +38,7 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
             session_uuid,
             task_data
         )
-        return make_response(('enqueued',401))
+        return make_response(('enqueued',201))
 
     @app.route("/api/task", methods=["GET"])
     @with_session(session=session)
