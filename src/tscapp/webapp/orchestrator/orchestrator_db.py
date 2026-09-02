@@ -1,15 +1,12 @@
-from threading import Event
-from .orchestrator_tasks import TaskStatus
-from json import loads
-from json import dumps
-from _thread import LockType
-from threading import Thread
-from typing import Tuple
-import sqlite3 as sql
-from threading import Lock
-from pathlib import Path
 import logging
-from datetime import datetime
+import sqlite3 as sql
+from _thread import LockType
+from datetime import UTC, datetime
+from json import dumps, loads
+from pathlib import Path
+from threading import Event, Lock
+
+from .orchestrator_tasks import TaskStatus
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +48,7 @@ def worker_event_signal():
 def worker_event_clear():
     _notify_worker.clear()
 
-class OrchestratorDB():
+class OrchestratorDB:
     db_con: sql.Connection
     db_cur: sql.Cursor
     
@@ -66,7 +63,7 @@ class OrchestratorDB():
 
     @under_lock
     def table_sessions_create(self, uuid: str, client: str, alias: str ):
-        created = datetime.now()
+        created = datetime.now(UTC)
         self.db_cur.execute("INSERT INTO sessions(uuid,client,alias,created) VALUES (?, ?, ?, ?)", (uuid, client, alias, created))
         self.db_con.commit()
         return {"id":uuid, "client":client, "alias":alias, "created":created}
@@ -156,7 +153,7 @@ class OrchestratorDB():
     def table_tasks_create(self, uuid: str, client: str, session: str, data: any):
         data_json = dumps(data)
         status = TaskStatus.ENQUEUED.value
-        modified = datetime.now()
+        modified = datetime.now(UTC)
         self.db_cur.execute("INSERT INTO tasks(uuid,client,session,data,status,modified) VALUES (?, ?, ?, ?, ?, ?)", (uuid, client, session, data_json, status, modified))
         self.db_con.commit()
         worker_event_signal()
@@ -212,19 +209,19 @@ class OrchestratorDB():
 
     @under_lock
     def table_tasks_update_status(self, uuid: str, client: str, status: TaskStatus):
-        self.db_cur.execute("UPDATE tasks SET status = ?, modified = ? WHERE uuid = ? AND client = ?", (status.value,datetime.now(),uuid,client))
+        self.db_cur.execute("UPDATE tasks SET status = ?, modified = ? WHERE uuid = ? AND client = ?", (status.value,datetime.now(UTC),uuid,client))
         self.db_con.commit()
         worker_event_signal()
 
     @under_lock
     def table_tasks_update_status_absolute(self, uuid: str, status: TaskStatus):
-        self.db_cur.execute("UPDATE tasks SET status = ?, modified = ? WHERE uuid = ?", (status.value,datetime.now(),uuid))
+        self.db_cur.execute("UPDATE tasks SET status = ?, modified = ? WHERE uuid = ?", (status.value,datetime.now(UTC),uuid))
         self.db_con.commit()
         worker_event_signal()
         
     @under_lock
     def table_tasks_update_data_absolute(self, uuid: str, data):
-        self.db_cur.execute("UPDATE tasks SET data = ?, modified = ? WHERE uuid = ?", (dumps(data),datetime.now(),uuid))
+        self.db_cur.execute("UPDATE tasks SET data = ?, modified = ? WHERE uuid = ?", (dumps(data),datetime.now(UTC),uuid))
         self.db_con.commit()
 
     @under_lock
@@ -262,7 +259,7 @@ def init_db(cur: sql.Cursor) -> None:
     )
 
 
-def load_db(db_file: Path) -> Tuple[sql.Connection, sql.Cursor]:
+def load_db(db_file: Path) -> tuple[sql.Connection, sql.Cursor]:
     will_init = not db_file.exists()
     db_con = sql.connect(db_file, check_same_thread=False)
     db_cur = db_con.cursor()

@@ -1,22 +1,21 @@
-from json import loads
-from dataclasses import dataclass
-from tscapp.webapp.orchestrator.orchestrator_db import under_worker_lock
-from tscapp.webapp.orchestrator.orchestrator_db import _notify_worker
-from tscapp.webapp.orchestrator.orchestrator_tasks import TaskStatus
-from tscapp.webapp.orchestrator.orchestrator_db import OrchestratorDB
-from tscapp.webapp.orchestrator.orchestrator_db import load_db
-from pathlib import Path
-from sqlite3 import Cursor
-from sqlite3 import Connection
-from threading import Lock
-from collections.abc import Callable
-
 import logging
+from collections.abc import Callable
+from dataclasses import dataclass
+from json import loads
+from pathlib import Path
+from sqlite3 import Connection, Cursor
+
+from tscapp.webapp.orchestrator.orchestrator_db import (
+    OrchestratorDB,
+    _notify_worker,
+    under_worker_lock,
+)
+from tscapp.webapp.orchestrator.orchestrator_tasks import TaskStatus
 
 logger = logging.getLogger(__name__)
 
 @dataclass
-class RegisteredTasksPayload():
+class RegisteredTasksPayload:
     odb: OrchestratorDB
     appdata_path: Path
     file_save_path: Path
@@ -64,7 +63,7 @@ class Worker:
             if not res:
                 _notify_worker.wait()
                 continue
-            task_uuid, task_client, task_session, task_data, task_status, task_modified = res
+            task_uuid, task_client, task_session, task_data = res[:4]
             task_data = loads(task_data)
             try:
                 func = task_data['func']
@@ -74,14 +73,14 @@ class Worker:
                     func_payload = RegisteredTasksPayload(self.orchestrator_db, self.appdata_path, self.file_save_path / task_uuid, task_client, task_session, task_data)
                     try:
                         result = func(func_payload, **kwargs)
-                    except Exception as e:
-                        logger.exception(e)
+                    except Exception:
+                        logger.exception()
                         self.orchestrator_db.table_tasks_update_status_absolute(uuid=task_uuid, status=TaskStatus.FAILED)
                     else:
                         task_data["result"] = result
                         logger.info(f"task run {task_uuid} success")
                         self.orchestrator_db.table_tasks_update_data_absolute(uuid=task_uuid, data=task_data)
                         self.orchestrator_db.table_tasks_update_status_absolute(uuid=task_uuid, status=TaskStatus.COMPLETED)
-            except Exception as e:
-                logger.exception(e)
+            except Exception:
+                logger.exception()
                 self.orchestrator_db.table_tasks_update_status_absolute(uuid=task_uuid, status=TaskStatus.CRASHED)

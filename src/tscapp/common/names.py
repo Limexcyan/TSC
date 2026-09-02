@@ -1,4 +1,5 @@
 import random
+
 random.seed()
 
 dict_pre = [

@@ -1,17 +1,16 @@
-from json import loads
-from tscapp.common.names import random_sentence
-from pathlib import Path
+import logging
 from json import dumps
 from threading import Thread
-from tscapp.core.processor import ProcessorConfig, processor
-from tscapp.webapp.orchestrator.worker import worker_thread_init, RegisteredTasksPayload
-from tscapp.webapp.orchestrator.orchestrator_db import OrchestratorDB
 from typing import Any
-import logging
+
+from tscapp.common.names import random_sentence
+from tscapp.core.processor import ProcessorConfig, processor
+from tscapp.webapp.orchestrator.orchestrator_db import OrchestratorDB
+from tscapp.webapp.orchestrator.worker import RegisteredTasksPayload, worker_thread_init
 
 logger = logging.getLogger(__name__)
 
-registered_functions = dict()
+registered_functions = {}
 
 def register_task(f):
     registered_functions[f.__name__] = f

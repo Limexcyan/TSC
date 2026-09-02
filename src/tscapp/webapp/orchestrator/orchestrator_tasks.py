@@ -1,5 +1,6 @@
 from enum import IntFlag, auto
 
+
 class TaskStatus(IntFlag):
     WAITING = auto()
     RUNNING = auto()
@@ -25,15 +26,14 @@ def status_to_string(status: TaskStatus):
     if status in TaskStatusTranslation:
         return TaskStatusTranslation[status]
     res = ""
-    for _status in TaskStatusTranslation.keys():
+    for _status, value in TaskStatusTranslation.items():
         if status & _status:
-            if _status in TaskStatusTranslation:
-                res += TaskStatusTranslation[_status]
+            res += value
     return res
 
 def status_code_to_status(code: int):
     res_status = None
-    for status in TaskStatusTranslation.keys():
+    for status in TaskStatusTranslation:
         if status & code:
             if not res_status:
                 res_status = status

@@ -1,10 +1,10 @@
-from ..common.settings import ConfigBase
+import logging
+
+import polars as pl
 from rdkit.Chem import MolFromSmiles
 from rdkit.Chem.rdFingerprintGenerator import GetMorganGenerator
 
-import polars as pl
-
-import logging
+from ..common.settings import ConfigBase
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +18,6 @@ def featurizer_morgan_fingerprint(
 ) -> pl.DataFrame:
     logger.info("featurize r=%d s=%d", config.mfp_radius, config.mfp_size)
     fingerprint_labels = [f"mfp_{i+1}" for i in range(config.mfp_size)]
-    preload_fingerprints = list()
     smiles_series = dataframe.get_column("smiles")
     fingerprint_generator = GetMorganGenerator(
         radius=config.mfp_radius,

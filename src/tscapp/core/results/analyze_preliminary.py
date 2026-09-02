@@ -1,7 +1,8 @@
 from pathlib import Path
-import polars as pl
+
 import plotly.express as px
-from plotly.io import to_html
+import polars as pl
+
 
 def preliminary_analysis(input_file: Path):
     data = pl.read_csv(input_file)

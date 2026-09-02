@@ -1,15 +1,21 @@
+import logging
 import pickle
 from pathlib import Path
-import logging
+
 from ..common.cli import CliRunnerMixin
 from ..common.settings import ConfigBase, SettingsBase
-
-from .processor_loader import LoaderConfig, load_stage
+from .processor_clustering import (
+    ClusteringConfig,
+    clustering,
+    clustering_get_centroids,
+    clustering_get_distances,
+)
+from .processor_consolidator import (
+    consolidate_after_loaded,
+)
 from .processor_featurizer import FeaturizerConfig, featurizer_morgan_fingerprint
-from .processor_consolidator import consolidate_after_loaded, consolidate_after_featurize
-from .processor_clustering import ClusteringConfig, clustering, clustering_get_centroids, clustering_get_distances
-
-from .results.analyze import analyze, AnalyzeConfig
+from .processor_loader import LoaderConfig, load_stage
+from .results.analyze import AnalyzeConfig, analyze
 
 logger = logging.getLogger(__name__)
 
@@ -28,7 +34,7 @@ class ProcessorCli(CliRunnerMixin, SettingsBase):
         processor(config=self.processor)
 
 def processor(config: ProcessorConfig):
-    loaded = list()
+    loaded = []
     for file in config.input_files:
         chembl_data = load_stage(file, config.loader_config)
         loaded.append(chembl_data)
@@ -43,7 +49,8 @@ def processor(config: ProcessorConfig):
     resulting.write_csv(config.output_file)
     if config.save_clustering:
         logger.info("saving clustering")
-        pickle.dump(clustered, open(config.output_file.parent / (config.output_file.stem + ".bin.clustered"), "wb"))
+        with open(config.output_file.parent / (config.output_file.stem + ".bin.clustered"), "wb") as fo:
+            pickle.dump(clustered, fo)
     logger.info("results saved under %s", config.output_file)
     
     logger.info("running analysys...")

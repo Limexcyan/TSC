@@ -1,10 +1,9 @@
 import logging
 import sys
+from typing import Annotated
 
 from pydantic import BeforeValidator, ValidationError
 from pydantic_settings import BaseSettings, CliApp
-
-from typing import Annotated
 
 from .logging import configure_logging
 
@@ -14,7 +13,7 @@ def _coerce_log_level(v: str) -> str:
     v = v.strip().upper()
     if v.isdigit() and (name := logging._levelToName.get(int(v))):
         return name
-    if v in logging._nameToLevel.keys():
+    if v in logging._nameToLevel:
         return v
     raise ValueError(f"Invalid log level: {v}")
 

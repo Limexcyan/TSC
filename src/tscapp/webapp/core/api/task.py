@@ -1,21 +1,19 @@
-from tscapp.webapp.orchestrator.orchestrator_tasks import status_code_to_status_string
-from json import loads
-from ...orchestrator.orchestrator_tasks import TaskStatus, status_code_to_status
-from flask import Response
-import shutil
-import os
-from uuid import uuid4
 import logging
-from flask import make_response
-from os.path import getsize
-from werkzeug.utils import secure_filename
+import os
+import shutil
+from json import dumps, loads
 from pathlib import Path
-from flask import Flask, request
+from uuid import uuid4
+
+from flask import Flask, make_response, request
 from flask_socketio import SocketIO
-from ...orchestrator.orchestrator_db import OrchestratorDB
-from ..webapp_common import with_session
-from ....common.names import random_sentence
+
 from flask_session import Session
+from tscapp.webapp.orchestrator.orchestrator_tasks import status_code_to_status_string
+
+from ...orchestrator.orchestrator_db import OrchestratorDB
+from ...orchestrator.orchestrator_tasks import status_code_to_status
+from ..webapp_common import with_session
 
 logger = logging.getLogger(__name__)
 
@@ -40,7 +38,7 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
             task_data
         )
         os.makedirs(appdata_path / "task" / task_uuid)
-        return make_response(('{"status":"enqueued"}',201))
+        return make_response((dumps(metadata),201))
 
     def _aux_status_id_to_message(record):
         record = list(record)
@@ -91,7 +89,7 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     def api_task_task_delete(task_id):
         session_client = session["uuid"]
         tasks = odb.table_tasks_query_client(session_client)
-        tasks_uuid = list(map(lambda x: x[0], tasks))
+        tasks_uuid = [x[0] for x in tasks]
         if task_id in tasks_uuid:
             odb.table_tasks_delete(task_id, session_client)
             for file in (appdata_path / "task" / task_id).glob("*"):

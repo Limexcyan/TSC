@@ -1,8 +1,9 @@
-from ..orchestrator.orchestrator_db import OrchestratorDB, under_lock
-from flask_socketio import SocketIO
-from flask import Flask
-
 import logging
+
+from flask import Flask
+from flask_socketio import SocketIO
+
+from ..orchestrator.orchestrator_db import OrchestratorDB, under_lock
 
 logger = logging.getLogger(__name__)
 

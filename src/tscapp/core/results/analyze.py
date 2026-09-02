@@ -1,11 +1,11 @@
-from plotly.io import to_html
-from .analyze_preliminary import preliminary_analysis
-import pickle
-from pathlib import Path
 import logging
+from pathlib import Path
+
+from plotly.io import to_html
+
 from ...common.cli import CliRunnerMixin
 from ...common.settings import ConfigBase, SettingsBase
-
+from .analyze_preliminary import preliminary_analysis
 
 logger = logging.getLogger(__name__)
 

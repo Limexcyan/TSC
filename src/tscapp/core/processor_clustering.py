@@ -1,10 +1,10 @@
+import logging
 from enum import Enum
-from ..common.settings import ConfigBase
-from sklearn.cluster import BisectingKMeans
 
 import polars as pl
+from sklearn.cluster import BisectingKMeans
 
-import logging
+from ..common.settings import ConfigBase
 
 logger = logging.getLogger(__name__)
 

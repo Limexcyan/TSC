@@ -1,6 +1,7 @@
-from typing import Any
-from pathlib import Path
 import tomllib
+from pathlib import Path
+from typing import Any
+
 
 def read_config(file: Any) -> dict[str, Any]:
     return tomllib.load(file)

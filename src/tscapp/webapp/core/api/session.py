@@ -1,18 +1,17 @@
-from flask import Response
-import shutil
-import os
-from uuid import uuid4
 import logging
-from flask import make_response
-from os.path import getsize
-from werkzeug.utils import secure_filename
+import os
+import shutil
 from pathlib import Path
-from flask import Flask, request
+from uuid import uuid4
+
+from flask import Flask, make_response, request
 from flask_socketio import SocketIO
+
+from flask_session import Session
+
+from ....common.names import random_sentence
 from ...orchestrator.orchestrator_db import OrchestratorDB
 from ..webapp_common import with_session
-from ....common.names import random_sentence
-from flask_session import Session
 
 logger = logging.getLogger(__name__)
 
@@ -77,4 +76,3 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
             shutil.rmtree(session_path)
         return make_response(('deleted',204))
 
-    pass

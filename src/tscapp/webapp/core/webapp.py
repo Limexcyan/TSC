@@ -1,20 +1,17 @@
-from flask_session import Session
-from tscapp.webapp.core.webapp_logic import init_sessions
-from tscapp.webapp.core.webapp_config import load_webapp_config
-from typing import Tuple
+import logging
 from pathlib import Path
+
 from flask import Flask, session
 from flask_socketio import SocketIO
 
+from flask_session import Session
+from tscapp.webapp.core.webapp_config import load_webapp_config
+
 from ...common.cli import CliRunnerMixin
 from ...common.settings import ConfigBase, SettingsBase
-
-from .webapp_config import load_flask_config, load_orchestrator_config
-
 from ..diagnostic.admin_pages import register_admin_urls
-from ..orchestrator.orchestrator import orchestrator_init, OrchestratorDB
-
-import logging
+from ..orchestrator.orchestrator import orchestrator_init
+from .webapp_config import load_flask_config, load_orchestrator_config
 
 logger = logging.getLogger(__name__)
 
@@ -40,7 +37,7 @@ def webapp(config:WebappConfig):
     register_admin_urls(app=app, sio=sio, odb=odb)
     webapp_start(app=app, config=config)
 
-def webapp_init(config: WebappConfig) -> Tuple[Flask, SocketIO]:
+def webapp_init(config: WebappConfig) -> tuple[Flask, SocketIO]:
     logger.info("static folder is %s", config.sites_static_dir.resolve())
     logger.info("template folder is %s", config.sites_templates_dir.resolve())
     logger.info("config file is %s", config.config_file.resolve())

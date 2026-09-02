@@ -1,20 +1,12 @@
-from flask import make_response
-from uuid import uuid4
-from functools import wraps
-from flask_session import Session
-import os
-from pathlib import Path
 import logging
+from functools import wraps
+from uuid import uuid4
+
+from flask import make_response
+
+from flask_session import Session
 
 logger = logging.getLogger(__name__)
-
-def list_files(dir: Path):
-    dirs = next(dir.walk())[1]
-    dirs.sort(key=lambda x: -os.path.getmtime(dir / x))
-    manifest = dict()
-    for d in dirs:
-        manifest.update({d:next((dir / d).walk())[2]})
-    return manifest
 
 def assert_session(session: Session, create=False):
     if not session.get("uuid"):

@@ -1,12 +1,11 @@
+import logging
 from enum import Enum, auto
-from ..common.settings import ConfigBase
-from typing import List
 from pathlib import Path
-from rdkit.Chem.PandasTools import LoadSDF
 
 import polars as pl
+from rdkit.Chem.PandasTools import LoadSDF
 
-import logging
+from ..common.settings import ConfigBase
 
 logger = logging.getLogger(__name__)
 
@@ -20,7 +19,7 @@ class LoaderStage(Enum):
 
 class LoaderConfig(ConfigBase):
     smiles_col: str = "smiles"
-    keep_cols: List[str] | str = ["chembl_id","smiles"]
+    keep_cols: list[str] = ["chembl_id","smiles"]
     load_stage: LoaderStage = LoaderStage.NONE
 
 def load_chembl_sdf(
