@@ -41,9 +41,10 @@ function client_sessions_build_session_list_file(){
             res.sort(function (a,b) {
                 return new Date(b[3]) - new Date(a[3]);
             });
-            root.innerHTML = '';
+            root.innerHTML = '<h2>Active sessions</h2>';
             res.forEach(function (session) {
                 session_container = document.createElement("div");
+                session_container.className = "div-hoverable unhoverable"
                 session_name = document.createElement("h3");
                 session_manage = document.createElement("button");
                 session_delete = document.createElement("button");
@@ -52,6 +53,7 @@ function client_sessions_build_session_list_file(){
                 session_delete.innerText = "Delete";
                 session_manage.onclick = function () { window.location.href=`/session/${session[0]}`; };
                 session_delete.onclick = function () { api_delete_existing_session(session[0]).then(client_sessions_build_session_list_file);};
+                session_delete.classList.add("btn-red") 
                 session_container.appendChild(session_name)
                 session_container.appendChild(session_manage)
                 session_container.appendChild(session_delete)
@@ -68,9 +70,10 @@ function client_sessions_build_session_list_task(){
             res.sort(function (a,b) {
                 return new Date(b[5]) - new Date(a[5]);
             });
-            root.innerHTML = '';
+            root.innerHTML = '<h2>Tasks</h2>';
             res.forEach(function (task) {
                 task_container = document.createElement("div");
+                task_container.className = "div-hoverable unhoverable"
                 task_name = document.createElement("h3");
                 task_status = document.createElement("span");
                 task_uuid = document.createElement("h5");
@@ -78,13 +81,30 @@ function client_sessions_build_session_list_task(){
                 task_resubmit = document.createElement("button");
                 task_view_result = document.createElement("button");
                 task_status.innerText = task[6];
-                task_uuid.innerText = task[0];
+                task_uuid.innerText = task[5];
                 task_delete.innerText = "Delete";
                 task_resubmit.innerText = "Resubmit";
                 task_view_result.innerText = "View results";
                 task_delete.onclick = function () { _api_call("DELETE",`/api/task/${task[0]}`).then(client_sessions_build_session_list_task)};
                 task_resubmit.onclick = function () { _api_call("PUT",`/api/task/${task[0]}`, '{"status":"16"}').then(client_sessions_build_session_list_task)};
                 task_view_result.onclick = function () {window.location.href = `/task/${task[0]}`}
+                task_delete.classList.add("btn-red")
+                switch(task[4]) {
+                    case 2:
+                        task_status.className = "material-badge material-badge-info"
+                        break
+                    case 4:
+                        task_status.className = "material-badge material-badge-success"
+                        break
+                    case 8:
+                        task_status.className = "material-badge material-badge-error"
+                        break
+                    case 16:
+                        task_status.className = "material-badge material-badge-warning"
+                        break
+                    default:
+                        task_status.className = "material-badge material-badge-primary"
+                }
                 task_container.appendChild(task_status)
                 task_container.appendChild(task_name)
                 task_container.appendChild(task_uuid)
@@ -103,9 +123,19 @@ function client_sessions_build_session_list_task(){
         });
 }
 
+function upload_button_wake_up(){
+    let gathered = Array.from(document.querySelectorAll("div[data-selected='1']"))
+    let files = gathered.map((x) => x.id)
+    if (files.length >= 1) {
+        document.getElementById("submit-task").disabled = false
+    } else {
+        document.getElementById("submit-task").disabled = false
+    }
+}
+
 function _client_session_build_sdf_files(uuid, file) {
     let root = document.getElementById("session-list-files-sdf")
-    file_container = document.createElement("div");
+    let file_container = document.createElement("div");
     let id = file[0].replaceAll("\\","/").split("/",3).at(-1);
     file_container.id = id
     file_container.dataset.selected = 0
@@ -114,26 +144,33 @@ function _client_session_build_sdf_files(uuid, file) {
     file_name.innerText = id;
     file_delete.innerText = "Delete";
     file_delete.onclick = function () { _api_call("DELETE", `/api/file/${id}`, `{"session":"${uuid}"}`).then(() => {client_session_build_session_contents(uuid)})}
+    file_delete.classList.add("btn-red")
     file_container.appendChild(file_name);
     file_container.appendChild(file_delete);
+    
+    file_container.classList.add("div-hoverable");
     file_container.onclick = function () {
         file_selected_status = document.getElementById(id)
         if (file_selected_status.dataset.selected > 0) {
             file_selected_status.dataset.selected = 0;
+            file_container.className = "div-hoverable";
         } else {
             file_selected_status.dataset.selected = 1;
+            file_container.className = "div-selected";
         }
+        upload_button_wake_up()
     }
-
+    
     root.appendChild(file_container)
 }
 
 function _client_session_build_csv_files(uuid, file) {
     root = document.getElementById("session-list-files-csv")
-    file_container = document.createElement("div");
+    let file_container = document.createElement("div");
     let id = self.crypto.randomUUID();
     file_container.id = id
     file_container.dataset.selected = 0
+    file_container.className = "div-hoverable unhoverable"
     file_name = document.createElement("h3");
     file_download = document.createElement("button");
     associated_task_view = document.createElement("button");
@@ -147,14 +184,7 @@ function _client_session_build_csv_files(uuid, file) {
     file_container.appendChild(file_name);
     file_container.appendChild(file_download);
     file_container.appendChild(associated_task_view);
-    file_container.onclick = function () {
-        file_selected_status = document.getElementById(id)
-        if (file_selected_status.dataset.selected > 0) {
-            file_selected_status.dataset.selected = 0;
-        } else {
-            file_selected_status.dataset.selected = 1;
-        }
-    }
+
 
     root.appendChild(file_container)
 }
@@ -163,10 +193,10 @@ function send_files_task_clustering(uuid, filelist){
     return _api_call("POST", `/api/task`, `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}}}}}`)
 }
 
+
 function client_session_build_session_contents(uuid){
     _api_call("GET", `/api/session/file/${uuid}`)
         .then(res => {
-            console.log(res)
             res.sort();
             root = document.getElementById("session-list-files-sdf");
             root.innerHTML = '';
@@ -181,4 +211,65 @@ function client_session_build_session_contents(uuid){
             });
         }
         );
+}
+
+function client_session_build_tasks(uuid){
+    let root = document.getElementById("session-list-tasks")
+    _api_call("GET", `/api/task/session/${uuid}`)
+    .then(res => {
+        console.log(res)
+        res.sort(function (a,b) {
+            return new Date(b[5]) - new Date(a[5]);
+        });
+        root.innerHTML = '';
+        res.forEach(function (task) {
+                task_container = document.createElement("div");
+                task_container.className = "div-hoverable unhoverable"
+                task_name = document.createElement("h3");
+                task_status = document.createElement("span");
+                task_uuid = document.createElement("h5");
+                task_delete = document.createElement("button");
+                task_resubmit = document.createElement("button");
+                task_view_result = document.createElement("button");
+                task_status.innerText = task[6];
+                task_uuid.innerText = task[5];
+                task_delete.innerText = "Delete";
+                task_resubmit.innerText = "Resubmit";
+                task_view_result.innerText = "View results";
+                task_delete.onclick = function () { _api_call("DELETE",`/api/task/${task[0]}`).then(() => {client_session_build_tasks(uuid); client_session_build_session_contents(uuid);})};
+                task_resubmit.onclick = function () { _api_call("PUT",`/api/task/${task[0]}`, '{"status":"16"}').then(() => {client_session_build_tasks(uuid)})};
+                task_view_result.onclick = function () {window.location.href = `/task/${task[0]}`}
+                task_delete.classList.add("btn-red")
+                switch(task[4]) {
+                    case 2:
+                        task_status.className = "material-badge material-badge-info"
+                        break
+                    case 4:
+                        task_status.className = "material-badge material-badge-success"
+                        break
+                    case 8:
+                        task_status.className = "material-badge material-badge-error"
+                        break
+                    case 16:
+                        task_status.className = "material-badge material-badge-warning"
+                        break
+                    default:
+                        task_status.className = "material-badge material-badge-primary"
+                }
+                task_container.appendChild(task_status)
+                task_container.appendChild(task_name)
+                task_container.appendChild(task_uuid)
+                task_container.appendChild(task_delete)
+                task_container.appendChild(task_resubmit)
+                if (JSON.parse(task[3]).hasOwnProperty("result")) {
+                    task_name.innerText = JSON.parse(task[3])['result']['output-filename'];
+                } else {
+                    task_name.innerText = "[unnamed task]";
+                }
+                if (task[4] == 4) {
+                    task_container.append(task_view_result);
+                }
+                root.appendChild(task_container)
+            });
+    })
 }

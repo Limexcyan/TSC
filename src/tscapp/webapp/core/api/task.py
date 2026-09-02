@@ -94,6 +94,8 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
         tasks_uuid = list(map(lambda x: x[0], tasks))
         if task_id in tasks_uuid:
             odb.table_tasks_delete(task_id, session_client)
+            for file in (appdata_path / "task" / task_id).glob("*"):
+                odb.table_files_delete(str(file.relative_to(appdata_path)), session_client)
             shutil.rmtree(appdata_path / "task" / task_id)
             return make_response(('{"status":"deleted"}',204))
         return make_response(('{"status":"forbidden"}', 403))

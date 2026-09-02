@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,22 +8,27 @@
 </head>
 <body>
     <script type="text/javascript" src="/static/client_session.js"></script>
-    <header class="hero">Browse through your files</header>
     <main>
-        <button id="initSession">Create new session</button>
-        <script>
+        <section class="hero" style="padding: 61px 45px 45px;">
+            <div class="eyebrow">Browse through your sessions</div>
+        </section>
+        <section class="section">
+            <div class="container">
+            <a class="button button-primary" id="initSession">Create new session</a>
+            <script>
             document.getElementById('initSession').onclick = function () {
                 api_post_new_client_session().then(client_sessions_build_session_list);
             };
-        </script>
-        <div style="float:left;clear:none;padding-left:2%;padding-right:2%;padding-top:3%;width:90%;">
-        <div id="file-session-list" style="float:left;">
-            <h2>Sessions</h2>
+            </script>
+            <div style="float:left;clear:none;padding:2% 2% 0px 2%;width:100%">
+            <div id="file-session-list" style="float:left;width:60%;padding:2% 2% 0px 2%;">
+            </div>
+            <div id="task-session-list" style="float:right;width:40%;padding:2% 2% 0px 2%;">
+            </div>
         </div>
-        <div id="task-session-list" style="float:right;">
-            <h2>Tasks</h2>
+            </div>
         </div>
-        </div>
+        </section>
     </main>
     <footer class="site-footer">
     </footer>

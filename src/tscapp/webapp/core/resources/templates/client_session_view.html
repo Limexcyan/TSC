@@ -1,65 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Landing page</title>
+    <link rel="stylesheet" href="/static/dropzone.min.css"/>
     <link rel="stylesheet" href="/static/styles.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/basic.min.css"/>
     <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.js"></script>
 </head>
 <body>
     <script type="text/javascript" src="/static/client_session.js"></script>
-    <header class="hero">Browse through your files</header>
     <main>
-        <div id="session-files-sdf">
-        <h1>SDF files in session</h1>
-        <p>select the files to run a task on selection or</p>
-        <a href="#upload">upload more files</a>
-        <button id="submit-task">Run clustering on selected files</button>
-        <script>
-            btn_submit = document.getElementById("submit-task");
-            btn_submit.onclick = function () {
-                let gathered = Array.from(document.querySelectorAll("div[data-selected='1']"))
-                let files = gathered.map((x) => x.id)
-                send_files_task_clustering("{{uuid}}", JSON.stringify(files))
-                .then((_) => window.location.href="/session", (_) => window.location.href="/session");
-            }
-        </script>
-        <div id="session-list-files-sdf">
+        <section class="hero" style="padding: 61px 45px 45px;">
+            <div class="eyebrow" id="session-name">Session</div>
+        </section>
+        <section class="secion">
+            <div class="container">
+            <div id="upload" class="upload-div">
+                <h1>Upload files:</h1>
+                <form method="POST" action="/api/file" class="dropzone dz-clickable" id="dropper" enctype="multipart/form-data">
+                    <input type="hidden" id="session" name="session" value="{{uuid}}" />
+                    <input type="hidden" id="type" name="type" value="sdf" />
+                </form>
+                <script type="application/javascript">
+                    Dropzone.options.dropper = {
+                        paramName: 'file',
+                        chunking: true,
+                        forceChunking: true,
+                        url: '/api/file',
+                        maxFilesize: 1025, // MB
+                        chunkSize: 1_000_000 // B
+                    }
+                </script>
+            </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div style="float:left;clear:none;padding:2% 2% 0px 2%;width:100%;margin:0px 6px 0px 5px">
+                <div id="session-list-files" style="float:left;width:60%;padding:2% 2% 0px 2%;">
+                <h2>Session SDF files</h2>
+                <button id="submit-task" class="btn-short-big">Run clustering on selected files</button>
+                <script>
+                    btn_submit = document.getElementById("submit-task");
+                    btn_submit.onclick = function () {
+                        let gathered = Array.from(document.querySelectorAll("div[data-selected='1']"))
+                        let files = gathered.map((x) => x.id)
+                        if (files.length >= 1) {
+                            send_files_task_clustering("{{uuid}}", JSON.stringify(files))
+                            .then((_) => window.location.href="/session", (_) => window.location.href="/session");
+                        }
+                    }
+                    upload_button_wake_up()
+                </script>
+                <div id="session-list-files-sdf">
+                </div>
+                <h2>Session CSV files</h2>
+                <div id="session-list-files-csv">
+                </div>
+                </div>
+                <div id="session-tasks" style="float:right;width:40%;padding:2% 2% 0px 2%;">
+                <h2>Session tasks</h2>
+                <div id="session-list-tasks">
+                </div>
+                </div>
+                </div>
+            </div>
+        </section>
 
-        </div>
-        </div>
-        <div id="session-files-csv">
-        <h1>Task results in session</h1>
-        <div id="session-list-files-csv">
-
-        </div>
-        <p>run a task on selected files to populate this</p>
-        </div>
-        <div id="upload" class="upload-div">
-            <p>Upload files:</p>
-            <form method="POST" action="/api/file" class="dropzone dz-clickable" id="dropper" enctype="multipart/form-data">
-                <input type="hidden" id="session" name="session" value="{{uuid}}" />
-                <input type="hidden" id="type" name="type" value="sdf" />
-            </form>
-            <script type="application/javascript">
-                Dropzone.options.dropper = {
-                    paramName: 'file',
-                    chunking: true,
-                    forceChunking: true,
-                    url: '/api/file',
-                    maxFilesize: 1025, // MB
-                    chunkSize: 1_000_000 // B
-                }
-            </script>
-        </div>
     </main>
-    <footer class="site-footer">
-    </footer>
     <script>
-        client_session_build_session_contents("{{ uuid }}")
+        client_session_build_session_contents("{{ uuid }}");
+        client_session_build_tasks("{{ uuid }}");
     </script>
 </body>
 </html>

@@ -117,7 +117,7 @@ def api_file_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
         session_client = session["uuid"]
         request_body = request.get_json()
         session_uuid = request_body.get("session", None)
-        task_uuid = request.body.get("task", None)
+        task_uuid = request_body.get("task", None)
         if not session_uuid and not task_uuid:
             return make_response(('no data',400))
         if session_uuid:

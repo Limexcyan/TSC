@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,10 +8,18 @@
 </head>
 <body>
     <script type="text/javascript" src="/static/client_session.js"></script>
-    {% autoescape false %}
-    {{html_graph_analysis_preliminary}}
-    {% endautoescape %}
-    <div>
+    <section class="hero" style="padding: 61px 45px 45px;">
+        <div class="eyebrow">Task results</div>
+    </section>
+    <section class="section">
+        <div class="container">
+            {% autoescape false %}
+            {{html_graph_analysis_preliminary}}
+            {% endautoescape %}
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
         <button id="resubmit">Resubmit task</button>
         <button id="more-analysis">Analyze further</button>
         <script>
@@ -20,6 +28,8 @@
                 _api_call("PUT","/api/task/{{ task_id }}", '{"status":"16"}').then(() => window.location.href = "/session")
             }
         </script>
-    </div>
+        </div>
+    </section>
+        
 </body>
 </html>
