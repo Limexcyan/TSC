@@ -9,10 +9,12 @@ from flask import Flask, make_response, request
 from flask_socketio import SocketIO
 
 from flask_session import Session
-from tscapp.webapp.orchestrator.orchestrator_tasks import status_code_to_status_string
 
 from ...orchestrator.orchestrator_db import OrchestratorDB
-from ...orchestrator.orchestrator_tasks import status_code_to_status
+from ...orchestrator.orchestrator_tasks import (
+    status_code_to_status,
+    status_code_to_status_string,
+)
 from ..webapp_common import with_session
 
 logger = logging.getLogger(__name__)

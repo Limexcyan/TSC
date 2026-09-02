@@ -5,12 +5,12 @@ from json import loads
 from pathlib import Path
 from sqlite3 import Connection, Cursor
 
-from tscapp.webapp.orchestrator.orchestrator_db import (
+from .orchestrator_db import (
     OrchestratorDB,
     _notify_worker,
     under_worker_lock,
 )
-from tscapp.webapp.orchestrator.orchestrator_tasks import TaskStatus
+from .orchestrator_tasks import TaskStatus
 
 logger = logging.getLogger(__name__)
 

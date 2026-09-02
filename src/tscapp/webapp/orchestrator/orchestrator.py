@@ -3,10 +3,13 @@ from json import dumps
 from threading import Thread
 from typing import Any
 
-from tscapp.common.names import random_sentence
-from tscapp.core.processor import ProcessorConfig, processor
-from tscapp.webapp.orchestrator.orchestrator_db import OrchestratorDB
-from tscapp.webapp.orchestrator.worker import RegisteredTasksPayload, worker_thread_init
+from ...common.names import random_sentence
+from ...core.processor import ProcessorConfig, processor
+from .orchestrator_db import OrchestratorDB
+from .worker import (
+    RegisteredTasksPayload,
+    worker_thread_init,
+)
 
 logger = logging.getLogger(__name__)
 

@@ -13,7 +13,10 @@ from .processor_clustering import (
 from .processor_consolidator import (
     consolidate_after_loaded,
 )
-from .processor_featurizer import FeaturizerConfig, featurizer_morgan_fingerprint
+from .processor_featurizer import (
+    FeaturizerConfig,
+    featurizer_morgan_fingerprint,
+)
 from .processor_loader import LoaderConfig, load_stage
 from .results.analyze import AnalyzeConfig, analyze
 
