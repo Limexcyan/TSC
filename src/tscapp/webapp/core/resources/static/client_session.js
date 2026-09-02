@@ -30,7 +30,12 @@ function api_delete_existing_session(uuid){
 }
 
 function client_sessions_build_session_list(){
-    root = document.getElementById("session-list");
+    client_sessions_build_session_list_file()
+    client_sessions_build_session_list_task()
+}
+
+function client_sessions_build_session_list_file(){
+    let root = document.getElementById("file-session-list");
     _api_call("GET", "/api/session")
         .then(res => {
             res.sort(function (a,b) {
@@ -39,14 +44,14 @@ function client_sessions_build_session_list(){
             root.innerHTML = '';
             res.forEach(function (session) {
                 session_container = document.createElement("div");
-                session_name = document.createElement("h2");
+                session_name = document.createElement("h3");
                 session_manage = document.createElement("button");
                 session_delete = document.createElement("button");
                 session_name.innerText = session[2];
                 session_manage.innerText = "Manage";
                 session_delete.innerText = "Delete";
                 session_manage.onclick = function () { window.location.href=`/session/${session[0]}`; };
-                session_delete.onclick = function () { api_delete_existing_session(session[0]).then(client_sessions_build_session_list);};
+                session_delete.onclick = function () { api_delete_existing_session(session[0]).then(client_sessions_build_session_list_file);};
                 session_container.appendChild(session_name)
                 session_container.appendChild(session_manage)
                 session_container.appendChild(session_delete)
@@ -55,23 +60,113 @@ function client_sessions_build_session_list(){
         });
 }
 
+function client_sessions_build_session_list_task(){
+    let root = document.getElementById("task-session-list");
+    _api_call("GET", "/api/task")
+        .then(res => {
+            console.log(res)
+            res.sort(function (a,b) {
+                return new Date(b[5]) - new Date(a[5]);
+            });
+            root.innerHTML = '';
+            res.forEach(function (task) {
+                task_container = document.createElement("div");
+                task_name = document.createElement("h3");
+                task_status = document.createElement("span");
+                task_uuid = document.createElement("h5");
+                task_delete = document.createElement("button");
+                task_resubmit = document.createElement("button");
+                if (JSON.parse(task[3]).hasOwnProperty("result")) {
+                    task_name.innerText = JSON.parse(task[3])['result']['output-filename'];
+                } else {
+                    task_name.innerText = "[unnamed task]";
+                }
+                task_status.innerText = task[6];
+                task_uuid.innerText = task[0];
+                task_delete.innerText = "Delete";
+                task_resubmit.innerText = "Resubmit";
+                task_delete.onclick = function () { _api_call("DELETE",`/api/task/${task[0]}`).then(client_sessions_build_session_list_task)};
+                task_resubmit.onclick = function () { _api_call("PUT",`/api/task/${task[0]}`, '{"status":"16"}').then(client_sessions_build_session_list_task)};
+                task_container.appendChild(task_status)
+                task_container.appendChild(task_name)
+                task_container.appendChild(task_uuid)
+                task_container.appendChild(task_delete)
+                task_container.appendChild(task_resubmit)
+                root.appendChild(task_container)
+            });
+        });
+}
+
+function _client_session_build_sdf_files(uuid, file) {
+    let root = document.getElementById("session-list-files-sdf")
+    file_container = document.createElement("div");
+    let id = file[0].replaceAll("\\","/").split("/",3).at(-1);
+    file_container.id = id
+    file_container.dataset.selected = 0
+    file_name = document.createElement("h3");
+    file_delete = document.createElement("button");
+    file_name.innerText = id;
+    file_delete.innerText = "Delete";
+    file_delete.onclick = function () { _api_call("DELETE", `/api/file/${id}`, `{"session":"${uuid}"}`).then(() => {client_session_build_session_contents(uuid)})}
+    file_container.appendChild(file_name);
+    file_container.appendChild(file_delete);
+    file_container.onclick = function () {
+        file_selected_status = document.getElementById(id)
+        if (file_selected_status.dataset.selected > 0) {
+            file_selected_status.dataset.selected = 0;
+        } else {
+            file_selected_status.dataset.selected = 1;
+        }
+    }
+
+    root.appendChild(file_container)
+}
+
+function _client_session_build_csv_files(uuid, file) {
+    root = document.getElementById("session-list-files-csv")
+    file_container = document.createElement("div");
+    let id = self.crypto.randomUUID();
+    file_container.id = id
+    file_container.dataset.selected = 0
+    file_name = document.createElement("h3");
+    file_download = document.createElement("button");
+    let fn = file[0].replaceAll("\\","/").split("/",3).at(-1);;
+    file_name.innerText = fn
+    file_download.innerText = "Download";
+    file_download.onclick = function () { window.open(`/api/file/${uuid}/${fn}`) }
+    file_container.appendChild(file_name);
+    file_container.appendChild(file_download);
+    file_container.onclick = function () {
+        file_selected_status = document.getElementById(id)
+        if (file_selected_status.dataset.selected > 0) {
+            file_selected_status.dataset.selected = 0;
+        } else {
+            file_selected_status.dataset.selected = 1;
+        }
+    }
+
+    root.appendChild(file_container)
+}
+
+function send_files_task_clustering(uuid, filelist){
+    return _api_call("POST", `/api/task`, `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}}}}}`)
+}
+
 function client_session_build_session_contents(uuid){
-    root = document.getElementById("session-list");
     _api_call("GET", `/api/session/file/${uuid}`)
         .then(res => {
             console.log(res)
             res.sort();
+            root = document.getElementById("session-list-files-sdf");
+            root.innerHTML = '';
+            root = document.getElementById("session-list-files-csv");
             root.innerHTML = '';
             res.forEach(function (file) {
-                file_container = document.createElement("div");
-                file_name = document.createElement("h3");
-                file_delete = document.createElement("button");
-                file_name.innerText = file[0].replaceAll("\\","/").split("/",3).at(-1);;
-                file_delete.innerText = "Delete"
-                file_delete.onclick = function () { _api_call("DELETE", `/api/file/${file[0].replaceAll("\\","/").split("/",3).at(-1)}`, `{"session":"${uuid}"}`).then(() => {client_session_build_session_contents(uuid)})}
-                file_container.appendChild(file_name)
-                file_container.appendChild(file_delete)
-                root.appendChild(file_container)
+                if (file[1] == "sdf") {
+                    _client_session_build_sdf_files(uuid, file)
+                } else if (file[1] == "csv") {
+                    _client_session_build_csv_files(uuid, file)
+                }
             });
         }
         );

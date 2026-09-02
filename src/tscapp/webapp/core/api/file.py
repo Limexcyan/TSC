@@ -1,3 +1,4 @@
+from flask import send_file
 from flask import Response
 import shutil
 import os
@@ -71,6 +72,15 @@ def api_file_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     def api_file_get():
         metadata = odb.table_files_query_client(session["uuid"])
         return make_response((metadata,200))
+    
+    @app.route("/api/file/<uuid>/<fn>", methods=["GET"])
+    @with_session(session=session)
+    def api_file_file_download(uuid,fn):
+        session_client = session["uuid"]
+        session_uuid = uuid
+        path = str(Path(session_client) / session_uuid / fn)
+        print(appdata_path, path)
+        return send_file(appdata_path / path)
 
     @app.route("/api/file/session/<session_id>", methods=["GET"])
     @with_session(session=session)

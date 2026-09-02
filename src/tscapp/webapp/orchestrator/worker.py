@@ -19,12 +19,14 @@ logger = logging.getLogger(__name__)
 class RegisteredTasksPayload():
     odb: OrchestratorDB
     appdata_path: Path
+    file_save_path: Path
     task_client: str
     task_session: str
 
-def worker_thread_init(worker_functions: dict[str,Callable], db_path: Path, appdata_path: Path):
-    worker = Worker(worker_functions, db_path, appdata_path)
+def worker_thread_init(worker_functions: dict[str,Callable], db_path: Path, appdata_path: Path, file_save_path: Path):
+    worker = Worker(worker_functions, db_path, appdata_path, file_save_path)
     worker.worker_loop()
+    return True
 
 class Worker:
     worker_functions: dict[str,Callable]
@@ -34,10 +36,11 @@ class Worker:
     worker_orchestrator_db_cur: Cursor
     orchestrator_db: OrchestratorDB
 
-    def __init__(self, worker_functions: dict[str,Callable], db_path: Path, appdata_path: Path):
+    def __init__(self, worker_functions: dict[str,Callable], db_path: Path, appdata_path: Path, file_save_path: Path):
         self.worker_functions = worker_functions
         self.appdata_path = appdata_path
         self.orchestrator_db = OrchestratorDB(db_path)
+        self.file_save_path = file_save_path
     
     @under_worker_lock
     def fetch_work_order(self):
@@ -68,7 +71,7 @@ class Worker:
                 print(kwargs)
                 if func in self.worker_functions:
                     func = self.worker_functions[func]
-                    func_payload = RegisteredTasksPayload(self.orchestrator_db, self.appdata_path, task_client, task_session)
+                    func_payload = RegisteredTasksPayload(self.orchestrator_db, self.appdata_path, self.file_save_path, task_client, task_session)
                     try:
                         result = func(func_payload, **kwargs)
                     except Exception as e:

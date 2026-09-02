@@ -1,3 +1,4 @@
+from tscapp.webapp.orchestrator.orchestrator_tasks import status_code_to_status_string
 from json import loads
 from ...orchestrator.orchestrator_tasks import TaskStatus, status_code_to_status
 from flask import Response
@@ -38,20 +39,31 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
             session_uuid,
             task_data
         )
-        return make_response(('enqueued',201))
+        return make_response(('{"status":"enqueued"}',201))
+
+    def _aux_status_id_to_message(record):
+        record = list(record)
+        record.append(status_code_to_status_string(record[4]))
+        return record
 
     @app.route("/api/task", methods=["GET"])
     @with_session(session=session)
     def api_task_get():
         session_client = session["uuid"]
         metadata = odb.table_tasks_query_client(session_client)
+        if not metadata:
+            metadata = []
+        metadata = list(map(_aux_status_id_to_message,metadata))
         return make_response((metadata, 200))
-    
+
     @app.route("/api/task/session/<session_id>", methods=["GET"])
     @with_session(session=session)
     def api_task_session_session_get(session_id):
         session_client = session["uuid"]
         metadata = odb.table_tasks_query_session(session_client, session_id)
+        if not metadata:
+            metadata = []
+        metadata = list(map(_aux_status_id_to_message,metadata))
         return make_response((metadata, 200))
     
     @app.route("/api/task/<task_id>", methods=["GET"])
@@ -66,17 +78,18 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     @with_session(session=session)
     def api_task_task_put(task_id):
         session_client = session["uuid"]
-        updated_status = request.form.get("status", default=None)
+        request_form = request.get_json()
+        updated_status = request_form.get("status", None)
         if not updated_status:
             return make_response(('no update', 400))
-        odb.table_tasks_update_status(task_id, session_client, int(updated_status))
-        return make_response(('updated', 200))
+        odb.table_tasks_update_status(task_id, session_client, status_code_to_status(int(updated_status)))
+        return make_response(('{"status":"updated"}', 200))
     
     @app.route("/api/task/<task_id>", methods=["DELETE"])
     @with_session(session=session)
     def api_task_task_delete(task_id):
         session_client = session["uuid"]
         odb.table_tasks_delete(task_id, session_client)
-        return make_response(('deleted',204))
+        return make_response(('{"status":"deleted"}',204))
     
 

@@ -13,7 +13,32 @@
     <script type="text/javascript" src="/static/client_session.js"></script>
     <header class="hero">Browse through your files</header>
     <main>
-        <div id="upload-div" class="upload-div">
+        <div id="session-files-sdf">
+        <h1>SDF files in session</h1>
+        <p>select the files to run a task on selection or</p>
+        <a href="#upload">upload more files</a>
+        <button id="submit-task">Run clustering on selected files</button>
+        <script>
+            btn_submit = document.getElementById("submit-task");
+            btn_submit.onclick = function () {
+                let gathered = Array.from(document.querySelectorAll("div[data-selected='1']"))
+                let files = gathered.map((x) => x.id)
+                send_files_task_clustering("{{uuid}}", JSON.stringify(files))
+                .then((_) => window.location.href="/session", (_) => window.location.href="/session");
+            }
+        </script>
+        <div id="session-list-files-sdf">
+
+        </div>
+        </div>
+        <div id="session-files-csv">
+        <h1>Task results in session</h1>
+        <div id="session-list-files-csv">
+
+        </div>
+        <p>run a task on selected files to populate this</p>
+        </div>
+        <div id="upload" class="upload-div">
             <p>Upload files:</p>
             <form method="POST" action="/api/file" class="dropzone dz-clickable" id="dropper" enctype="multipart/form-data">
                 <input type="hidden" id="session" name="session" value="{{uuid}}" />
@@ -29,9 +54,6 @@
                     chunkSize: 1_000_000 // B
                 }
             </script>
-        </div>
-        <div id="session-list">
-
         </div>
     </main>
     <footer class="site-footer">

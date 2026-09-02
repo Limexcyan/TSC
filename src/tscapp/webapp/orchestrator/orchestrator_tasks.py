@@ -25,7 +25,7 @@ def status_to_string(status: TaskStatus):
     if status in TaskStatusTranslation:
         return TaskStatusTranslation[status]
     res = ""
-    for _status in TaskStatus.__iter__():
+    for _status in TaskStatusTranslation.keys():
         if status & _status:
             if _status in TaskStatusTranslation:
                 res += TaskStatusTranslation[_status]
@@ -33,7 +33,7 @@ def status_to_string(status: TaskStatus):
 
 def status_code_to_status(code: int):
     res_status = None
-    for status in TaskStatus.__iter__():
+    for status in TaskStatusTranslation.keys():
         if status & code:
             if not res_status:
                 res_status = status

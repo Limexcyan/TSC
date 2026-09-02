@@ -1,3 +1,4 @@
+import pickle
 from pathlib import Path
 import logging
 from ..common.cli import CliRunnerMixin
@@ -13,6 +14,7 @@ logger = logging.getLogger(__name__)
 class ProcessorConfig(ConfigBase):
     output_file: Path
     input_files: list[Path]
+    save_clustering: bool = True
     loader_config: LoaderConfig = LoaderConfig()
     featurizer_config: FeaturizerConfig = FeaturizerConfig()
     clustering_config: ClusteringConfig = ClusteringConfig()
@@ -36,6 +38,9 @@ def processor(config: ProcessorConfig):
         (clustering_get_distances(featurized, clustered)).alias("distance"),
     )
     resulting.write_csv(config.output_file)
+    if config.save_clustering:
+        logger.info("saving clustering")
+        pickle.dump(clustered, open(config.output_file.parent / (config.output_file.stem + ".bin.clustered"), "wb"))
     logger.info("results saved under %s", config.output_file)
 
 if __name__ == "__main__":

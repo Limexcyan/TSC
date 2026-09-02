@@ -224,7 +224,7 @@ class OrchestratorDB():
         
     @under_lock
     def table_tasks_update_data_absolute(self, uuid: str, data):
-        self.db_cur.execute("UPDATE tasks SET status = ?, modified = ? WHERE uuid = ?", (dumps(data),datetime.now(),uuid))
+        self.db_cur.execute("UPDATE tasks SET data = ?, modified = ? WHERE uuid = ?", (dumps(data),datetime.now(),uuid))
         self.db_con.commit()
 
     @under_lock

@@ -32,8 +32,8 @@ class WebappCli(CliRunnerMixin, SettingsBase):
 
 def webapp(config:WebappConfig):
     app, sio = webapp_init(config=config)
-    odb = orchestrator_init(load_orchestrator_config(config.config_file.resolve()))
     wappconf = load_webapp_config(config.config_file.resolve())
+    odb = orchestrator_init(load_orchestrator_config(config.config_file.resolve()), wappconf)
 
     from .webapp_logic import register_urls
     register_urls(app=app, sio=sio, odb=odb, session=session, appdata_path=wappconf['file_path'])
