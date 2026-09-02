@@ -76,22 +76,28 @@ function client_sessions_build_session_list_task(){
                 task_uuid = document.createElement("h5");
                 task_delete = document.createElement("button");
                 task_resubmit = document.createElement("button");
-                if (JSON.parse(task[3]).hasOwnProperty("result")) {
-                    task_name.innerText = JSON.parse(task[3])['result']['output-filename'];
-                } else {
-                    task_name.innerText = "[unnamed task]";
-                }
+                task_view_result = document.createElement("button");
                 task_status.innerText = task[6];
                 task_uuid.innerText = task[0];
                 task_delete.innerText = "Delete";
                 task_resubmit.innerText = "Resubmit";
+                task_view_result.innerText = "View results";
                 task_delete.onclick = function () { _api_call("DELETE",`/api/task/${task[0]}`).then(client_sessions_build_session_list_task)};
                 task_resubmit.onclick = function () { _api_call("PUT",`/api/task/${task[0]}`, '{"status":"16"}').then(client_sessions_build_session_list_task)};
+                task_view_result.onclick = function () {window.location.href = `/task/${task[0]}`}
                 task_container.appendChild(task_status)
                 task_container.appendChild(task_name)
                 task_container.appendChild(task_uuid)
                 task_container.appendChild(task_delete)
                 task_container.appendChild(task_resubmit)
+                if (JSON.parse(task[3]).hasOwnProperty("result")) {
+                    task_name.innerText = JSON.parse(task[3])['result']['output-filename'];
+                } else {
+                    task_name.innerText = "[unnamed task]";
+                }
+                if (task[4] == 4) {
+                    task_container.append(task_view_result);
+                }
                 root.appendChild(task_container)
             });
         });
@@ -130,12 +136,17 @@ function _client_session_build_csv_files(uuid, file) {
     file_container.dataset.selected = 0
     file_name = document.createElement("h3");
     file_download = document.createElement("button");
-    let fn = file[0].replaceAll("\\","/").split("/",3).at(-1);;
-    file_name.innerText = fn
+    associated_task_view = document.createElement("button");
+    let fn = file[0].replaceAll("\\","/").split("/",3).at(-1);
+    let tn = file[0].replaceAll("\\","/").split("/",3).at(-2);
+    file_name.innerText = fn;
     file_download.innerText = "Download";
-    file_download.onclick = function () { window.open(`/api/file/${uuid}/${fn}`) }
+    associated_task_view.innerText = "View results";
+    file_download.onclick = function () { window.open(`/api/file/task/${tn}/${fn}`) };
+    associated_task_view.onclick = function () { window.location.href = `/task/${tn}` };
     file_container.appendChild(file_name);
     file_container.appendChild(file_download);
+    file_container.appendChild(associated_task_view);
     file_container.onclick = function () {
         file_selected_status = document.getElementById(id)
         if (file_selected_status.dataset.selected > 0) {

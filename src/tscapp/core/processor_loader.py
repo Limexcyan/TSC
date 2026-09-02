@@ -36,7 +36,10 @@ def load_chembl_sdf(
             embedProps=True
         )
     )
-    return chembl_sdf.select(config.keep_cols)
+    kept = chembl_sdf.select(config.keep_cols)
+    return kept.with_columns(
+        pl.Series("filename",[file.stem for _ in range(kept.shape[0])]).alias("filename")
+    )
 
 def load_csv(
     file: Path,

@@ -1,3 +1,4 @@
+from tscapp.webapp.core.webapp_common import with_session
 import shutil
 import os
 from uuid import uuid4
@@ -28,57 +29,28 @@ def register_urls(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     api_file_init(app, sio, odb, session, appdata_path)
     api_task_init(app, sio, odb, session, appdata_path)
 
-
     @app.route('/')
     def index():
         return render_template("landing.html")
 
     @app.route('/session')
+    @with_session(session=session)
     def browse():
-        assertion = assert_session(session, create=True)
-        if assertion.status_code >= 400:
-            return assertion
         return render_template("client_sessions.html")
 
     @app.route('/session/<session_id>')
+    @with_session(session=session)
     def browse_session(session_id):
-        assertion = assert_session(session, create=True)
-        if assertion.status_code >= 400:
-            return assertion
         return render_template("client_session_view.html", uuid=session_id)
-
-    @app.route('/session/<session_key>/<session_id>')
-    def browse_public_session(session_key,session_id):
-        return make_response(("ok",200))
-
-    @app.route('/process')
-    def process():
-        return render_template("upload_pipeline_processor.html")
-
-    @app.route('/upload', methods=["POST"])
-    def upload():
-        file = request.files['file']
-        save = appdata_path / secure_filename(file.filename)
-        current_chunk = int(request.form['dzchunkindex'])
-
-        if save.exists() and current_chunk == 0:
-            return make_response(('File already exists', 400))
-        
-        try:
-            with open(save, 'ab') as fo:
-                fo.seek(int(request.form['dzchunkbyteoffset']))
-                fo.write(file.stream.read())
-        except OSError:
-            logger.exception("Could not write to file")
-            return make_response(("Exception while writing the file to disk", 500))
-        
-        total_chunks = int(request.form['dztotalchunkcount']) - 1
-
-        if current_chunk == total_chunks:
-            if getsize(save) != int(request.form['dztotalfilesize']):
-                logger.error("Filesize mismatch")
-                return make_response(("Filesize mismatch", 500))
-            else:
-                logger.info("Upload successfull")
-        
-        return make_response(('Chunk write ok', 200))
+    
+    @app.route('/task/<task_id>')
+    @with_session(session=session)
+    def browse_results(task_id):
+        task_data = appdata_path / "task" / task_id
+        task_graphs = dict()
+        html_embed_preliminary = ""
+        for graph in task_data.glob("*.html"):
+            if "_preliminary" in graph.stem:
+                with open(graph, "r") as graph:
+                    html_embed_preliminary = graph.read()
+        return render_template("results.html", task_id=task_id,html_graph_analysis_preliminary=html_embed_preliminary)

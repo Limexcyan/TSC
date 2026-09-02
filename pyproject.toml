@@ -12,6 +12,7 @@ dependencies = [
     "flask-session>=0.8.0",
     "flask-socketio>=5.6.1",
     "pandas>=3.0.5",
+    "plotly>=7.0.0",
     "polars>=1.43.2",
     "pyarrow>=25.0.0",
     "pydantic>=2.13.4",

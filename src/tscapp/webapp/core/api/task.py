@@ -39,6 +39,7 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
             session_uuid,
             task_data
         )
+        os.makedirs(appdata_path / "task" / task_uuid)
         return make_response(('{"status":"enqueued"}',201))
 
     def _aux_status_id_to_message(record):
@@ -89,7 +90,12 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     @with_session(session=session)
     def api_task_task_delete(task_id):
         session_client = session["uuid"]
-        odb.table_tasks_delete(task_id, session_client)
-        return make_response(('{"status":"deleted"}',204))
+        tasks = odb.table_tasks_query_client(session_client)
+        tasks_uuid = list(map(lambda x: x[0], tasks))
+        if task_id in tasks_uuid:
+            odb.table_tasks_delete(task_id, session_client)
+            shutil.rmtree(appdata_path / "task" / task_id)
+            return make_response(('{"status":"deleted"}',204))
+        return make_response(('{"status":"forbidden"}', 403))
     
 

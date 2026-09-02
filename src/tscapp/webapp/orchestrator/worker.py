@@ -22,6 +22,7 @@ class RegisteredTasksPayload():
     file_save_path: Path
     task_client: str
     task_session: str
+    full_request: str
 
 def worker_thread_init(worker_functions: dict[str,Callable], db_path: Path, appdata_path: Path, file_save_path: Path):
     worker = Worker(worker_functions, db_path, appdata_path, file_save_path)
@@ -38,9 +39,9 @@ class Worker:
 
     def __init__(self, worker_functions: dict[str,Callable], db_path: Path, appdata_path: Path, file_save_path: Path):
         self.worker_functions = worker_functions
-        self.appdata_path = appdata_path
+        self.appdata_path = file_save_path
         self.orchestrator_db = OrchestratorDB(db_path)
-        self.file_save_path = file_save_path
+        self.file_save_path = file_save_path / "task"
     
     @under_worker_lock
     def fetch_work_order(self):
@@ -68,10 +69,9 @@ class Worker:
             try:
                 func = task_data['func']
                 kwargs = task_data['kwargs']
-                print(kwargs)
                 if func in self.worker_functions:
                     func = self.worker_functions[func]
-                    func_payload = RegisteredTasksPayload(self.orchestrator_db, self.appdata_path, self.file_save_path, task_client, task_session)
+                    func_payload = RegisteredTasksPayload(self.orchestrator_db, self.appdata_path, self.file_save_path / task_uuid, task_client, task_session, task_data)
                     try:
                         result = func(func_payload, **kwargs)
                     except Exception as e:

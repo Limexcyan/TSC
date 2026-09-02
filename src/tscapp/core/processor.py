@@ -9,6 +9,8 @@ from .processor_featurizer import FeaturizerConfig, featurizer_morgan_fingerprin
 from .processor_consolidator import consolidate_after_loaded, consolidate_after_featurize
 from .processor_clustering import ClusteringConfig, clustering, clustering_get_centroids, clustering_get_distances
 
+from .results.analyze import analyze, AnalyzeConfig
+
 logger = logging.getLogger(__name__)
 
 class ProcessorConfig(ConfigBase):
@@ -36,12 +38,16 @@ def processor(config: ProcessorConfig):
     resulting = consolidated.with_columns(
         (clustering_get_centroids(featurized, clustered)).alias("centroid"),
         (clustering_get_distances(featurized, clustered)).alias("distance"),
+
     )
     resulting.write_csv(config.output_file)
     if config.save_clustering:
         logger.info("saving clustering")
         pickle.dump(clustered, open(config.output_file.parent / (config.output_file.stem + ".bin.clustered"), "wb"))
     logger.info("results saved under %s", config.output_file)
+    
+    logger.info("running analysys...")
+    analyze(config=AnalyzeConfig(output_dir=config.output_file.parent,input_csv=config.output_file))
 
 if __name__ == "__main__":
     ProcessorCli.run()

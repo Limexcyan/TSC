@@ -81,6 +81,14 @@ def api_file_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
         path = str(Path(session_client) / session_uuid / fn)
         print(appdata_path, path)
         return send_file(appdata_path / path)
+    
+    @app.route("/api/file/task/<uuid>/<fn>", methods=["GET"])
+    @with_session(session=session)
+    def api_file_task_file_download(uuid,fn):
+        task_uuid = uuid
+        path = str(Path("task") / task_uuid / fn)
+        print(appdata_path, path)
+        return send_file(appdata_path / path)
 
     @app.route("/api/file/session/<session_id>", methods=["GET"])
     @with_session(session=session)
@@ -109,9 +117,13 @@ def api_file_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
         session_client = session["uuid"]
         request_body = request.get_json()
         session_uuid = request_body.get("session", None)
-        if not session_uuid:
-            return make_response(('no session',400))
-        path = str(Path(session_client) / session_uuid / fn)
+        task_uuid = request.body.get("task", None)
+        if not session_uuid and not task_uuid:
+            return make_response(('no data',400))
+        if session_uuid:
+            path = str(Path(session_client) / session_uuid / fn)
+        else:
+            path = str(Path("task") / task_uuid / fn)
         file_associated_session = odb.table_files_retrieve_session(path, session_client)
         if not file_associated_session:
             return (('not tracked',404))

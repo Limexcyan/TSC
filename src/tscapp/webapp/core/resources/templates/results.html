@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="/static/styles.css" type="text/css">
+</head>
+<body>
+    <script type="text/javascript" src="/static/client_session.js"></script>
+    {% autoescape false %}
+    {{html_graph_analysis_preliminary}}
+    {% endautoescape %}
+    <div>
+        <button id="resubmit">Resubmit task</button>
+        <button id="more-analysis">Analyze further</button>
+        <script>
+            btn_resubmit = document.getElementById("resubmit")
+            btn_resubmit.onclick = function () {
+                _api_call("PUT","/api/task/{{ task_id }}", '{"status":"16"}').then(() => window.location.href = "/session")
+            }
+        </script>
+    </div>
+</body>
+</html>

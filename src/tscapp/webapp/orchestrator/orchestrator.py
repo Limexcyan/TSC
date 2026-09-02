@@ -1,3 +1,4 @@
+from json import loads
 from tscapp.common.names import random_sentence
 from pathlib import Path
 from json import dumps
@@ -20,19 +21,27 @@ def register_task(f):
 def webapp_processor(payload: RegisteredTasksPayload, config=None):
     if not config:
         raise RuntimeError("wanted kwarg config")
-    path_prefix = payload.file_save_path / payload.task_client / payload.task_session
+    path_prefix = payload.appdata_path / payload.task_client / payload.task_session
     files = config["input_files"]
     for i, file in enumerate(files):
         files[i] = str(path_prefix / file)
     config["input_files"] = files
-    output_file_name = random_sentence()
-    output_file = path_prefix / (output_file_name + ".csv")
-    clustered = output_file.parent / (output_file.stem + ".bin.clustered")
+    res = payload.full_request.get("result", None)
+    if res:
+        logger.info("task has been resubmitted, will overwrite files")
+        output_file_name = res["output-filename"]
+    else:
+        output_file_name = random_sentence()
+    output_file = payload.file_save_path / (output_file_name + ".csv")
+    clustered = payload.file_save_path / (output_file_name + ".bin.clustered")
+    preliminary = payload.file_save_path / (output_file_name + "_preliminary.html")
     config["output_file"] = str(output_file)
     config = ProcessorConfig.model_validate_json(dumps(config))
     processor(config)
-    payload.odb.table_files_create(str(output_file.relative_to(payload.file_save_path)), "csv", payload.task_client, payload.task_session)
-    payload.odb.table_files_create(str(clustered.relative_to(payload.file_save_path)), "clu", payload.task_client, payload.task_session)
+    if not res:
+        payload.odb.table_files_create(str(output_file.relative_to(payload.appdata_path)), "csv", payload.task_client, payload.task_session)
+        payload.odb.table_files_create(str(clustered.relative_to(payload.appdata_path)), "clu", payload.task_client, payload.task_session)
+        payload.odb.table_files_create(str(preliminary.relative_to(payload.appdata_path)), "ana", payload.task_client, payload.task_session)
     return {"output-filename":output_file_name}
 
 def orchestrator_init(config: dict[str, Any], wa_config: dict[str, Any]):
