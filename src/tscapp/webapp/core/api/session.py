@@ -53,15 +53,16 @@ def api_session_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Se
     @app.route("/api/session/<session_uuid>", methods=["PUT"])
     @with_session(session=session)
     def api_session_session_put(session_uuid):
-        session_alias = request.form.get("name", default=None)
-        if session_alias:
-            return make_response(('no alias',400))
+        request_form = request.get_json()
+        session_alias = request_form.get("name", None)
+        if not session_alias:
+            return make_response(('{"reason":"no alias"}',400))
         odb.table_sessions_update_alias(
             session_uuid,
             session["uuid"],
             session_alias
         )
-        return make_response(('ok',200))
+        return make_response(('{"result":"ok"}',200))
     
     @app.route("/api/session/<session_uuid>", methods=["DELETE"])
     @with_session(session=session)

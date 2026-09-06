@@ -105,7 +105,7 @@ function api_delete_existing_session(uuid){
     return _api_call("DELETE", `/api/session/${uuid}`);
 }
 
-function client_sessions_build_session_list(){
+async function client_sessions_build_session_list(){
     webapp_build_session_list();
     client_sessions_build_session_list_task();
 }
@@ -119,12 +119,13 @@ function webapp_build_session_list(){
             res.sort(function (a,b) {
                 return new Date(b[3]) - new Date(a[3]);
             });
-            root.innerHTML = '<h2>Active sessions</h2>';
+            root.innerHTML = '<h2>Active sessions</h2><h5>You can rename them by clicking on their name.</h5>';
             res.forEach(function (session) {
                 let session_container = _create_element(root, "div", {id:session[0],className:"div-hoverable unhoverable",click:(() => {_navigate_to_session(session[0])})})
 
                 // title
-                _create_element(session_container, "h3", {innerText:session[2]});
+                title = _create_element(session_container, "h3", {innerText:session[2],className:"editable-header"});
+                _register_header_editable(title, session[0]);
                 // manage
                 _create_element(session_container, "button", {innerText:"Manage", click:(() => {_navigate_to_session(session[0])})});
                 // delete
@@ -133,10 +134,14 @@ function webapp_build_session_list(){
         });
 }
 
-async function client_sessions_build_session_list_task(){
+async function client_sessions_build_session_list_task(uuid=null){
+    let endpoint = "/api/task"
+    if (uuid !== null) {
+        endpoint = `/api/task/session/${uuid}`
+    }
     let root = document.getElementById("task-session-list");
     let relevant_session = await _api_call("GET", "/api/session").then(res => {let r = {};res.map((x) => (r[`${x[0]}`]= x[2])); return r});
-    await _api_call("GET", "/api/task")
+    await _api_call("GET", endpoint)
         .then(res => {
             res.sort(function (a,b) {
                 return new Date(b[5]) - new Date(a[5]);
@@ -235,4 +240,60 @@ function client_session_build_session_contents(uuid){
             });
         }
         );
+}
+
+function _register_header_editable(header, id){
+
+    header.addEventListener("click", (e) => {
+        // Prevent creating another input if one already exists
+        e.stopPropagation();
+        if (header.querySelector("input")) return;
+
+        const currentText = header.textContent.trim();
+
+        const input = document.createElement("input");
+        input.type = "text";
+        input.value = currentText;
+        input.setAttribute("aria-label", "Edit heading");
+
+        header.textContent = "";
+        header.appendChild(input);
+
+        input.focus();
+        input.select();
+
+        input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            const newText = input.value.trim() || currentText;
+
+            header.textContent = newText;
+
+            // Custom event emitted when Enter is pressed
+            header.dispatchEvent(
+                new CustomEvent("header-submit", {
+                    bubbles: true,
+                    detail: {
+                        id: id,
+                        value: newText
+                    }
+                })
+            );
+        }
+
+        if (event.key === "Escape") {
+            header.textContent = currentText;
+        }
+        });
+
+        input.addEventListener("blur", () => {
+            if (header.contains(input)) {
+            header.textContent = input.value.trim() || currentText;
+            }
+        });
+        });
+
+        // Listen for the emitted event
+        header.addEventListener("header-submit", (event) => {
+            _api_call("PUT", `/api/session/${event.detail.id}`, `{"name":"${event.detail.value}"}`)
+    });
 }

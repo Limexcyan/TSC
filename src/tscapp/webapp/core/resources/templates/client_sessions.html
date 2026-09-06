@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Landing page</title>
     <link rel="stylesheet" href="/static/styles.css" type="text/css">
+    <script type="text/javascript" src="/static/page_build.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf-8">
         var socket = io();
@@ -14,7 +15,6 @@
     </script>
 </head>
 <body>
-    <script type="text/javascript" src="/static/client_session.js"></script>
     <main>
         <section class="hero" style="padding: 61px 45px 45px;">
             <div class="eyebrow">Browse through your sessions</div>
@@ -40,7 +40,7 @@
     <footer class="site-footer">
     </footer>
     <script>
-        client_sessions_build_session_list()
+        client_sessions_build_session_list();
     </script>
 </body>
 </html>
