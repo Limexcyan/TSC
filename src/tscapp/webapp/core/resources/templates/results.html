@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="/static/styles.css" type="text/css">
 </head>
 <body>
+        <header class="site-header">
+            <section class="hero" style="padding:17px 0 0 0;height:70px;">
+            <span class="site-title"><span class="site-title-mark"></span>Task results analysis</span>
+            </section>
+        </header>
     <script type="text/javascript" src="/static/page_build.js"></script>
-    <section class="hero" style="padding: 61px 45px 45px;">
-        <div class="eyebrow">Task results</div>
-    </section>
-    <section class="section">
+    <section>
         <div class="container">
-            {% autoescape false %}
-            {{html_graph_analysis_preliminary}}
-            {% endautoescape %}
+        <h1>Analyze your clustering results</h1>
+            <p>If you like the preliminary results, you can analyze them further.</p>
+            <p>If you wish, you can share these results with others by copying the link</p>
+            <p class="p-warn">Resubmitting this task will irreversibly overwrite the analysis present here. Save the graphs and/or the .csv file if you wish to keep them</p>
         </div>
-    </section>
-    <section class="section">
         <div class="container">
         <button id="resubmit">Resubmit task</button>
         <button id="more-analysis">Analyze further</button>
@@ -29,7 +30,13 @@
             }
         </script>
         </div>
+        <div class="container">
+            {% autoescape false %}
+            {{html_graph_analysis_preliminary}}
+            {% endautoescape %}
+        </div>
     </section>
+
         
 </body>
 </html>

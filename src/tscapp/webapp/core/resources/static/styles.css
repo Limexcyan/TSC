@@ -104,10 +104,20 @@ button {
   font-size: 1.1rem;
 }
 
+p {
+  color: var(--muted);
+}
+
+.p-warn {
+  color: #9b3c3c;
+  font-weight: 600;
+}
+
 /* Header */
 
 .site-header {
   position: sticky;
+  inset-block-start: 1rem;
   z-index: 10;
   top: 0;
   border-bottom: 1px solid rgb(229 224 234 / 70%);
@@ -1120,4 +1130,72 @@ button:active {
     width: 100%;
     min-width: 0;
   }
+}
+
+/* Site title / brand */
+
+.site-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 61px;
+  color: var(--text);
+  font-family: Roboto, Inter, "Segoe UI", Arial, sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+
+  transition:
+    color var(--transition),
+    opacity var(--transition);
+}
+
+.site-title:hover {
+  color: var(--primary);
+}
+
+.site-title:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 35%, transparent);
+  outline-offset: 5px;
+  border-radius: var(--radius-sm);
+}
+
+/* Optional logo icon or mark */
+
+.site-title-mark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  place-items: center;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+/* Optional highlighted part of the title */
+
+.site-title span {
+  color: var(--primary);
+}
+
+/* Dark mode */
+
+[data-theme="dark"] .site-title {
+  color: var(--text);
+}
+
+[data-theme="dark"] .site-title:hover {
+  color: var(--primary);
+}
+
+[data-theme="dark"] .site-title-mark {
+  color: #241d30;
+  background: var(--primary);
 }

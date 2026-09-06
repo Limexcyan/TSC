@@ -15,23 +15,30 @@
     </script>
 </head>
 <body>
+        <header class="site-header">
+            <section class="hero" style="padding:17px 0 0 0;height:70px;">
+            <span class="site-title"><span class="site-title-mark"></span>Sessions and tasks</span>
+            </section>
+        </header>
     <main>
-        <section class="hero" style="padding: 61px 45px 45px;">
-            <div class="eyebrow">Browse through your sessions</div>
-        </section>
-        <section class="section">
+        <section>
             <div class="container">
+            <h1>View your sessions and tasks</h1>
+            <p>Sessions hold files relevant to themselves, which you can upload and run clustering on after clicking the "manage" button of a session.<br>
+            The action of executing a clustering on certain files within a session is a task. Every task ran in all sessions is visible here.
+            If you are interested in tasks ran for a certain session, click on the "manage" button of that session.</p>
+            <p class="p-warn">Once you delete a session, all files and tasks relevant to that session will be unrecoverably deleted.</p>
+            <div style="float:left;clear:none;padding:2% 2% 0px 2%;width:100%">
+            <div style="float:left;width:60%;padding:2% 2% 0px 2%;">
             <a class="button button-primary" id="initSession">Create new session</a>
             <script>
             document.getElementById('initSession').onclick = function () {
                 api_post_new_client_session().then(client_sessions_build_session_list);
             };
             </script>
-            <div style="float:left;clear:none;padding:2% 2% 0px 2%;width:100%">
-            <div id="file-session-list" style="float:left;width:60%;padding:2% 2% 0px 2%;">
+            <div id="file-session-list"></div>
             </div>
-            <div id="task-session-list" style="float:right;width:40%;padding:2% 2% 0px 2%;">
-            </div>
+            <div id="task-session-list" style="float:right;width:40%;padding:2% 2% 0px 2%;"></div>
         </div>
             </div>
         </div>
