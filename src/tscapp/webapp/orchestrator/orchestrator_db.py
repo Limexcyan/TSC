@@ -1,3 +1,5 @@
+from tscapp.webapp.orchestrator.orchestrator_tasks import status_to_string
+from flask_socketio import SocketIO
 import logging
 import sqlite3 as sql
 from _thread import LockType
@@ -51,13 +53,25 @@ def worker_event_clear():
 class OrchestratorDB:
     db_con: sql.Connection
     db_cur: sql.Cursor
+    sio: SocketIO
     
-    def __init__(self, db_path: Path):
+    def __init__(self, db_path: Path, sio: SocketIO):
         self.db_con, self.db_cur = load_db(db_path)
+        self.sio = sio
 
     @property
     def cursor(self):
         return self.db_cur
+
+    def _send_info_task_update(self, uuid: str, status: TaskStatus, client: str | None = None,):
+        logger.info(f"emitting update to {client}")
+        try:
+            if client:
+                self.sio.emit("update", {"status":status.value,"name":status_to_string(status),"id":uuid}, to=client)
+            else:
+                self.sio.emit("update", {"status":status.value,"name":status_to_string(status),"id":uuid})
+        except Exception:
+            logger.error("socketio emit failed!")
 
     # SESSIONS
 
@@ -157,6 +171,7 @@ class OrchestratorDB:
         self.db_cur.execute("INSERT INTO tasks(uuid,client,session,data,status,modified) VALUES (?, ?, ?, ?, ?, ?)", (uuid, client, session, data_json, status, modified))
         self.db_con.commit()
         worker_event_signal()
+        self._send_info_task_update(uuid,status)
         return {"uuid":uuid, "client":client, "session":session, "data":loads(data_json)}
     
     @under_lock
@@ -211,12 +226,14 @@ class OrchestratorDB:
     def table_tasks_update_status(self, uuid: str, client: str, status: TaskStatus):
         self.db_cur.execute("UPDATE tasks SET status = ?, modified = ? WHERE uuid = ? AND client = ?", (status.value,datetime.now(UTC),uuid,client))
         self.db_con.commit()
+        self._send_info_task_update(uuid,status)
         worker_event_signal()
 
     @under_lock
     def table_tasks_update_status_absolute(self, uuid: str, status: TaskStatus):
         self.db_cur.execute("UPDATE tasks SET status = ?, modified = ? WHERE uuid = ?", (status.value,datetime.now(UTC),uuid))
         self.db_con.commit()
+        self._send_info_task_update(uuid,status)
         worker_event_signal()
         
     @under_lock

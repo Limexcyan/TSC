@@ -1,3 +1,4 @@
+from flask_socketio import SocketIO
 import logging
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -23,8 +24,8 @@ class RegisteredTasksPayload:
     task_session: str
     full_request: str
 
-def worker_thread_init(worker_functions: dict[str,Callable], db_path: Path, appdata_path: Path, file_save_path: Path):
-    worker = Worker(worker_functions, db_path, appdata_path, file_save_path)
+def worker_thread_init(worker_functions: dict[str,Callable], db_path: Path, appdata_path: Path, file_save_path: Path, sio: SocketIO):
+    worker = Worker(worker_functions, db_path, appdata_path, file_save_path, sio)
     worker.worker_loop()
     return True
 
@@ -36,10 +37,10 @@ class Worker:
     worker_orchestrator_db_cur: Cursor
     orchestrator_db: OrchestratorDB
 
-    def __init__(self, worker_functions: dict[str,Callable], db_path: Path, appdata_path: Path, file_save_path: Path):
+    def __init__(self, worker_functions: dict[str,Callable], db_path: Path, appdata_path: Path, file_save_path: Path, sio: SocketIO):
         self.worker_functions = worker_functions
         self.appdata_path = file_save_path
-        self.orchestrator_db = OrchestratorDB(db_path)
+        self.orchestrator_db = OrchestratorDB(db_path,sio)
         self.file_save_path = file_save_path / "task"
     
     @under_worker_lock
@@ -75,12 +76,12 @@ class Worker:
                         result = func(func_payload, **kwargs)
                     except Exception:
                         logger.exception()
-                        self.orchestrator_db.table_tasks_update_status_absolute(uuid=task_uuid, status=TaskStatus.FAILED)
+                        self.orchestrator_db.table_tasks_update_status(uuid=task_uuid, client=task_client, status=TaskStatus.FAILED)
                     else:
                         task_data["result"] = result
                         logger.info(f"task run {task_uuid} success")
                         self.orchestrator_db.table_tasks_update_data_absolute(uuid=task_uuid, data=task_data)
-                        self.orchestrator_db.table_tasks_update_status_absolute(uuid=task_uuid, status=TaskStatus.COMPLETED)
+                        self.orchestrator_db.table_tasks_update_status(uuid=task_uuid, client=task_client, status=TaskStatus.COMPLETED)
             except Exception:
                 logger.exception()
                 self.orchestrator_db.table_tasks_update_status_absolute(uuid=task_uuid, status=TaskStatus.CRASHED)

@@ -6,10 +6,17 @@
     <title>Landing page</title>
     <link rel="stylesheet" href="/static/dropzone.min.css"/>
     <link rel="stylesheet" href="/static/styles.css" type="text/css">
+    <script type="text/javascript" src="/static/client_session.js"></script>
     <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf-8">
+        var socket = io();
+        socket.on('update', (data) => {
+            _update_badge(data.status, data.name, data.id);
+        })
+    </script>
 </head>
 <body>
-    <script type="text/javascript" src="/static/client_session.js"></script>
     <main>
         <section class="hero" style="padding: 61px 45px 45px;">
             <div class="eyebrow" id="session-name">Session</div>
@@ -18,20 +25,26 @@
             <div class="container">
             <div id="upload" class="upload-div">
                 <h1>Upload files:</h1>
+                <script>
+                Dropzone.options.dropper = {
+                    init: function() {
+                        this.on("queuecomplete", () => {
+                            client_session_build_session_contents("{{ uuid }}");
+                        });
+                    },
+                    paramName: 'file',
+                    acceptedFiles: '.sdf',
+                    chunking: true,
+                    forceChunking: true,
+                    url: '/api/file',
+                    maxFilesize: 1025, // MB
+                    chunkSize: 1_000_000, // B
+                };
+                </script>
                 <form method="POST" action="/api/file" class="dropzone dz-clickable" id="dropper" enctype="multipart/form-data">
                     <input type="hidden" id="session" name="session" value="{{uuid}}" />
                     <input type="hidden" id="type" name="type" value="sdf" />
                 </form>
-                <script type="application/javascript">
-                    Dropzone.options.dropper = {
-                        paramName: 'file',
-                        chunking: true,
-                        forceChunking: true,
-                        url: '/api/file',
-                        maxFilesize: 1025, // MB
-                        chunkSize: 1_000_000 // B
-                    }
-                </script>
             </div>
             </div>
         </section>
@@ -61,7 +74,7 @@
                 </div>
                 <div id="session-tasks" style="float:right;width:40%;padding:2% 2% 0px 2%;">
                 <h2>Session tasks</h2>
-                <div id="session-list-tasks">
+                <div id="task-session-list">
                 </div>
                 </div>
                 </div>
@@ -71,7 +84,7 @@
     </main>
     <script>
         client_session_build_session_contents("{{ uuid }}");
-        client_session_build_tasks("{{ uuid }}");
+        client_sessions_build_session_list_task("{{ uuid }}");
     </script>
 </body>
 </html>

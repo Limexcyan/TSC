@@ -17,6 +17,78 @@ function _api_call(method, endpoint, body="{}"){
     })
 }
 
+function _create_element(parentNode, element, {id, innerText, click, className, dataset}){
+    let x = document.createElement(element)
+    if(id !== null) { x.id = id }
+    if(innerText !== null) {x.innerText = innerText }
+    if(click !== null) { x.onclick = click }
+    if(className !== null) { x.className = className }
+    if(dataset !== null) { Object.keys(x).forEach(k => {x.dataset[k] = x[k]})}
+    parentNode.appendChild(x)
+}
+
+function _create_badge(parentNode, status, statusname, id){
+    let task_status = "material-badge"
+    switch(status) {
+        case 2:
+            task_status = "material-badge material-badge-info"
+            break
+        case 4:
+            task_status = "material-badge material-badge-success"
+            break
+        case 8:
+            task_status = "material-badge material-badge-error"
+            break
+        case 16:
+            task_status = "material-badge material-badge-warning"
+            break
+        default:
+            task_status = "material-badge"
+    }
+    _create_element(parentNode, "span", {id:`${id}-badge`,className:task_status,innerText:statusname})
+}
+function _update_badge(status, statusname, id){
+    parent = document.getElementById(`${id}`)
+    if (parent === null) {
+        client_sessions_build_session_list_task()
+        return
+    }
+    let task_status = "material-badge material-badge-info"
+    switch(status) {
+        case 2: // running
+            task_status = "material-badge material-badge-info"
+            document.getElementById(`${id}-d`).remove()
+            document.getElementById(`${id}-r`).remove()
+            document.getElementById(`${id}-v`).remove()
+            break
+        case 4: // success
+            task_status = "material-badge material-badge-success"
+            _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(client_sessions_build_session_list_task)}),className:"btn-red"});
+            _create_element(parent, "button", {id:`${id}-r`,innerText:"Resubmit",click:(() => { _api_call("PUT",`/api/task/${id}`, '{"status":"16"}').then(client_sessions_build_session_list_task)})});
+            _create_element(parent, "button", {id:`${id}-v`,innerText:"View",click:(() => {window.location.href = `/task/${id}`})})
+            break
+        case 8: // failure
+            task_status = "material-badge material-badge-error"
+            _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(client_sessions_build_session_list_task)}),className:"btn-red"});
+            _create_element(parent, "button", {id:`${id}-r`,innerText:"Resubmit",click:(() => { _api_call("PUT",`/api/task/${id}`, '{"status":"16"}').then(client_sessions_build_session_list_task)})});
+            _create_element(parent, "button", {id:`${id}-v`,innerText:"View",click:(() => {window.location.href = `/task/${id}`})})  
+            break
+        case 16: // enqueued
+            task_status = "material-badge material-badge-warning"
+            _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(client_sessions_build_session_list_task)}),className:"btn-red"});
+            document.getElementById(`${id}-r`).remove()
+            document.getElementById(`${id}-v`).remove()
+            break
+        default:
+            task_status = "material-badge"
+    }
+    badge = document.getElementById(`${id}-badge`);
+    if (badge !== null) {
+        badge.className = task_status;
+        badge.innerText = statusname;
+    }
+}
+
 function api_post_new_client_session(preferred_name=null){
     if (preferred_name === null) {
         return _api_call("POST", "/api/session");
@@ -30,11 +102,13 @@ function api_delete_existing_session(uuid){
 }
 
 function client_sessions_build_session_list(){
-    client_sessions_build_session_list_file()
+    webapp_build_session_list()
     client_sessions_build_session_list_task()
 }
 
-function client_sessions_build_session_list_file(){
+function _navigate_to_session(uuid){window.location.href = `/session/${uuid}`}
+
+function webapp_build_session_list(){
     let root = document.getElementById("file-session-list");
     _api_call("GET", "/api/session")
         .then(res => {
@@ -43,28 +117,26 @@ function client_sessions_build_session_list_file(){
             });
             root.innerHTML = '<h2>Active sessions</h2>';
             res.forEach(function (session) {
-                session_container = document.createElement("div");
-                session_container.className = "div-hoverable unhoverable"
-                session_name = document.createElement("h3");
-                session_manage = document.createElement("button");
-                session_delete = document.createElement("button");
-                session_name.innerText = session[2];
-                session_manage.innerText = "Manage";
-                session_delete.innerText = "Delete";
-                session_manage.onclick = function () { window.location.href=`/session/${session[0]}`; };
-                session_delete.onclick = function () { api_delete_existing_session(session[0]).then(client_sessions_build_session_list_file);};
-                session_delete.classList.add("btn-red") 
-                session_container.appendChild(session_name)
-                session_container.appendChild(session_manage)
-                session_container.appendChild(session_delete)
-                root.appendChild(session_container)
+                let session_container = document.createElement("div");
+                session_container.id = session[0];
+                session_container.className = "div-hoverable unhoverable";
+                session_container.onclick = (() => {_navigate_to_session(session[0])});
+                // title
+                _create_element(session_container, "h3", {innerText:session[2]});
+                // manage
+                _create_element(session_container, "button", {innerText:"Manage", click:(() => {_navigate_to_session(session[0])})});
+                // delete
+                _create_element(session_container, "button", {innerText:"Delete", click:function () { api_delete_existing_session(session[0]).then(webapp_build_session_list);}, className:"btn-red"});
+                root.appendChild(session_container);
             });
         });
 }
 
-function client_sessions_build_session_list_task(){
+async function client_sessions_build_session_list_task(){
     let root = document.getElementById("task-session-list");
-    _api_call("GET", "/api/task")
+    let relevant_session = await _api_call("GET", "/api/session").then(res => {let r = {};res.map((x) => (r[`${x[0]}`]= x[2])); return r});
+    console.log(relevant_session)
+    await _api_call("GET", "/api/task")
         .then(res => {
             console.log(res)
             res.sort(function (a,b) {
@@ -73,52 +145,23 @@ function client_sessions_build_session_list_task(){
             root.innerHTML = '<h2>Tasks</h2>';
             res.forEach(function (task) {
                 task_container = document.createElement("div");
+                task_container.id = task[0];
                 task_container.className = "div-hoverable unhoverable"
-                task_name = document.createElement("h3");
-                task_status = document.createElement("span");
-                task_uuid = document.createElement("h5");
-                task_delete = document.createElement("button");
-                task_resubmit = document.createElement("button");
-                task_view_result = document.createElement("button");
-                task_status.innerText = task[6];
-                task_uuid.innerText = task[5];
-                task_delete.innerText = "Delete";
-                task_resubmit.innerText = "Resubmit";
-                task_view_result.innerText = "View results";
-                task_delete.onclick = function () { _api_call("DELETE",`/api/task/${task[0]}`).then(client_sessions_build_session_list_task)};
-                task_resubmit.onclick = function () { _api_call("PUT",`/api/task/${task[0]}`, '{"status":"16"}').then(client_sessions_build_session_list_task)};
-                task_view_result.onclick = function () {window.location.href = `/task/${task[0]}`}
-                task_delete.classList.add("btn-red")
-                switch(task[4]) {
-                    case 2:
-                        task_status.className = "material-badge material-badge-info"
-                        break
-                    case 4:
-                        task_status.className = "material-badge material-badge-success"
-                        break
-                    case 8:
-                        task_status.className = "material-badge material-badge-error"
-                        break
-                    case 16:
-                        task_status.className = "material-badge material-badge-warning"
-                        break
-                    default:
-                        task_status.className = "material-badge material-badge-primary"
-                }
-                task_container.appendChild(task_status)
-                task_container.appendChild(task_name)
-                task_container.appendChild(task_uuid)
-                task_container.appendChild(task_delete)
-                task_container.appendChild(task_resubmit)
-                if (JSON.parse(task[3]).hasOwnProperty("result")) {
-                    task_name.innerText = JSON.parse(task[3])['result']['output-filename'];
-                } else {
-                    task_name.innerText = "[unnamed task]";
-                }
-                if (task[4] == 4) {
-                    task_container.append(task_view_result);
-                }
-                root.appendChild(task_container)
+
+                let task_name = "[unnamed task]";
+                if (JSON.parse(task[3]).hasOwnProperty("result")) {task_name = JSON.parse(task[3])['result']['output-filename'];}
+
+                _create_element(task_container, "h3", {innerText:task_name});
+                _create_badge(task_container, task[4], task[6], task[0]);
+                _create_element(task_container, "h5", {innerText:Date(task[5]).toString().split(" GMT")[0]});
+                // _create_element(task_container, "button", {id:`${task[0]}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${task[0]}`).then(client_sessions_build_session_list_task)}),className:"btn-red"});
+                // _create_element(task_container, "button", {id:`${task[0]}-r`,innerText:"Resubmit",click:(() => { _api_call("PUT",`/api/task/${task[0]}`, '{"status":"16"}').then(client_sessions_build_session_list_task)})});
+                // _create_element(task_container, "button", {id:`${task[0]}-v`,innerText:"View",click:(() => {window.location.href = `/task/${task[0]}`})})
+
+                root.appendChild(task_container);
+
+                // run update badge to refresh button visibility
+                _update_badge(task[4],task[6],task[0])
             });
         });
 }
@@ -211,65 +254,4 @@ function client_session_build_session_contents(uuid){
             });
         }
         );
-}
-
-function client_session_build_tasks(uuid){
-    let root = document.getElementById("session-list-tasks")
-    _api_call("GET", `/api/task/session/${uuid}`)
-    .then(res => {
-        console.log(res)
-        res.sort(function (a,b) {
-            return new Date(b[5]) - new Date(a[5]);
-        });
-        root.innerHTML = '';
-        res.forEach(function (task) {
-                task_container = document.createElement("div");
-                task_container.className = "div-hoverable unhoverable"
-                task_name = document.createElement("h3");
-                task_status = document.createElement("span");
-                task_uuid = document.createElement("h5");
-                task_delete = document.createElement("button");
-                task_resubmit = document.createElement("button");
-                task_view_result = document.createElement("button");
-                task_status.innerText = task[6];
-                task_uuid.innerText = task[5];
-                task_delete.innerText = "Delete";
-                task_resubmit.innerText = "Resubmit";
-                task_view_result.innerText = "View results";
-                task_delete.onclick = function () { _api_call("DELETE",`/api/task/${task[0]}`).then(() => {client_session_build_tasks(uuid); client_session_build_session_contents(uuid);})};
-                task_resubmit.onclick = function () { _api_call("PUT",`/api/task/${task[0]}`, '{"status":"16"}').then(() => {client_session_build_tasks(uuid)})};
-                task_view_result.onclick = function () {window.location.href = `/task/${task[0]}`}
-                task_delete.classList.add("btn-red")
-                switch(task[4]) {
-                    case 2:
-                        task_status.className = "material-badge material-badge-info"
-                        break
-                    case 4:
-                        task_status.className = "material-badge material-badge-success"
-                        break
-                    case 8:
-                        task_status.className = "material-badge material-badge-error"
-                        break
-                    case 16:
-                        task_status.className = "material-badge material-badge-warning"
-                        break
-                    default:
-                        task_status.className = "material-badge material-badge-primary"
-                }
-                task_container.appendChild(task_status)
-                task_container.appendChild(task_name)
-                task_container.appendChild(task_uuid)
-                task_container.appendChild(task_delete)
-                task_container.appendChild(task_resubmit)
-                if (JSON.parse(task[3]).hasOwnProperty("result")) {
-                    task_name.innerText = JSON.parse(task[3])['result']['output-filename'];
-                } else {
-                    task_name.innerText = "[unnamed task]";
-                }
-                if (task[4] == 4) {
-                    task_container.append(task_view_result);
-                }
-                root.appendChild(task_container)
-            });
-    })
 }

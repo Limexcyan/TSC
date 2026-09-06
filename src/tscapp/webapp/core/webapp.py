@@ -5,7 +5,7 @@ from flask import Flask, session
 from flask_socketio import SocketIO
 
 from flask_session import Session
-from tscapp.webapp.core.webapp_config import load_webapp_config
+from .webapp_config import load_webapp_config
 
 from ...common.cli import CliRunnerMixin
 from ...common.settings import ConfigBase, SettingsBase
@@ -30,7 +30,7 @@ class WebappCli(CliRunnerMixin, SettingsBase):
 def webapp(config:WebappConfig):
     app, sio = webapp_init(config=config)
     wappconf = load_webapp_config(config.config_file.resolve())
-    odb = orchestrator_init(load_orchestrator_config(config.config_file.resolve()), wappconf)
+    odb = orchestrator_init(load_orchestrator_config(config.config_file.resolve()), wappconf, sio)
 
     from .webapp_logic import register_urls
     register_urls(app=app, sio=sio, odb=odb, session=session, appdata_path=wappconf['file_path'])
