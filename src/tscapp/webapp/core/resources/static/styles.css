@@ -11,6 +11,7 @@
   --surface-alt: #f1eef8;
   --text: #1d1b20;
   --muted: #6f6b75;
+  --muted-alt: #39373b;
   --border: #e5e0ea;
 
   --radius-sm: 8px;
@@ -180,6 +181,12 @@ button {
     box-shadow var(--transition),
     transform var(--transition);
 }
+
+.btn-short-big:disabled {
+  background: #1d1b20;
+  color: var(--muted-alt);
+}
+
 
 .button:hover {
   transform: translateY(-2px);
