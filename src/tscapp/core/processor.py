@@ -12,6 +12,7 @@ from .processor_clustering import (
 )
 from .processor_consolidator import (
     consolidate_after_loaded,
+    consolidate_after_featurize
 )
 from .processor_featurizer import (
     FeaturizerConfig,
@@ -40,15 +41,20 @@ def processor(config: ProcessorConfig):
     loaded = []
     for file in config.input_files:
         chembl_data = load_stage(file, config.loader_config)
-        loaded.append(chembl_data)
+        featurized = featurizer_morgan_fingerprint(chembl_data, config.featurizer_config)
+        loaded.append(consolidate_after_featurize(chembl_data,featurized))
     consolidated = consolidate_after_loaded(loaded)
-    featurized = featurizer_morgan_fingerprint(consolidated, config.featurizer_config)
+    #for file in config.input_files:
+    #    chembl_data = load_stage(file, config.loader_config)
+    #    loaded.append(chembl_data)
+    #consolidated = consolidate_after_loaded(loaded)
+    #featurized = featurizer_morgan_fingerprint(consolidated, config.featurizer_config)
+    featurized = consolidated.select(r"^mfp.*$")
     clustered, seed = clustering(featurized, config.clustering_config)
     resulting = consolidated.with_columns(
         (clustering_get_centroids(featurized, clustered)).alias("centroid"),
         (clustering_get_distances(featurized, clustered)).alias("distance"),
-
-    )
+    ).drop("^mfp.*$")
     resulting.write_csv(config.output_file)
     if config.save_clustering:
         logger.info("saving clustering")

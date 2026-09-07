@@ -60,6 +60,6 @@ def load_stage(
         case LoaderStage.FEATURIZED:
             raise NotImplementedError
         case LoaderStage.CLUSTERED:
-            raise NotImplementedError
+            return load_csv(file)
         case _:
             raise ValueError(f"Loader stage {config.load_stage} does not exist")

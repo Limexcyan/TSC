@@ -1,5 +1,8 @@
+from copy import deepcopy
+from copy import copy
 from json import dumps
 from ...core.processor import ProcessorConfig, processor
+from ...core.reprocessor import ReProcessorConfig, reprocessor
 from tscapp.common.names import random_sentence
 import logging
 from enum import IntFlag, auto
@@ -60,21 +63,49 @@ def register_task(f):
 def webapp_processor(payload, config=None):
     if not config:
         raise RuntimeError("wanted kwarg config")
+    config_new = deepcopy(config)
     path_prefix = payload.appdata_path / payload.task_client / payload.task_session
-    files = config["input_files"]
+    files = config_new["input_files"]
     for i, file in enumerate(files):
         files[i] = str(path_prefix / file)
-    config["input_files"] = files
+    config_new["input_files"] = files
     completed_flag = payload.full_request.get("completed_flag", None)
     output_file_name = payload.full_request["name"]
     output_file = payload.file_save_path / (output_file_name + ".csv")
     clustered = payload.file_save_path / (output_file_name + ".bin.clustered")
     preliminary = payload.file_save_path / (output_file_name + "_preliminary.html")
-    config["output_file"] = str(output_file)
-    config = ProcessorConfig.model_validate_json(dumps(config))
-    response = processor(config)
+    config_new["output_file"] = str(output_file)
+    config_new = ProcessorConfig.model_validate_json(dumps(config_new))
+    response = processor(config_new)
     if not completed_flag:
         payload.odb.table_files_create(str(output_file.relative_to(payload.appdata_path)), "csv", payload.task_client, payload.task_session)
         payload.odb.table_files_create(str(clustered.relative_to(payload.appdata_path)), "clu", payload.task_client, payload.task_session)
         payload.odb.table_files_create(str(preliminary.relative_to(payload.appdata_path)), "ana", payload.task_client, payload.task_session)
     return {"completed_flag":True,"kwargs":{"config":{"clustering_config":{"seed":response}}}}
+
+@register_task
+def webapp_reprocessor(payload, config=None):
+    if not config:
+        raise RuntimeError("wanted kwarg config")
+    config_new = deepcopy(config)
+    path_prefix = payload.appdata_path / payload.task_client / payload.task_session
+    files = config_new["input_files"]
+    for i, file in enumerate(files):
+        files[i] = str(path_prefix / file)
+    config_new["input_files"] = files
+    print(payload.file_save_path)
+    print(config["resource_path"])
+    config_new["resource_path"] = str(payload.file_save_path.parent / config["resource_path"])
+    completed_flag = payload.full_request.get("completed_flag", None)
+    output_file_name = payload.full_request["name"]
+    output_file = payload.file_save_path / (output_file_name + ".csv")
+    clustered = payload.file_save_path / (output_file_name + ".bin.clustered")
+    preliminary = payload.file_save_path / (output_file_name + "_preliminary.html")
+    config_new["output_file"] = str(output_file)
+    config_new = ReProcessorConfig.model_validate_json(dumps(config_new))
+    reprocessor(config_new)
+    if not completed_flag:
+        payload.odb.table_files_create(str(output_file.relative_to(payload.appdata_path)), "csv", payload.task_client, payload.task_session)
+        payload.odb.table_files_create(str(clustered.relative_to(payload.appdata_path)), "clu", payload.task_client, payload.task_session)
+        payload.odb.table_files_create(str(preliminary.relative_to(payload.appdata_path)), "ana", payload.task_client, payload.task_session)
+    return {"completed_flag":True}

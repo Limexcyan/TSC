@@ -204,7 +204,6 @@ function _client_session_build_sdf_files(uuid, file) {
     _create_element(file_container, "h3", {innerText:id})
     // delete
     _create_element(file_container, "button", {innerText:"Delete",click:(() => {_api_call("DELETE", `/api/file/${id}`, `{"session":"${uuid}"}`).then(() => {client_session_build_session_contents(uuid)})}),className:"btn-red"})
-
 }
 
 function _client_session_build_csv_files(uuid, file) {
@@ -224,19 +223,41 @@ function _client_session_build_csv_files(uuid, file) {
 
 }
 
+
+function _client_session_build_sdf_files(root_id, uuid, file, ignore_interact=false, selected=0) {
+    let root = document.getElementById(root_id)
+    let id = file[0].replaceAll("\\","/").split("/",3).at(-1);
+
+    let file_container = _create_element(root, "div", {id:id,dataset:{selected:selected},className:"div-hoverable",click:(() => _file_container_select(id))})
+    _file_container_select(id);
+    _file_container_select(id);
+
+    // name
+    _create_element(file_container, "h3", {innerText:id})
+    // delete
+    if (!ignore_interact)
+    _create_element(file_container, "button", {innerText:"Delete",click:(() => {_api_call("DELETE", `/api/file/${id}`, `{"session":"${uuid}"}`).then(() => {client_session_build_session_contents(uuid)})}),className:"btn-red"})
+}
+
 function send_files_task_clustering(uuid, filelist, mfp_r, mfp_c, c_c, c_s=null){
     kwargs = `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}, "featurizer_config":{"mfp_radius":${mfp_r},"mfp_size":${mfp_c}},"clustering_config":{"cluster_count":${c_c}}}}}}`;
     if (c_s !== null) { kwargs = `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}, "featurizer_config":{"mfp_radius":${mfp_r},"mfp_size":${mfp_c}},"clustering_config":{"cluster_count":${c_c},"seed":${c_s}}}}}}`}
     return _api_call("POST", `/api/task`, kwargs)
 }
 
-/*
-function resend_files_task_clustering(uuid, mfp_r, mfp_c, c_c, c_s=null){
-    kwargs = `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}, "featurizer_config":{"mfp_radius":${mfp_r},"mfp_size":${mfp_c}},"clustering_config":{"cluster_count":${c_c}}}}}}`;
-    if (c_s !== null) { kwargs = `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}, "featurizer_config":{"mfp_radius":${mfp_r},"mfp_size":${mfp_c}},"clustering_config":{"cluster_count":${c_c},"seed":${c_s}}}}}}`}
+
+function resend_files_task_clustering(uuid, filelist, old_data, task_id){
+    let filelist_array = Array.from(filelist);
+    if (filelist.length < 2) {
+        input_files = `"input_files":["${filelist_array}"]`
+    } else {
+        input_files = `"input_files":${filelist_array}`
+    }
+    let old_config = old_data.kwargs.config;
+    kwargs = `{"session":"${uuid}","data":{"func":"webapp_reprocessor","kwargs":{"config": {${input_files}, "resource_path":"${task_id}", "featurizer_config":{"mfp_radius":${old_config.featurizer_config.mfp_radius},"mfp_size":${old_config.featurizer_config.mfp_size}},"clustering_config":{"cluster_count":${old_config.clustering_config.cluster_count},"seed":${old_config.clustering_config.seed}}}}}}`;
     return _api_call("POST", `/api/task`, kwargs)
 }
-*/
+
 
 
 function client_session_build_session_contents(uuid){
@@ -249,7 +270,7 @@ function client_session_build_session_contents(uuid){
             root.innerHTML = '';
             res.forEach(function (file) {
                 if (file[1] == "sdf") {
-                    _client_session_build_sdf_files(uuid, file)
+                    _client_session_build_sdf_files("session-list-files-sdf", uuid, file)
                 } else if (file[1] == "csv") {
                     _client_session_build_csv_files(uuid, file)
                 }
@@ -257,6 +278,30 @@ function client_session_build_session_contents(uuid){
         }
         );
 }
+
+function client_task_build_session_sdf_files(uuid, files){
+    _api_call("GET", `/api/session/file/${uuid}`)
+        .then(res => {
+            res.sort();
+            root = document.getElementById("task-list-files-sdf");
+            root.innerHTML = '';
+            res.forEach(function (file) {
+                if (file[1] == "sdf") {
+                    let id = file[0].replaceAll("\\","/").split("/",3).at(-1);
+                    console.log(id, files, files.includes(id))
+                    if (files.includes(id)){
+                        //_client_session_build_sdf_files("task-list-files-sdf", uuid, file, true, 1)
+                    } else {
+                        _client_session_build_sdf_files("task-list-files-sdf", uuid, file, true, 0)
+                    }
+                    
+                }
+            });
+        }
+        );
+}
+
+
 
 function _register_header_editable(header, id){
 
@@ -316,8 +361,9 @@ function _register_header_editable(header, id){
 
 function load_task_data(uuid){
     let root = document.getElementById("task-data");
-    _api_call("GET", `/api/task/${uuid}`)
+    return _api_call("GET", `/api/task/${uuid}`)
         .then((res) => {
+            let files = res.data.kwargs.config.input_files
             root.innerText = JSON.stringify(res.data);
             document.getElementById("mfp-size").value = res.data.kwargs.config.featurizer_config.mfp_size;
             document.getElementById("mfp-radius").value = res.data.kwargs.config.featurizer_config.mfp_radius;
@@ -326,5 +372,6 @@ function load_task_data(uuid){
             
 			document.getElementById("mfp-size-value").textContent = res.data.kwargs.config.featurizer_config.mfp_size;
 			document.getElementById("mfp-radius-value").textContent = res.data.kwargs.config.featurizer_config.mfp_radius;
+            return files;
         })
 }

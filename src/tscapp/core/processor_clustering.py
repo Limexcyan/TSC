@@ -29,7 +29,7 @@ def clustering_get_centroids(data: pl.DataFrame, buffer: ClusteringBuffer) -> pl
 def clustering(data: pl.DataFrame, config: ClusteringConfig) -> ClusteringBuffer:
     match config.use_clustering:
         case ClusteringBuffers.BISECTING_K_MEANS:
-            return clustering_bisecting_k_means(data, config)
+            return clustering_bisecting_k_means(data.select(r"^mfp.*$"), config)
         case _:
             raise ValueError(f"Clustering buffer {config.use_clustering} does not exist")
 

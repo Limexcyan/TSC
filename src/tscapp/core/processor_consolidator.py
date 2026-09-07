@@ -10,4 +10,4 @@ def consolidate_after_featurize(featurizer_input: pl.DataFrame, featurizer_outpu
 
 def consolidate_after_loaded(all_outputs: list[pl.DataFrame]) -> pl.DataFrame:
     logger.info("v-stacking %d consolidation outputs", len(all_outputs))
-    return pl.concat(all_outputs, how="vertical")
+    return pl.concat(all_outputs, how="vertical_relaxed")

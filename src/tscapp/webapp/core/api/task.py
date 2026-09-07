@@ -30,10 +30,10 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
         request_body = request.get_json()
         session_uuid = request_body.get("session", None)
         if not session_uuid:
-            return make_response(('no session',400))
+            return make_response(({"reason":"no session"},400))
         task_data = request_body.get("data", None)
         if not task_data:
-            return make_response(('no data', 400))
+            return make_response(({"reasoon":"no data"}, 400))
         task_uuid = uuid4().hex
         metadata = odb.table_tasks_create(
             task_uuid,
@@ -73,9 +73,8 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     @with_session(session=session)
     def api_task_task_get(task_id):
         session_client = session["uuid"]
-        data = odb.table_tasks_retrieve_data(task_id, session_client)
-        status = odb.table_tasks_retrieve_status(task_id, session_client)
-        return make_response(({"status":status,"data":data},200))
+        task = odb.table_tasks_retrieve_task(task_id, session_client)
+        return make_response(({"status":task[4],"data":loads(task[3]),"session":task[2]},200))
     
     @app.route("/api/task/<task_id>", methods=["PUT"])
     @with_session(session=session)

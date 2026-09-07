@@ -24,8 +24,9 @@
             <p class="p-warn">Resubmitting this task will irreversibly overwrite the analysis present here. Save the graphs and/or the .csv file if you wish to keep them</p>
         </div>
         <div class="container">
-        <button id="resubmit-task">Resubmit task</button>
+        <button id="resubmit-task" class="open-popup" data-popup-target="clustering-overlay">Resubmit task</button>
         <button id="more-analysis">Analyze further</button>
+        <button id="resubmit-task" class="open-popup" data-popup-target="reclustering-overlay">Add files to this clustering</button>
         </div>
         <div class="container">
             {% autoescape false %}
@@ -33,6 +34,8 @@
             {% endautoescape %}
         </div>
     </section>
+
+    <!-- CLUSTERIN OVERLAY -->
     <div class="popup-overlay" id="clustering-overlay" role="presentation">
     <section class="popup-window" role="dialog">
       <div class="popup-header">
@@ -118,57 +121,131 @@
       </div>
     </section>
     </div>
+
+    <!-- RECLUSTERING OVERLAY -->
+    <div class="popup-overlay" id="reclustering-overlay" role="presentation">
+    <section class="popup-window" role="dialog">
+      <div class="popup-header">
+        <h2 class="popup-title">Clustering parameters</h2>
+        <button class="popup-close" id="close-reclustering-overlay" type="button">&times;</button>
+      </div>
+      <div class="popup-content">
+        <p>This will create a new task in the task owner's session.</p>
+        <h4>Run this clustering model of following files:</h4>
+        <div id="task-list-files-sdf"></div>
+      </div>
+      <div class="popup-actions">
+        <button class="popup-cancel" id="cancel-reclustering-overlay" type="button">
+          Cancel
+        </button>
+        <button class="btn-short-big" id="submit-task" type="button" disabled="true">
+          Run
+        </button>
+      </div>
+    </section>
+    </div>
+
+    
     <script>
-    const openPopup = document.getElementById("resubmit-task");
-    const closePopup = document.getElementById("close-clustering-overlay");
-    const cancelPopup = document.getElementById("cancel-clustering-overlay");
-    const confirmPopup = document.getElementById("submit-clustering-overlay");
-    const popupOverlay = document.getElementById("clustering-overlay");
+    let lastFocusedElement = null;
 
-    let lastFocusedElement;
+    function openPopup(popup) {
+      lastFocusedElement = document.activeElement;
 
-    function showPopup() {
-        lastFocusedElement = document.activeElement;
-        popupOverlay.classList.add("is-open");
-        document.body.style.overflow = "hidden";
-        closePopup.focus();
+      popup.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+
+      popup.querySelector(".popup-close")?.focus();
     }
 
-    function hidePopup() {
-        popupOverlay.classList.remove("is-open");
+    function closePopup(popup) {
+      popup.classList.remove("is-open");
+
+      const anyPopupOpen = document.querySelector(
+        ".popup-overlay.is-open"
+      );
+
+      if (!anyPopupOpen) {
         document.body.style.overflow = "";
-        lastFocusedElement?.focus();
+      }
+
+      lastFocusedElement?.focus();
     }
 
-    openPopup.addEventListener("click", showPopup);
-    closePopup.addEventListener("click", hidePopup);
-    cancelPopup.addEventListener("click", hidePopup);
+    // Open the selected popup
+    document.querySelectorAll("[data-popup-target]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const popupId = button.dataset.popupTarget;
+        const popup = document.getElementById(popupId);
+
+        if (popup) {
+          openPopup(popup);
+        }
+      });
+    });
+
+    // Close buttons
+    document.querySelectorAll(".popup-close, .popup-cancel").forEach((button) => {
+      button.addEventListener("click", () => {
+        const popup = button.closest(".popup-overlay");
+        closePopup(popup);
+      });
+    });
+
+    // Close when clicking the backdrop
+    document.querySelectorAll(".popup-overlay").forEach((popup) => {
+      popup.addEventListener("click", (event) => {
+        if (event.target === popup) {
+          closePopup(popup);
+        }
+      });
+    });
+
+    // Close the active popup with Escape
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+
+      const openPopupElement = document.querySelector(
+        ".popup-overlay.is-open"
+      );
+
+      if (openPopupElement) {
+        closePopup(openPopupElement);
+      }
+    });
+    </script>
+    <script>
+    const confirmPopup = document.getElementById("submit-clustering-overlay");
+    const submitRecluster = document.getElementById("submit-task");
 
     confirmPopup.addEventListener("click", () => {
+        c_s = null;
+        if (document.getElementById('clu-seed').value !== "") {c_s = document.getElementById('clu-seed').value}
+        _api_call("PUT","/api/task/{{ task_id }}", '{"status":"16"}').then(() => window.location.href = "/session")
+    });
+    submitRecluster.addEventListener("click", () => {
         let gathered = Array.from(document.querySelectorAll("div[data-selected='1']"));
         let files = gathered.map((x) => x.id);
-        console.log(files);
         if (files.length >= 1) {
-            c_s = null;
-            if (document.getElementById('clu-seed').value !== "") {c_s = document.getElementById('clu-seed').value}
-            _api_call("PUT","/api/task/{{ task_id }}", '{"status":"16"}').then(() => window.location.href = "/session")
+            clustering_old_data = JSON.parse(document.getElementById("task-data").innerText)
+            _api_call("GET", "/api/task/{{ task_id }}").then(
+                (res) => {
+                    resend_files_task_clustering(res.session, files, clustering_old_data, "{{ task_id }}").then(
+                        () => window.location.href = "/session"
+                    )
+                }
+            )
         }
-        hidePopup();
-    });
-
-    // Close when clicking outside the popup
-    popupOverlay.addEventListener("click", (event) => {
-        if (event.target === popupOverlay) {hidePopup();}
-    });
-
-    // Close with Escape
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && popupOverlay.classList.contains("is-open")) {hidePopup();}
     });
     </script>
     
     <script>
         load_task_data("{{ task_id }}")
+        .then((files) => {
+            _api_call("GET", "/api/task/{{ task_id }}").then(
+                (res) => {client_task_build_session_sdf_files(res.session, files)}
+            )
+        })
     </script>
 </body>
 </html>

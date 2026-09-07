@@ -15,13 +15,13 @@ def assert_session(session: Session, create=False):
             session_uuid = uuid4().hex
             session["uuid"] = session_uuid
             logger.info("Created new session %s", session_uuid)
-            return make_response(("created", 201))
+            return make_response(({"result":"created"}, 201))
         logger.error("User does not have a session yet")
-        return make_response(("no session", 400))
+        return make_response(({"reason":"no session"}, 400))
     if create:
         logger.info("User already has a session")
-        return make_response(("satisfied", 100))
-    return make_response(("ok", 200))
+        return make_response(({"reason":"satisfied"}, 100))
+    return make_response(({"result":"ok"}, 200))
 
 def with_session(session: Session, create=False):
     def with_session_wrapper(f):

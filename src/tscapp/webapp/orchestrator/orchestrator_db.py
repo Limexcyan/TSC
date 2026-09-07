@@ -175,6 +175,14 @@ class OrchestratorDB:
         return {"uuid":uuid, "client":client, "session":session, "data":loads(data_json)}
     
     @under_lock
+    def table_tasks_retrieve_task(self, uuid: str, client: str):
+        self.db_cur.execute("SELECT * FROM tasks WHERE uuid = ? AND client = ?", (uuid,client))
+        res = self.db_cur.fetchone()
+        if res:
+            return res
+        return None
+
+    @under_lock
     def table_tasks_retrieve_data(self, uuid: str, client: str):
         self.db_cur.execute("SELECT data FROM tasks WHERE uuid = ? AND client = ?", (uuid,client))
         res = self.db_cur.fetchone()
