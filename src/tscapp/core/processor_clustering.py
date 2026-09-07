@@ -1,3 +1,5 @@
+from random import getrandbits
+from random import random
 import logging
 from enum import Enum
 
@@ -13,6 +15,7 @@ class ClusteringBuffers(Enum):
 
 class ClusteringConfig(ConfigBase):
     cluster_count: int = 64
+    seed: int | None = None
     use_clustering: ClusteringBuffers = ClusteringBuffers.BISECTING_K_MEANS
 
 type ClusteringBuffer = BisectingKMeans
@@ -30,8 +33,13 @@ def clustering(data: pl.DataFrame, config: ClusteringConfig) -> ClusteringBuffer
         case _:
             raise ValueError(f"Clustering buffer {config.use_clustering} does not exist")
 
-def clustering_bisecting_k_means(data: pl.DataFrame, config: ClusteringConfig) -> BisectingKMeans:
+def clustering_bisecting_k_means(data: pl.DataFrame, config: ClusteringConfig) -> tuple[BisectingKMeans, int]:
     logger.info("clustering with %d clusters on dataset with %d rows", config.cluster_count, data.shape[0])
-    clustering_buffer = BisectingKMeans(n_clusters=config.cluster_count)
+    if config.seed:
+        seed = config.seed
+        clustering_buffer = BisectingKMeans(n_clusters=config.cluster_count, random_state=config.seed)
+    else:
+        seed = getrandbits(32)
+        clustering_buffer = BisectingKMeans(n_clusters=config.cluster_count, random_state=seed)
     clustering_buffer.fit(data)
-    return clustering_buffer
+    return (clustering_buffer, seed)

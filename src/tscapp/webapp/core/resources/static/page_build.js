@@ -43,6 +43,9 @@ function _create_badge(parentNode, status, statusname, id){
         case 16:
             task_status = "material-badge material-badge-warning";
             break;
+        case 64:
+            task_status = "material-badge material-badge-crashed";
+            break;
         default:
             task_status = "material-badge";
     }
@@ -57,32 +60,35 @@ function _update_badge(status, statusname, id){
     btn_d = document.getElementById(`${id}-d`)
     btn_r = document.getElementById(`${id}-r`)
     btn_v = document.getElementById(`${id}-v`)
+    btn_d?.remove()
+    btn_r?.remove()
+    btn_v?.remove()
     let task_status = "material-badge material-badge-info";
     switch(status) {
         case 2: // running
             task_status = "material-badge material-badge-info";
-            if (btn_d !== null) { btn_d.remove() }
-            if (btn_r !== null) { btn_d.remove() }
-            if (btn_v !== null) { btn_d.remove() }
             break
         case 4: // success
             task_status = "material-badge material-badge-success";
-            _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(client_sessions_build_session_list_task)}),className:"btn-red"});
-            _create_element(parent, "button", {id:`${id}-r`,innerText:"Resubmit",click:(() => { _api_call("PUT",`/api/task/${id}`, '{"status":"16"}').then(client_sessions_build_session_list_task)})});
+            _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(() => {client_sessions_build_session_list_task()})}),className:"btn-red"});
+            _create_element(parent, "button", {id:`${id}-r`,innerText:"Resubmit",click:(() => { _api_call("PUT",`/api/task/${id}`, '{"status":"16"}').then(() => {client_sessions_build_session_list_task()})})});
             _create_element(parent, "button", {id:`${id}-v`,innerText:"View",click:(() => {window.location.href = `/task/${id}`})});
             break
         case 8: // failure
             task_status = "material-badge material-badge-error";
-            _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(client_sessions_build_session_list_task)}),className:"btn-red"});
-            _create_element(parent, "button", {id:`${id}-r`,innerText:"Resubmit",click:(() => { _api_call("PUT",`/api/task/${id}`, '{"status":"16"}').then(client_sessions_build_session_list_task)})});
+            _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(() => {client_sessions_build_session_list_task()})}),className:"btn-red"});
+            _create_element(parent, "button", {id:`${id}-r`,innerText:"Resubmit",click:(() => { _api_call("PUT",`/api/task/${id}`, '{"status":"16"}').then(() => {client_sessions_build_session_list_task()})})});
             _create_element(parent, "button", {id:`${id}-v`,innerText:"View",click:(() => {window.location.href = `/task/${id}`})});
             break
         case 16: // enqueued
             task_status = "material-badge material-badge-warning";
-            _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(client_sessions_build_session_list_task)}),className:"btn-red"});
-            if (btn_r !== null) { btn_d.remove() }
-            if (btn_v !== null) { btn_d.remove() }
+            _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(() => {client_sessions_build_session_list_task()})}),className:"btn-red"});
             break
+        case 64: // crashed
+            task_status = "material-badge material-badge-crashed";
+            _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(() => {client_sessions_build_session_list_task()})}),className:"btn-red"});
+            _create_element(parent, "button", {id:`${id}-r`,innerText:"Resubmit",click:(() => { _api_call("PUT",`/api/task/${id}`, '{"status":"16"}').then(() => {client_sessions_build_session_list_task()})})});
+            break;
         default:
             task_status = "material-badge";
     }
@@ -121,7 +127,7 @@ function webapp_build_session_list(){
             });
             root.innerHTML = '<h2>Active sessions</h2><h5>You can rename them by clicking on their name.</h5>';
             res.forEach(function (session) {
-                let session_container = _create_element(root, "div", {id:session[0],className:"div-hoverable unhoverable",click:(() => {_navigate_to_session(session[0])})})
+                let session_container = _create_element(root, "div", {id:session[0],className:"div-hoverable unhoverable"})
 
                 // title
                 title = _create_element(session_container, "h3", {innerText:session[2],className:"editable-header"});
@@ -129,7 +135,7 @@ function webapp_build_session_list(){
                 // manage
                 _create_element(session_container, "button", {innerText:"Manage", click:(() => {_navigate_to_session(session[0])})});
                 // delete
-                _create_element(session_container, "button", {innerText:"Delete", click:function () { api_delete_existing_session(session[0]).then(webapp_build_session_list);}, className:"btn-red"});
+                _create_element(session_container, "button", {innerText:"Delete", click:(() => { api_delete_existing_session(session[0]).then(() => {webapp_build_session_list()});}), className:"btn-red"});
             });
         });
 }
@@ -151,7 +157,7 @@ async function client_sessions_build_session_list_task(uuid=null){
                 let task_container = _create_element(root, "div", {id:task[0],className:"div-hoverable unhoverable"})
 
                 let task_name = "[unnamed task]";
-                if (JSON.parse(task[3]).hasOwnProperty("result")) {task_name = JSON.parse(task[3])['result']['output-filename'];}
+                if (JSON.parse(task[3]).hasOwnProperty("name")) {task_name = JSON.parse(task[3])['name'];}
 
                 // name
                 _create_element(task_container, "h3", {innerText:task_name});
@@ -218,9 +224,19 @@ function _client_session_build_csv_files(uuid, file) {
 
 }
 
-function send_files_task_clustering(uuid, filelist){
-    return _api_call("POST", `/api/task`, `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}}}}}`)
+function send_files_task_clustering(uuid, filelist, mfp_r, mfp_c, c_c, c_s=null){
+    kwargs = `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}, "featurizer_config":{"mfp_radius":${mfp_r},"mfp_size":${mfp_c}},"clustering_config":{"cluster_count":${c_c}}}}}}`;
+    if (c_s !== null) { kwargs = `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}, "featurizer_config":{"mfp_radius":${mfp_r},"mfp_size":${mfp_c}},"clustering_config":{"cluster_count":${c_c},"seed":${c_s}}}}}}`}
+    return _api_call("POST", `/api/task`, kwargs)
 }
+
+/*
+function resend_files_task_clustering(uuid, mfp_r, mfp_c, c_c, c_s=null){
+    kwargs = `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}, "featurizer_config":{"mfp_radius":${mfp_r},"mfp_size":${mfp_c}},"clustering_config":{"cluster_count":${c_c}}}}}}`;
+    if (c_s !== null) { kwargs = `{"session":"${uuid}","data":{"func":"webapp_processor","kwargs":{"config": {"input_files":${filelist}, "featurizer_config":{"mfp_radius":${mfp_r},"mfp_size":${mfp_c}},"clustering_config":{"cluster_count":${c_c},"seed":${c_s}}}}}}`}
+    return _api_call("POST", `/api/task`, kwargs)
+}
+*/
 
 
 function client_session_build_session_contents(uuid){
@@ -296,4 +312,19 @@ function _register_header_editable(header, id){
         header.addEventListener("header-submit", (event) => {
             _api_call("PUT", `/api/session/${event.detail.id}`, `{"name":"${event.detail.value}"}`)
     });
+}
+
+function load_task_data(uuid){
+    let root = document.getElementById("task-data");
+    _api_call("GET", `/api/task/${uuid}`)
+        .then((res) => {
+            root.innerText = JSON.stringify(res.data);
+            document.getElementById("mfp-size").value = res.data.kwargs.config.featurizer_config.mfp_size;
+            document.getElementById("mfp-radius").value = res.data.kwargs.config.featurizer_config.mfp_radius;
+            document.getElementById("clu-count").value = res.data.kwargs.config.clustering_config.cluster_count;
+            document.getElementById("clu-seed").value = res.data.kwargs.config.clustering_config.seed;
+            
+			document.getElementById("mfp-size-value").textContent = res.data.kwargs.config.featurizer_config.mfp_size;
+			document.getElementById("mfp-radius-value").textContent = res.data.kwargs.config.featurizer_config.mfp_radius;
+        })
 }

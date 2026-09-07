@@ -187,7 +187,7 @@ class OrchestratorDB:
         self.db_cur.execute("SELECT status FROM tasks WHERE uuid = ? AND client = ?", (uuid,client))
         res = self.db_cur.fetchone()
         if res:
-            return loads(res[0])
+            return res[0]
         return None
 
     @under_lock

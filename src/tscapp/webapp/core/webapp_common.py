@@ -1,3 +1,4 @@
+from collections.abc import Mapping
 import logging
 from functools import wraps
 from uuid import uuid4
@@ -32,3 +33,11 @@ def with_session(session: Session, create=False):
             return f(*args, **kwargs)
         return _f
     return with_session_wrapper
+
+def merge_dicts(o, n):
+    for k,v in n.items():
+        if isinstance(v, Mapping):
+            o[k] = merge_dicts(o.get(k, {}), v)
+        else:
+            o[k] = v
+    return o

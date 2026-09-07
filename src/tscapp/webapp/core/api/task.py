@@ -1,3 +1,5 @@
+from tscapp.webapp.core.webapp_common import merge_dicts
+from collections.abc import Mapping
 import logging
 import os
 import shutil
@@ -71,7 +73,7 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     @with_session(session=session)
     def api_task_task_get(task_id):
         session_client = session["uuid"]
-        data = loads(odb.table_tasks_retrieve_data(task_id, session_client))
+        data = odb.table_tasks_retrieve_data(task_id, session_client)
         status = odb.table_tasks_retrieve_status(task_id, session_client)
         return make_response(({"status":status,"data":data},200))
     
@@ -82,8 +84,18 @@ def api_task_init(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
         request_form = request.get_json()
         updated_status = request_form.get("status", None)
         if not updated_status:
-            return make_response(('no update', 400))
+            return make_response(('{"reason":"no update"}', 400))
         odb.table_tasks_update_status(task_id, session_client, status_code_to_status(int(updated_status)))
+        updated_data = request_form.get("data", None)
+        if updated_data:
+            try:
+                data = loads(updated_data)
+            except Exception:
+                return make_response(('{"reason":"malformed data"}', 400))
+            else:
+                old_data = loads(odb.table_tasks_retrieve_data(task_id, session_client))
+                new_data = merge_dicts(old_data, data)
+                odb.table_tasks_update_data_absolute(task_id, dumps(new_data))
         return make_response(('{"status":"updated"}', 200))
     
     @app.route("/api/task/<task_id>", methods=["DELETE"])

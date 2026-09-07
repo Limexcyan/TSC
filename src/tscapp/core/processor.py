@@ -43,7 +43,7 @@ def processor(config: ProcessorConfig):
         loaded.append(chembl_data)
     consolidated = consolidate_after_loaded(loaded)
     featurized = featurizer_morgan_fingerprint(consolidated, config.featurizer_config)
-    clustered = clustering(featurized, config.clustering_config)
+    clustered, seed = clustering(featurized, config.clustering_config)
     resulting = consolidated.with_columns(
         (clustering_get_centroids(featurized, clustered)).alias("centroid"),
         (clustering_get_distances(featurized, clustered)).alias("distance"),
@@ -58,6 +58,7 @@ def processor(config: ProcessorConfig):
     
     logger.info("running analysys...")
     analyze(config=AnalyzeConfig(output_dir=config.output_file.parent,input_csv=config.output_file))
+    return seed
 
 if __name__ == "__main__":
     ProcessorCli.run()

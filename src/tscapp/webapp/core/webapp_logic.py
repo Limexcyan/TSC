@@ -5,7 +5,7 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO
 
 from flask_session import Session
-from tscapp.webapp.core.webapp_common import with_session
+from .webapp_common import with_session
 
 from ..orchestrator.orchestrator_db import OrchestratorDB
 from .api.file import api_file_init
