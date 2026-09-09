@@ -71,7 +71,6 @@ function _update_badge(status, statusname, id){
         case 4: // success
             task_status = "material-badge material-badge-success";
             _create_element(parent, "button", {id:`${id}-d`,innerText:"Delete",click:(() => { _api_call("DELETE",`/api/task/${id}`).then(() => {client_sessions_build_session_list_task()})}),className:"btn-red"});
-            _create_element(parent, "button", {id:`${id}-r`,innerText:"Resubmit",click:(() => { _api_call("PUT",`/api/task/${id}`, '{"status":"16"}').then(() => {client_sessions_build_session_list_task()})})});
             _create_element(parent, "button", {id:`${id}-v`,innerText:"View",click:(() => {window.location.href = `/task/${id}`})});
             break
         case 8: // failure
@@ -223,7 +222,6 @@ function _client_session_build_csv_files(uuid, file) {
 
 }
 
-
 function _client_session_build_sdf_files(root_id, uuid, file, ignore_interact=false, selected=0) {
     let root = document.getElementById(root_id)
     let id = file[0].replaceAll("\\","/").split("/",3).at(-1);
@@ -245,7 +243,6 @@ function send_files_task_clustering(uuid, filelist, mfp_r, mfp_c, c_c, c_s=null)
     return _api_call("POST", `/api/task`, kwargs)
 }
 
-
 function resend_files_task_clustering(uuid, filelist, old_data, task_id){
     let filelist_array = Array.from(filelist);
     if (filelist.length < 2) {
@@ -258,7 +255,10 @@ function resend_files_task_clustering(uuid, filelist, old_data, task_id){
     return _api_call("POST", `/api/task`, kwargs)
 }
 
-
+function send_for_more_analysis(uuid, source, name){
+    kwargs = `{"session":"${uuid}","data":{"name":"Analyze ${name}","func":"webapp_analyze","source":"${source}","kwargs":{"config": {"analyze_mode":["mcs"]}}}}`
+    return _api_call("POST", `/api/task`, kwargs)
+}
 
 function client_session_build_session_contents(uuid){
     _api_call("GET", `/api/session/file/${uuid}`)
@@ -300,8 +300,6 @@ function client_task_build_session_sdf_files(uuid, files){
         }
         );
 }
-
-
 
 function _register_header_editable(header, id){
 

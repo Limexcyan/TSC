@@ -3,6 +3,7 @@ from copy import copy
 from json import dumps
 from ...core.processor import ProcessorConfig, processor
 from ...core.reprocessor import ReProcessorConfig, reprocessor
+from ...core.results.analyze import AnalyzeConfig, analyze
 from tscapp.common.names import random_sentence
 import logging
 from enum import IntFlag, auto
@@ -108,4 +109,21 @@ def webapp_reprocessor(payload, config=None):
         payload.odb.table_files_create(str(output_file.relative_to(payload.appdata_path)), "csv", payload.task_client, payload.task_session)
         payload.odb.table_files_create(str(clustered.relative_to(payload.appdata_path)), "clu", payload.task_client, payload.task_session)
         payload.odb.table_files_create(str(preliminary.relative_to(payload.appdata_path)), "ana", payload.task_client, payload.task_session)
+    return {"completed_flag":True}
+
+@register_task
+def webapp_analyze(payload, config=None):
+    if not config:
+        raise RuntimeError("wanted kwarg config")
+    config_new = deepcopy(config)
+    source_dir = payload.full_request["source"]
+    completed_flag = payload.full_request.get("completed_flag", None)
+    config_new["input_dir"] = str(payload.file_save_path.parent / source_dir)
+    config_new["output_dir"] = str(payload.file_save_path.parent / source_dir)
+    output_file_name = payload.full_request["name"].split(" ",1)[-1]
+    output_file = payload.file_save_path.parent / source_dir / (output_file_name + "_mcs.html")
+    config_new = AnalyzeConfig.model_validate_json(dumps(config_new))
+    analyze(config_new)
+    if not completed_flag:
+        payload.odb.table_files_create(str(output_file.relative_to(payload.appdata_path)), "ana", payload.task_client, payload.task_session)
     return {"completed_flag":True}

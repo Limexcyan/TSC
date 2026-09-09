@@ -25,12 +25,16 @@
         </div>
         <div class="container">
         <button id="resubmit-task" class="open-popup" data-popup-target="clustering-overlay">Resubmit task</button>
-        <button id="more-analysis">Analyze further</button>
-        <button id="resubmit-task" class="open-popup" data-popup-target="reclustering-overlay">Add files to this clustering</button>
+        <button id="recluster-task" class="open-popup" data-popup-target="reclustering-overlay">Add files to this clustering</button>
         </div>
         <div class="container">
             {% autoescape false %}
             {{html_graph_analysis_preliminary}}
+            {% endautoescape %}
+        </div>
+        <div class="container">
+            {% autoescape false %}
+            {{html_graph_analysis_mcs}}
             {% endautoescape %}
         </div>
     </section>
@@ -236,6 +240,19 @@
                 }
             )
         }
+    });
+    </script>
+    <script>
+    const moreAnalysis = document.getElementById("more-analysis")
+    moreAnalysis?.addEventListener("click", () => {
+        clustering_old_data = JSON.parse(document.getElementById("task-data").innerText);
+        _api_call("GET", "/api/task/{{ task_id }}").then(
+                (res) => {
+                    send_for_more_analysis(res.session,"{{ task_id }}",clustering_old_data.name).then(
+                        () => window.location.href = "/session"
+                    )
+                }
+            )
     });
     </script>
     

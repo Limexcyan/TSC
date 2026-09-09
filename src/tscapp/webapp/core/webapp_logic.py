@@ -43,8 +43,13 @@ def register_urls(app: Flask, sio: SocketIO, odb: OrchestratorDB, session: Sessi
     def browse_results(task_id):
         task_data = appdata_path / "task" / task_id
         html_embed_preliminary = ""
+        html_embed_mcs = '<button id="more-analysis">Analyze further</button>'
         for graph in task_data.glob("*.html"):
+            print(graph)
             if "_preliminary" in graph.stem:
-                with open(graph, "r") as graph:
-                    html_embed_preliminary = graph.read()
-        return render_template("results.html", task_id=task_id,html_graph_analysis_preliminary=html_embed_preliminary)
+                with open(graph, "r") as _graph:
+                    html_embed_preliminary = _graph.read()
+            if "_mcs" in graph.stem:
+                with open(graph, "r") as _graph:
+                    html_embed_mcs = _graph.read()
+        return render_template("results.html", task_id=task_id,html_graph_analysis_preliminary=html_embed_preliminary,html_graph_analysis_mcs=html_embed_mcs)

@@ -69,7 +69,7 @@ def reprocessor(config: ReProcessorConfig):
     logger.info("results saved under %s", config.output_file)
     
     logger.info("running analysys...")
-    analyze(config=AnalyzeConfig(output_dir=config.output_file.parent,input_csv=config.output_file))
+    analyze(config=AnalyzeConfig(output_dir=config.output_file.parent,input_dir=config.output_file.parent))
 
 if __name__ == "__main__":
     ReProcessorCli.run()
