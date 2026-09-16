@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="/static/styles.css" type="text/css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar container">
+        <a class="logo" href="#">
+        <span class="logo-mark">⬢</span>
+        TSC
+        </a>
+
+        <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#signup">Usage</a>
+        <a href="#refs">References</a>
+        </div>
+
+        <a class="button button-primary" href="/session">View sessions</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content container">
+                <div>
+                    <div class="eyebrow">Structural based analysis</div>
+                    <h1>Targeted Structural <span>Clustering</span></h1>
+                    <p class="hero-description">
+                    A simple platform to help aid drug development with in silico tools.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Features</h2>
+        <p>Rapidly test out CHEMBL molecule bases for structural similarity</p>
+      </div>
+
+      <div class="features">
+        <article class="feature-card">
+          <h3>Custom clustering</h3>
+          <p>Run clustering algorithms on any set of <i>.sdf</i> molecule databases.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Extensive graphs</h3>
+          <p>View the preliminary clustering results and drill them down.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Persistent results</h3>
+          <p>Share your clustering results with your peers or download them yourself.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta" id="signup">
+        <h2>Create your own structural clustering analysis</h2>
+        <p>Simply click on the button below and create a new session.</p>
+        <a class="button button-primary" href="/session">View sessions</a>
+      </div>
+    </div>
+  </section>
+  <article class="feature-card" style="margin-bottom:1%" id="refs">
+    <h3>References</h3>
+    <p>This application is part of a research paper. For more information, visit <a href="#">here</a></p>
+  </article>
+</body>
+</html>

@@ -2,7 +2,7 @@
 name = "tasc-paper-repro"
 version = "0.1.0"
 description = "Reproducibility package for the TaSC ligand-distribution experiments"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
   "numpy",
   "pandas",
@@ -11,7 +11,33 @@ dependencies = [
   "matplotlib",
   "biopython",
   "jinja2",
+    "flask>=3.1.3",
+    "flask-session>=0.8.0",
+    "flask-socketio>=5.6.1",
+    "pandas>=3.0.5",
+    "plotly>=7.0.0",
+    "polars>=1.43.2",
+    "pyarrow>=25.0.0",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.14.2",
+    "rdkit>=2026.3.5",
+    "scikit-learn>=1.9.0",
 ]
+
+[project.scripts]
+tscapp = "tscapp:main"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.5",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 79
 
 [project.optional-dependencies]
 rdkit = ["rdkit"]
@@ -24,3 +50,4 @@ where = ["src"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+

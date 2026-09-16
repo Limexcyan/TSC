@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="/static/styles.css" type="text/css">
+</head>
+<body>
+    <script id="task-data" type="application/json">
+        {}
+    </script> 
+        <header class="site-header">
+            <section class="hero" style="padding:17px 0 0 0;height:70px;">
+            <span class="site-title"><span class="site-title-mark"></span>Task results analysis</span>
+            </section>
+        </header>
+    <script type="text/javascript" src="/static/page_build.js"></script>
+    <section>
+        <div class="container">
+        <h1>Analyze your clustering results</h1>
+            <p>If you like the preliminary results, you can analyze them further.</p>
+            <p>If you wish, you can share these results with others by copying the link</p>
+            <p class="p-warn">Resubmitting this task will irreversibly overwrite the analysis present here. Save the graphs and/or the .csv file if you wish to keep them</p>
+        </div>
+        <div class="container">
+        <button id="resubmit-task" class="open-popup" data-popup-target="clustering-overlay">Resubmit task</button>
+        <button id="recluster-task" class="open-popup" data-popup-target="reclustering-overlay">Add files to this clustering</button>
+        </div>
+        <div class="container">
+            {% autoescape false %}
+            {{html_graph_analysis_preliminary}}
+            {% endautoescape %}
+        </div>
+        <div class="container">
+            {% autoescape false %}
+            {{html_graph_analysis_mcs}}
+            {% endautoescape %}
+        </div>
+    </section>
+
+    <!-- CLUSTERIN OVERLAY -->
+    <div class="popup-overlay" id="clustering-overlay" role="presentation">
+    <section class="popup-window" role="dialog">
+      <div class="popup-header">
+        <h2 class="popup-title">Clustering parameters</h2>
+        <button class="popup-close" id="close-clustering-overlay" type="button">&times;</button>
+      </div>
+      <div class="popup-content">
+        <h4>Featurizing</h4>
+        <div style="margin-top:-2em;display:grid;grid-template-columns:50% 50%">
+            <div>
+                <div style="display:inline-flex; flex-direction: row; justify-content: left; align-items: center; width: 100%">
+                    <div style="width:fit-content"><p>Morgan fingerprint size -&nbsp;</p></div>
+                    <div style="width:fit-content"><label for="mfp-size" class="range-field"><output id="mfp-size-value"></output></label></div>
+                </div>
+                <div>
+                    <input id="mfp-size" class="material-range" name="mfp-size" type="range" min="1024" max="4096" value="1024" step="1024" style="width:60%"/>
+                </div>
+            </div>
+            <div>
+                <div style="display:inline-flex; flex-direction: row; justify-content: left; align-items: center; width: 100%">
+                    <div style="width:fit-content"><p>Morgan fingerprint radius -&nbsp;</p></div>
+                    <div style="width:fit-content"><label for="mfp-radius" class="range-field"><output id="mfp-radius-value"></output></label></div>
+                </div>
+                <div>
+                    <input id="mfp-radius" class="material-range" name="mfp-radius" type="range" min="1" max="4" value="2" step="1" style="width:60%"/>
+                </div>
+            </div>
+        </div>
+        <h4>Clustering</h4>
+        <div style="margin-top:-2em;display:grid;grid-template-columns:50% 50%">
+            <div>
+                <div style="display:inline-flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%">
+                    <div style="width:fit-content"><p>Cluster seed&nbsp;</p></div>
+                    <div style="width:fit-content"><em style="margin-right: 5em;">(Leave blank for random seed)</em></div>
+                </div>
+                <div>
+                    <input id="clu-seed" type="number" name="clu-seed" class="material-number" style="width:70%" min="0" value="10"/>
+                </div>
+            </div>
+            <div>
+                <div style="display:inline-flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%">
+                    <div style="width:fit-content"><p>Cluster count</p></div>
+                    <div style="width:fit-content"><em style="margin-right: 5em;">(between 2 and 256, required)</em></div>
+                </div>
+                <div>
+                    <input id="clu-count" type="number" name="clu-count" class="material-number" style="width:70%" min="2" max="256" value="32"/>
+                </div>
+            </div>
+        </div>
+        <script>
+			const mfp_size_val = document.getElementById("mfp-size-value");
+			const mfp_size_inp = document.getElementById("mfp-size");
+			const mfp_radius_val = document.getElementById("mfp-radius-value");
+			const mfp_radius_inp = document.getElementById("mfp-radius");
+			mfp_size_val.textContent = mfp_size_inp.value;
+			mfp_radius_val.textContent = mfp_radius_inp.value;
+			mfp_size_inp.addEventListener("change", (event) => { mfp_size_val.textContent = event.target.value; });
+			mfp_radius_inp.addEventListener("change", (event) => { mfp_radius_val.textContent = event.target.value; });
+		</script>
+      </div>
+      <div class="popup-actions">
+        <button class="popup-cancel" id="cancel-clustering-overlay" type="button">
+          Cancel
+        </button>
+        <button class="btn-short-big" id="submit-clustering-overlay" type="button" disabled="true">
+          Run
+        </button>
+        <script>
+            const clu_cnt = document.getElementById("clu-count");
+            const clu_seed = document.getElementById("clu-seed");
+            const btn_run = document.getElementById("submit-clustering-overlay")
+            function refresh_run_button(){
+                if(clu_cnt.value === "") {
+                    btn_run.disabled = true;
+                }
+                else {
+                    btn_run.disabled = false;
+                }
+            }
+            clu_cnt.addEventListener("input", (event) => {refresh_run_button()})
+            refresh_run_button()
+        </script>
+      </div>
+    </section>
+    </div>
+
+    <!-- RECLUSTERING OVERLAY -->
+    <div class="popup-overlay" id="reclustering-overlay" role="presentation">
+    <section class="popup-window" role="dialog">
+      <div class="popup-header">
+        <h2 class="popup-title">Clustering parameters</h2>
+        <button class="popup-close" id="close-reclustering-overlay" type="button">&times;</button>
+      </div>
+      <div class="popup-content">
+        <p>This will create a new task in the task owner's session.</p>
+        <h4>Run this clustering model of following files:</h4>
+        <div id="task-list-files-sdf"></div>
+      </div>
+      <div class="popup-actions">
+        <button class="popup-cancel" id="cancel-reclustering-overlay" type="button">
+          Cancel
+        </button>
+        <button class="btn-short-big" id="submit-task" type="button" disabled="true">
+          Run
+        </button>
+      </div>
+    </section>
+    </div>
+
+    
+    <script>
+    let lastFocusedElement = null;
+
+    function openPopup(popup) {
+      lastFocusedElement = document.activeElement;
+
+      popup.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+
+      popup.querySelector(".popup-close")?.focus();
+    }
+
+    function closePopup(popup) {
+      popup.classList.remove("is-open");
+
+      const anyPopupOpen = document.querySelector(
+        ".popup-overlay.is-open"
+      );
+
+      if (!anyPopupOpen) {
+        document.body.style.overflow = "";
+      }
+
+      lastFocusedElement?.focus();
+    }
+
+    // Open the selected popup
+    document.querySelectorAll("[data-popup-target]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const popupId = button.dataset.popupTarget;
+        const popup = document.getElementById(popupId);
+
+        if (popup) {
+          openPopup(popup);
+        }
+      });
+    });
+
+    // Close buttons
+    document.querySelectorAll(".popup-close, .popup-cancel").forEach((button) => {
+      button.addEventListener("click", () => {
+        const popup = button.closest(".popup-overlay");
+        closePopup(popup);
+      });
+    });
+
+    // Close when clicking the backdrop
+    document.querySelectorAll(".popup-overlay").forEach((popup) => {
+      popup.addEventListener("click", (event) => {
+        if (event.target === popup) {
+          closePopup(popup);
+        }
+      });
+    });
+
+    // Close the active popup with Escape
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+
+      const openPopupElement = document.querySelector(
+        ".popup-overlay.is-open"
+      );
+
+      if (openPopupElement) {
+        closePopup(openPopupElement);
+      }
+    });
+    </script>
+    <script>
+    const confirmPopup = document.getElementById("submit-clustering-overlay");
+    const submitRecluster = document.getElementById("submit-task");
+
+    confirmPopup.addEventListener("click", () => {
+        c_s = null;
+        if (document.getElementById('clu-seed').value !== "") {c_s = document.getElementById('clu-seed').value}
+        _api_call("PUT","/api/task/{{ task_id }}", '{"status":"16"}').then(() => window.location.href = "/session")
+    });
+    submitRecluster.addEventListener("click", () => {
+        let gathered = Array.from(document.querySelectorAll("div[data-selected='1']"));
+        let files = gathered.map((x) => x.id);
+        if (files.length >= 1) {
+            clustering_old_data = JSON.parse(document.getElementById("task-data").innerText)
+            _api_call("GET", "/api/task/{{ task_id }}").then(
+                (res) => {
+                    resend_files_task_clustering(res.session, files, clustering_old_data, "{{ task_id }}").then(
+                        () => window.location.href = "/session"
+                    )
+                }
+            )
+        }
+    });
+    </script>
+    <script>
+    const moreAnalysis = document.getElementById("more-analysis")
+    moreAnalysis?.addEventListener("click", () => {
+        clustering_old_data = JSON.parse(document.getElementById("task-data").innerText);
+        _api_call("GET", "/api/task/{{ task_id }}").then(
+                (res) => {
+                    send_for_more_analysis(res.session,"{{ task_id }}",clustering_old_data.name).then(
+                        () => window.location.href = "/session"
+                    )
+                }
+            )
+    });
+    </script>
+    
+    <script>
+        load_task_data("{{ task_id }}")
+        .then((files) => {
+            _api_call("GET", "/api/task/{{ task_id }}").then(
+                (res) => {client_task_build_session_sdf_files(res.session, files)}
+            )
+        })
+    </script>
+</body>
+</html>
